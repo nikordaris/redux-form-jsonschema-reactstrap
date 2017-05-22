@@ -1,0 +1,10 @@
+{
+  "extends": "react-app",
+  "rules": {
+    "jsx-a11y/img-has-alt": 0,
+    "quotes": [
+      "warn",
+      "single"
+    ]
+  }
+}

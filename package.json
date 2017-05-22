@@ -1,0 +1,63 @@
+{
+  "name": "redux-form-widgets-reactstrap",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikordaris/redux-form-widgets-reactstrap.git"
+  },
+  "author": "Nikordaris <nikordaris@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikordaris/redux-form-widgets-reactstrap/issues"
+  },
+  "homepage": "https://github.com/nikordaris/redux-form-widgets-reactstrap#readme",
+  "scripts": {
+    "build": "babel src --out-dir lib --ignore __tests__",
+    "test": "concurrently --kill-others \"eslint src/**/*.js\" \"jest src/**/*.test.js --notify\" ",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "deploy-storybook": "storybook-to-ghpages"
+  },
+  "jest": {
+    "rootDir": "src",
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js"
+  },
+  "devDependencies": {
+    "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-deployer": "^1.2.0",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "concurrently": "^3.4.0",
+    "enzyme": "^2.8.2",
+    "eslint": "^3.19.0",
+    "eslint-config-react-app": "^0.6.2",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jest": "^20.0.1",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.0.1",
+    "flow-bin": "^0.46.0",
+    "jest": "^20.0.1",
+    "jest-cli": "^20.0.1",
+    "jest-enzyme": "^3.1.1",
+    "prettydiff": "^99.0.1",
+    "react": "^15.5.4"
+  },
+  "peerDependencies": {
+    "react": "^15.5.4",
+    "reactstrap": "^4.6.2",
+    "redux-form": "^6.7.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "styled-components": "^1.4.6"
+  }
+}
