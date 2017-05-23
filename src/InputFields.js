@@ -4,7 +4,6 @@ import React, { Component } from 'react';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
-import type { SchemaType } from 'jsonschema-redux-form';
 
 import FormField from './FormField';
 
@@ -24,21 +23,42 @@ class InputFormField extends Component {
   }
 }
 
-class InputField extends Component {
-  props: {
-    schema: SchemaType
+export class InputField extends Component {
+  static defaultProps = {
+    type: 'text'
   };
 
-  validate = (value, allValues, props) => {
+  props: {
+    schema: SchemaType,
+    type: string
+  };
+
+  validate = (value: any, allValues: any, props: { [string]: any }) => {
     const { schema } = this.props;
-    return validate(value, schema);
+    const ajv = new Ajv();
+    return ajv.validate(schema, value);
   };
 
   render() {
-    return <Field {...this.props} validate={this.validate} />;
+    return (
+      <Field
+        {...this.props}
+        component={InputFormField}
+        validate={this.validate}
+      />
+    );
   }
 }
 
-export const createInputField = (options: { [string]: any }) => (
-  <Field component={InputField} {...options} />
-);
+const createInputField = (options: { [string]: any }) => class
+  extends Component {
+  render() {
+    return <InputField {...this.props} {...options} />;
+  }
+};
+
+export const EmailInputField = createInputField({ type: 'email' });
+export const PasswordInputField = createInputField({ type: 'password' });
+export const FileInputField = createInputField({ type: 'file' });
+export const DateInputField = createInputField({ type: 'date' });
+export default createInputField;
