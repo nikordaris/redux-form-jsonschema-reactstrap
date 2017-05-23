@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import type { SchemaType } from 'jsonschema-redux-form';
-import { UncontrolledTooltip } from 'react-strap';
+import { UncontrolledTooltip, Label } from 'react-strap';
 import { has, get } from 'lodash';
 
 const LABEL_PROP = 'meta.form.label';
@@ -47,15 +47,6 @@ export default class FormField extends Component {
     children: React.Element<*> | [React.Element<*>]
   };
 
-  renderTooltip(target: string, placement: string = 'right') {
-    const { schema: { description } } = this.props;
-    return (
-      <UncontrolledTooltip target={target} placement={placement}>
-        {description}
-      </UncontrolledTooltip>
-    );
-  }
-
   render() {
     const {
       id,
@@ -65,8 +56,7 @@ export default class FormField extends Component {
       schema,
       tooltipProps: { placement = 'right', tooltipProps },
       labelProps: {
-        tag: LabelTag = 'label',
-        tooltipPlacement = 'right',
+        tag: LabelTag = Label,
         requiredColor = 'red',
         ...labelProps
       },
@@ -81,12 +71,13 @@ export default class FormField extends Component {
         ...warningProps
       },
       meta: { error, warning },
+      input,
       ...rest
     } = this.props;
     const label = get(schema, LABEL_PROP);
     const labelId = `${id}-label`;
     return (
-      <Tag id={id} {...rest}>
+      <Tag {...rest}>
         {schema.description &&
           <UncontrolledTooltip
             target={labelId}
@@ -95,16 +86,20 @@ export default class FormField extends Component {
           >
             {schema.description}
           </UncontrolledTooltip>}
-        <LabelTag id={labelId} {...labelProps}>
+
+        <LabelTag id={labelId} for={id} {...labelProps}>
           {required && <span style={{ color: requiredColor }}>*</span>}
           {label}
         </LabelTag>
-        {React.children(child => React.cloneElement(child, this.props))}
+
+        {React.children(child => React.cloneElement(child, {input, id, schema, ...rest}))}
+
         {showError(this.props) &&
           error &&
           <ErrorTag id={`${id}-error`} {...errorProps}>
             {error}
           </ErrorTag>}
+          
         {showWarning(this.props) &&
           warning &&
           <WarningTag id={`${id}-warning`} {...warningProps}>
