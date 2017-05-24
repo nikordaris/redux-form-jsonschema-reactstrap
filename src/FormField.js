@@ -3,7 +3,7 @@ import type { SchemaType } from 'jsonschema-redux-form';
 import { UncontrolledTooltip, Label } from 'react-strap';
 import { get } from 'lodash';
 
-const LABEL_PROP = 'meta.form.label';
+const LABEL_PROP = 'id';
 
 const DEFAULT_SHOW = ({ meta }) => meta.touched;
 
@@ -26,7 +26,6 @@ export default class FormField extends Component {
     labelProps: {
       [string]: any,
       tag: string,
-      tooltipPlacement: string,
       requiredColor: string
     },
     tooltipProps: {
