@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
 import type { SchemaType } from 'jsonschema-redux-form';
 import { UncontrolledTooltip, Label } from 'react-strap';
-import { has, get } from 'lodash';
+import { get } from 'lodash';
 
 const LABEL_PROP = 'meta.form.label';
-
-export type OptionsType = {
-  tag: string
-};
-
-type MessagePropsType = {
-  [string]: any,
-  tag: string,
-  show: (props: { [string]: any }) => boolean
-};
 
 const DEFAULT_SHOW = ({ meta }) => meta.touched;
 
@@ -92,14 +82,16 @@ export default class FormField extends Component {
           {label}
         </LabelTag>
 
-        {React.children(child => React.cloneElement(child, {input, id, schema, ...rest}))}
+        {React.children(child =>
+          React.cloneElement(child, { input, id, schema, ...rest })
+        )}
 
         {showError(this.props) &&
           error &&
           <ErrorTag id={`${id}-error`} {...errorProps}>
             {error}
           </ErrorTag>}
-          
+
         {showWarning(this.props) &&
           warning &&
           <WarningTag id={`${id}-warning`} {...warningProps}>
