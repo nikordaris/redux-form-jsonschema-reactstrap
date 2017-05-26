@@ -4,9 +4,10 @@ import React, { Component } from 'react';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
-import { sortBy, get, has } from 'lodash';
-
+import { sortBy, isEmpty } from 'lodash';
 import type { SchemaType } from 'jsonschema-redux-form';
+import 'jsonschema-redux-form';
+
 import FormField from './FormField';
 
 class InputComponent extends Component<*, *, *> {
@@ -14,17 +15,17 @@ class InputComponent extends Component<*, *, *> {
     options: []
   };
   props: {
-    id: string,
+    name: string,
     type: string,
-    options?: ObjectSelectOptionsType,
-    input: { [string]: any },
-    styles: { [string]: any },
+    options: ObjectSelectOptionsType,
+    input: { name: string },
+    styles: { [style: string]: any },
     children: [React.Element<*>]
   };
 
   renderInputArrayOptions(options: [OptionType]) {
-    return sortBy(options, o => o.label).map(({ value, label }) => (
-      <option value={value}>{label}</option>
+    return sortBy(options, o => o.label || o.value).map(({ value, label }) => (
+      <option value={value}>{label || value}</option>
     ));
   }
 
@@ -41,10 +42,10 @@ class InputComponent extends Component<*, *, *> {
   }
 
   render() {
-    const { id, options, styles, input, ...rest } = this.props;
+    const { name, options, styles, input, ...rest } = this.props;
     return (
-      <FormField id={id} {...rest}>
-        <Input {...input} {...rest}>
+      <FormField {...rest}>
+        <Input id={name} {...input} {...rest}>
           {options && this.renderInputOptions(options)}
         </Input>
       </FormField>
@@ -73,15 +74,13 @@ export class InputField extends Component<*, *, *> {
   getOptions() {
     const { schema } = this.props;
     if (schema.oneOf) {
-      return schema.oneOf.map(({
-        id: label,
-        const: value,
-        description: tooltip
-      }) => ({
-        label,
-        value,
-        tooltip
-      }));
+      return schema.oneOf
+        .map(({ title: label, const: value, description: tooltip }) => ({
+          label,
+          value,
+          tooltip
+        }))
+        .filter(({ value }) => value);
     }
     return undefined;
   }

@@ -3,7 +3,7 @@ import type { SchemaType } from 'jsonschema-redux-form';
 import { UncontrolledTooltip, Label } from 'react-strap';
 import { get } from 'lodash';
 
-const LABEL_PROP = 'id';
+const LABEL_PROP = 'title';
 
 const DEFAULT_SHOW = ({ meta }) => meta.touched;
 
@@ -17,7 +17,7 @@ export default class FormField extends Component {
     tooltipProps: {}
   };
   props: {
-    id: string,
+    name: string,
     schema: SchemaType,
     required: boolean,
     tag: string,
@@ -38,7 +38,7 @@ export default class FormField extends Component {
 
   render() {
     const {
-      id,
+      name,
       styles,
       required,
       tag: Tag,
@@ -64,7 +64,7 @@ export default class FormField extends Component {
       ...rest
     } = this.props;
     const label = get(schema, LABEL_PROP);
-    const labelId = `${id}-label`;
+    const labelId = `${name}-label`;
     return (
       <Tag {...rest}>
         {schema.description &&
@@ -76,24 +76,24 @@ export default class FormField extends Component {
             {schema.description}
           </UncontrolledTooltip>}
 
-        <LabelTag id={labelId} for={id} {...labelProps}>
+        <LabelTag id={labelId} for={name} {...labelProps}>
           {required && <span style={{ color: requiredColor }}>*</span>}
           {label}
         </LabelTag>
 
         {React.children(child =>
-          React.cloneElement(child, { input, id, schema, ...rest })
+          React.cloneElement(child, { input, id: name, schema, ...rest })
         )}
 
         {showError(this.props) &&
           error &&
-          <ErrorTag id={`${id}-error`} {...errorProps}>
+          <ErrorTag id={`${name}-error`} {...errorProps}>
             {error}
           </ErrorTag>}
 
         {showWarning(this.props) &&
           warning &&
-          <WarningTag id={`${id}-warning`} {...warningProps}>
+          <WarningTag id={`${name}-warning`} {...warningProps}>
             {warning}
           </WarningTag>}
       </Tag>
