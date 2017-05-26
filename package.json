@@ -14,16 +14,27 @@
   },
   "homepage": "https://github.com/nikordaris/redux-form-widgets-reactstrap#readme",
   "scripts": {
-    "build": "npm run clean; babel src --out-dir lib --ignore __tests__",
+    "prepublish": "npm run build",
+    "build": "npm run clean; babel src --out-dir lib --ignore *.test.js",
     "clean": "rimraf lib",
-    "test": "concurrently --kill-others \"eslint src/**/*.js\" \"jest src/**/*.test.js --notify\" ",
+    "test": "concurrently \"eslint src/**/*.js\" \"jest\"",
+    "test:ci": "npm test && codecov",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "postinstall": "flow-typed install"
   },
   "jest": {
     "rootDir": "src",
-    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js"
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "collectCoverage": true
+  },
+  "jest-junit": {
+    "output": "./coverage/reports/junit.xml"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
@@ -51,16 +62,15 @@
     "jest-enzyme": "^3.1.1",
     "prettydiff": "^99.0.1",
     "react": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
     "rimraf": "^2.6.1"
-  },
-  "peerDependencies": {
-    "react": "^15.5.4",
-    "reactstrap": "^4.6.2",
-    "redux-form": "^6.7.0"
   },
   "dependencies": {
     "ajv": "^5.1.3",
     "lodash": "^4.17.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "react-transition-group": "^1.1.3",
     "reactstrap": "^4.6.2",
     "redux-form": "^6.7.0",
     "styled-components": "^1.4.6"

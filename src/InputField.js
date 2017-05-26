@@ -4,9 +4,8 @@ import React, { Component } from 'react';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
-import { sortBy, isEmpty } from 'lodash';
+import { sortBy } from 'lodash';
 import type { SchemaType } from 'jsonschema-redux-form';
-import 'jsonschema-redux-form';
 
 import FormField from './FormField';
 

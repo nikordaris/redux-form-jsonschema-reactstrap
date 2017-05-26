@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import type { SchemaType } from 'jsonschema-redux-form';
-import { UncontrolledTooltip, Label } from 'react-strap';
+import { UncontrolledTooltip, Label } from 'reactstrap';
 import { get } from 'lodash';
 
 const LABEL_PROP = 'title';
