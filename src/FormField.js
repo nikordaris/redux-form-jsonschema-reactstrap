@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import type { SchemaType } from 'jsonschema-redux-form';
+import React, { Component, Children, cloneElement } from 'react';
+import type { SchemaType } from 'redux-jsonschema';
 import { UncontrolledTooltip, Label } from 'reactstrap';
 import { get } from 'lodash';
 
@@ -24,12 +24,10 @@ export default class FormField extends Component {
     errorProps: MessagePropsType,
     warningProps: MessagePropsType,
     labelProps: {
-      [string]: any,
       tag: string,
       requiredColor: string
     },
     tooltipProps: {
-      [string]: any,
       placement: string
     },
     meta: { [string]: any },
@@ -43,9 +41,9 @@ export default class FormField extends Component {
       required,
       tag: Tag,
       schema,
-      tooltipProps: { placement = 'right', tooltipProps },
+      tooltipProps: { placement = 'right', ...tooltipProps },
       labelProps: {
-        tag: LabelTag = Label,
+        tag: LabelTag = 'label',
         requiredColor = 'red',
         ...labelProps
       },
@@ -67,6 +65,11 @@ export default class FormField extends Component {
     const labelId = `${name}-label`;
     return (
       <Tag {...rest}>
+        <LabelTag id={labelId} for={name} {...labelProps}>
+          {required && <span style={{ color: requiredColor }}>*</span>}
+          {label}
+        </LabelTag>
+
         {schema.description &&
           <UncontrolledTooltip
             target={labelId}
@@ -76,13 +79,8 @@ export default class FormField extends Component {
             {schema.description}
           </UncontrolledTooltip>}
 
-        <LabelTag id={labelId} for={name} {...labelProps}>
-          {required && <span style={{ color: requiredColor }}>*</span>}
-          {label}
-        </LabelTag>
-
-        {React.children(child =>
-          React.cloneElement(child, { input, id: name, schema, ...rest })
+        {Children.map(child =>
+          cloneElement(child, { input, id: name, schema, ...rest })
         )}
 
         {showError(this.props) &&

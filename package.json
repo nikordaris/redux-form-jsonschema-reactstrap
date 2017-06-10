@@ -1,18 +1,18 @@
 {
-  "name": "redux-form-widgets-reactstrap",
+  "name": "redux-form-jsonschema-reactstrap",
   "version": "0.0.1",
   "description": "",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikordaris/redux-form-widgets-reactstrap.git"
+    "url": "git+https://github.com/nikordaris/redux-form-jsonschema-reactstrap.git"
   },
   "author": "Nikordaris <nikordaris@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nikordaris/redux-form-widgets-reactstrap/issues"
+    "url": "https://github.com/nikordaris/redux-form-jsonschema-reactstrap/issues"
   },
-  "homepage": "https://github.com/nikordaris/redux-form-widgets-reactstrap#readme",
+  "homepage": "https://github.com/nikordaris/redux-form-jsonschema-reactstrap#readme",
   "scripts": {
     "prepublish": "npm run build",
     "build": "npm run clean; babel src --out-dir lib --ignore *.test.js",
@@ -21,8 +21,7 @@
     "test:ci": "npm test && codecov",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages",
-    "postinstall": "flow-typed install"
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "jest": {
     "rootDir": "src",
@@ -57,22 +56,22 @@
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.1",
     "flow-bin": "^0.46.0",
+    "flow-typed": "^2.1.2",
     "jest": "^20.0.1",
     "jest-cli": "^20.0.1",
     "jest-enzyme": "^3.1.1",
-    "prettydiff": "^99.0.1",
     "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
     "react-test-renderer": "^15.5.4",
+    "react-transition-group": "^1.1.3",
+    "reactstrap": "^4.6.2",
+    "redux-form": "^6.8.0",
     "rimraf": "^2.6.1"
   },
   "dependencies": {
     "ajv": "^5.1.3",
     "lodash": "^4.17.4",
-    "react-dom": "^15.5.4",
-    "react-redux": "^5.0.5",
-    "react-transition-group": "^1.1.3",
-    "reactstrap": "^4.6.2",
-    "redux-form": "^6.7.0",
     "styled-components": "^1.4.6"
   }
 }

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render FormField should render 1`] = `
+<div>
+  <label
+    className=""
+    htmlFor="foo"
+    id="foo-label"
+  >
+    <span
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      *
+    </span>
+    Foo
+  </label>
+  <div
+    id="foo-error"
+  >
+    error
+  </div>
+  <div
+    id="foo-warning"
+  >
+    warning
+  </div>
+</div>
+`;

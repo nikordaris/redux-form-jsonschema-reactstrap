@@ -5,7 +5,6 @@ import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
 import { sortBy } from 'lodash';
-import type { SchemaType } from 'jsonschema-redux-form';
 
 import FormField from './FormField';
 
@@ -22,20 +21,16 @@ class InputComponent extends Component<*, *, *> {
     children: [React.Element<*>]
   };
 
-  renderInputArrayOptions(options: [OptionType]) {
+  renderInputOptions(options: Array<OptionType>) {
     return sortBy(options, o => o.label || o.value).map(({ value, label }) => (
       <option value={value}>{label || value}</option>
     ));
   }
 
-  renderInputOptions(options: ObjectSelectOptionsType) {
-    if (Array.isArray(options)) {
-      return this.renderInputArrayOptions(options);
-    }
-
-    return sortBy(Object.keys(options)).map((group, idx) => (
+  renderGroupInputOptions(options: { [string]: Array<OptionType> }) {
+    return sortBy(Object.keys(options)).map((group: string, idx: number) => (
       <optgroup key={idx} label={group}>
-        {this.renderInputArrayOptions(options[group])}
+        {this.renderInputOptions(options[group])}
       </optgroup>
     ));
   }
@@ -45,7 +40,9 @@ class InputComponent extends Component<*, *, *> {
     return (
       <FormField {...rest}>
         <Input id={name} {...input} {...rest}>
-          {options && this.renderInputOptions(options)}
+          {Array.isArray(options)
+            ? this.renderInputOptions(options)
+            : this.renderGroupInputOptions(options)}
         </Input>
       </FormField>
     );
@@ -59,7 +56,7 @@ export class InputField extends Component<*, *, *> {
   };
 
   props: {
-    schema: SchemaType,
+    schema: any,
     component: string,
     type: string
   };

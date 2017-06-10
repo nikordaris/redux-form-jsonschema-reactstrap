@@ -7,10 +7,10 @@ const schema = {
   description: 'foobar',
   type: 'number',
   meta: {
-    form: {
+    vis: {
       ordinal: 0,
       editable: true,
-      widget: 'NumberInputField'
+      component: 'NumberInputField'
     }
   }
 };

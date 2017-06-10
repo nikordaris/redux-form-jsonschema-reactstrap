@@ -10,21 +10,15 @@ declare type OptionType = {
 };
 
 declare type ObjectSelectOptionsType =
-  | {
-      [group: string]: [
-        OptionType
-      ]
-    }
-  | [
-    OptionType
-  ];
+  | { [string]: Array<OptionType> }
+  | Array<OptionType>;
 
 declare type MessagePropsType = {
   tag: string,
   show: (props: { [string]: any }) => boolean
 };
 
-declare module 'redux-form-widgets-reactstrap' {
+declare module 'redux-form-jsonschema-reactstrap' {
   declare module.exports: {
     MessagePropsType: MessagePropsType,
     OptionType: OptionType,
