@@ -1,6 +1,6 @@
 import React, { Component, Children, cloneElement } from 'react';
 import type { SchemaType } from 'redux-jsonschema';
-import { UncontrolledTooltip, Label } from 'reactstrap';
+import { UncontrolledTooltip } from 'reactstrap';
 import { get } from 'lodash';
 
 const LABEL_PROP = 'title';
@@ -34,6 +34,20 @@ export default class FormField extends Component {
     children: React.Element<*> | [React.Element<*>]
   };
 
+  constructor(props) {
+    super(props);
+    this.state = { Label: null };
+  }
+
+  renderTooltip(labelId, schema, tooltipProps) {
+    const { placement, ...rest } = tooltipProps;
+    return (
+      <UncontrolledTooltip target={labelId} placement={placement} {...rest}>
+        {schema.description}
+      </UncontrolledTooltip>
+    );
+  }
+
   render() {
     const {
       name,
@@ -41,7 +55,7 @@ export default class FormField extends Component {
       required,
       tag: Tag,
       schema,
-      tooltipProps: { placement = 'right', ...tooltipProps },
+      tooltipProps,
       labelProps: {
         tag: LabelTag = 'label',
         requiredColor = 'red',
@@ -65,19 +79,20 @@ export default class FormField extends Component {
     const labelId = `${name}-label`;
     return (
       <Tag {...rest}>
-        <LabelTag id={labelId} for={name} {...labelProps}>
+        <LabelTag
+          id={labelId}
+          ref={e => {
+            this._label = e;
+          }}
+          for={name}
+          {...labelProps}
+        >
           {required && <span style={{ color: requiredColor }}>*</span>}
           {label}
         </LabelTag>
 
         {schema.description &&
-          <UncontrolledTooltip
-            target={labelId}
-            placement={placement}
-            {...tooltipProps}
-          >
-            {schema.description}
-          </UncontrolledTooltip>}
+          this.renderTooltip(labelId, schema, tooltipProps)}
 
         {Children.map(child =>
           cloneElement(child, { input, id: name, schema, ...rest })
