@@ -13,14 +13,11 @@ declare type ObjectSelectOptionsType =
   | { [string]: Array<OptionType> }
   | Array<OptionType>;
 
-declare type MessagePropsType = {
-  tag: string,
-  show: (props: { [string]: any }) => boolean
-};
+declare type ShowFeedbackType = (props: { [string]: any }) => boolean;
 
 declare module 'redux-form-jsonschema-reactstrap' {
   declare module.exports: {
-    MessagePropsType: MessagePropsType,
+    ShowFeedbackType: ShowFeedbackType,
     OptionType: OptionType,
     ObjectSelectOptionsType: ObjectSelectOptionsType,
     createInputField(options: CreateInputOptionsType): any

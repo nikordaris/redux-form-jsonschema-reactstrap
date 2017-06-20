@@ -1,7 +1,12 @@
 import React, { Component, Children, cloneElement } from 'react';
 import type { SchemaType } from 'redux-jsonschema';
-import { UncontrolledTooltip } from 'reactstrap';
-import { get } from 'lodash';
+import {
+  UncontrolledTooltip,
+  Label,
+  FormFeedback,
+  FormGroup
+} from 'reactstrap';
+import { get, has } from 'lodash';
 
 const LABEL_PROP = 'title';
 
@@ -10,10 +15,9 @@ const DEFAULT_SHOW = ({ meta }) => meta.touched;
 export default class FormField extends Component {
   static defaultProps = {
     required: false,
-    tag: 'div',
+    tag: FormGroup,
     labelProps: {},
-    errorProps: {},
-    warningProps: {},
+    showFeedback: DEFAULT_SHOW,
     tooltipProps: {}
   };
   props: {
@@ -21,8 +25,7 @@ export default class FormField extends Component {
     schema: SchemaType,
     required: boolean,
     tag: string,
-    errorProps: MessagePropsType,
-    warningProps: MessagePropsType,
+    showFeedback: ShowFeedbackType,
     labelProps: {
       tag: string,
       requiredColor: string
@@ -34,9 +37,18 @@ export default class FormField extends Component {
     children: React.Element<*> | [React.Element<*>]
   };
 
-  constructor(props) {
-    super(props);
-    this.state = { Label: null };
+  getInputState() {
+    const { meta, showFeedback } = this.props;
+
+    if (showFeedback(this.props)) {
+      if (has(meta, 'error')) {
+        return 'danger';
+      } else if (has(meta, 'warning')) {
+        return 'warning';
+      }
+    }
+
+    return undefined;
   }
 
   renderTooltip(labelId, schema, tooltipProps) {
@@ -55,60 +67,44 @@ export default class FormField extends Component {
       required,
       tag: Tag,
       schema,
-      tooltipProps,
+      tooltipProps: { placement = 'right', ...tooltipProps },
       labelProps: {
-        tag: LabelTag = 'label',
+        tag: LabelTag = Label,
         requiredColor = 'red',
         ...labelProps
       },
-      errorProps: {
-        tag: ErrorTag = 'div',
-        show: showError = DEFAULT_SHOW,
-        ...errorProps
-      },
-      warningProps: {
-        tag: WarningTag = 'div',
-        show: showWarning = DEFAULT_SHOW,
-        ...warningProps
-      },
+      showFeedback,
       meta: { error, warning },
       input,
       ...rest
     } = this.props;
     const label = get(schema, LABEL_PROP);
     const labelId = `${name}-label`;
+    const inputState = this.getInputState();
     return (
-      <Tag {...rest}>
-        <LabelTag
-          id={labelId}
-          ref={e => {
-            this._label = e;
-          }}
-          for={name}
-          {...labelProps}
-        >
+      <Tag {...rest} color={inputState}>
+        <LabelTag id={labelId} for={name} {...labelProps}>
           {required && <span style={{ color: requiredColor }}>*</span>}
           {label}
         </LabelTag>
 
         {schema.description &&
-          this.renderTooltip(labelId, schema, tooltipProps)}
+          <UncontrolledTooltip
+            target={labelId}
+            placement={placement}
+            {...tooltipProps}
+          >
+            {schema.description}
+          </UncontrolledTooltip>}
 
         {Children.map(child =>
           cloneElement(child, { input, id: name, schema, ...rest })
         )}
 
-        {showError(this.props) &&
-          error &&
-          <ErrorTag id={`${name}-error`} {...errorProps}>
-            {error}
-          </ErrorTag>}
-
-        {showWarning(this.props) &&
-          warning &&
-          <WarningTag id={`${name}-warning`} {...warningProps}>
-            {warning}
-          </WarningTag>}
+        {inputState &&
+          <FormFeedback id={`${name}-feedback`}>
+            {error || warning}
+          </FormFeedback>}
       </Tag>
     );
   }
