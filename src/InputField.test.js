@@ -1,6 +1,5 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 import _inputFields from './index';
 import { forEach } from 'lodash';
 import { Provider } from 'react-redux';
@@ -8,12 +7,6 @@ import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
 
 const { SelectInputField, ...inputFields } = _inputFields;
-
-const testShallowInputFieldSnapshot = (options, InputComponent) => () => {
-  const wrapper = shallow(<InputComponent {...options} />);
-
-  expect(wrapper.getNodes()).toMatchSnapshot();
-};
 
 const testInputFieldSnapshot = (options, InputComponent) => () => {
   const rootReducers = combineReducers({ form: formReducer });
