@@ -19,8 +19,8 @@ const schema = {
 
 const schemaNoDescription = omit(schema, ['description']);
 
-const testFormFieldSnapshot = (options, testRenderer = renderer) => () => {
-  const tree = testRenderer
+const testFormFieldSnapshot = options => () => {
+  const tree = renderer
     .create(
       <FormField {...options}>
         <input type="number" />

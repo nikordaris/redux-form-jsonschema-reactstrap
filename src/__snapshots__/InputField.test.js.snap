@@ -1,0 +1,425 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render InputFields Should render ColorInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="color"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    ColorInputField
+  </label>
+</div>
+`;
+
+exports[`Render InputFields Should render DateInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="date"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    DateInputField
+  </label>
+</div>
+`;
+
+exports[`Render InputFields Should render EmailInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="email"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    EmailInputField
+  </label>
+</div>
+`;
+
+exports[`Render InputFields Should render FileInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="file"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    FileInputField
+  </label>
+</div>
+`;
+
+exports[`Render InputFields Should render NumberInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="number"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    NumberInputField
+  </label>
+</div>
+`;
+
+exports[`Render InputFields Should render PasswordInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="password"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    PasswordInputField
+  </label>
+</div>
+`;
+
+exports[`Render InputFields Should render SelectInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="select"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    SelectInputField
+  </label>
+</div>
+`;
+
+exports[`Render InputFields Should render TextAreaInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="textarea"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    TextAreaInputField
+  </label>
+</div>
+`;

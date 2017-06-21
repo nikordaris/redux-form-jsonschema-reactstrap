@@ -22,9 +22,10 @@ class InputComponent extends Component<*, *, *> {
   };
 
   renderInputOptions(options: Array<OptionType>) {
-    return sortBy(options, o => o.label || o.value).map(({ value, label }) => (
-      <option value={value}>{label || value}</option>
-    ));
+    return sortBy(options, o => o.label || o.value).map(({
+      value,
+      label
+    }, idx) => <option key={idx} value={value}>{label || value}</option>);
   }
 
   renderGroupInputOptions(options: { [string]: Array<OptionType> }) {
@@ -92,19 +93,24 @@ export class InputField extends Component<*, *, *> {
   }
 }
 
-const createInputField = (options: CreateInputOptionsType) => class
-  extends Component {
-  render() {
-    return <InputField {...this.props} {...options} />;
+const createInputField = (options: CreateInputOptionsType) => {
+  class CreatedInputField extends Component {
+    render() {
+      return <InputField {...this.props} {...options} />;
+    }
   }
+  return CreatedInputField;
 };
 
-export const EmailInputField = createInputField({ type: 'email' });
-export const PasswordInputField = createInputField({ type: 'password' });
-export const FileInputField = createInputField({ type: 'file' });
-export const DateInputField = createInputField({ type: 'date' });
-export const NumberInputField = createInputField({ type: 'number' });
-export const ColorInputField = createInputField({ type: 'color' });
-export const SelectInputField = createInputField({ type: 'select' });
-export const TextAreaInputField = createInputField({ type: 'textarea' });
+export const inputFields = {
+  EmailInputField: createInputField({ type: 'email' }),
+  PasswordInputField: createInputField({ type: 'password' }),
+  FileInputField: createInputField({ type: 'file' }),
+  DateInputField: createInputField({ type: 'date' }),
+  NumberInputField: createInputField({ type: 'number' }),
+  ColorInputField: createInputField({ type: 'color' }),
+  SelectInputField: createInputField({ type: 'select' }),
+  TextAreaInputField: createInputField({ type: 'textarea' })
+};
+
 export default createInputField;
