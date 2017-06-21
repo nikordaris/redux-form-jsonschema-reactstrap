@@ -46,6 +46,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "codecov": "^2.2.0",
     "concurrently": "^3.4.0",
     "enzyme": "^2.8.2",
     "eslint": "^4.0.0",
