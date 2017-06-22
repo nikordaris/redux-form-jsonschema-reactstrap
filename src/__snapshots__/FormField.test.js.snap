@@ -3,6 +3,108 @@
 exports[`Render FormField should render 1`] = `
 Array [
   <FormGroup
+    color={undefined}
+    tag="div"
+>
+    <Label
+        for="foo"
+        id="foo-label"
+        tag="label"
+    >
+        <span
+            style={
+                Object {
+                    "color": "red",
+                  }
+            }
+        >
+            *
+        </span>
+        Foo
+    </Label>
+    <UncontrolledTooltip
+        placement="right"
+        target="foo-label"
+    >
+        foobar
+    </UncontrolledTooltip>
+    <input
+        id="foo"
+        input={undefined}
+        schema={
+            Object {
+                "description": "foobar",
+                "meta": Object {
+                  "vis": Object {
+                    "component": "NumberInputField",
+                    "editable": true,
+                    "ordinal": 0,
+                  },
+                },
+                "title": "Foo",
+                "type": "number",
+              }
+        }
+        type="number"
+    />
+</FormGroup>,
+]
+`;
+
+exports[`Render FormField should render touched 1`] = `
+Array [
+  <FormGroup
+    color={undefined}
+    tag="div"
+>
+    <Label
+        for="foo"
+        id="foo-label"
+        tag="label"
+    >
+        <span
+            style={
+                Object {
+                    "color": "red",
+                  }
+            }
+        >
+            *
+        </span>
+        Foo
+    </Label>
+    <UncontrolledTooltip
+        placement="right"
+        target="foo-label"
+    >
+        foobar
+    </UncontrolledTooltip>
+    <input
+        id="foo"
+        input={undefined}
+        schema={
+            Object {
+                "description": "foobar",
+                "meta": Object {
+                  "vis": Object {
+                    "component": "NumberInputField",
+                    "editable": true,
+                    "ordinal": 0,
+                  },
+                },
+                "title": "Foo",
+                "type": "number",
+              }
+        }
+        type="number"
+    />
+</FormGroup>,
+]
+`;
+
+exports[`Render FormField should render with error 1`] = `
+Array [
+  <FormGroup
     color="danger"
     tag="div"
 >
@@ -28,11 +130,87 @@ Array [
     >
         foobar
     </UncontrolledTooltip>
+    <input
+        id="foo"
+        input={undefined}
+        schema={
+            Object {
+                "description": "foobar",
+                "meta": Object {
+                  "vis": Object {
+                    "component": "NumberInputField",
+                    "editable": true,
+                    "ordinal": 0,
+                  },
+                },
+                "title": "Foo",
+                "type": "number",
+              }
+        }
+        type="number"
+    />
     <FormFeedback
         id="foo-feedback"
         tag="div"
     >
         error
+    </FormFeedback>
+</FormGroup>,
+]
+`;
+
+exports[`Render FormField should render with warning 1`] = `
+Array [
+  <FormGroup
+    color="warning"
+    tag="div"
+>
+    <Label
+        for="foo"
+        id="foo-label"
+        tag="label"
+    >
+        <span
+            style={
+                Object {
+                    "color": "red",
+                  }
+            }
+        >
+            *
+        </span>
+        Foo
+    </Label>
+    <UncontrolledTooltip
+        placement="right"
+        target="foo-label"
+    >
+        foobar
+    </UncontrolledTooltip>
+    <input
+        id="foo"
+        input={undefined}
+        schema={
+            Object {
+                "description": "foobar",
+                "meta": Object {
+                  "vis": Object {
+                    "component": "NumberInputField",
+                    "editable": true,
+                    "ordinal": 0,
+                  },
+                },
+                "title": "Foo",
+                "type": "number",
+              }
+        }
+        type="number"
+    />
+    <FormFeedback
+        id="foo-feedback"
+        tag="div"
+    >
+        warning
     </FormFeedback>
 </FormGroup>,
 ]
@@ -58,6 +236,24 @@ exports[`Render FormField should render without tooltip 1`] = `
     </span>
     Foo
   </label>
+  <input
+    id="foo"
+    input={undefined}
+    schema={
+      Object {
+        "meta": Object {
+          "vis": Object {
+            "component": "NumberInputField",
+            "editable": true,
+            "ordinal": 0,
+          },
+        },
+        "title": "Foo",
+        "type": "number",
+      }
+    }
+    type="number"
+  />
   <div
     className="form-control-feedback"
     id="foo-feedback"

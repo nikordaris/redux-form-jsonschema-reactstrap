@@ -38,7 +38,7 @@ const testShallowFormFieldSnapshot = options => () => {
   );
 
   expect(wrapper.getNodes()).toMatchSnapshot();
-}
+};
 
 describe('Render FormField', () => {
   it(
@@ -47,7 +47,37 @@ describe('Render FormField', () => {
       name: 'foo',
       schema,
       required: true,
-      meta: { touched: true, error: 'error', warning: 'warning' }
+      meta: { touched: false }
+    })
+  );
+
+  it(
+    'should render touched',
+    testShallowFormFieldSnapshot({
+      name: 'foo',
+      schema,
+      required: true,
+      meta: { touched: true }
+    })
+  );
+
+  it(
+    'should render with error',
+    testShallowFormFieldSnapshot({
+      name: 'foo',
+      schema,
+      required: true,
+      meta: { touched: true, error: 'error' }
+    })
+  );
+
+  it(
+    'should render with warning',
+    testShallowFormFieldSnapshot({
+      name: 'foo',
+      schema,
+      required: true,
+      meta: { touched: true, warning: 'warning' }
     })
   );
 

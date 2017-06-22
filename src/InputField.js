@@ -68,28 +68,55 @@ export class InputField extends Component<*, *, *> {
     return ajv.validate(schema, value);
   };
 
-  getOptions() {
-    const { schema } = this.props;
+  getOptions(schema: any) {
+    const { title: group } = schema;
     if (schema.oneOf) {
       return schema.oneOf
-        .map(({ title: label, const: value, description: tooltip }) => ({
-          label,
-          value,
-          tooltip
-        }))
+        .reduce((result, optionsSchema) => {
+          const options = this.getOptions(optionsSchema);
+          const {
+            title: label,
+            const: value,
+            description: tooltip
+          } = optionsSchema;
+
+          if (options) {
+            result.push(...options);
+          } else {
+            result.push({
+              group,
+              label,
+              value,
+              tooltip
+            });
+          }
+
+          return result;
+        }, [])
         .filter(({ value }) => value);
     }
     return undefined;
   }
 
   render() {
-    return (
-      <Field
-        options={this.getOptions()}
-        validate={this.validate}
-        {...this.props}
-      />
-    );
+    const { schema } = this.props;
+    let options = this.getOptions(schema);
+    if (options) {
+      options = options.reduce((result, { group, ...option }) => {
+        const groupItems = result[group] || [];
+        return {
+          ...result,
+          [group]: [...groupItems, option]
+        };
+      }, {});
+
+      const values = Object.values(options);
+      if (values.length === 1) {
+        options = values[0];
+      }
+    }
+
+    return <Field options={options} validate={this.validate} {...this.props} />;
   }
 }
 

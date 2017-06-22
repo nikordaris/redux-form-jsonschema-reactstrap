@@ -51,15 +51,6 @@ export default class FormField extends Component {
     return undefined;
   }
 
-  renderTooltip(labelId, schema, tooltipProps) {
-    const { placement, ...rest } = tooltipProps;
-    return (
-      <UncontrolledTooltip target={labelId} placement={placement} {...rest}>
-        {schema.description}
-      </UncontrolledTooltip>
-    );
-  }
-
   render() {
     const {
       name,
@@ -76,6 +67,7 @@ export default class FormField extends Component {
       showFeedback,
       meta: { error, warning },
       input,
+      children,
       ...rest
     } = this.props;
     const label = get(schema, LABEL_PROP);
@@ -97,7 +89,7 @@ export default class FormField extends Component {
             {schema.description}
           </UncontrolledTooltip>}
 
-        {Children.map(child =>
+        {Children.map(children, child =>
           cloneElement(child, { input, id: name, schema, ...rest })
         )}
 

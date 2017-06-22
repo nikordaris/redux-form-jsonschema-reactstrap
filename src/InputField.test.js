@@ -60,4 +60,51 @@ describe('Render InputFields', () => {
       SelectInputField
     )
   );
+
+  it(
+    'Should render SelectInputField with only values',
+    testInputFieldSnapshot(
+      {
+        schema: {
+          id: 'SelectInputField',
+          title: 'SelectInputField',
+          type: 'string',
+          oneOf: [{ const: 'foo' }, { const: 'bar' }]
+        },
+        name: 'SelectInputField'
+      },
+      SelectInputField
+    )
+  );
+
+  it(
+    'Should render SelectInputField with groups',
+    testInputFieldSnapshot(
+      {
+        schema: {
+          id: 'SelectInputField',
+          title: 'SelectInputField',
+          type: 'number',
+          oneOf: [
+            {
+              title: 'Foo Group',
+              oneOf: [
+                { title: 'foo', const: 1, description: 'foo description' },
+                { title: 'foo2', const: 2, description: 'foo2 description' }
+              ]
+            },
+            {
+              title: 'Bar Group',
+              oneOf: [
+                { title: 'bar', const: 1, description: 'bar description' },
+                { title: 'bar2', const: 2, description: 'bar2 description' }
+              ]
+            }
+          ]
+        },
+        name: 'SelectInputField'
+      },
+      SelectInputField
+    )
+  );
 });
