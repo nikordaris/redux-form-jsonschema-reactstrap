@@ -1,5 +1,4 @@
 import React, { Component, Children, cloneElement } from 'react';
-import type { SchemaType } from 'redux-jsonschema';
 import {
   UncontrolledTooltip,
   Label,
@@ -22,7 +21,7 @@ export default class FormField extends Component {
   };
   props: {
     name: string,
-    schema: SchemaType,
+    schema: { [string]: any },
     required: boolean,
     tag: string,
     showFeedback: ShowFeedbackType,
@@ -41,10 +40,12 @@ export default class FormField extends Component {
     const { meta, showFeedback } = this.props;
 
     if (showFeedback(this.props)) {
-      if (has(meta, 'error')) {
+      if (!!get(meta, 'error')) {
         return 'danger';
-      } else if (has(meta, 'warning')) {
+      } else if (!!get(meta, 'warning')) {
         return 'warning';
+      } else {
+        return 'success';
       }
     }
 
@@ -90,7 +91,7 @@ export default class FormField extends Component {
           </UncontrolledTooltip>}
 
         {Children.map(children, child =>
-          cloneElement(child, { input, id: name, schema, ...rest })
+          cloneElement(child, { id: name, state: inputState, ...rest })
         )}
 
         {inputState &&

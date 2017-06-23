@@ -123,6 +123,7 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
               "DateInputField": [Function],
               "EmailInputField": [Function],
               "FileInputField": [Function],
+              "InputField": [Function],
               "NumberInputField": [Function],
               "PasswordInputField": [Function],
               "TextAreaInputField": [Function],
@@ -269,6 +270,7 @@ exports[`Render InputFields Should render DateInputField 1`] = `
               "DateInputField": [Function],
               "EmailInputField": [Function],
               "FileInputField": [Function],
+              "InputField": [Function],
               "NumberInputField": [Function],
               "PasswordInputField": [Function],
               "TextAreaInputField": [Function],
@@ -415,6 +417,7 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
               "DateInputField": [Function],
               "EmailInputField": [Function],
               "FileInputField": [Function],
+              "InputField": [Function],
               "NumberInputField": [Function],
               "PasswordInputField": [Function],
               "TextAreaInputField": [Function],
@@ -561,6 +564,7 @@ exports[`Render InputFields Should render FileInputField 1`] = `
               "DateInputField": [Function],
               "EmailInputField": [Function],
               "FileInputField": [Function],
+              "InputField": [Function],
               "NumberInputField": [Function],
               "PasswordInputField": [Function],
               "TextAreaInputField": [Function],
@@ -579,6 +583,153 @@ exports[`Render InputFields Should render FileInputField 1`] = `
     untouch={[Function]}
     valid={true}
     value={undefined}
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render InputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="text"
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    InputField
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id={undefined}
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    input={undefined}
+    invalid={false}
+    meta={
+      Object {
+        "active": false,
+        "asyncValidating": false,
+        "autofilled": false,
+        "dirty": false,
+        "dispatch": [Function],
+        "error": undefined,
+        "form": "MyForm",
+        "initial": undefined,
+        "invalid": false,
+        "pristine": true,
+        "submitFailed": false,
+        "submitting": false,
+        "touched": false,
+        "valid": true,
+        "visited": false,
+        "warning": undefined,
+      }
+    }
+    name="InputField"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "InputField",
+        "meta": Object {
+          "vis": Object {
+            "component": "InputField",
+            "editable": true,
+            "ordinal": Object {
+              "ColorInputField": [Function],
+              "DateInputField": [Function],
+              "EmailInputField": [Function],
+              "FileInputField": [Function],
+              "InputField": [Function],
+              "NumberInputField": [Function],
+              "PasswordInputField": [Function],
+              "TextAreaInputField": [Function],
+            },
+          },
+        },
+        "title": "InputField",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="text"
+    untouch={[Function]}
+    valid={true}
+    value=""
     warning={undefined}
   />
 </div>
@@ -707,6 +858,7 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
               "DateInputField": [Function],
               "EmailInputField": [Function],
               "FileInputField": [Function],
+              "InputField": [Function],
               "NumberInputField": [Function],
               "PasswordInputField": [Function],
               "TextAreaInputField": [Function],
@@ -853,6 +1005,7 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
               "DateInputField": [Function],
               "EmailInputField": [Function],
               "FileInputField": [Function],
+              "InputField": [Function],
               "NumberInputField": [Function],
               "PasswordInputField": [Function],
               "TextAreaInputField": [Function],
@@ -1492,6 +1645,7 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
               "DateInputField": [Function],
               "EmailInputField": [Function],
               "FileInputField": [Function],
+              "InputField": [Function],
               "NumberInputField": [Function],
               "PasswordInputField": [Function],
               "TextAreaInputField": [Function],

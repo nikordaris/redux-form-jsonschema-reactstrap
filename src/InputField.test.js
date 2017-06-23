@@ -1,16 +1,17 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import _inputFields from './index';
-import { forEach } from 'lodash';
+import { forEach, get } from 'lodash';
 import { Provider } from 'react-redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
 
 const { SelectInputField, ...inputFields } = _inputFields;
 
-const testInputFieldSnapshot = (options, InputComponent) => () => {
+const testInputFieldSnapshot = options => () => {
   const rootReducers = combineReducers({ form: formReducer });
   const store = createStore(rootReducers);
+  const InputComponent = get(_inputFields, options.name);
   const WrappedComponent = reduxForm({ form: 'MyForm' })(InputComponent);
   const tree = renderer
     .create(
@@ -44,67 +45,58 @@ describe('Render InputFields', () => {
 
   it(
     'Should render SelectInputField',
-    testInputFieldSnapshot(
-      {
-        schema: {
-          id: 'SelectInputField',
-          title: 'SelectInputField',
-          type: 'number',
-          oneOf: [
-            { title: 'foo', const: 1, description: 'foo description' },
-            { title: 'bar', const: 2, description: 'bar description' }
-          ]
-        },
-        name: 'SelectInputField'
+    testInputFieldSnapshot({
+      schema: {
+        id: 'SelectInputField',
+        title: 'SelectInputField',
+        type: 'number',
+        oneOf: [
+          { title: 'foo', const: 1, description: 'foo description' },
+          { title: 'bar', const: 2, description: 'bar description' }
+        ]
       },
-      SelectInputField
-    )
+      name: 'SelectInputField'
+    })
   );
 
   it(
     'Should render SelectInputField with only values',
-    testInputFieldSnapshot(
-      {
-        schema: {
-          id: 'SelectInputField',
-          title: 'SelectInputField',
-          type: 'string',
-          oneOf: [{ const: 'foo' }, { const: 'bar' }]
-        },
-        name: 'SelectInputField'
+    testInputFieldSnapshot({
+      schema: {
+        id: 'SelectInputField',
+        title: 'SelectInputField',
+        type: 'string',
+        oneOf: [{ const: 'foo' }, { const: 'bar' }]
       },
-      SelectInputField
-    )
+      name: 'SelectInputField'
+    })
   );
 
   it(
     'Should render SelectInputField with groups',
-    testInputFieldSnapshot(
-      {
-        schema: {
-          id: 'SelectInputField',
-          title: 'SelectInputField',
-          type: 'number',
-          oneOf: [
-            {
-              title: 'Foo Group',
-              oneOf: [
-                { title: 'foo', const: 1, description: 'foo description' },
-                { title: 'foo2', const: 2, description: 'foo2 description' }
-              ]
-            },
-            {
-              title: 'Bar Group',
-              oneOf: [
-                { title: 'bar', const: 1, description: 'bar description' },
-                { title: 'bar2', const: 2, description: 'bar2 description' }
-              ]
-            }
-          ]
-        },
-        name: 'SelectInputField'
+    testInputFieldSnapshot({
+      schema: {
+        id: 'SelectInputField',
+        title: 'SelectInputField',
+        type: 'number',
+        oneOf: [
+          {
+            title: 'Foo Group',
+            oneOf: [
+              { title: 'foo', const: 1, description: 'foo description' },
+              { title: 'foo2', const: 2, description: 'foo2 description' }
+            ]
+          },
+          {
+            title: 'Bar Group',
+            oneOf: [
+              { title: 'bar', const: 1, description: 'bar description' },
+              { title: 'bar2', const: 2, description: 'bar2 description' }
+            ]
+          }
+        ]
       },
-      SelectInputField
-    )
+      name: 'SelectInputField'
+    })
   );
 });
