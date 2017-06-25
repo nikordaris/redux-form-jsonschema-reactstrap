@@ -30,21 +30,7 @@ Array [
     </UncontrolledTooltip>
     <input
         id="foo"
-        input={undefined}
-        schema={
-            Object {
-                "description": "foobar",
-                "meta": Object {
-                  "vis": Object {
-                    "component": "NumberInputField",
-                    "editable": true,
-                    "ordinal": 0,
-                  },
-                },
-                "title": "Foo",
-                "type": "number",
-              }
-        }
+        state={undefined}
         type="number"
     />
 </FormGroup>,
@@ -54,7 +40,7 @@ Array [
 exports[`Render FormField should render touched 1`] = `
 Array [
   <FormGroup
-    color={undefined}
+    color="success"
     tag="div"
 >
     <Label
@@ -81,22 +67,12 @@ Array [
     </UncontrolledTooltip>
     <input
         id="foo"
-        input={undefined}
-        schema={
-            Object {
-                "description": "foobar",
-                "meta": Object {
-                  "vis": Object {
-                    "component": "NumberInputField",
-                    "editable": true,
-                    "ordinal": 0,
-                  },
-                },
-                "title": "Foo",
-                "type": "number",
-              }
-        }
+        state="success"
         type="number"
+    />
+    <FormFeedback
+        id="foo-feedback"
+        tag="div"
     />
 </FormGroup>,
 ]
@@ -132,21 +108,7 @@ Array [
     </UncontrolledTooltip>
     <input
         id="foo"
-        input={undefined}
-        schema={
-            Object {
-                "description": "foobar",
-                "meta": Object {
-                  "vis": Object {
-                    "component": "NumberInputField",
-                    "editable": true,
-                    "ordinal": 0,
-                  },
-                },
-                "title": "Foo",
-                "type": "number",
-              }
-        }
+        state="danger"
         type="number"
     />
     <FormFeedback
@@ -189,21 +151,7 @@ Array [
     </UncontrolledTooltip>
     <input
         id="foo"
-        input={undefined}
-        schema={
-            Object {
-                "description": "foobar",
-                "meta": Object {
-                  "vis": Object {
-                    "component": "NumberInputField",
-                    "editable": true,
-                    "ordinal": 0,
-                  },
-                },
-                "title": "Foo",
-                "type": "number",
-              }
-        }
+        state="warning"
         type="number"
     />
     <FormFeedback
@@ -238,20 +186,7 @@ exports[`Render FormField should render without tooltip 1`] = `
   </label>
   <input
     id="foo"
-    input={undefined}
-    schema={
-      Object {
-        "meta": Object {
-          "vis": Object {
-            "component": "NumberInputField",
-            "editable": true,
-            "ordinal": 0,
-          },
-        },
-        "title": "Foo",
-        "type": "number",
-      }
-    }
+    state="danger"
     type="number"
   />
   <div

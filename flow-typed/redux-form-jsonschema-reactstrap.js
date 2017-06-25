@@ -1,5 +1,6 @@
 declare type CreateInputOptionsType = {
-  type: string,
+  type?: string,
+  component?: any,
   options?: ObjectSelectOptionsType
 };
 

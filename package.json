@@ -36,9 +36,9 @@
     "output": "./coverage/reports/junit.xml"
   },
   "devDependencies": {
-    "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-deployer": "^1.2.0",
-    "@storybook/react": "3.1.5",
+    "@storybook/addon-actions": "^3.1.5",
+    "@storybook/react": "^3.1.5",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",

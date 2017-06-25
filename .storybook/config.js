@@ -1,4 +1,4 @@
-import { configure } from '@kadira/storybook';
+import { configure } from '@storybook/react';
 import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 function loadStories() {

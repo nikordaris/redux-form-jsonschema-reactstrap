@@ -1,7 +1,8 @@
 import React, { Component, cloneElement } from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
-import { storiesOf, addDecorator } from '@kadira/storybook';
+import { storiesOf, addDecorator } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { Button } from 'reactstrap';
 import SchemaVis from 'react-jsonschema-vis';
@@ -16,7 +17,6 @@ const store = createStore(
 
 class TestForm extends Component {
   handleSubmit = values => {
-    console.log(values);
     this.props.handleSubmit(values);
   };
   render() {
@@ -31,13 +31,9 @@ class TestForm extends Component {
   }
 }
 
-const ReduxTestForm = reduxForm({ form: 'test' })(TestForm);
-
 addDecorator(getStory => (
   <Provider store={store}>
-    <ReduxTestForm>
-      {getStory()}
-    </ReduxTestForm>
+    {getStory()}
   </Provider>
 ));
 
@@ -114,8 +110,7 @@ storiesOf(
       favColor: {
         id: 'FavColor',
         title: 'Favorite Color',
-        type: 'integer',
-        min: 0,
+        type: 'string',
         meta: {
           vis: {
             ordinal: 150,
@@ -142,22 +137,6 @@ storiesOf(
           }
         }
       },
-      resume: {
-        id: 'Resume',
-        title: 'Resume',
-        type: 'string',
-        media: {
-          binaryEncoding: 'base64',
-          type: 'image/png'
-        },
-        meta: {
-          vis: {
-            ordinal: 170,
-            editable: true,
-            component: 'FileInputField'
-          }
-        }
-      },
       comments: {
         id: 'Comments',
         title: 'Comments',
@@ -172,7 +151,16 @@ storiesOf(
       }
     }
   };
+
+  const ReduxTestForm = reduxForm({ form: 'test' })(TestForm);
+
   return (
-    <SchemaVis className="container" schema={schema} components={inputFields} />
+    <ReduxTestForm onSubmit={data => action('form submit')(data)}>
+      <SchemaVis
+        className="container"
+        schema={schema}
+        components={inputFields}
+      />
+    </ReduxTestForm>
   );
 });

@@ -9,15 +9,18 @@ import { sortBy, get } from 'lodash';
 import FormField from './FormField';
 
 class InputComponent extends Component<*, *, *> {
-  static defaultProps = {};
+  static defaultProps = {
+    styles: {}
+  };
   props: {
-    name: string,
     type: string,
     schema: { [string]: any },
     options?: ObjectSelectOptionsType,
     input: { name: string },
+    meta: { [string]: any },
+    children: [React.Element<*>],
     styles: { [style: string]: any },
-    children: [React.Element<*>]
+    style: { [string]: string | number }
   };
 
   renderInputOptions(options: Array<OptionType> = []) {
@@ -37,17 +40,25 @@ class InputComponent extends Component<*, *, *> {
 
   renderInputWithChildren() {
     const {
-      name,
       styles,
       options,
       input,
       type,
       children,
+      schema,
+      meta,
       ...rest
     } = this.props;
 
     return (
-      <Input id={name} type={type} {...input} {...rest}>
+      <Input
+        id={input.name}
+        type={type}
+        {...input}
+        {...rest}
+        style={styles.input}
+      >
+        <option disabled defaultValue={true}>Select {input.name} </option>
         {Array.isArray(options)
           ? this.renderInputOptions(options)
           : this.renderGroupInputOptions(options)}
@@ -56,20 +67,30 @@ class InputComponent extends Component<*, *, *> {
   }
   renderInput() {
     const {
-      name,
       styles,
       type,
       input,
+      schema,
+      meta,
       options,
       children,
+      style,
       ...rest
     } = this.props;
-    return <Input id={name} type={type} {...input} {...rest} />;
+    return (
+      <Input
+        id={input.name}
+        type={type}
+        {...input}
+        {...rest}
+        style={styles.input}
+      />
+    );
   }
   render() {
-    const { name, options, styles, input, schema, type, ...rest } = this.props;
+    const { options, styles, input, schema, type, ...rest } = this.props;
     return (
-      <FormField name={name} schema={schema} {...rest}>
+      <FormField name={input.name} schema={schema} {...rest}>
         {options ? this.renderInputWithChildren() : this.renderInput()}
       </FormField>
     );
@@ -84,7 +105,7 @@ export class InputField extends Component<*, *, *> {
 
   props: {
     schema: any,
-    component: string,
+    component: any,
     type: string,
     name: string
   };
@@ -170,11 +191,16 @@ export const inputFields = {
   InputField,
   EmailInputField: createInputField({ type: 'email' }),
   PasswordInputField: createInputField({ type: 'password' }),
-  FileInputField: createInputField({ type: 'file' }),
   DateInputField: createInputField({ type: 'date' }),
   DateTimeInputField: createInputField({ type: 'datetime-local' }),
-  NumberInputField: createInputField({ type: 'number' }),
-  ColorInputField: createInputField({ type: 'color' }),
+  NumberInputField: createInputField({
+    type: 'number',
+    normalize: value => parseInt(value, 10) || value
+  }),
+  ColorInputField: createInputField({
+    type: 'color',
+    styles: { input: { height: '40px' } }
+  }),
   SelectInputField: createInputField({ type: 'select' }),
   TextAreaInputField: createInputField({ type: 'textarea' })
 };

@@ -31,16 +31,15 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="color"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -81,28 +80,7 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="ColorInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -111,36 +89,13 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "ColorInputField",
-        "meta": Object {
-          "vis": Object {
-            "component": "ColorInputField",
-            "editable": true,
-            "ordinal": Object {
-              "ColorInputField": [Function],
-              "DateInputField": [Function],
-              "EmailInputField": [Function],
-              "FileInputField": [Function],
-              "InputField": [Function],
-              "NumberInputField": [Function],
-              "PasswordInputField": [Function],
-              "TextAreaInputField": [Function],
-            },
-          },
-        },
-        "title": "ColorInputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="color"
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   />
@@ -178,16 +133,15 @@ exports[`Render InputFields Should render DateInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="date"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -228,28 +182,7 @@ exports[`Render InputFields Should render DateInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="DateInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -258,36 +191,115 @@ exports[`Render InputFields Should render DateInputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "DateInputField",
-        "meta": Object {
-          "vis": Object {
-            "component": "DateInputField",
-            "editable": true,
-            "ordinal": Object {
-              "ColorInputField": [Function],
-              "DateInputField": [Function],
-              "EmailInputField": [Function],
-              "FileInputField": [Function],
-              "InputField": [Function],
-              "NumberInputField": [Function],
-              "PasswordInputField": [Function],
-              "TextAreaInputField": [Function],
-            },
-          },
-        },
-        "title": "DateInputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="date"
     untouch={[Function]}
-    valid={true}
+    valid={false}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render DateTimeInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={true}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={false}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor={undefined}
+    id="undefined-label"
+  >
+    DateTimeInputField
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id={undefined}
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={true}
+    name="DateTimeInputField"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    reset={[Function]}
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="datetime-local"
+    untouch={[Function]}
+    valid={false}
     value=""
     warning={undefined}
   />
@@ -325,16 +337,15 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="email"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -375,28 +386,7 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="EmailInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -405,36 +395,13 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "EmailInputField",
-        "meta": Object {
-          "vis": Object {
-            "component": "EmailInputField",
-            "editable": true,
-            "ordinal": Object {
-              "ColorInputField": [Function],
-              "DateInputField": [Function],
-              "EmailInputField": [Function],
-              "FileInputField": [Function],
-              "InputField": [Function],
-              "NumberInputField": [Function],
-              "PasswordInputField": [Function],
-              "TextAreaInputField": [Function],
-            },
-          },
-        },
-        "title": "EmailInputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="email"
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   />
@@ -472,16 +439,16 @@ exports[`Render InputFields Should render FileInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
+  onChange={[Function]}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="file"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -522,28 +489,7 @@ exports[`Render InputFields Should render FileInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="FileInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -552,37 +498,14 @@ exports[`Render InputFields Should render FileInputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "FileInputField",
-        "meta": Object {
-          "vis": Object {
-            "component": "FileInputField",
-            "editable": true,
-            "ordinal": Object {
-              "ColorInputField": [Function],
-              "DateInputField": [Function],
-              "EmailInputField": [Function],
-              "FileInputField": [Function],
-              "InputField": [Function],
-              "NumberInputField": [Function],
-              "PasswordInputField": [Function],
-              "TextAreaInputField": [Function],
-            },
-          },
-        },
-        "title": "FileInputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="file"
     untouch={[Function]}
-    valid={true}
-    value={undefined}
+    valid={false}
+    value=""
     warning={undefined}
   />
 </div>
@@ -619,16 +542,15 @@ exports[`Render InputFields Should render InputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="text"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -669,28 +591,7 @@ exports[`Render InputFields Should render InputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="InputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -699,36 +600,13 @@ exports[`Render InputFields Should render InputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "InputField",
-        "meta": Object {
-          "vis": Object {
-            "component": "InputField",
-            "editable": true,
-            "ordinal": Object {
-              "ColorInputField": [Function],
-              "DateInputField": [Function],
-              "EmailInputField": [Function],
-              "FileInputField": [Function],
-              "InputField": [Function],
-              "NumberInputField": [Function],
-              "PasswordInputField": [Function],
-              "TextAreaInputField": [Function],
-            },
-          },
-        },
-        "title": "InputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="text"
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   />
@@ -766,16 +644,15 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="number"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -816,28 +693,7 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="NumberInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -846,36 +702,13 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "NumberInputField",
-        "meta": Object {
-          "vis": Object {
-            "component": "NumberInputField",
-            "editable": true,
-            "ordinal": Object {
-              "ColorInputField": [Function],
-              "DateInputField": [Function],
-              "EmailInputField": [Function],
-              "FileInputField": [Function],
-              "InputField": [Function],
-              "NumberInputField": [Function],
-              "PasswordInputField": [Function],
-              "TextAreaInputField": [Function],
-            },
-          },
-        },
-        "title": "NumberInputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="number"
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   />
@@ -913,16 +746,15 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="password"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -963,28 +795,7 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="PasswordInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -993,36 +804,13 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "PasswordInputField",
-        "meta": Object {
-          "vis": Object {
-            "component": "PasswordInputField",
-            "editable": true,
-            "ordinal": Object {
-              "ColorInputField": [Function],
-              "DateInputField": [Function],
-              "EmailInputField": [Function],
-              "FileInputField": [Function],
-              "InputField": [Function],
-              "NumberInputField": [Function],
-              "PasswordInputField": [Function],
-              "TextAreaInputField": [Function],
-            },
-          },
-        },
-        "title": "PasswordInputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="password"
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   />
@@ -1060,16 +848,15 @@ exports[`Render InputFields Should render SelectInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="select"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -1110,28 +897,7 @@ exports[`Render InputFields Should render SelectInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="SelectInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -1140,31 +906,12 @@ exports[`Render InputFields Should render SelectInputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "SelectInputField",
-        "oneOf": Array [
-          Object {
-            "const": 1,
-            "description": "foo description",
-            "title": "foo",
-          },
-          Object {
-            "const": 2,
-            "description": "bar description",
-            "title": "bar",
-          },
-        ],
-        "title": "SelectInputField",
-        "type": "number",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   >
@@ -1213,16 +960,15 @@ exports[`Render InputFields Should render SelectInputField with groups 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="select"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -1263,28 +1009,7 @@ exports[`Render InputFields Should render SelectInputField with groups 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="SelectInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -1293,51 +1018,12 @@ exports[`Render InputFields Should render SelectInputField with groups 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "SelectInputField",
-        "oneOf": Array [
-          Object {
-            "oneOf": Array [
-              Object {
-                "const": 1,
-                "description": "foo description",
-                "title": "foo",
-              },
-              Object {
-                "const": 2,
-                "description": "foo2 description",
-                "title": "foo2",
-              },
-            ],
-            "title": "Foo Group",
-          },
-          Object {
-            "oneOf": Array [
-              Object {
-                "const": 1,
-                "description": "bar description",
-                "title": "bar",
-              },
-              Object {
-                "const": 2,
-                "description": "bar2 description",
-                "title": "bar2",
-              },
-            ],
-            "title": "Bar Group",
-          },
-        ],
-        "title": "SelectInputField",
-        "type": "number",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   >
@@ -1404,16 +1090,15 @@ exports[`Render InputFields Should render SelectInputField with only values 1`] 
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="select"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -1454,28 +1139,7 @@ exports[`Render InputFields Should render SelectInputField with only values 1`] 
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="SelectInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -1484,27 +1148,12 @@ exports[`Render InputFields Should render SelectInputField with only values 1`] 
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "SelectInputField",
-        "oneOf": Array [
-          Object {
-            "const": "foo",
-          },
-          Object {
-            "const": "bar",
-          },
-        ],
-        "title": "SelectInputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   >
@@ -1553,16 +1202,15 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={false}
+  invalid={true}
   pure={true}
   reset={[Function]}
   submit={[Function]}
   submitSucceeded={false}
   touch={[Function]}
   triggerSubmit={undefined}
-  type="textarea"
   untouch={[Function]}
-  valid={true}
+  valid={false}
   warning={undefined}
 >
   <label
@@ -1603,28 +1251,7 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    input={undefined}
-    invalid={false}
-    meta={
-      Object {
-        "active": false,
-        "asyncValidating": false,
-        "autofilled": false,
-        "dirty": false,
-        "dispatch": [Function],
-        "error": undefined,
-        "form": "MyForm",
-        "initial": undefined,
-        "invalid": false,
-        "pristine": true,
-        "submitFailed": false,
-        "submitting": false,
-        "touched": false,
-        "valid": true,
-        "visited": false,
-        "warning": undefined,
-      }
-    }
+    invalid={true}
     name="TextAreaInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -1633,35 +1260,12 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
     onFocus={[Function]}
     pure={true}
     reset={[Function]}
-    schema={
-      Object {
-        "id": "TextAreaInputField",
-        "meta": Object {
-          "vis": Object {
-            "component": "TextAreaInputField",
-            "editable": true,
-            "ordinal": Object {
-              "ColorInputField": [Function],
-              "DateInputField": [Function],
-              "EmailInputField": [Function],
-              "FileInputField": [Function],
-              "InputField": [Function],
-              "NumberInputField": [Function],
-              "PasswordInputField": [Function],
-              "TextAreaInputField": [Function],
-            },
-          },
-        },
-        "title": "TextAreaInputField",
-        "type": "string",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={true}
+    valid={false}
     value=""
     warning={undefined}
   />
