@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import injectSheet from 'react-jss';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
@@ -19,8 +20,7 @@ class InputComponent extends Component<*, *, *> {
     input: { name: string },
     meta: { [string]: any },
     children: [React.Element<*>],
-    styles: { [style: string]: any },
-    style: { [string]: string | number }
+    classes: { [string]: any }
   };
 
   renderInputOptions(options: Array<OptionType> = []) {
@@ -109,7 +109,8 @@ export class InputField extends Component<*, *, *> {
     component: any,
     type: string,
     name: string,
-    required: boolean
+    required: boolean,
+    classes: { [string]: any }
   };
 
   validate = (value: any, allValues: any, props: { [string]: any }) => {
@@ -185,13 +186,14 @@ export class InputField extends Component<*, *, *> {
   }
 }
 
-const createInputField = (options: CreateInputOptionsType) => {
+const createInputField = (_options: CreateInputOptionsType) => {
+  const { styles, ...options } = _options;
   class CreatedInputField extends Component {
     render() {
       return <InputField {...this.props} {...options} />;
     }
   }
-  return CreatedInputField;
+  return injectSheet(styles)(CreatedInputField);
 };
 
 export const inputFields = {
