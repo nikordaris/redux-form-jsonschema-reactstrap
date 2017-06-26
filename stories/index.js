@@ -23,9 +23,9 @@ class TestForm extends Component {
     const { children } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="container">
         {React.Children.map(children, child => cloneElement(child))}
-        <Button type="submit">Submit</Button>
+        <Button color="primary" type="submit">Submit</Button>
       </form>
     );
   }
@@ -43,6 +43,7 @@ storiesOf(
 ).add('simple form', () => {
   const schema = {
     type: 'object',
+    required: ['fullName', 'email', 'password'],
     properties: {
       fullName: {
         id: 'FullName',
@@ -156,11 +157,7 @@ storiesOf(
 
   return (
     <ReduxTestForm onSubmit={data => action('form submit')(data)}>
-      <SchemaVis
-        className="container"
-        schema={schema}
-        components={inputFields}
-      />
+      <SchemaVis schema={schema} components={inputFields} />
     </ReduxTestForm>
   );
 });

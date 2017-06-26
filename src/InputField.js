@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
-import { sortBy, get } from 'lodash';
+import { sortBy, get, isEmpty } from 'lodash';
 
 import FormField from './FormField';
 
@@ -83,7 +83,7 @@ class InputComponent extends Component<*, *, *> {
         type={type}
         {...input}
         {...rest}
-        style={styles.input}
+        style={{ height: '40px' }}
       />
     );
   }
@@ -100,21 +100,28 @@ class InputComponent extends Component<*, *, *> {
 export class InputField extends Component<*, *, *> {
   static defaultProps = {
     type: 'text',
-    component: InputComponent
+    component: InputComponent,
+    required: false
   };
 
   props: {
     schema: any,
     component: any,
     type: string,
-    name: string
+    name: string,
+    required: boolean
   };
 
   validate = (value: any, allValues: any, props: { [string]: any }) => {
-    const { schema } = this.props;
+    const { schema, required } = this.props;
     const ajv = new Ajv();
     ajv.validate(schema, value);
-    return get(ajv, 'errors[0].message');
+    if (isEmpty(value) && required) {
+      return 'missing required field';
+    } else if (!isEmpty(value)) {
+      return get(ajv, 'errors[0].message');
+    }
+    return undefined;
   };
 
   getOptions(schema: any) {

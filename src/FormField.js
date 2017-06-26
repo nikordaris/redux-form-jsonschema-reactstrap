@@ -5,7 +5,7 @@ import {
   FormFeedback,
   FormGroup
 } from 'reactstrap';
-import { get, has } from 'lodash';
+import { get } from 'lodash';
 
 const LABEL_PROP = 'title';
 
