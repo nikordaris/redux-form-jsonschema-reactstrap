@@ -5,13 +5,12 @@ import injectSheet from 'react-jss';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
-import { sortBy, get, isEmpty } from 'lodash';
+import { sortBy, get, isEmpty, merge } from 'lodash';
 
 import FormField from './FormField';
 
 class InputComponent extends Component<*, *, *> {
-  static defaultProps = {
-  };
+  static defaultProps = {};
   props: {
     type: string,
     schema: { [string]: any },
@@ -98,7 +97,7 @@ class InputComponent extends Component<*, *, *> {
   }
 }
 
-export class InputField extends Component<*, *, *> {
+class InputField extends Component<*, *, *> {
   static defaultProps = {
     type: 'text',
     component: InputComponent,
@@ -191,10 +190,14 @@ const createInputField = (_options: CreateInputOptionsType) => {
   const { styles, ...options } = _options;
   class CreatedInputField extends Component {
     render() {
-      return <InputField {...this.props} {...options} />;
+      const { styles: componentStyles, ...rest } = this.props;
+      const StyledInputField = injectSheet(merge({}, styles, componentStyles))(
+        InputField
+      );
+      return <StyledInputField {...rest} {...options} />;
     }
   }
-  return injectSheet(styles)(CreatedInputField);
+  return CreatedInputField;
 };
 
 export const inputFields = {
