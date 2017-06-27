@@ -1,7 +1,8 @@
 declare type CreateInputOptionsType = {
   type?: string,
   component?: any,
-  options?: ObjectSelectOptionsType
+  options?: ObjectSelectOptionsType,
+  styles?: { [string]: any }
 };
 
 declare type OptionType = {
@@ -21,6 +22,7 @@ declare module 'redux-form-jsonschema-reactstrap' {
     ShowFeedbackType: ShowFeedbackType,
     OptionType: OptionType,
     ObjectSelectOptionsType: ObjectSelectOptionsType,
+    CreateInputOptionsType: CreateInputOptionsType,
     createInputField(options: CreateInputOptionsType): any
   };
 }
