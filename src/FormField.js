@@ -55,7 +55,8 @@ export default class FormField extends Component {
   render() {
     const {
       name,
-      styles,
+      classes,
+      sheet,
       required,
       tag: Tag,
       schema,
@@ -76,13 +77,19 @@ export default class FormField extends Component {
     const inputState = this.getInputState();
     return (
       <Tag {...rest} color={inputState}>
-        <LabelTag id={labelId} for={name} {...labelProps}>
+        <LabelTag
+          className={classes.label}
+          id={labelId}
+          for={name}
+          {...labelProps}
+        >
           {required && <span style={{ color: requiredColor }}>*</span>}
           {label}
         </LabelTag>
 
         {schema.description &&
           <UncontrolledTooltip
+            className={classes.tooltip}
             target={labelId}
             placement={placement}
             {...tooltipProps}
@@ -95,7 +102,7 @@ export default class FormField extends Component {
         )}
 
         {inputState &&
-          <FormFeedback id={`${name}-feedback`}>
+          <FormFeedback className={classes.feedback} id={`${name}-feedback`}>
             {error || warning}
           </FormFeedback>}
       </Tag>

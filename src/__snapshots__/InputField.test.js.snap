@@ -31,7 +31,7 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -39,7 +39,7 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -69,7 +69,7 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="form-control"
+    className="input-0-0 form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -80,7 +80,7 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="ColorInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -88,19 +88,15 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={
-      Object {
-        "height": "40px",
-      }
-    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="color"
     untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   />
@@ -138,7 +134,7 @@ exports[`Render InputFields Should render DateInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -146,7 +142,7 @@ exports[`Render InputFields Should render DateInputField 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -187,7 +183,7 @@ exports[`Render InputFields Should render DateInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="DateInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -195,15 +191,15 @@ exports[`Render InputFields Should render DateInputField 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="date"
     untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   />
@@ -241,7 +237,7 @@ exports[`Render InputFields Should render DateTimeInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -249,7 +245,7 @@ exports[`Render InputFields Should render DateTimeInputField 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -290,7 +286,7 @@ exports[`Render InputFields Should render DateTimeInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="DateTimeInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -298,15 +294,15 @@ exports[`Render InputFields Should render DateTimeInputField 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="datetime-local"
     untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   />
@@ -344,7 +340,7 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -352,7 +348,7 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -393,7 +389,7 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="EmailInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -401,118 +397,15 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="email"
     untouch={[Function]}
-    valid={false}
-    value=""
-    warning={undefined}
-  />
-</div>
-`;
-
-exports[`Render InputFields Should render InputField 1`] = `
-<div
-  anyTouched={false}
-  array={
-    Object {
-      "insert": [Function],
-      "move": [Function],
-      "pop": [Function],
-      "push": [Function],
-      "remove": [Function],
-      "removeAll": [Function],
-      "shift": [Function],
-      "splice": [Function],
-      "swap": [Function],
-      "unshift": [Function],
-    }
-  }
-  asyncValidate={[Function]}
-  autofill={[Function]}
-  blur={[Function]}
-  change={[Function]}
-  className="form-group"
-  clearAsyncError={[Function]}
-  clearSubmit={[Function]}
-  clearSubmitErrors={[Function]}
-  destroy={[Function]}
-  error={undefined}
-  handleSubmit={[Function]}
-  initialValues={undefined}
-  initialize={[Function]}
-  initialized={false}
-  invalid={true}
-  pure={true}
-  reset={[Function]}
-  submit={[Function]}
-  submitSucceeded={false}
-  touch={[Function]}
-  triggerSubmit={undefined}
-  untouch={[Function]}
-  valid={false}
-  warning={undefined}
->
-  <label
-    className=""
-    htmlFor="InputField"
-    id="InputField-label"
-  >
-    InputField
-  </label>
-  <input
-    anyTouched={false}
-    array={
-      Object {
-        "insert": [Function],
-        "move": [Function],
-        "pop": [Function],
-        "push": [Function],
-        "remove": [Function],
-        "removeAll": [Function],
-        "shift": [Function],
-        "splice": [Function],
-        "swap": [Function],
-        "unshift": [Function],
-      }
-    }
-    asyncValidate={[Function]}
-    autofill={[Function]}
-    blur={[Function]}
-    change={[Function]}
-    className="form-control"
-    clearAsyncError={[Function]}
-    clearSubmit={[Function]}
-    clearSubmitErrors={[Function]}
-    destroy={[Function]}
-    error={undefined}
-    handleSubmit={[Function]}
-    id="InputField"
-    initialValues={undefined}
-    initialize={[Function]}
-    initialized={false}
-    invalid={true}
-    name="InputField"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onDragStart={[Function]}
-    onDrop={[Function]}
-    onFocus={[Function]}
-    pure={true}
-    reset={[Function]}
-    style={undefined}
-    submit={[Function]}
-    submitSucceeded={false}
-    touch={[Function]}
-    triggerSubmit={undefined}
-    type="text"
-    untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   />
@@ -550,7 +443,7 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -558,7 +451,7 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -599,7 +492,7 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="NumberInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -607,15 +500,15 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="number"
     untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   />
@@ -653,7 +546,7 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -661,7 +554,7 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -702,7 +595,7 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="PasswordInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -710,15 +603,15 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     type="password"
     untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   />
@@ -756,7 +649,7 @@ exports[`Render InputFields Should render SelectInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -764,7 +657,7 @@ exports[`Render InputFields Should render SelectInputField 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -805,7 +698,7 @@ exports[`Render InputFields Should render SelectInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="SelectInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -813,14 +706,14 @@ exports[`Render InputFields Should render SelectInputField 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   >
@@ -877,7 +770,7 @@ exports[`Render InputFields Should render SelectInputField with groups 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -885,7 +778,7 @@ exports[`Render InputFields Should render SelectInputField with groups 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -926,7 +819,7 @@ exports[`Render InputFields Should render SelectInputField with groups 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="SelectInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -934,14 +827,14 @@ exports[`Render InputFields Should render SelectInputField with groups 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   >
@@ -1016,7 +909,7 @@ exports[`Render InputFields Should render SelectInputField with only values 1`] 
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -1024,7 +917,7 @@ exports[`Render InputFields Should render SelectInputField with only values 1`] 
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -1065,7 +958,7 @@ exports[`Render InputFields Should render SelectInputField with only values 1`] 
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="SelectInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -1073,14 +966,14 @@ exports[`Render InputFields Should render SelectInputField with only values 1`] 
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={false}
+    valid={true}
     value=""
     warning={undefined}
   >
@@ -1137,7 +1030,7 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
   initialValues={undefined}
   initialize={[Function]}
   initialized={false}
-  invalid={true}
+  invalid={false}
   pure={true}
   reset={[Function]}
   submit={[Function]}
@@ -1145,7 +1038,7 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
   touch={[Function]}
   triggerSubmit={undefined}
   untouch={[Function]}
-  valid={false}
+  valid={true}
   warning={undefined}
 >
   <label
@@ -1186,7 +1079,7 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
-    invalid={true}
+    invalid={false}
     name="TextAreaInputField"
     onBlur={[Function]}
     onChange={[Function]}
@@ -1194,14 +1087,117 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
     onDrop={[Function]}
     onFocus={[Function]}
     pure={true}
+    required={false}
     reset={[Function]}
-    style={undefined}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={false}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render TextInputField 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="TextInputField"
+    id="TextInputField-label"
+  >
+    TextInputField
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="TextInputField"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="TextInputField"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="text"
+    untouch={[Function]}
+    valid={true}
     value=""
     warning={undefined}
   />

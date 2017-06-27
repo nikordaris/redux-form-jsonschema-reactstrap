@@ -46,6 +46,7 @@ describe('Render FormField', () => {
     testShallowFormFieldSnapshot({
       name: 'foo',
       schema,
+      classes: {},
       required: true,
       meta: { touched: false }
     })
@@ -56,6 +57,7 @@ describe('Render FormField', () => {
     testShallowFormFieldSnapshot({
       name: 'foo',
       schema,
+      classes: {},
       required: true,
       meta: { touched: true }
     })
@@ -66,6 +68,7 @@ describe('Render FormField', () => {
     testShallowFormFieldSnapshot({
       name: 'foo',
       schema,
+      classes: {},
       required: true,
       meta: { touched: true, error: 'error' }
     })
@@ -76,6 +79,7 @@ describe('Render FormField', () => {
     testShallowFormFieldSnapshot({
       name: 'foo',
       schema,
+      classes: {},
       required: true,
       meta: { touched: true, warning: 'warning' }
     })
@@ -85,6 +89,7 @@ describe('Render FormField', () => {
     'should render without tooltip',
     testFormFieldSnapshot({
       name: 'foo',
+      classes: {},
       schema: schemaNoDescription,
       required: true,
       meta: { touched: true, error: 'error', warning: 'warning' }

@@ -53,7 +53,7 @@ storiesOf(
           vis: {
             ordinal: 100,
             editable: true,
-            component: 'InputField'
+            component: 'TextInputField'
           }
         }
       },
