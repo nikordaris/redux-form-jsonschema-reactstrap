@@ -1,6 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
+import injectSheet from 'react-jss';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
@@ -10,7 +11,6 @@ import FormField from './FormField';
 
 class InputComponent extends Component<*, *, *> {
   static defaultProps = {
-    styles: {}
   };
   props: {
     type: string,
@@ -19,8 +19,8 @@ class InputComponent extends Component<*, *, *> {
     input: { name: string },
     meta: { [string]: any },
     children: [React.Element<*>],
-    styles: { [style: string]: any },
-    style: { [string]: string | number }
+    classes: { [string]: any },
+    sheet: any
   };
 
   renderInputOptions(options: Array<OptionType> = []) {
@@ -40,7 +40,8 @@ class InputComponent extends Component<*, *, *> {
 
   renderInputWithChildren() {
     const {
-      styles,
+      classes,
+      sheet,
       options,
       input,
       type,
@@ -56,7 +57,7 @@ class InputComponent extends Component<*, *, *> {
         type={type}
         {...input}
         {...rest}
-        style={styles.input}
+        className={classes.input}
       >
         <option disabled defaultValue={true}>Select {input.name} </option>
         {Array.isArray(options)
@@ -67,28 +68,28 @@ class InputComponent extends Component<*, *, *> {
   }
   renderInput() {
     const {
-      styles,
+      classes,
+      sheet,
       type,
       input,
       schema,
       meta,
       options,
       children,
-      style,
       ...rest
     } = this.props;
     return (
       <Input
+        className={classes.input}
         id={input.name}
         type={type}
         {...input}
         {...rest}
-        style={{ height: '40px' }}
       />
     );
   }
   render() {
-    const { options, styles, input, schema, type, ...rest } = this.props;
+    const { options, input, schema, type, ...rest } = this.props;
     return (
       <FormField name={input.name} schema={schema} {...rest}>
         {options ? this.renderInputWithChildren() : this.renderInput()}
@@ -109,7 +110,8 @@ export class InputField extends Component<*, *, *> {
     component: any,
     type: string,
     name: string,
-    required: boolean
+    required: boolean,
+    classes: { [string]: any }
   };
 
   validate = (value: any, allValues: any, props: { [string]: any }) => {
@@ -185,17 +187,18 @@ export class InputField extends Component<*, *, *> {
   }
 }
 
-const createInputField = (options: CreateInputOptionsType) => {
+const createInputField = (_options: CreateInputOptionsType) => {
+  const { styles, ...options } = _options;
   class CreatedInputField extends Component {
     render() {
       return <InputField {...this.props} {...options} />;
     }
   }
-  return CreatedInputField;
+  return injectSheet(styles)(CreatedInputField);
 };
 
 export const inputFields = {
-  InputField,
+  TextInputField: createInputField({ type: 'text' }),
   EmailInputField: createInputField({ type: 'email' }),
   PasswordInputField: createInputField({ type: 'password' }),
   DateInputField: createInputField({ type: 'date' }),
