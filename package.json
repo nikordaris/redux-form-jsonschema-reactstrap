@@ -32,9 +32,6 @@
     ],
     "collectCoverage": true
   },
-  "jest-junit": {
-    "output": "./coverage/reports/junit.xml"
-  },
   "devDependencies": {
     "@kadira/storybook-deployer": "^1.2.0",
     "@storybook/addon-actions": "^3.1.5",
