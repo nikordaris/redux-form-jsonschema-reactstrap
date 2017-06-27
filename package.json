@@ -18,7 +18,7 @@
     "build": "npm run clean; babel src --out-dir lib --ignore *.test.js",
     "clean": "rimraf lib",
     "test": "concurrently \"eslint src/**/*.js\" \"jest\"",
-    "test:ci": "npm test && codecov && npm build-storybook",
+    "test:ci": "npm test && codecov && npm run build-storybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages"
