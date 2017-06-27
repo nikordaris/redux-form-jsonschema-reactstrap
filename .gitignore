@@ -62,3 +62,6 @@ typings/
 
 # Flow-typed
 flow-typed/npm
+
+# Storybook
+storybook-static
