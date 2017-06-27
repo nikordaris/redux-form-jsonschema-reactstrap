@@ -7,6 +7,7 @@ Array [
     tag="div"
 >
     <Label
+        className={undefined}
         for="foo"
         id="foo-label"
         tag="label"
@@ -23,6 +24,7 @@ Array [
         Foo
     </Label>
     <UncontrolledTooltip
+        className={undefined}
         placement="right"
         target="foo-label"
     >
@@ -44,6 +46,7 @@ Array [
     tag="div"
 >
     <Label
+        className={undefined}
         for="foo"
         id="foo-label"
         tag="label"
@@ -60,6 +63,7 @@ Array [
         Foo
     </Label>
     <UncontrolledTooltip
+        className={undefined}
         placement="right"
         target="foo-label"
     >
@@ -71,6 +75,7 @@ Array [
         type="number"
     />
     <FormFeedback
+        className={undefined}
         id="foo-feedback"
         tag="div"
     />
@@ -85,6 +90,7 @@ Array [
     tag="div"
 >
     <Label
+        className={undefined}
         for="foo"
         id="foo-label"
         tag="label"
@@ -101,6 +107,7 @@ Array [
         Foo
     </Label>
     <UncontrolledTooltip
+        className={undefined}
         placement="right"
         target="foo-label"
     >
@@ -112,6 +119,7 @@ Array [
         type="number"
     />
     <FormFeedback
+        className={undefined}
         id="foo-feedback"
         tag="div"
     >
@@ -128,6 +136,7 @@ Array [
     tag="div"
 >
     <Label
+        className={undefined}
         for="foo"
         id="foo-label"
         tag="label"
@@ -144,6 +153,7 @@ Array [
         Foo
     </Label>
     <UncontrolledTooltip
+        className={undefined}
         placement="right"
         target="foo-label"
     >
@@ -155,6 +165,7 @@ Array [
         type="number"
     />
     <FormFeedback
+        className={undefined}
         id="foo-feedback"
         tag="div"
     >
