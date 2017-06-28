@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Render InputFields Should render Card 1`] = `
+<div
+  className="card-0-1 card"
+>
+  <div
+    className="header-0-2 card-header"
+  >
+    Card
+  </div>
+  <div
+    className="card-block"
+  />
+</div>
+`;
+
 exports[`Render InputFields Should render ColorInputField 1`] = `
 <div
   anyTouched={false}

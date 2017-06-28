@@ -1,0 +1,161 @@
+{
+  "type": "object",
+  "required": [
+    "fullName",
+    "email",
+    "password"
+  ],
+  "properties": {
+    "fullName": {
+      "id": "FullName",
+      "title": "Full Name",
+      "type": "string",
+      "meta": {
+        "vis": {
+          "ordinal": 100,
+          "editable": true,
+          "component": "TextInputField"
+        }
+      }
+    },
+    "email": {
+      "id": "Email",
+      "title": "Email",
+      "type": "string",
+      "format": "email",
+      "meta": {
+        "vis": {
+          "ordinal": 110,
+          "editable": true,
+          "component": "EmailInputField"
+        }
+      }
+    },
+    "password": {
+      "id": "Password",
+      "title": "Password",
+      "type": "string",
+      "meta": {
+        "vis": {
+          "ordinal": 120,
+          "editable": true,
+          "component": "PasswordInputField"
+        }
+      }
+    },
+    "dob": {
+      "id": "DOB",
+      "title": "DOB",
+      "type": "string",
+      "format": "date",
+      "meta": {
+        "vis": {
+          "ordinal": 130,
+          "editable": true,
+          "component": "DateInputField"
+        }
+      }
+    },
+    "numChildren": {
+      "id": "Children",
+      "title": "# of Children",
+      "type": "integer",
+      "min": 0,
+      "meta": {
+        "vis": {
+          "ordinal": 140,
+          "editable": true,
+          "component": "NumberInputField"
+        }
+      }
+    },
+    "favColor": {
+      "id": "FavColor",
+      "title": "Favorite Color",
+      "type": "string",
+      "meta": {
+        "vis": {
+          "ordinal": 150,
+          "editable": true,
+          "component": "ColorInputField"
+        }
+      }
+    },
+    "gender": {
+      "id": "Gender",
+      "title": "Gender",
+      "type": "string",
+      "oneOf": [
+        {
+          "const": "Male"
+        },
+        {
+          "const": "Female"
+        },
+        {
+          "const": "Non-binary/ third gender"
+        },
+        {
+          "const": "Prefer not to say"
+        }
+      ],
+      "meta": {
+        "vis": {
+          "ordinal": 160,
+          "editable": true,
+          "component": "SelectInputField"
+        }
+      }
+    },
+    "geo": {
+      "id": "Geo",
+      "title": "Geo Location",
+      "type": "object",
+      "meta": {
+        "vis": {
+          "ordinal": 170,
+          "editable": true,
+          "component": "Card"
+        }
+      },
+      "properties": {
+        "lat": {
+          "id": "Lat",
+          "title": "Latitude",
+          "type": "string",
+          "meta": {
+            "vis": {
+              "ordinal": 1,
+              "editable": true,
+              "component": "TextInputField"
+            }
+          }
+        },
+        "lon": {
+          "id": "Lon",
+          "title": "Longitude",
+          "type": "string",
+          "meta": {
+            "vis": {
+              "ordinal": 2,
+              "editable": true,
+              "component": "TextInputField"
+            }
+          }
+        }
+      }
+    },
+    "comments": {
+      "id": "Comments",
+      "title": "Comments",
+      "type": "string",
+      "meta": {
+        "vis": {
+          "ordinal": 180,
+          "editable": true,
+          "component": "TextAreaInputField"
+        }
+      }
+    }
+  }
+}

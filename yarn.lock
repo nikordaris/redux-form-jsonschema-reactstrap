@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@kadira/storybook-deployer@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@kadira/storybook-deployer/-/storybook-deployer-1.2.0.tgz#1708f5cb37fa08ab4173b1bd99df6f4717dfae12"
-  dependencies:
-    git-url-parse "^6.0.2"
-    shelljs "^0.7.0"
-
 "@storybook/addon-actions@^3.1.5":
   version "3.1.5"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-3.1.5.tgz#0a92e23a781a1fcedf6f0e1ef3f609f03098ebaf"
@@ -2982,19 +2975,6 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-git-up@^2.0.0:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/git-up/-/git-up-2.0.8.tgz#24be049c9f0b193481d2df4e016a16530a5f4ef4"
-  dependencies:
-    is-ssh "^1.3.0"
-    parse-url "^1.3.0"
-
-git-url-parse@^6.0.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/git-url-parse/-/git-url-parse-6.2.2.tgz#be49024e14b8487553436b4572b8b439532fa871"
-  dependencies:
-    git-up "^2.0.0"
-
 github@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/github/-/github-0.2.4.tgz#24fa7f0e13fa11b946af91134c51982a91ce538b"
@@ -3467,7 +3447,7 @@ is-glob@^2.0.0, is-glob@^2.0.1:
   dependencies:
     is-extglob "^1.0.0"
 
-is-in-browser@1.0.2, is-in-browser@^1.0.2:
+is-in-browser@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-in-browser/-/is-in-browser-1.0.2.tgz#f688bea8f1e5aadc3244ebc870d188cfb9b613cf"
 
@@ -3549,12 +3529,6 @@ is-resolvable@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-resolvable/-/is-resolvable-1.0.0.tgz#8df57c61ea2e3c501408d100fb013cf8d6e0cc62"
   dependencies:
     tryit "^1.0.1"
-
-is-ssh@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/is-ssh/-/is-ssh-1.3.0.tgz#ebea1169a2614da392a63740366c3ce049d8dff6"
-  dependencies:
-    protocols "^1.1.0"
 
 is-stream@^1.0.1:
   version "1.1.0"
@@ -4038,70 +4012,63 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
-jss-camel-case@^4.0.0:
+jss-camel-case@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/jss-camel-case/-/jss-camel-case-5.0.0.tgz#886c1fe56a8a11577454d6a8b4133caa6c1f53a0"
+
+jss-compose@^4.0.0:
   version "4.0.0"
-  resolved "https://registry.yarnpkg.com/jss-camel-case/-/jss-camel-case-4.0.0.tgz#39ef2a137aaa1e2f160ab826845305f8efabcfd5"
-
-jss-compose@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/jss-compose/-/jss-compose-3.0.1.tgz#0ac07f20baf1d523c211016d383dab08dcfe4186"
+  resolved "https://registry.yarnpkg.com/jss-compose/-/jss-compose-4.0.0.tgz#f0109e8e8301a2678279301c24523dbc76115b9b"
   dependencies:
     warning "^3.0.0"
 
-jss-default-unit@^6.0.0:
-  version "6.1.2"
-  resolved "https://registry.yarnpkg.com/jss-default-unit/-/jss-default-unit-6.1.2.tgz#6c460154129b7be304a4a4dcd2b283584954aec5"
+jss-default-unit@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/jss-default-unit/-/jss-default-unit-7.0.0.tgz#176c1db91da870e3ad16301f6f4b4cfc6fe1e90a"
 
-jss-expand@^3.0.0:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/jss-expand/-/jss-expand-3.0.1.tgz#90f1b30ad0ab700e666ea54f7186341c50d7feed"
+jss-expand@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/jss-expand/-/jss-expand-4.0.0.tgz#71ec15386d7839bb23892acf9dcaa40b7fe9c785"
 
-jss-extend@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/jss-extend/-/jss-extend-4.0.1.tgz#6b716a1b217ba32715dbcb69940ec67b35c415dc"
+jss-extend@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/jss-extend/-/jss-extend-5.0.0.tgz#08a1d4015d05dfe011e3a281457d471226865387"
   dependencies:
     warning "^3.0.0"
 
-jss-global@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/jss-global/-/jss-global-1.0.1.tgz#36731778f6d8649110611f7c178dbcd60fd92b24"
-
-jss-nested@^4.0.0:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/jss-nested/-/jss-nested-4.0.1.tgz#f50cc206430c8a920ccd54e3b756f7fc72455130"
-  dependencies:
-    warning "^3.0.0"
-
-jss-preset-default@^2.0.0:
+jss-global@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.yarnpkg.com/jss-preset-default/-/jss-preset-default-2.0.0.tgz#0368d99626b31067e8d04ab3c7cb17ba8354d422"
+  resolved "https://registry.yarnpkg.com/jss-global/-/jss-global-2.0.0.tgz#a162f822f17e5d760151d908bdb41d7f2824c28f"
+
+jss-nested@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/jss-nested/-/jss-nested-5.0.0.tgz#c0752f31f2d465110d7de6ac83583dbed669faa0"
   dependencies:
-    jss-camel-case "^4.0.0"
-    jss-compose "^3.0.0"
-    jss-default-unit "^6.0.0"
-    jss-expand "^3.0.0"
-    jss-extend "^4.0.0"
-    jss-global "^1.0.0"
-    jss-nested "^4.0.0"
-    jss-props-sort "^4.0.0"
-    jss-vendor-prefixer "^5.0.0"
+    warning "^3.0.0"
 
-jss-props-sort@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/jss-props-sort/-/jss-props-sort-4.0.0.tgz#ef4239c6795ca304c18dce9e0395a1789ed9f78a"
+jss-preset-default@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/jss-preset-default/-/jss-preset-default-3.0.0.tgz#e43ee1ac526f689baf2bfd28ae95a6fdc3a02663"
+  dependencies:
+    jss-camel-case "^5.0.0"
+    jss-compose "^4.0.0"
+    jss-default-unit "^7.0.0"
+    jss-expand "^4.0.0"
+    jss-extend "^5.0.0"
+    jss-global "^2.0.0"
+    jss-nested "^5.0.0"
+    jss-props-sort "^5.0.0"
+    jss-vendor-prefixer "^6.0.0"
 
-jss-vendor-prefixer@^5.0.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/jss-vendor-prefixer/-/jss-vendor-prefixer-5.1.0.tgz#59b73544de81e6b2efd71f6d3b744671826865a2"
+jss-props-sort@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/jss-props-sort/-/jss-props-sort-5.0.0.tgz#8839c88433f64e8c1dab1a7068796f19b84f9195"
+
+jss-vendor-prefixer@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/jss-vendor-prefixer/-/jss-vendor-prefixer-6.0.0.tgz#be58124f0cbed76e98cc8eb5219dbb260f057d0b"
   dependencies:
     css-vendor "^0.3.8"
-
-jss@^7.0.0:
-  version "7.1.7"
-  resolved "https://registry.yarnpkg.com/jss/-/jss-7.1.7.tgz#f2ace208247f1a68166dd20ccd69c866105fa404"
-  dependencies:
-    is-in-browser "1.0.2"
-    warning "3.0.0"
 
 jss@^8.0.0:
   version "8.0.0"
@@ -4968,13 +4935,6 @@ parse-json@^2.2.0:
   dependencies:
     error-ex "^1.2.0"
 
-parse-url@^1.3.0:
-  version "1.3.11"
-  resolved "https://registry.yarnpkg.com/parse-url/-/parse-url-1.3.11.tgz#57c15428ab8a892b1f43869645c711d0e144b554"
-  dependencies:
-    is-ssh "^1.3.0"
-    protocols "^1.4.0"
-
 parse5@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-1.5.1.tgz#9b7f3b0de32be78dc2401b17573ccaf0f6f59d94"
@@ -5428,10 +5388,6 @@ prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7,
     fbjs "^0.8.9"
     loose-envify "^1.3.1"
 
-protocols@^1.1.0, protocols@^1.4.0:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/protocols/-/protocols-1.4.5.tgz#21de1f441c4ef7094408ed9f1c94f7a114b87557"
-
 proxy-addr@~1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-1.1.4.tgz#27e545f6960a44a627d9b44467e35c1b6b4ce2f3"
@@ -5576,22 +5532,13 @@ react-inspector@^2.0.0:
     babel-runtime "^6.23.0"
     is-dom "^1.0.9"
 
-react-jsonschema-vis@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/react-jsonschema-vis/-/react-jsonschema-vis-0.0.4.tgz#f63ad989c5cbd2d75a5550d7417ffa732370a4d9"
+react-jsonschema-vis@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/react-jsonschema-vis/-/react-jsonschema-vis-0.0.5.tgz#7411eae4655dff66fae315e2a5bf1f011ef80bf1"
   dependencies:
     evaluate-style "^1.0.0"
     lodash "^4.17.4"
     styled-components "^1.4.6"
-
-react-jss@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/react-jss/-/react-jss-6.1.1.tgz#01a548e6531b691186c3e8d8250980fb2938f1fe"
-  dependencies:
-    hoist-non-react-statics "^1.2.0"
-    jss "^7.0.0"
-    jss-preset-default "^2.0.0"
-    prop-types "^15.5.8"
 
 react-komposer@^1.9.0:
   version "1.13.1"
@@ -6174,7 +6121,7 @@ shallowequal@0.2.x, shallowequal@^0.2.2:
   dependencies:
     lodash.keys "^3.1.2"
 
-shelljs@^0.7.0, shelljs@^0.7.7:
+shelljs@^0.7.7:
   version "0.7.8"
   resolved "https://registry.yarnpkg.com/shelljs/-/shelljs-0.7.8.tgz#decbcf874b0d1e5fb72e14b164a9683048e9acb3"
   dependencies:
@@ -6787,7 +6734,7 @@ walker@~1.0.5:
   dependencies:
     makeerror "1.0.x"
 
-warning@3.0.0, warning@^3.0.0:
+warning@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
   dependencies:
