@@ -1,13 +1,13 @@
 // @flow
 
 import React, { Component } from 'react';
-import injectSheet from 'react-jss';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
 import { sortBy, get, isEmpty, merge } from 'lodash';
 
 import FormField from './FormField';
+import { injectSheet } from './Jss';
 
 class InputComponent extends Component<*, *, *> {
   static defaultProps = {};
@@ -188,16 +188,13 @@ class InputField extends Component<*, *, *> {
 
 const createInputField = (_options: CreateInputOptionsType) => {
   const { styles, ...options } = _options;
-  class CreatedInputField extends Component {
+  class CreatedInputField extends Component<*, *, *> {
     render() {
-      const { styles: componentStyles, ...rest } = this.props;
-      const StyledInputField = injectSheet(merge({}, styles, componentStyles))(
-        InputField
-      );
-      return <StyledInputField {...rest} {...options} />;
+      return <InputField {...this.props} {...options} />;
     }
   }
-  return CreatedInputField;
+
+  return injectSheet(styles)(CreatedInputField);
 };
 
 export const inputFields = {
