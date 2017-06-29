@@ -13,7 +13,6 @@
       "meta": {
         "vis": {
           "ordinal": 100,
-          "editable": true,
           "component": "TextInputField"
         }
       }
@@ -26,7 +25,6 @@
       "meta": {
         "vis": {
           "ordinal": 110,
-          "editable": true,
           "component": "EmailInputField"
         }
       }
@@ -38,7 +36,6 @@
       "meta": {
         "vis": {
           "ordinal": 120,
-          "editable": true,
           "component": "PasswordInputField"
         }
       }
@@ -51,7 +48,7 @@
       "meta": {
         "vis": {
           "ordinal": 130,
-          "editable": true,
+          "disable": true,
           "component": "DateInputField"
         }
       }
@@ -64,7 +61,6 @@
       "meta": {
         "vis": {
           "ordinal": 140,
-          "editable": true,
           "component": "NumberInputField"
         }
       }
@@ -76,7 +72,6 @@
       "meta": {
         "vis": {
           "ordinal": 150,
-          "editable": true,
           "component": "ColorInputField"
         }
       }
@@ -102,7 +97,6 @@
       "meta": {
         "vis": {
           "ordinal": 160,
-          "editable": true,
           "component": "SelectInputField"
         }
       }
@@ -114,7 +108,6 @@
       "meta": {
         "vis": {
           "ordinal": 170,
-          "editable": true,
           "component": "Card"
         }
       },
@@ -126,7 +119,6 @@
           "meta": {
             "vis": {
               "ordinal": 1,
-              "editable": true,
               "component": "TextInputField"
             }
           }
@@ -138,7 +130,6 @@
           "meta": {
             "vis": {
               "ordinal": 2,
-              "editable": true,
               "component": "TextInputField"
             }
           }
@@ -152,7 +143,6 @@
       "meta": {
         "vis": {
           "ordinal": 180,
-          "editable": true,
           "component": "TextAreaInputField"
         }
       }
