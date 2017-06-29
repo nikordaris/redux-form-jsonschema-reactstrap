@@ -5532,9 +5532,9 @@ react-inspector@^2.0.0:
     babel-runtime "^6.23.0"
     is-dom "^1.0.9"
 
-react-jsonschema-vis@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/react-jsonschema-vis/-/react-jsonschema-vis-0.0.5.tgz#7411eae4655dff66fae315e2a5bf1f011ef80bf1"
+react-jsonschema-vis@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/react-jsonschema-vis/-/react-jsonschema-vis-0.0.6.tgz#06a3a5cc1274ed9c60220081d42e67325b531812"
   dependencies:
     evaluate-style "^1.0.0"
     lodash "^4.17.4"
