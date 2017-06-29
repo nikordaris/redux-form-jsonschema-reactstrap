@@ -11,7 +11,6 @@ const schema = {
   meta: {
     vis: {
       ordinal: 0,
-      editable: true,
       component: 'NumberInputField'
     }
   }

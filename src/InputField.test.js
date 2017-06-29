@@ -32,7 +32,6 @@ describe('Render InputFields', () => {
       meta: {
         vis: {
           ordinal: idx,
-          editable: true,
           component: name
         }
       }
