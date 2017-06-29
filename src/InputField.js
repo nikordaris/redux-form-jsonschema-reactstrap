@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import Ajv from 'ajv';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
-import { sortBy, get, isEmpty, merge } from 'lodash';
+import { sortBy, get, isEmpty } from 'lodash';
 
 import FormField from './FormField';
 import { injectSheet } from './Jss';
