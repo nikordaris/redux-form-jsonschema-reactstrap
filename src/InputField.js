@@ -8,8 +8,9 @@ import { sortBy, get, isEmpty } from 'lodash';
 
 import FormField from './FormField';
 import { injectSheet } from './Jss';
+import validate from './validator';
 
-class InputComponent extends Component<*, *, *> {
+export class InputComponent extends Component<*, *, *> {
   static defaultProps = {};
   props: {
     type: string,
@@ -19,55 +20,19 @@ class InputComponent extends Component<*, *, *> {
     meta: { [string]: any },
     children: [React.Element<*>],
     classes: { [string]: any },
-    sheet: any
+    styles: { [string]: any },
+    sheet: any,
+    renderSchema: (
+      { [string]: any },
+      index: string,
+      namespace: string
+    ) => React.Element<*>
   };
 
-  renderInputOptions(options: Array<OptionType> = []) {
-    return sortBy(options, o => o.label || o.value).map(({
-      value,
-      label
-    }, idx) => <option key={idx} value={value}>{label || value}</option>);
-  }
-
-  renderGroupInputOptions(options: { [string]: Array<OptionType> } = {}) {
-    return sortBy(Object.keys(options)).map((group: string, idx: number) => (
-      <optgroup key={idx} label={group}>
-        {this.renderInputOptions(options[group])}
-      </optgroup>
-    ));
-  }
-
-  renderInputWithChildren() {
-    const {
-      classes,
-      sheet,
-      options,
-      input,
-      type,
-      children,
-      schema,
-      meta,
-      ...rest
-    } = this.props;
-
-    return (
-      <Input
-        id={input.name}
-        type={type}
-        {...input}
-        {...rest}
-        className={classes.input}
-      >
-        <option disabled defaultValue={true}>Select {input.name} </option>
-        {Array.isArray(options)
-          ? this.renderInputOptions(options)
-          : this.renderGroupInputOptions(options)}
-      </Input>
-    );
-  }
   renderInput() {
     const {
       classes,
+      styles,
       sheet,
       type,
       input,
@@ -75,23 +40,23 @@ class InputComponent extends Component<*, *, *> {
       meta,
       options,
       children,
+      renderSchema,
       ...rest
     } = this.props;
-    return (
-      <Input
-        className={classes.input}
-        id={input.name}
-        type={type}
-        {...input}
-        {...rest}
-      />
-    );
+    const attributes = {
+      className: classes.input,
+      id: input.name,
+      type,
+      ...input,
+      ...rest
+    };
+    return <Input {...attributes} />;
   }
   render() {
-    const { options, input, schema, type, ...rest } = this.props;
+    const { options, schema, type, ...rest } = this.props;
     return (
-      <FormField name={input.name} schema={schema} {...rest}>
-        {options ? this.renderInputWithChildren() : this.renderInput()}
+      <FormField schema={schema} {...rest}>
+        {this.renderInput()}
       </FormField>
     );
   }
@@ -113,73 +78,16 @@ class InputField extends Component<*, *, *> {
     classes: { [string]: any }
   };
 
-  validate = (value: any, allValues: any, props: { [string]: any }) => {
-    const { schema, required } = this.props;
-    const ajv = new Ajv();
-    ajv.validate(schema, value);
-    if (isEmpty(value) && required) {
-      return 'missing required field';
-    } else if (!isEmpty(value)) {
-      return get(ajv, 'errors[0].message');
-    }
-    return undefined;
-  };
-
-  getOptions(schema: any) {
-    const { title: group } = schema;
-    if (schema.oneOf) {
-      return schema.oneOf
-        .reduce((result, optionsSchema) => {
-          const options = this.getOptions(optionsSchema);
-          const {
-            title: label,
-            const: value,
-            description: tooltip
-          } = optionsSchema;
-
-          if (options) {
-            result.push(...options);
-          } else {
-            result.push({
-              group,
-              label,
-              value,
-              tooltip
-            });
-          }
-
-          return result;
-        }, [])
-        .filter(({ value }) => value);
-    }
-    return undefined;
-  }
-
   render() {
-    const { schema, name, component, ...rest } = this.props;
-    let options = this.getOptions(schema);
-    if (options) {
-      options = options.reduce((result, { group, ...option }) => {
-        const groupItems = result[group] || [];
-        return {
-          ...result,
-          [group]: [...groupItems, option]
-        };
-      }, {});
-
-      const values = Object.values(options);
-      if (values.length === 1) {
-        options = values[0];
-      }
-    }
+    const { schema, name, component, required, ...rest } = this.props;
 
     return (
       <Field
         name={name}
         schema={schema}
+        required={required}
         component={component}
-        options={options}
-        validate={this.validate}
+        validate={validate(schema, required)}
         {...rest}
       />
     );
@@ -204,14 +112,12 @@ export const inputFields = {
   DateInputField: createInputField({ type: 'date' }),
   DateTimeInputField: createInputField({ type: 'datetime-local' }),
   NumberInputField: createInputField({
-    type: 'number',
-    normalize: value => parseInt(value, 10) || value
+    type: 'number'
   }),
   ColorInputField: createInputField({
     type: 'color',
     styles: { input: { height: '40px' } }
   }),
-  SelectInputField: createInputField({ type: 'select' }),
   TextAreaInputField: createInputField({ type: 'textarea' })
 };
 

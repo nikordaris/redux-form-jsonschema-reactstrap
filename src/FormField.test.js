@@ -43,7 +43,7 @@ describe('Render FormField', () => {
   it(
     'should render',
     testShallowFormFieldSnapshot({
-      name: 'foo',
+      input: { name: 'foo' },
       schema,
       classes: {},
       required: true,
@@ -54,7 +54,7 @@ describe('Render FormField', () => {
   it(
     'should render touched',
     testShallowFormFieldSnapshot({
-      name: 'foo',
+      input: { name: 'foo' },
       schema,
       classes: {},
       required: true,
@@ -65,7 +65,7 @@ describe('Render FormField', () => {
   it(
     'should render with error',
     testShallowFormFieldSnapshot({
-      name: 'foo',
+      input: { name: 'foo' },
       schema,
       classes: {},
       required: true,
@@ -76,7 +76,7 @@ describe('Render FormField', () => {
   it(
     'should render with warning',
     testShallowFormFieldSnapshot({
-      name: 'foo',
+      input: { name: 'foo' },
       schema,
       classes: {},
       required: true,
@@ -87,7 +87,7 @@ describe('Render FormField', () => {
   it(
     'should render without tooltip',
     testFormFieldSnapshot({
-      name: 'foo',
+      input: { name: 'foo' },
       classes: {},
       schema: schemaNoDescription,
       required: true,

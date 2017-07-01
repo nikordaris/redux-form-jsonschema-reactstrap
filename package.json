@@ -39,6 +39,7 @@
     "babel-eslint": "^7.2.3",
     "babel-jest": "^20.0.1",
     "babel-loader": "^7.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
@@ -63,13 +64,14 @@
     "jest-enzyme": "^3.1.1",
     "jsdom": "^11.0.0",
     "node-sass": "^4.5.3",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-jsonschema-vis": "^0.0.6",
     "react-redux": "^5.0.5",
     "react-test-renderer": "^15.5.4",
     "react-transition-group": "^1.1.3",
     "reactstrap": "^4.6.2",
+    "redux": "^3.7.1",
     "redux-form": "^6.8.0",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.6",
@@ -81,5 +83,13 @@
     "jss-preset-default": "^3.0.0",
     "lodash": "^4.17.4",
     "styled-components": "^2.0.1"
+  },
+  "peerDependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-jsonschema-vis": "^0.0.6",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.1",
+    "redux-form": "^6.8.0"
   }
 }

@@ -9,7 +9,10 @@
     "fullName": {
       "id": "FullName",
       "title": "Full Name",
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "meta": {
         "vis": {
           "ordinal": 100,
@@ -20,7 +23,10 @@
     "email": {
       "id": "Email",
       "title": "Email",
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "email",
       "meta": {
         "vis": {
@@ -32,7 +38,10 @@
     "password": {
       "id": "Password",
       "title": "Password",
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "meta": {
         "vis": {
           "ordinal": 120,
@@ -43,7 +52,10 @@
     "dob": {
       "id": "DOB",
       "title": "DOB",
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "date",
       "meta": {
         "vis": {
@@ -56,7 +68,10 @@
     "numChildren": {
       "id": "Children",
       "title": "# of Children",
-      "type": "integer",
+      "type": [
+        "integer",
+        "null"
+      ],
       "min": 0,
       "meta": {
         "vis": {
@@ -68,7 +83,10 @@
     "favColor": {
       "id": "FavColor",
       "title": "Favorite Color",
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "meta": {
         "vis": {
           "ordinal": 150,
@@ -79,7 +97,10 @@
     "gender": {
       "id": "Gender",
       "title": "Gender",
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "oneOf": [
         {
           "const": "Male"
@@ -97,49 +118,127 @@
       "meta": {
         "vis": {
           "ordinal": 160,
-          "component": "SelectInputField"
+          "component": "SingleSelectInput"
         }
       }
     },
-    "geo": {
-      "id": "Geo",
-      "title": "Geo Location",
+    "home": {
+      "id": "Home",
+      "title": "Home Address",
       "type": "object",
       "meta": {
         "vis": {
           "ordinal": 170,
-          "component": "Card"
+          "component": "SingleSelectInput"
         }
       },
-      "properties": {
-        "lat": {
-          "id": "Lat",
-          "title": "Latitude",
-          "type": "string",
-          "meta": {
-            "vis": {
-              "ordinal": 1,
-              "component": "TextInputField"
+      "oneOf": [
+        {
+          "id": "Address",
+          "title": "Address",
+          "type": "object",
+          "properties": {
+            "street1": {
+              "id": "Street",
+              "title": "Street Line 1",
+              "type": "string",
+              "meta": {
+                "vis": {
+                  "ordinal": 170,
+                  "component": "TextInputField"
+                }
+              }
+            },
+            "street2": {
+              "id": "Street",
+              "title": "Street Line 2",
+              "type": "string",
+              "meta": {
+                "vis": {
+                  "ordinal": 170,
+                  "component": "TextInputField"
+                }
+              }
+            },
+            "city": {
+              "id": "City",
+              "title": "City",
+              "type": "string",
+              "meta": {
+                "vis": {
+                  "ordinal": 170,
+                  "component": "TextInputField"
+                }
+              }
+            },
+            "state": {
+              "id": "State",
+              "title": "State",
+              "type": "string",
+              "meta": {
+                "vis": {
+                  "ordinal": 170,
+                  "component": "TextInputField"
+                }
+              }
+            },
+            "zipcode": {
+              "id": "ZipCode",
+              "title": "Zip Code",
+              "type": "integer",
+              "meta": {
+                "vis": {
+                  "ordinal": 170,
+                  "component": "TextInputField"
+                }
+              }
             }
           }
         },
-        "lon": {
-          "id": "Lon",
-          "title": "Longitude",
-          "type": "string",
-          "meta": {
-            "vis": {
-              "ordinal": 2,
-              "component": "TextInputField"
+        {
+          "id": "Coordinates",
+          "title": "Coordinates",
+          "type": "object",
+          "properties": {
+            "lat": {
+              "id": "Lat",
+              "title": "Latitude",
+              "type": [
+                "string",
+                "null"
+              ],
+              "meta": {
+                "vis": {
+                  "ordinal": 1,
+                  "component": "TextInputField"
+                }
+              }
+            },
+            "lon": {
+              "id": "Lon",
+              "title": "Longitude",
+              "type": [
+                "string",
+                "null"
+              ],
+              "meta": {
+                "vis": {
+                  "ordinal": 2,
+                  "component": "TextInputField"
+                }
+              }
             }
           }
         }
-      }
+      ]
     },
     "comments": {
       "id": "Comments",
       "title": "Comments",
-      "type": "string",
+      "type": [
+        "string",
+        "null"
+      ],
       "meta": {
         "vis": {
           "ordinal": 180,

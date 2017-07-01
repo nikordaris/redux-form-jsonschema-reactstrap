@@ -45,6 +45,6 @@ storiesOf(
   module
 ).add('simple form', () => (
   <ReduxTestForm onSubmit={data => action('form submit')(data)}>
-    <SchemaVis schema={schema} components={components} />
+    <SchemaVis form="test" schema={schema} components={components} />
   </ReduxTestForm>
 ));

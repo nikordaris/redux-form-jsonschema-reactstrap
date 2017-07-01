@@ -6,7 +6,7 @@ declare type CreateInputOptionsType = {
 };
 
 declare type OptionType = {
-  value: [any],
+  value: any,
   label: [string],
   tooltip?: [string]
 };

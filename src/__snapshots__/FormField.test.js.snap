@@ -3,6 +3,7 @@
 exports[`Render FormField should render 1`] = `
 Array [
   <FormGroup
+    className={undefined}
     color={undefined}
     tag="div"
 >
@@ -42,6 +43,7 @@ Array [
 exports[`Render FormField should render touched 1`] = `
 Array [
   <FormGroup
+    className={undefined}
     color="success"
     tag="div"
 >
@@ -86,6 +88,7 @@ Array [
 exports[`Render FormField should render with error 1`] = `
 Array [
   <FormGroup
+    className={undefined}
     color="danger"
     tag="div"
 >
@@ -132,6 +135,7 @@ Array [
 exports[`Render FormField should render with warning 1`] = `
 Array [
   <FormGroup
+    className={undefined}
     color="warning"
     tag="div"
 >

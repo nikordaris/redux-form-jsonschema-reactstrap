@@ -5,5 +5,8 @@
     "es2015",
     "stage-0"
   ],
-  "sourceMaps": "inline"
+  "sourceMaps": "inline",
+  "plugins": [
+    "transform-decorators-legacy"
+  ]
 }
