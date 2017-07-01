@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { merge } from 'lodash';
+import { merge, isEqual } from 'lodash';
 import { create } from 'jss';
 import preset from 'jss-preset-default';
 
@@ -19,7 +19,7 @@ export const injectSheet = styles => WrappedComponent => {
       const { styles: componentStyles } = this.props;
       const { styles: nextComponentStyles } = nextProps;
 
-      if (componentStyles !== nextComponentStyles) {
+      if (!isEqual(componentStyles, nextComponentStyles)) {
         this.updateSheets(merge({}, styles, nextComponentStyles), nextProps);
       } else if (this.state.sheet) {
         this.state.sheet.update(nextProps);
@@ -48,10 +48,12 @@ export const injectSheet = styles => WrappedComponent => {
     }
 
     render() {
-      const { styles, ...rest } = this.props;
+      const { styles: componentStyles } = this.props;
+      const mergedStyles = merge({}, styles, componentStyles);
       return (
         <WrappedComponent
-          {...rest}
+          {...this.props}
+          styles={mergedStyles}
           classes={this.state.classes}
           sheet={this.state.sheet}
         />

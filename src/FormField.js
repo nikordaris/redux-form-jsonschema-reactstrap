@@ -20,7 +20,6 @@ export default class FormField extends Component {
     tooltipProps: {}
   };
   props: {
-    name: string,
     schema: { [string]: any },
     required: boolean,
     tag: string,
@@ -54,8 +53,8 @@ export default class FormField extends Component {
 
   render() {
     const {
-      name,
       classes,
+      styles,
       sheet,
       required,
       tag: Tag,
@@ -70,13 +69,15 @@ export default class FormField extends Component {
       meta: { error, warning },
       input,
       children,
+      renderSchema,
       ...rest
     } = this.props;
+    const { name } = input;
     const label = get(schema, LABEL_PROP);
     const labelId = `${name}-label`;
     const inputState = this.getInputState();
     return (
-      <Tag {...rest} color={inputState}>
+      <Tag {...rest} className={classes.formGroup} color={inputState}>
         <LabelTag
           className={classes.label}
           id={labelId}

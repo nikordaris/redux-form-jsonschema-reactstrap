@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render SelectSchema Should render SingleSelectInput 1`] = `
+<div
+  className="card-0-1 card"
+>
+  <div
+    className="header-0-2 card-header"
+  >
+    SingleSelectInput
+  </div>
+  <div
+    className="card-block"
+  >
+    <select
+      className="form-control"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        disabled={true}
+        value=""
+      >
+        Select 
+        SingleSelectInput
+      </option>
+      <option
+        value="bar"
+      >
+        bar
+      </option>
+      <option
+        value="foo"
+      >
+        foo
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`Render SelectSchema Should render SingleSelectInput with groups 1`] = `
+<div
+  className="card-0-9 card"
+>
+  <div
+    className="header-0-10 card-header"
+  >
+    SingleSelectInput
+  </div>
+  <div
+    className="card-block"
+  >
+    <select
+      className="form-control"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        disabled={true}
+        value=""
+      >
+        Select 
+        SingleSelectInput
+      </option>
+      <option
+        value="Bar Group"
+      >
+        Bar Group
+      </option>
+      <option
+        value="Foo Group"
+      >
+        Foo Group
+      </option>
+    </select>
+  </div>
+</div>
+`;
+
+exports[`Render SelectSchema Should render SingleSelectInput with only values 1`] = `
+<div
+  className="card-0-5 card"
+>
+  <div
+    className="header-0-6 card-header"
+  >
+    SingleSelectInput
+  </div>
+  <div
+    className="card-block"
+  >
+    <select
+      className="form-control"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        disabled={true}
+        value=""
+      >
+        Select 
+        SingleSelectInput
+      </option>
+      <option
+        value="bar"
+      >
+        bar
+      </option>
+      <option
+        value="foo"
+      >
+        foo
+      </option>
+    </select>
+  </div>
+</div>
+`;

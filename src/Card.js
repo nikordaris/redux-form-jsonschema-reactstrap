@@ -20,6 +20,6 @@ class CardWithHeader extends Component {
 }
 
 export default injectSheet({
-  card: { marginBottom: 10 },
+  card: { marginBottom: 10, marginTop: 15 },
   header: { padding: 5, paddingLeft: 10 }
 })(CardWithHeader);
