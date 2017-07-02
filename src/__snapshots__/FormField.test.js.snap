@@ -33,6 +33,7 @@ Array [
     </UncontrolledTooltip>
     <input
         id="foo"
+        name="foo"
         state={undefined}
         type="number"
     />
@@ -73,6 +74,7 @@ Array [
     </UncontrolledTooltip>
     <input
         id="foo"
+        name="foo"
         state="success"
         type="number"
     />
@@ -118,6 +120,7 @@ Array [
     </UncontrolledTooltip>
     <input
         id="foo"
+        name="foo"
         state="danger"
         type="number"
     />
@@ -165,6 +168,7 @@ Array [
     </UncontrolledTooltip>
     <input
         id="foo"
+        name="foo"
         state="warning"
         type="number"
     />
@@ -201,6 +205,7 @@ exports[`Render FormField should render without tooltip 1`] = `
   </label>
   <input
     id="foo"
+    name="foo"
     state="danger"
     type="number"
   />

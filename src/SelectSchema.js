@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Ajv from 'ajv';
 import { Field, change } from 'redux-form';
 import { Input } from 'reactstrap';
 import { sortBy, omit, isEmpty } from 'lodash';
@@ -16,7 +15,12 @@ import CardWithHeader from './Card';
 @injectSheet({
   selectedObject: { marginTop: 10 }
 })
-@connect(() => ({}), dispatch => bindActionCreators({ change }, dispatch))
+@connect(
+  () => ({}),
+  dispatch => bindActionCreators({ change }, dispatch),
+  undefined,
+  { withRef: true }
+)
 export class SingleSelectInput extends Component {
   static defaultProps = {
     tag: CardWithHeader
@@ -62,15 +66,11 @@ export class SingleSelectInput extends Component {
   };
 
   renderInputOptions(options: Array<OptionType>) {
-    const rv = sortBy(options, o => o.label || o.value).map(({
-      label,
-      value
-    }, idx) => (
+    return sortBy(options, o => o.label).map(({ label, value }, idx) => (
       <option key={idx} value={React.isValidElement(value) ? label : value}>
         {label}
       </option>
     ));
-    return rv;
   }
 
   handleChange = (e: { target: { value: string } }) => {
@@ -140,14 +140,7 @@ export class SingleSelectInput extends Component {
   render() {
     const { schema, name } = this.props;
     const options = this.getOptions(schema.oneOf, `${name}-oneOf`);
-    if (
-      isEmpty(
-        options.filter(({ value }) => {
-          const rv = React.isValidElement(value);
-          return rv;
-        })
-      )
-    ) {
+    if (isEmpty(options.filter(({ value }) => React.isValidElement(value)))) {
       return this.renderSelectField(options);
     }
 
