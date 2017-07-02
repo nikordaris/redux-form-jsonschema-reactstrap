@@ -150,10 +150,12 @@ describe('Render SelectSchema', () => {
         />
       </Provider>
     );
-    const SelectComponent = wrapper.find(SingleSelectInput).node.wrapped
-      .wrappedInstance;
-    const input = wrapper.find(Input);
-    input.simulate('change', { target: { value: 'Foo' } });
+    const StyledComponent = wrapper.find(SingleSelectInput);
+    const SelectComponent = StyledComponent.node.wrapped.wrappedInstance;
+
+    wrapper.find(Input).simulate('change', { target: { value: 'Foo' } });
     expect(SelectComponent.state.selected).toEqual('Foo');
+    wrapper.unmount();
+    expect(StyledComponent.node.state.sheet.attached).toBeFalsy();
   });
 });

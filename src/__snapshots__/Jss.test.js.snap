@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Inject JSS should inject stylesheet 1`] = `
+<p
+  className="test-0-0"
+>
+  test
+</p>
+`;
+
+exports[`Inject JSS should update props 1`] = `
+<Foo
+  classes={
+    Object {
+      "test": "test-0-3",
+    }
+  }
+  foo="red"
+  sheet={
+    StyleSheet {
+      "attached": true,
+      "classes": Object {
+        "test": "test-0-3",
+      },
+      "deployed": true,
+      "linked": false,
+      "options": Object {
+        "Renderer": [Function],
+        "classes": Object {
+          "test": "test-0-3",
+        },
+        "generateClassName": [Function],
+        "index": 0,
+        "insertionPoint": undefined,
+        "jss": Jss {
+          "generateClassName": [Function],
+          "options": Object {
+            "Renderer": [Function],
+            "createGenerateClassName": [Function],
+            "plugins": Array [
+              Object {
+                "onCreateRule": [Function],
+                "onProcessRule": [Function],
+              },
+              Object {
+                "onProcessStyle": [Function],
+              },
+              Object {
+                "onProcessStyle": [Function],
+              },
+              Object {
+                "onProcessStyle": [Function],
+              },
+              Object {
+                "onProcessStyle": [Function],
+              },
+              Object {
+                "onChangeValue": [Function],
+                "onProcessStyle": [Function],
+              },
+              Object {
+                "onProcessStyle": [Function],
+              },
+              Object {
+                "onChangeValue": [Function],
+                "onProcessRule": [Function],
+                "onProcessStyle": [Function],
+              },
+              Object {
+                "onProcessStyle": [Function],
+              },
+            ],
+          },
+          "plugins": PluginsRegistry {
+            "hooks": Object {
+              "onChangeValue": Array [
+                [Function],
+                [Function],
+              ],
+              "onCreateRule": Array [
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+              "onProcessRule": Array [
+                [Function],
+                [Function],
+              ],
+              "onProcessSheet": Array [],
+              "onProcessStyle": Array [
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+                [Function],
+              ],
+            },
+          },
+          "version": "8.0.0",
+        },
+        "parent": [Circular],
+        "sheet": [Circular],
+      },
+      "renderer": DomRenderer {
+        "element": <style
+          type="text/css"
+          data-jss=""
+    >
+          .test-0-3 { background: black; }
+    </style>,
+        "getSelector": [Function],
+        "getStyle": [Function],
+        "hasInsertedRules": false,
+        "setSelector": [Function],
+        "setStyle": [Function],
+        "sheet": [Circular],
+      },
+      "rules": RuleList {
+        "classes": Object {
+          "test": "test-0-3",
+        },
+        "index": Array [
+          Object {
+            "background": "black",
+            "color": "red",
+          },
+        ],
+        "map": Object {
+          ".test-0-3": Object {
+            "background": "black",
+            "color": "red",
+          },
+          "test": Object {
+            "background": "black",
+            "color": "red",
+          },
+        },
+        "options": Object {
+          "Renderer": [Function],
+          "classes": Object {
+            "test": "test-0-3",
+          },
+          "generateClassName": [Function],
+          "index": 0,
+          "insertionPoint": undefined,
+          "jss": Jss {
+            "generateClassName": [Function],
+            "options": Object {
+              "Renderer": [Function],
+              "createGenerateClassName": [Function],
+              "plugins": Array [
+                Object {
+                  "onCreateRule": [Function],
+                  "onProcessRule": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onChangeValue": [Function],
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onChangeValue": [Function],
+                  "onProcessRule": [Function],
+                  "onProcessStyle": [Function],
+                },
+                Object {
+                  "onProcessStyle": [Function],
+                },
+              ],
+            },
+            "plugins": PluginsRegistry {
+              "hooks": Object {
+                "onChangeValue": Array [
+                  [Function],
+                  [Function],
+                ],
+                "onCreateRule": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+                "onProcessRule": Array [
+                  [Function],
+                  [Function],
+                ],
+                "onProcessSheet": Array [],
+                "onProcessStyle": Array [
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                  [Function],
+                ],
+              },
+            },
+            "version": "8.0.0",
+          },
+          "parent": [Circular],
+          "sheet": [Circular],
+        },
+        "raw": Object {
+          "test": Object {
+            "background": "black",
+            "color": [Function],
+          },
+        },
+      },
+    }
+  }
+  styles={
+    Object {
+      "test": Object {
+        "background": "black",
+        "color": [Function],
+      },
+    }
+  }
+/>
+`;
