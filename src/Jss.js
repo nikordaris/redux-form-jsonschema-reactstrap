@@ -47,6 +47,10 @@ export const injectSheet = styles => WrappedComponent => {
       this.setState({ sheet, classes: sheet.classes });
     }
 
+    getWrappedInstance() {
+      return this.wrapped;
+    }
+
     render() {
       const { styles: componentStyles } = this.props;
       const mergedStyles = merge({}, styles, componentStyles);
@@ -56,6 +60,9 @@ export const injectSheet = styles => WrappedComponent => {
           styles={mergedStyles}
           classes={this.state.classes}
           sheet={this.state.sheet}
+          ref={elm => {
+            this.wrapped = elm;
+          }}
         />
       );
     }

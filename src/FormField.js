@@ -99,7 +99,7 @@ export default class FormField extends Component {
           </UncontrolledTooltip>}
 
         {Children.map(children, child =>
-          cloneElement(child, { id: name, state: inputState, ...rest })
+          cloneElement(child, { id: name, state: inputState, ...input, ...rest })
         )}
 
         {inputState &&

@@ -1,9 +1,11 @@
 import React from 'react';
+import { Input } from 'reactstrap';
 import renderer from 'react-test-renderer';
 import inputFields from './index';
 import { Provider } from 'react-redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
+import { mount } from 'enzyme';
 
 const { SingleSelectInput } = inputFields;
 
@@ -14,7 +16,7 @@ const testInputFieldSnapshot = options => () => {
   const tree = renderer
     .create(
       <Provider store={store}>
-        <WrappedComponent {...options} renderSchema={() => <div />} />
+        <WrappedComponent renderSchema={() => undefined} {...options} />
       </Provider>
     )
     .toJSON();
@@ -52,30 +54,106 @@ describe('Render SelectSchema', () => {
   );
 
   it(
-    'Should render SingleSelectInput with groups',
+    'Should render SingleSelectInput with only titles',
     testInputFieldSnapshot({
       schema: {
         id: 'SingleSelectInput',
         title: 'SingleSelectInput',
-        type: 'number',
-        oneOf: [
-          {
-            title: 'Foo Group',
-            oneOf: [
-              { title: 'foo', const: 1, description: 'foo description' },
-              { title: 'foo2', const: 2, description: 'foo2 description' }
-            ]
-          },
-          {
-            title: 'Bar Group',
-            oneOf: [
-              { title: 'bar', const: 1, description: 'bar description' },
-              { title: 'bar2', const: 2, description: 'bar2 description' }
-            ]
-          }
-        ]
+        type: 'string',
+        oneOf: [{ title: 'foo' }, { title: 'bar' }]
       },
       name: 'SingleSelectInput'
     })
   );
+
+  it(
+    'Should render object SingleSelectInput',
+    testInputFieldSnapshot({
+      schema: {
+        id: 'SingleSelectInput',
+        title: 'SingleSelectInput',
+        type: 'object',
+        oneOf: [
+          {
+            title: 'Foo',
+            id: 'Foo',
+            type: 'object',
+            properties: {
+              x: {
+                type: 'string',
+                title: 'X',
+                id: 'x'
+              }
+            }
+          },
+          {
+            id: 'Bar',
+            title: 'Bar',
+            type: 'object',
+            properties: {
+              y: {
+                type: 'string',
+                title: 'Y',
+                id: 'Y'
+              }
+            }
+          }
+        ]
+      },
+      renderSchema: () => <div />,
+      name: 'SingleSelectInput'
+    })
+  );
+
+  it('should handle select change', () => {
+    const rootReducers = combineReducers({ form: formReducer });
+    const store = createStore(rootReducers);
+    const WrappedComponent = reduxForm({ form: 'MyForm' })(SingleSelectInput);
+    const schema = {
+      id: 'SingleSelectInput',
+      title: 'SingleSelectInput',
+      type: 'object',
+      oneOf: [
+        {
+          title: 'Foo',
+          id: 'Foo',
+          type: 'object',
+          properties: {
+            x: {
+              type: 'string',
+              title: 'X',
+              id: 'x'
+            }
+          }
+        },
+        {
+          id: 'Bar',
+          title: 'Bar',
+          type: 'object',
+          properties: {
+            y: {
+              type: 'string',
+              title: 'Y',
+              id: 'Y'
+            }
+          }
+        }
+      ]
+    };
+    const wrapper = mount(
+      <Provider store={store}>
+        <WrappedComponent
+          renderSchema={() => <div />}
+          schema={schema}
+          name="foobar"
+          change={() => undefined}
+        />
+      </Provider>
+    );
+    const SelectComponent = wrapper.find(SingleSelectInput).node.wrapped
+      .wrappedInstance;
+    const input = wrapper.find(Input);
+    input.simulate('change', { target: { value: 'Foo' } });
+    expect(SelectComponent.state.selected).toEqual('Foo');
+  });
 });
