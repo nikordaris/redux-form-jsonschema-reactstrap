@@ -8,9 +8,9 @@ import { Input } from 'reactstrap';
 import { sortBy, omit, isEmpty } from 'lodash';
 
 import FormField from './FormField';
-import { injectSheet } from './Jss';
-import validate from './validator';
-import CardWithHeader from './Card';
+import { injectSheet } from '../Jss';
+import validate from '../validator';
+import { CardWithHeader } from './CardContainers';
 
 @injectSheet({
   selectedObject: { marginTop: 10 }
@@ -21,7 +21,7 @@ import CardWithHeader from './Card';
   undefined,
   { withRef: true }
 )
-export class SingleSelectInput extends Component {
+export class SingleSelect extends Component {
   static defaultProps = {
     tag: CardWithHeader
   };

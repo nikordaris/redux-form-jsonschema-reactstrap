@@ -16,7 +16,7 @@
       "meta": {
         "vis": {
           "ordinal": 100,
-          "component": "TextInputField"
+          "component": "Text"
         }
       }
     },
@@ -31,7 +31,7 @@
       "meta": {
         "vis": {
           "ordinal": 110,
-          "component": "EmailInputField"
+          "component": "Email"
         }
       }
     },
@@ -45,7 +45,7 @@
       "meta": {
         "vis": {
           "ordinal": 120,
-          "component": "PasswordInputField"
+          "component": "Password"
         }
       }
     },
@@ -61,7 +61,7 @@
         "vis": {
           "ordinal": 130,
           "disable": true,
-          "component": "DateInputField"
+          "component": "Date"
         }
       }
     },
@@ -76,7 +76,7 @@
       "meta": {
         "vis": {
           "ordinal": 140,
-          "component": "NumberInputField"
+          "component": "Number"
         }
       }
     },
@@ -90,7 +90,7 @@
       "meta": {
         "vis": {
           "ordinal": 150,
-          "component": "ColorInputField"
+          "component": "Color"
         }
       }
     },
@@ -145,7 +145,7 @@
               "meta": {
                 "vis": {
                   "ordinal": 170,
-                  "component": "TextInputField"
+                  "component": "Text"
                 }
               }
             },
@@ -156,7 +156,7 @@
               "meta": {
                 "vis": {
                   "ordinal": 170,
-                  "component": "TextInputField"
+                  "component": "Text"
                 }
               }
             },
@@ -167,7 +167,7 @@
               "meta": {
                 "vis": {
                   "ordinal": 170,
-                  "component": "TextInputField"
+                  "component": "Text"
                 }
               }
             },
@@ -178,7 +178,7 @@
               "meta": {
                 "vis": {
                   "ordinal": 170,
-                  "component": "TextInputField"
+                  "component": "Text"
                 }
               }
             },
@@ -189,7 +189,7 @@
               "meta": {
                 "vis": {
                   "ordinal": 170,
-                  "component": "TextInputField"
+                  "component": "Text"
                 }
               }
             }
@@ -210,7 +210,7 @@
               "meta": {
                 "vis": {
                   "ordinal": 1,
-                  "component": "TextInputField"
+                  "component": "Text"
                 }
               }
             },
@@ -224,7 +224,7 @@
               "meta": {
                 "vis": {
                   "ordinal": 2,
-                  "component": "TextInputField"
+                  "component": "Text"
                 }
               }
             }
@@ -235,14 +235,46 @@
     "comments": {
       "id": "Comments",
       "title": "Comments",
-      "type": [
-        "string",
-        "null"
-      ],
+      "type": "array",
+      "items": {
+        "id": "Comment",
+        "title": "Comment",
+        "type": "object",
+        "meta": {
+          "vis": {
+            "ordinal": 1,
+            "component": "CardWithHeader"
+          }
+        },
+        "properties": {
+          "subject": {
+            "title": "Subject",
+            "it": "Subject",
+            "type": "string",
+            "meta": {
+              "vis": {
+                "ordinal": 1,
+                "component": "Text"
+              }
+            }
+          },
+          "comment": {
+            "id": "Comment",
+            "title": "Comment",
+            "type": "string",
+            "meta": {
+              "vis": {
+                "ordinal": 2,
+                "component": "TextArea"
+              }
+            }
+          }
+        }
+      },
       "meta": {
         "vis": {
           "ordinal": 180,
-          "component": "TextAreaInputField"
+          "component": "UniformedArrayCard"
         }
       }
     }

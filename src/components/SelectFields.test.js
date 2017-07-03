@@ -1,13 +1,11 @@
 import React from 'react';
 import { Input } from 'reactstrap';
 import renderer from 'react-test-renderer';
-import inputFields from './index';
+import { SingleSelect } from './SelectFields';
 import { Provider } from 'react-redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
 import { mount } from 'enzyme';
-
-const { SingleSelectInput } = inputFields;
 
 const testInputFieldSnapshot = options => () => {
   const rootReducers = combineReducers({ form: formReducer });
@@ -25,53 +23,53 @@ const testInputFieldSnapshot = options => () => {
 
 describe('Render SelectSchema', () => {
   it(
-    'Should render SingleSelectInput',
+    'Should render SingleSelect',
     testInputFieldSnapshot({
       schema: {
-        id: 'SingleSelectInput',
-        title: 'SingleSelectInput',
+        id: 'SingleSelect',
+        title: 'SingleSelect',
         type: 'number',
         oneOf: [
           { title: 'foo', const: 1, description: 'foo description' },
           { title: 'bar', const: 2, description: 'bar description' }
         ]
       },
-      name: 'SingleSelectInput'
+      name: 'SingleSelect'
     })
   );
 
   it(
-    'Should render SingleSelectInput with only values',
+    'Should render SingleSelect with only values',
     testInputFieldSnapshot({
       schema: {
-        id: 'SingleSelectInput',
-        title: 'SingleSelectInput',
+        id: 'SingleSelect',
+        title: 'SingleSelect',
         type: 'string',
         oneOf: [{ const: 'foo' }, { const: 'bar' }]
       },
-      name: 'SingleSelectInput'
+      name: 'SingleSelect'
     })
   );
 
   it(
-    'Should render SingleSelectInput with only titles',
+    'Should render SingleSelect with only titles',
     testInputFieldSnapshot({
       schema: {
-        id: 'SingleSelectInput',
-        title: 'SingleSelectInput',
+        id: 'SingleSelect',
+        title: 'SingleSelect',
         type: 'string',
         oneOf: [{ title: 'foo' }, { title: 'bar' }]
       },
-      name: 'SingleSelectInput'
+      name: 'SingleSelect'
     })
   );
 
   it(
-    'Should render object SingleSelectInput',
+    'Should render object SingleSelect',
     testInputFieldSnapshot({
       schema: {
-        id: 'SingleSelectInput',
-        title: 'SingleSelectInput',
+        id: 'SingleSelect',
+        title: 'SingleSelect',
         type: 'object',
         oneOf: [
           {
@@ -101,17 +99,17 @@ describe('Render SelectSchema', () => {
         ]
       },
       renderSchema: () => <div />,
-      name: 'SingleSelectInput'
+      name: 'SingleSelect'
     })
   );
 
   it('should handle select change', () => {
     const rootReducers = combineReducers({ form: formReducer });
     const store = createStore(rootReducers);
-    const WrappedComponent = reduxForm({ form: 'MyForm' })(SingleSelectInput);
+    const WrappedComponent = reduxForm({ form: 'MyForm' })(SingleSelect);
     const schema = {
-      id: 'SingleSelectInput',
-      title: 'SingleSelectInput',
+      id: 'SingleSelect',
+      title: 'SingleSelect',
       type: 'object',
       oneOf: [
         {
@@ -150,7 +148,7 @@ describe('Render SelectSchema', () => {
         />
       </Provider>
     );
-    const StyledComponent = wrapper.find(SingleSelectInput);
+    const StyledComponent = wrapper.find(SingleSelect);
     const SelectComponent = StyledComponent.node.wrapped.wrappedInstance;
 
     wrapper.find(Input).simulate('change', { target: { value: 'Foo' } });

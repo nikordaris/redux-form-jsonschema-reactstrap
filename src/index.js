@@ -1,8 +1,6 @@
-import { inputFields } from './InputField';
-import Card from './Card';
-import { SingleSelectInput } from './SelectSchema';
-export createInputField from './InputField';
-export FormField from './FormField';
+export { FormField } from './components';
+export createInputField from './createInputField';
+export validate from './validator';
 
 // Named Components Map
-export default { ...inputFields, Card, SingleSelectInput };
+export default from './components';
