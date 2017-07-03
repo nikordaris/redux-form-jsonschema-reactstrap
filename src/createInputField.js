@@ -4,11 +4,11 @@ import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
 
-import FormField from './FormField';
+import FormField from './components/FormField';
 import { injectSheet } from './Jss';
 import validate from './validator';
 
-export class InputComponent extends Component<*, *, *> {
+class InputComponent extends Component<*, *, *> {
   static defaultProps = {};
   props: {
     type: string,
@@ -92,7 +92,7 @@ class InputField extends Component<*, *, *> {
   }
 }
 
-const createInputField = (_options: CreateInputOptionsType) => {
+export default function(_options: CreateInputOptionsType) {
   const { styles, ...options } = _options;
   class CreatedInputField extends Component<*, *, *> {
     render() {
@@ -101,22 +101,4 @@ const createInputField = (_options: CreateInputOptionsType) => {
   }
 
   return injectSheet(styles)(CreatedInputField);
-};
-
-export const inputFields = {
-  TextInputField: createInputField({ type: 'text' }),
-  EmailInputField: createInputField({ type: 'email' }),
-  PasswordInputField: createInputField({ type: 'password' }),
-  DateInputField: createInputField({ type: 'date' }),
-  DateTimeInputField: createInputField({ type: 'datetime-local' }),
-  NumberInputField: createInputField({
-    type: 'number'
-  }),
-  ColorInputField: createInputField({
-    type: 'color',
-    styles: { input: { height: '40px' } }
-  }),
-  TextAreaInputField: createInputField({ type: 'textarea' })
-};
-
-export default createInputField;
+}

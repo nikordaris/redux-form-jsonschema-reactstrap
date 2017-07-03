@@ -1,3 +1,10 @@
+// @flow
+/*
+react-jss doesn't merge styles properly for overriding child components
+this simple jss HOC will merge the styles but doesn't implement the other
+advanced features of react-jss since they are not needed for this library
+*/
+
 import React, { Component } from 'react';
 import { merge, isEqual } from 'lodash';
 import { create } from 'jss';
@@ -8,12 +15,24 @@ jss.setup(preset());
 
 export default jss;
 
-export const injectSheet = styles => WrappedComponent => {
+export const injectSheet = (styles: { [string]: any }) => (
+  WrappedComponent: string
+) => {
   class StyledComponent extends Component {
-    constructor(props: any) {
-      super(props);
-      this.state = { sheet: undefined, classes: undefined };
-    }
+    state = {
+      sheet: undefined,
+      classes: undefined
+    };
+    props: {
+      sheet: any,
+      styles: { [string]: any },
+      classes: { [string]: any }
+    };
+    state: {
+      sheet: any,
+      classes: { [string]: any }
+    };
+    wrapped: any;
 
     componentWillReceiveProps(nextProps: any) {
       const { styles: componentStyles } = this.props;

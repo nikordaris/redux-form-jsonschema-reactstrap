@@ -1,3 +1,4 @@
+// @flow
 import Ajv from 'ajv';
 import { get, isEmpty } from 'lodash';
 

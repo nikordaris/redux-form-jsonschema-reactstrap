@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import { FormField } from './index';
+import { FormField } from './FormField';
 import { omit } from 'lodash';
 
 const schema = {
