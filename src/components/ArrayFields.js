@@ -23,12 +23,14 @@ class UniformedArray extends Component {
   static defaultProps = {
     tag: Card,
     headerTag: CardHeader,
-    bodyTag: CardBlock
+    bodyTag: CardBlock,
+    addBtnProps: {}
   };
   props: {
     tag: string,
     headerTag: string,
     bodyTag: string,
+    addBtnProps: { [string]: any },
     schema: any,
     name: string,
     renderSchema: RenderSchemaType,
@@ -45,6 +47,7 @@ class UniformedArray extends Component {
       tag: Tag,
       headerTag: HeaderTag,
       bodyTag: BodyTag,
+      addBtnProps: { children, ...addBtnProps },
       schema,
       classes
     } = this.props;
@@ -54,7 +57,13 @@ class UniformedArray extends Component {
         <HeaderTag className={classes.header}>
           <div className={classes.headerTitle}>{schema.title}</div>
           <div className={classes.addButton}>
-            <Button color="primary" onClick={() => fields.push({})}>Add</Button>
+            <Button
+              color="primary"
+              size="sm"
+              {...addBtnProps}
+              onClick={() => fields.push({})}
+              children={children || 'Add'}
+            />
           </div>
         </HeaderTag>
         <BodyTag className={classes.body}>
@@ -79,6 +88,30 @@ class UniformedArray extends Component {
 export class UniformedArrayCard extends Component {
   render() {
     return <UniformedArray {...this.props} />;
+  }
+}
+
+@injectSheet({
+  container: { marginBottom: 10, marginTop: 15 },
+  header: {
+    width: '100%',
+    padding: 0,
+    marginBottom: 20,
+    fontSize: 21,
+    lineHeight: 'inherit',
+    color: '#333',
+    border: 0,
+    borderBottom: '1px solid #e5e5e5',
+    display: 'inline-flex'
+  },
+  addButton: { marginLeft: 'auto' },
+  headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
+})
+export class UniformedArrayInline extends Component {
+  render() {
+    return (
+      <UniformedArray {...this.props} bodyTag="div" headerTag="div" tag="div" />
+    );
   }
 }
 

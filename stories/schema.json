@@ -274,7 +274,7 @@
       "meta": {
         "vis": {
           "ordinal": 180,
-          "component": "UniformedArrayCard"
+          "component": "UniformedArrayInline"
         }
       }
     }
