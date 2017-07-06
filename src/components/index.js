@@ -5,6 +5,12 @@ import * as SelectFields from './SelectFields';
 
 export FormField from './FormField';
 
+export const defaultComponents = {
+  string: InputFields.Text,
+  number: InputFields.Number,
+  array: ArrayFields.UniformedArrayInline
+};
+
 export default {
   ...InputFields,
   ...ArrayFields,

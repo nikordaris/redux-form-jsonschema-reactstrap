@@ -24,7 +24,8 @@ class UniformedArray extends Component {
     tag: Card,
     headerTag: CardHeader,
     bodyTag: CardBlock,
-    addBtnProps: {}
+    addBtnProps: {},
+    required: false
   };
   props: {
     tag: string,
@@ -34,7 +35,8 @@ class UniformedArray extends Component {
     schema: any,
     name: string,
     renderSchema: RenderSchemaType,
-    classes: { [string]: any }
+    classes: { [string]: any },
+    required: boolean
   };
 
   renderForm(name: string, idx: string) {
@@ -74,8 +76,14 @@ class UniformedArray extends Component {
   };
 
   render() {
-    const { name } = this.props;
-    return <FieldArray name={name} component={this.renderFieldArray} />;
+    const { name, schema, required } = this.props;
+    return (
+      <FieldArray
+        name={name}
+        validate={validate(schema, required)}
+        component={this.renderFieldArray}
+      />
+    );
   }
 }
 
