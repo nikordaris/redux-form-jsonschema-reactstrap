@@ -118,7 +118,7 @@
       "meta": {
         "vis": {
           "ordinal": 160,
-          "component": "SingleSelectInput"
+          "component": "SingleSelect"
         }
       }
     },
@@ -129,7 +129,7 @@
       "meta": {
         "vis": {
           "ordinal": 170,
-          "component": "SingleSelectInput"
+          "component": "SingleSelect"
         }
       },
       "oneOf": [

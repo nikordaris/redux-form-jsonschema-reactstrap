@@ -1,21 +1,11 @@
 // @flow
 
 import React, { Component } from 'react';
-import {
-  Button,
-  Input,
-  Container,
-  Row,
-  Col,
-  Card,
-  CardHeader,
-  CardBlock
-} from 'reactstrap';
-import { Field, change, FieldArray } from 'redux-form';
-import { connect } from 'react-redux';
-import { get, sortBy } from 'lodash';
+import { Button, Card, CardHeader, CardBlock } from 'reactstrap';
+import { FieldArray } from 'redux-form';
+import { get } from 'lodash';
+import SchemaVis from 'react-jsonschema-vis';
 
-import FormField from './FormField';
 import { injectSheet } from '../Jss';
 import validate from '../validator';
 
@@ -32,16 +22,25 @@ class UniformedArray extends Component {
     headerTag: string,
     bodyTag: string,
     addBtnProps: { [string]: any },
-    schema: any,
+    schemaVis: {
+      schema: any
+    },
     name: string,
-    renderSchema: RenderSchemaType,
     classes: { [string]: any },
     required: boolean
   };
 
-  renderForm(name: string, idx: string) {
-    const { renderSchema, schema: { items } } = this.props;
-    return renderSchema(items, idx, name);
+  renderForm(fields: any, name: string, idx: number) {
+    const { schemaVis: { schema: { items }, ...schemaVis } } = this.props;
+    return (
+      <SchemaVis
+        {...schemaVis}
+        schema={items}
+        key={idx}
+        namespace={name}
+        onRemove={() => fields.remove(idx)}
+      />
+    );
   }
 
   renderFieldArray = (props: any) => {
@@ -50,7 +49,7 @@ class UniformedArray extends Component {
       headerTag: HeaderTag,
       bodyTag: BodyTag,
       addBtnProps: { children, ...addBtnProps },
-      schema,
+      schemaVis: { schema },
       classes
     } = this.props;
     const { fields } = props;
@@ -69,14 +68,14 @@ class UniformedArray extends Component {
           </div>
         </HeaderTag>
         <BodyTag className={classes.body}>
-          {fields.map((name, idx) => this.renderForm(name, idx))}
+          {fields.map((name, idx) => this.renderForm(fields, name, idx))}
         </BodyTag>
       </Tag>
     );
   };
 
   render() {
-    const { name, schema, required } = this.props;
+    const { name, schemaVis: { schema }, required } = this.props;
     return (
       <FieldArray
         name={name}
@@ -125,13 +124,20 @@ export class UniformedArrayInline extends Component {
 
 export class VariedArray extends Component {
   getArrayOptions(index: string) {
-    const { schema, renderSchema, name } = this.props;
+    const { schemaVis: { schema, ...schemaVis }, name } = this.props;
     const itemsOneOf = get(schema, 'items.oneOf');
     if (itemsOneOf) {
       itemsOneOf
         .map((s, idx) => {
           const { id, title, const: value, description } = s;
-          const rendered = renderSchema(s, `${index}-${idx}`, name);
+          const rendered = (
+            <SchemaVis
+              {...schemaVis}
+              schema={s}
+              key={`${index}-${idx}`}
+              namespace={name}
+            />
+          );
           return {
             label: title || id || value,
             tooltip: description,

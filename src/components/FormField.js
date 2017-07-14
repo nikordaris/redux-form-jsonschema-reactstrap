@@ -1,3 +1,5 @@
+//@flow
+
 import React, { Component, Children, cloneElement } from 'react';
 import {
   UncontrolledTooltip,
@@ -25,13 +27,17 @@ export default class FormField extends Component {
     tag: string,
     showFeedback: ShowFeedbackType,
     labelProps: {
-      tag: string,
-      requiredColor: string
+      tag?: string,
+      requiredColor?: string
     },
     tooltipProps: {
-      placement: string
+      placement?: string
     },
-    meta: { [string]: any },
+    classes: { [string]: any },
+    styles: { [string]: any },
+    sheet: any,
+    meta: { [string]: any, warning: any, error: any },
+    input: { [string]: any },
     children: React.Element<*> | [React.Element<*>]
   };
 
@@ -69,7 +75,6 @@ export default class FormField extends Component {
       meta: { error, warning },
       input,
       children,
-      renderSchema,
       ...rest
     } = this.props;
     const { name } = input;
@@ -99,7 +104,12 @@ export default class FormField extends Component {
           </UncontrolledTooltip>}
 
         {Children.map(children, child =>
-          cloneElement(child, { id: name, state: inputState, ...input, ...rest })
+          cloneElement(child, {
+            id: name,
+            state: inputState,
+            ...input,
+            ...rest
+          })
         )}
 
         {inputState &&
