@@ -15,8 +15,8 @@ jss.setup(preset());
 
 export default jss;
 
-export const injectSheet = (styles: { [string]: any }) => (
-  WrappedComponent: string
+export const injectSheet = (styles?: { [string]: any }) => (
+  WrappedComponent: any
 ) => {
   class StyledComponent extends Component {
     state = {

@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { Field, change } from 'redux-form';
 import { Input } from 'reactstrap';
 import { sortBy, omit, isEmpty } from 'lodash';
+import SchemaVis from 'react-jsonschema-vis';
 
 import FormField from './FormField';
 import { injectSheet } from '../Jss';
@@ -32,18 +33,16 @@ export class SingleSelect extends Component {
 
   props: {
     tag: string,
-    schema: any,
+    schemaVis: {
+      schema: any
+    },
     form: string,
     name: string,
     required: boolean,
     classes: { [string]: any },
+    sheet: any,
     styles: { [string]: any },
-    change: (form: string, prop: string, value: any) => void,
-    renderSchema: (
-      { [string]: any },
-      index: string,
-      namespace: string
-    ) => React.Element<*>
+    change: (form: string, prop: string, value: any) => void
   };
 
   state: {
@@ -51,11 +50,30 @@ export class SingleSelect extends Component {
   };
 
   getOptions = (schema: Array<any>, index: string) => {
-    const { renderSchema, name } = this.props;
+    const {
+      name,
+      tag,
+      required,
+      classes,
+      sheet,
+      styles,
+      change,
+      schemaVis: { schema: rootSchema, ...schemaVis },
+      ...rest
+    } = this.props;
     return schema
       .map((s, idx) => {
         const { id, title, const: value, description } = s;
-        const rendered = renderSchema(s, `${index}-${idx}`, name);
+        const rendered = (
+          <SchemaVis
+            schema={s}
+            key={`${index}-${idx}`}
+            namespace={name}
+            {...schemaVis}
+            {...rest}
+          />
+        );
+
         return {
           label: title || id || value,
           tooltip: description,
@@ -80,9 +98,16 @@ export class SingleSelect extends Component {
   };
 
   renderSelectInput(options: Array<OptionType>) {
-    const { tag: Tag, schema, styles, classes } = this.props;
+    const {
+      tag: Tag,
+      schemaVis: { schema },
+      styles,
+      classes,
+      sheet,
+      ...rest
+    } = this.props;
     return (
-      <Tag styles={styles} schema={schema}>
+      <Tag styles={styles} schema={schema} {...rest}>
         <Input
           className={classes.select}
           type="select"
@@ -105,7 +130,7 @@ export class SingleSelect extends Component {
       'renderSchema',
       'styles'
     ]);
-    const { schema, required } = this.props;
+    const { schemaVis: { schema }, required } = this.props;
     return (
       <Field
         type="select"
@@ -138,7 +163,7 @@ export class SingleSelect extends Component {
   }
 
   render() {
-    const { schema, name } = this.props;
+    const { schemaVis: { schema }, name } = this.props;
     const options = this.getOptions(schema.oneOf, `${name}-oneOf`);
     if (isEmpty(options.filter(({ value }) => React.isValidElement(value)))) {
       return this.renderSelectField(options);
