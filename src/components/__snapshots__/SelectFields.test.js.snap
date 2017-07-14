@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render SelectFields Should render SingleSelect 1`] = `
+<div
+  className="card-0-1 card"
+>
+  <div
+    className="header-0-2 card-header"
+  >
+    SingleSelect
+  </div>
+  <div />
+</div>
+`;
+
+exports[`Render SelectFields Should render SingleSelect with only titles 1`] = `
+<div
+  className="card-0-9 card"
+>
+  <div
+    className="header-0-10 card-header"
+  >
+    SingleSelect
+  </div>
+  <div />
+</div>
+`;
+
+exports[`Render SelectFields Should render SingleSelect with only values 1`] = `
+<div
+  className="card-0-5 card"
+>
+  <div
+    className="header-0-6 card-header"
+  >
+    SingleSelect
+  </div>
+  <div />
+</div>
+`;
+
+exports[`Render SelectFields Should render object SingleSelect 1`] = `
+<div
+  className="card-0-4 card"
+>
+  <div
+    className="header-0-5 card-header"
+  >
+    SingleSelect
+  </div>
+  <div />
+</div>
+`;

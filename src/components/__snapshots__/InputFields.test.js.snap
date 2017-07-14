@@ -1,0 +1,1000 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render InputFields Should render Color 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="Color"
+    id="Color-label"
+  >
+    Color
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="input-0-0 form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="Color"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="Color"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "Color",
+        "meta": Object {
+          "vis": Object {
+            "component": "Color",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Color",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="color"
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render Date 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="Date"
+    id="Date-label"
+  >
+    Date
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="Date"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="Date"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "Date",
+        "meta": Object {
+          "vis": Object {
+            "component": "Date",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Date",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="date"
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render DateTime 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="DateTime"
+    id="DateTime-label"
+  >
+    DateTime
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="DateTime"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="DateTime"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "DateTime",
+        "meta": Object {
+          "vis": Object {
+            "component": "DateTime",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "DateTime",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="datetime-local"
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render Email 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="Email"
+    id="Email-label"
+  >
+    Email
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="Email"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="Email"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "Email",
+        "meta": Object {
+          "vis": Object {
+            "component": "Email",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Email",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="email"
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render Number 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="Number"
+    id="Number-label"
+  >
+    Number
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="Number"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="Number"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "Number",
+        "meta": Object {
+          "vis": Object {
+            "component": "Number",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Number",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="number"
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render Password 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="Password"
+    id="Password-label"
+  >
+    Password
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="Password"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="Password"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "Password",
+        "meta": Object {
+          "vis": Object {
+            "component": "Password",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Password",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="password"
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render Text 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="Text"
+    id="Text-label"
+  >
+    Text
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="Text"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="Text"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "Text",
+        "meta": Object {
+          "vis": Object {
+            "component": "Text",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Text",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="text"
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render TextArea 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=""
+    htmlFor="TextArea"
+    id="TextArea-label"
+  >
+    TextArea
+  </label>
+  <textarea
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="TextArea"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="TextArea"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "TextArea",
+        "meta": Object {
+          "vis": Object {
+            "component": "TextArea",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "TextArea",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
