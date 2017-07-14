@@ -34,7 +34,10 @@ export class SingleSelect extends Component {
   props: {
     tag: string,
     schemaVis: {
-      schema: any
+      schema: any,
+      meta: {
+        hasComponent: (schema: any) => boolean
+      }
     },
     form: string,
     name: string,
@@ -58,13 +61,13 @@ export class SingleSelect extends Component {
       sheet,
       styles,
       change,
-      schemaVis: { schema: rootSchema, ...schemaVis },
+      schemaVis: { schema: rootSchema, meta: {hasComponent}, ...schemaVis },
       ...rest
     } = this.props;
     return schema
       .map((s, idx) => {
         const { id, title, const: value, description } = s;
-        const rendered = (
+        const rendered = hasComponent(s) && s.properties && (
           <SchemaVis
             schema={s}
             key={`${index}-${idx}`}
@@ -100,14 +103,14 @@ export class SingleSelect extends Component {
   renderSelectInput(options: Array<OptionType>) {
     const {
       tag: Tag,
-      schemaVis: { schema },
+      schemaVis: { schema, ...schemaVis },
       styles,
       classes,
       sheet,
       ...rest
     } = this.props;
     return (
-      <Tag styles={styles} schema={schema} {...rest}>
+      <Tag styles={styles} schemaVis={{ schema, ...schemaVis }} {...rest}>
         <Input
           className={classes.select}
           type="select"

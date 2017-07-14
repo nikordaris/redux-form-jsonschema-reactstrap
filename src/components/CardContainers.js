@@ -20,7 +20,7 @@ export class CardWithHeader extends Component {
     }
   };
   render() {
-    const { classes, name, schemaVis: { schema, prefix } } = this.props;
+    const { classes, name, schemaVis: { schema, ...schemaVis } } = this.props;
     return (
       <Card className={classes.card}>
         <CardHeader className={classes.header}>{schema.title}</CardHeader>
@@ -28,7 +28,7 @@ export class CardWithHeader extends Component {
           tag={CardBlock}
           className={classes.cardblock}
           schema={schema}
-          prefix={prefix}
+          {...schemaVis}
           namespace={name}
         />
       </Card>

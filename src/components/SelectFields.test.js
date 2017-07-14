@@ -6,33 +6,40 @@ import { Provider } from 'react-redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
 import { mount } from 'enzyme';
+import { Text } from './InputFields';
 
 const testInputFieldSnapshot = options => () => {
   const rootReducers = combineReducers({ form: formReducer });
   const store = createStore(rootReducers);
-  const WrappedComponent = reduxForm({ form: 'MyForm' })(SingleSelectInput);
+  const WrappedComponent = reduxForm({ form: 'MyForm' })(SingleSelect);
   const tree = renderer
     .create(
       <Provider store={store}>
-        <WrappedComponent renderSchema={() => undefined} {...options} />
+        <WrappedComponent {...options} />
       </Provider>
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
 };
 
-describe('Render SelectSchema', () => {
+describe('Render SelectFields', () => {
   it(
     'Should render SingleSelect',
     testInputFieldSnapshot({
-      schema: {
-        id: 'SingleSelect',
-        title: 'SingleSelect',
-        type: 'number',
-        oneOf: [
-          { title: 'foo', const: 1, description: 'foo description' },
-          { title: 'bar', const: 2, description: 'bar description' }
-        ]
+      schemaVis: {
+        prefix: 'meta.vis',
+        meta: {
+          hasComponent: () => false
+        },
+        schema: {
+          id: 'SingleSelect',
+          title: 'SingleSelect',
+          type: 'number',
+          oneOf: [
+            { title: 'foo', const: 1, description: 'foo description' },
+            { title: 'bar', const: 2, description: 'bar description' }
+          ]
+        }
       },
       name: 'SingleSelect'
     })
@@ -41,11 +48,17 @@ describe('Render SelectSchema', () => {
   it(
     'Should render SingleSelect with only values',
     testInputFieldSnapshot({
-      schema: {
-        id: 'SingleSelect',
-        title: 'SingleSelect',
-        type: 'string',
-        oneOf: [{ const: 'foo' }, { const: 'bar' }]
+      schemaVis: {
+        prefix: 'meta.vis',
+        meta: {
+          hasComponent: () => false
+        },
+        schema: {
+          id: 'SingleSelect',
+          title: 'SingleSelect',
+          type: 'string',
+          oneOf: [{ const: 'foo' }, { const: 'bar' }]
+        }
       },
       name: 'SingleSelect'
     })
@@ -54,11 +67,17 @@ describe('Render SelectSchema', () => {
   it(
     'Should render SingleSelect with only titles',
     testInputFieldSnapshot({
-      schema: {
-        id: 'SingleSelect',
-        title: 'SingleSelect',
-        type: 'string',
-        oneOf: [{ title: 'foo' }, { title: 'bar' }]
+      schemaVis: {
+        prefix: 'meta.vis',
+        meta: {
+          hasComponent: () => false
+        },
+        schema: {
+          id: 'SingleSelect',
+          title: 'SingleSelect',
+          type: 'string',
+          oneOf: [{ title: 'foo' }, { title: 'bar' }]
+        }
       },
       name: 'SingleSelect'
     })
@@ -67,38 +86,54 @@ describe('Render SelectSchema', () => {
   it(
     'Should render object SingleSelect',
     testInputFieldSnapshot({
-      schema: {
-        id: 'SingleSelect',
-        title: 'SingleSelect',
-        type: 'object',
-        oneOf: [
-          {
-            title: 'Foo',
-            id: 'Foo',
-            type: 'object',
-            properties: {
-              x: {
-                type: 'string',
-                title: 'X',
-                id: 'x'
+      schemaVis: {
+        components: { Text },
+        prefix: 'meta.vis',
+        meta: {
+          hasComponent: () => true
+        },
+        schema: {
+          id: 'SingleSelect',
+          title: 'SingleSelect',
+          type: 'object',
+          oneOf: [
+            {
+              title: 'Foo',
+              id: 'Foo',
+              type: 'object',
+              properties: {
+                x: {
+                  type: 'string',
+                  title: 'X',
+                  id: 'x',
+                  meta: {
+                    vis: {
+                      component: 'Text'
+                    }
+                  }
+                }
+              }
+            },
+            {
+              id: 'Bar',
+              title: 'Bar',
+              type: 'object',
+              properties: {
+                y: {
+                  type: 'string',
+                  title: 'Y',
+                  id: 'Y',
+                  meta: {
+                    vis: {
+                      component: 'Text'
+                    }
+                  }
+                }
               }
             }
-          },
-          {
-            id: 'Bar',
-            title: 'Bar',
-            type: 'object',
-            properties: {
-              y: {
-                type: 'string',
-                title: 'Y',
-                id: 'Y'
-              }
-            }
-          }
-        ]
+          ]
+        }
       },
-      renderSchema: () => <div />,
       name: 'SingleSelect'
     })
   );
@@ -120,7 +155,12 @@ describe('Render SelectSchema', () => {
             x: {
               type: 'string',
               title: 'X',
-              id: 'x'
+              id: 'x',
+              meta: {
+                vis: {
+                  component: 'Text'
+                }
+              }
             }
           }
         },
@@ -132,7 +172,12 @@ describe('Render SelectSchema', () => {
             y: {
               type: 'string',
               title: 'Y',
-              id: 'Y'
+              id: 'Y',
+              meta: {
+                vis: {
+                  component: 'Text'
+                }
+              }
             }
           }
         }
@@ -141,17 +186,23 @@ describe('Render SelectSchema', () => {
     const wrapper = mount(
       <Provider store={store}>
         <WrappedComponent
-          renderSchema={() => <div />}
-          schema={schema}
+          schemaVis={{
+            meta: {
+              hasComponent: () => true
+            },
+            components: { Text },
+            prefix: 'meta.vis',
+            schema
+          }}
           name="foobar"
-          change={() => undefined}
         />
       </Provider>
     );
     const StyledComponent = wrapper.find(SingleSelect);
     const SelectComponent = StyledComponent.node.wrapped.wrappedInstance;
-
-    wrapper.find(Input).simulate('change', { target: { value: 'Foo' } });
+    wrapper.find(Input).simulate('change', {
+      target: { value: 'Foo' }
+    });
     expect(SelectComponent.state.selected).toEqual('Foo');
     wrapper.unmount();
     expect(StyledComponent.node.state.sheet.attached).toBeFalsy();
