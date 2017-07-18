@@ -3,36 +3,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { Field, change } from 'redux-form';
-import { Input } from 'reactstrap';
-import { sortBy, omit, isEmpty } from 'lodash';
+import { Field, change, untouch } from 'redux-form';
+import { Input, Card, CardHeader, CardBlock } from 'reactstrap';
+import { sortBy, omit, isEmpty, forEach } from 'lodash';
 import SchemaVis from 'react-jsonschema-vis';
 
 import FormField from './FormField';
 import { injectSheet } from '../Jss';
 import validate from '../validator';
-import { CardWithHeader } from './CardContainers';
 
 @injectSheet({
-  selectedObject: { marginTop: 10 }
+  selectedObject: { marginTop: 10 },
+  card: { marginBottom: 10, marginTop: 15 },
+  header: { padding: 5, paddingLeft: 10 }
 })
 @connect(
   () => ({}),
-  dispatch => bindActionCreators({ change }, dispatch),
+  dispatch => bindActionCreators({ change, untouch }, dispatch),
   undefined,
   { withRef: true }
 )
 export class SingleSelect extends Component {
-  static defaultProps = {
-    tag: CardWithHeader
-  };
+  static defaultProps = {};
 
   state = {
     selected: ''
   };
 
   props: {
-    tag: string,
     schemaVis: {
       schema: any,
       meta: {
@@ -45,7 +43,8 @@ export class SingleSelect extends Component {
     classes: { [string]: any },
     sheet: any,
     styles: { [string]: any },
-    change: (form: string, prop: string, value: any) => void
+    change: (form: string, prop: string, value: any) => void,
+    untouch: (form: string, fields: string) => void
   };
 
   state: {
@@ -55,27 +54,27 @@ export class SingleSelect extends Component {
   getOptions = (schema: Array<any>, index: string) => {
     const {
       name,
-      tag,
       required,
       classes,
       sheet,
       styles,
       change,
-      schemaVis: { schema: rootSchema, meta: {hasComponent}, ...schemaVis },
+      untouch,
+      schemaVis: { schema: rootSchema, meta: { hasComponent }, ...schemaVis },
       ...rest
     } = this.props;
     return schema
       .map((s, idx) => {
         const { id, title, const: value, description } = s;
-        const rendered = hasComponent(s) && s.properties && (
+        const rendered =
+          (hasComponent(s) || !isEmpty(s.properties)) &&
           <SchemaVis
             schema={s}
             key={`${index}-${idx}`}
             namespace={name}
             {...schemaVis}
             {...rest}
-          />
-        );
+          />;
 
         return {
           label: title || id || value,
@@ -95,33 +94,30 @@ export class SingleSelect extends Component {
   }
 
   handleChange = (e: { target: { value: string } }) => {
-    const { name, change, form } = this.props;
+    const { name, change, untouch, form, schemaVis: {schema: {oneOf}} } = this.props;
     change(form, name, {});
+    oneOf.forEach(s => forEach(s.properties, (_, p) => untouch(form, `${name}.${p}`)));
     this.setState({ ...this.state, selected: e.target.value });
   };
 
   renderSelectInput(options: Array<OptionType>) {
-    const {
-      tag: Tag,
-      schemaVis: { schema, ...schemaVis },
-      styles,
-      classes,
-      sheet,
-      ...rest
-    } = this.props;
+    const { schemaVis: { schema }, classes } = this.props;
     return (
-      <Tag styles={styles} schemaVis={{ schema, ...schemaVis }} {...rest}>
-        <Input
-          className={classes.select}
-          type="select"
-          onChange={this.handleChange}
-          value={this.state.selected}
-        >
-          <option disabled value="">Select {schema.title}</option>
-          {this.renderInputOptions(options)}
-        </Input>
-        {this.renderInputObject(options)}
-      </Tag>
+      <Card className={classes.card}>
+        <CardHeader className={classes.header}>{schema.title}</CardHeader>
+        <CardBlock className={classes.cardblock}>
+          <Input
+            className={classes.select}
+            type="select"
+            onChange={this.handleChange}
+            value={this.state.selected}
+          >
+            <option disabled value="">Select {schema.title}</option>
+            {this.renderInputOptions(options)}
+          </Input>
+          {this.renderInputObject(options)}
+        </CardBlock>
+      </Card>
     );
   }
 
@@ -130,7 +126,8 @@ export class SingleSelect extends Component {
       'tag',
       'children',
       'change',
-      'renderSchema',
+      'untouch',
+      'schemaVis',
       'styles'
     ]);
     const { schemaVis: { schema }, required } = this.props;
@@ -139,6 +136,7 @@ export class SingleSelect extends Component {
         type="select"
         validate={validate(schema, required)}
         component={FormField}
+        schema={schema}
         {...rest}
       >
         <Input type="select">

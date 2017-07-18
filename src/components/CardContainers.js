@@ -16,18 +16,26 @@ export class CardWithHeader extends Component {
     classes: { [string]: any },
     schemaVis: {
       schema: any,
-      prefix: string
+      prefix: string,
+      meta: any
     }
   };
   render() {
-    const { classes, name, schemaVis: { schema, ...schemaVis } } = this.props;
+    const {
+      classes,
+      name,
+      schemaVis: { schema, prefix, meta, ...schemaVis }
+    } = this.props;
+    const _schema = set(merge({}, schema), prefix, undefined);
+
     return (
       <Card className={classes.card}>
         <CardHeader className={classes.header}>{schema.title}</CardHeader>
         <SchemaVis
           tag={CardBlock}
           className={classes.cardblock}
-          schema={schema}
+          schema={_schema}
+          prefix={prefix}
           {...schemaVis}
           namespace={name}
         />
@@ -47,21 +55,20 @@ export class CardItem extends Component {
     styles: any,
     sheet: any,
     onRemove: () => void,
-    renderSchema: RenderSchemaType,
-    renderProperties: RenderPropertiesType,
     name: string,
     classes: { [string]: any },
     btnProps: { [string]: any },
     schemaVis: {
       schema: any,
-      prefix: string
+      prefix: string,
+      meta: any
     }
   };
   render() {
     const {
       classes,
       name,
-      schemaVis: { schema, prefix, ...schemaVis },
+      schemaVis: { schema, prefix, meta, ...schemaVis },
       onRemove,
       styles,
       sheet,

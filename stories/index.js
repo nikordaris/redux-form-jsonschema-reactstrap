@@ -25,7 +25,10 @@ addDecorator(getStory => (
 
 const storybook = storiesOf('Reactstrap Redux-Form Jsonschema Vis', module);
 storybook.add('simple form', () => (
-  <ReduxTestForm onSubmit={data => action('Form(SimpleForm) submit')(data)}>
+  <ReduxTestForm
+    form="simple form"
+    onSubmit={data => action('Form(SimpleForm) submit')(data)}
+  >
     <SchemaVis
       form="simple form"
       schema={simpleFormSchema}
