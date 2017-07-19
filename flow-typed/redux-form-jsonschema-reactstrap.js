@@ -30,6 +30,13 @@ declare type RenderPropertiesType = (
   namespace: string
 ) => React.Element<*> | Array<React.Element<*>>;
 
+declare type SchemaVisType = {
+  schema: { [string]: any},
+  components: { [string]: any},
+  componentProps: { [string]: any},
+  prefix: string
+};
+
 declare module 'redux-form-jsonschema-reactstrap' {
   declare module.exports: {
     ShowFeedbackType: ShowFeedbackType,
@@ -38,6 +45,7 @@ declare module 'redux-form-jsonschema-reactstrap' {
     CreateInputOptionsType: CreateInputOptionsType,
     createInputField(options: CreateInputOptionsType): any,
     RenderSchemaType: RenderSchemaType,
-    RenderPropertiesType: RenderPropertiesType
+    RenderPropertiesType: RenderPropertiesType,
+    SchemaVisType: SchemaVisType
   };
 }

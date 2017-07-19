@@ -22,17 +22,14 @@ class UniformedArray extends Component {
     headerTag: string,
     bodyTag: string,
     addBtnProps: { [string]: any },
-    schemaVis: {
-      schema: any,
-      meta: any
-    },
+    schemaVis: SchemaVisType,
     name: string,
     classes: { [string]: any },
     required: boolean
   };
 
   renderForm(fields: any, name: string, idx: number) {
-    const { schemaVis: { schema: { items }, meta, ...schemaVis } } = this.props;
+    const { schemaVis: { schema: { items }, ...schemaVis } } = this.props;
     return (
       <SchemaVis
         {...schemaVis}
@@ -125,7 +122,7 @@ export class UniformedArrayInline extends Component {
 
 export class VariedArray extends Component {
   getArrayOptions(index: string) {
-    const { schemaVis: { schema, meta, ...schemaVis }, name } = this.props;
+    const { schemaVis: { schema, ...schemaVis }, name } = this.props;
     const itemsOneOf = get(schema, 'items.oneOf');
     if (itemsOneOf) {
       itemsOneOf
