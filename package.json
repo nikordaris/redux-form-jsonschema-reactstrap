@@ -88,7 +88,7 @@
   "peerDependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-jsonschema-vis": "^0.0.6",
+    "react-jsonschema-vis": "^0.0.8",
     "react-redux": "^5.0.5",
     "redux": "^3.7.1",
     "redux-form": "^6.8.0"

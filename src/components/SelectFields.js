@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux';
 import { Field, change, untouch } from 'redux-form';
 import { Input, Card, CardHeader, CardBlock } from 'reactstrap';
 import { sortBy, omit, isEmpty, forEach } from 'lodash';
-import SchemaVis from 'react-jsonschema-vis';
+import SchemaVis, { hasComponent } from 'react-jsonschema-vis';
 
 import FormField from './FormField';
 import { injectSheet } from '../Jss';
@@ -31,12 +31,7 @@ export class SingleSelect extends Component {
   };
 
   props: {
-    schemaVis: {
-      schema: any,
-      meta: {
-        hasComponent: (schema: any) => boolean
-      }
-    },
+    schemaVis: SchemaVisType,
     form: string,
     name: string,
     required: boolean,
@@ -60,20 +55,21 @@ export class SingleSelect extends Component {
       styles,
       change,
       untouch,
-      schemaVis: { schema: rootSchema, meta: { hasComponent }, ...schemaVis },
+      schemaVis,
+      schemaVis: { prefix },
       ...rest
     } = this.props;
     return schema
       .map((s, idx) => {
         const { id, title, const: value, description } = s;
         const rendered =
-          (hasComponent(s) || !isEmpty(s.properties)) &&
+          (hasComponent(s, prefix) || !isEmpty(s.properties)) &&
           <SchemaVis
-            schema={s}
             key={`${index}-${idx}`}
-            namespace={name}
             {...schemaVis}
             {...rest}
+            namespace={name}
+            schema={s}
           />;
 
         return {
@@ -94,9 +90,17 @@ export class SingleSelect extends Component {
   }
 
   handleChange = (e: { target: { value: string } }) => {
-    const { name, change, untouch, form, schemaVis: {schema: {oneOf}} } = this.props;
+    const {
+      name,
+      change,
+      untouch,
+      form,
+      schemaVis: { schema: { oneOf } }
+    } = this.props;
     change(form, name, {});
-    oneOf.forEach(s => forEach(s.properties, (_, p) => untouch(form, `${name}.${p}`)));
+    oneOf.forEach(s =>
+      forEach(s.properties, (_, p) => untouch(form, `${name}.${p}`))
+    );
     this.setState({ ...this.state, selected: e.target.value });
   };
 
