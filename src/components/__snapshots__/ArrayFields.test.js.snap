@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render ArrayFields Should render UniformedArrayCard 1`] = `
+<div
+  className="container-0-0 card"
+>
+  <div
+    className="header-0-1 card-header"
+  >
+    <div
+      className="headerTitle-0-3"
+    >
+      Uniformed Array Card
+    </div>
+    <div
+      className="addButton-0-2"
+    >
+      <button
+        className="btn btn-primary btn-sm"
+        onClick={[Function]}
+        type="button"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+  <div
+    className="card-block"
+  />
+</div>
+`;

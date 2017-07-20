@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render FormField should render 1`] = `
+Array [
+  <FormGroup
+    className={undefined}
+    color={undefined}
+    tag="div"
+>
+    <Label
+        className={undefined}
+        for="foo"
+        id="foo-label"
+        tag="label"
+    >
+        <span
+            style={
+                Object {
+                    "color": "red",
+                  }
+            }
+        >
+            *
+        </span>
+        Foo
+    </Label>
+    <UncontrolledTooltip
+        className={undefined}
+        placement="right"
+        target="foo-label"
+    >
+        foobar
+    </UncontrolledTooltip>
+    <input
+        id="foo"
+        name="foo"
+        state={undefined}
+        type="number"
+    />
+</FormGroup>,
+]
+`;
+
+exports[`Render FormField should render touched 1`] = `
+Array [
+  <FormGroup
+    className={undefined}
+    color="success"
+    tag="div"
+>
+    <Label
+        className={undefined}
+        for="foo"
+        id="foo-label"
+        tag="label"
+    >
+        <span
+            style={
+                Object {
+                    "color": "red",
+                  }
+            }
+        >
+            *
+        </span>
+        Foo
+    </Label>
+    <UncontrolledTooltip
+        className={undefined}
+        placement="right"
+        target="foo-label"
+    >
+        foobar
+    </UncontrolledTooltip>
+    <input
+        id="foo"
+        name="foo"
+        state="success"
+        type="number"
+    />
+    <FormFeedback
+        className={undefined}
+        id="foo-feedback"
+        tag="div"
+    />
+</FormGroup>,
+]
+`;
+
+exports[`Render FormField should render with error 1`] = `
+Array [
+  <FormGroup
+    className={undefined}
+    color="danger"
+    tag="div"
+>
+    <Label
+        className={undefined}
+        for="foo"
+        id="foo-label"
+        tag="label"
+    >
+        <span
+            style={
+                Object {
+                    "color": "red",
+                  }
+            }
+        >
+            *
+        </span>
+        Foo
+    </Label>
+    <UncontrolledTooltip
+        className={undefined}
+        placement="right"
+        target="foo-label"
+    >
+        foobar
+    </UncontrolledTooltip>
+    <input
+        id="foo"
+        name="foo"
+        state="danger"
+        type="number"
+    />
+    <FormFeedback
+        className={undefined}
+        id="foo-feedback"
+        tag="div"
+    >
+        error
+    </FormFeedback>
+</FormGroup>,
+]
+`;
+
+exports[`Render FormField should render with warning 1`] = `
+Array [
+  <FormGroup
+    className={undefined}
+    color="warning"
+    tag="div"
+>
+    <Label
+        className={undefined}
+        for="foo"
+        id="foo-label"
+        tag="label"
+    >
+        <span
+            style={
+                Object {
+                    "color": "red",
+                  }
+            }
+        >
+            *
+        </span>
+        Foo
+    </Label>
+    <UncontrolledTooltip
+        className={undefined}
+        placement="right"
+        target="foo-label"
+    >
+        foobar
+    </UncontrolledTooltip>
+    <input
+        id="foo"
+        name="foo"
+        state="warning"
+        type="number"
+    />
+    <FormFeedback
+        className={undefined}
+        id="foo-feedback"
+        tag="div"
+    >
+        warning
+    </FormFeedback>
+</FormGroup>,
+]
+`;
+
+exports[`Render FormField should render without tooltip 1`] = `
+<div
+  className="has-danger form-group"
+>
+  <label
+    className=""
+    htmlFor="foo"
+    id="foo-label"
+  >
+    <span
+      style={
+        Object {
+          "color": "red",
+        }
+      }
+    >
+      *
+    </span>
+    Foo
+  </label>
+  <input
+    id="foo"
+    name="foo"
+    state="danger"
+    type="number"
+  />
+  <div
+    className="form-control-feedback"
+    id="foo-feedback"
+  >
+    error
+  </div>
+</div>
+`;
