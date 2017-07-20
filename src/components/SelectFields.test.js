@@ -7,135 +7,134 @@ import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
 import { mount } from 'enzyme';
 import { Text } from './InputFields';
-
-const testInputFieldSnapshot = options => () => {
-  const rootReducers = combineReducers({ form: formReducer });
-  const store = createStore(rootReducers);
-  const WrappedComponent = reduxForm({ form: 'MyForm' })(SingleSelect);
-  const tree = renderer
-    .create(
-      <Provider store={store}>
-        <WrappedComponent {...options} />
-      </Provider>
-    )
-    .toJSON();
-  expect(tree).toMatchSnapshot();
-};
+import { matchSnapshotWithReduxForm } from '../testUtils';
 
 describe('Render SelectFields', () => {
   it(
     'Should render SingleSelect',
-    testInputFieldSnapshot({
-      schemaVis: {
-        prefix: 'meta.vis',
-        meta: {
-          hasComponent: () => false
+    matchSnapshotWithReduxForm(
+      {
+        schemaVis: {
+          prefix: 'meta.vis',
+          meta: {
+            hasComponent: () => false
+          },
+          schema: {
+            id: 'SingleSelect',
+            title: 'SingleSelect',
+            type: 'number',
+            oneOf: [
+              { title: 'foo', const: 1, description: 'foo description' },
+              { title: 'bar', const: 2, description: 'bar description' }
+            ]
+          }
         },
-        schema: {
-          id: 'SingleSelect',
-          title: 'SingleSelect',
-          type: 'number',
-          oneOf: [
-            { title: 'foo', const: 1, description: 'foo description' },
-            { title: 'bar', const: 2, description: 'bar description' }
-          ]
-        }
+        name: 'SingleSelect'
       },
-      name: 'SingleSelect'
-    })
+      SingleSelect
+    )
   );
 
   it(
     'Should render SingleSelect with only values',
-    testInputFieldSnapshot({
-      schemaVis: {
-        prefix: 'meta.vis',
-        meta: {
-          hasComponent: () => false
+    matchSnapshotWithReduxForm(
+      {
+        schemaVis: {
+          prefix: 'meta.vis',
+          meta: {
+            hasComponent: () => false
+          },
+          schema: {
+            id: 'SingleSelect',
+            title: 'SingleSelect',
+            type: 'string',
+            oneOf: [{ const: 'foo' }, { const: 'bar' }]
+          }
         },
-        schema: {
-          id: 'SingleSelect',
-          title: 'SingleSelect',
-          type: 'string',
-          oneOf: [{ const: 'foo' }, { const: 'bar' }]
-        }
+        name: 'SingleSelect'
       },
-      name: 'SingleSelect'
-    })
+      SingleSelect
+    )
   );
 
   it(
     'Should render SingleSelect with only titles',
-    testInputFieldSnapshot({
-      schemaVis: {
-        prefix: 'meta.vis',
-        meta: {
-          hasComponent: () => false
+    matchSnapshotWithReduxForm(
+      {
+        schemaVis: {
+          prefix: 'meta.vis',
+          meta: {
+            hasComponent: () => false
+          },
+          schema: {
+            id: 'SingleSelect',
+            title: 'SingleSelect',
+            type: 'string',
+            oneOf: [{ title: 'foo' }, { title: 'bar' }]
+          }
         },
-        schema: {
-          id: 'SingleSelect',
-          title: 'SingleSelect',
-          type: 'string',
-          oneOf: [{ title: 'foo' }, { title: 'bar' }]
-        }
+        name: 'SingleSelect'
       },
-      name: 'SingleSelect'
-    })
+      SingleSelect
+    )
   );
 
   it(
     'Should render object SingleSelect',
-    testInputFieldSnapshot({
-      schemaVis: {
-        components: { Text },
-        prefix: 'meta.vis',
-        meta: {
-          hasComponent: () => true
+    matchSnapshotWithReduxForm(
+      {
+        schemaVis: {
+          components: { Text },
+          prefix: 'meta.vis',
+          meta: {
+            hasComponent: () => true
+          },
+          schema: {
+            id: 'SingleSelect',
+            title: 'SingleSelect',
+            type: 'object',
+            oneOf: [
+              {
+                title: 'Foo',
+                id: 'Foo',
+                type: 'object',
+                properties: {
+                  x: {
+                    type: 'string',
+                    title: 'X',
+                    id: 'x',
+                    meta: {
+                      vis: {
+                        component: 'Text'
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                id: 'Bar',
+                title: 'Bar',
+                type: 'object',
+                properties: {
+                  y: {
+                    type: 'string',
+                    title: 'Y',
+                    id: 'Y',
+                    meta: {
+                      vis: {
+                        component: 'Text'
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
         },
-        schema: {
-          id: 'SingleSelect',
-          title: 'SingleSelect',
-          type: 'object',
-          oneOf: [
-            {
-              title: 'Foo',
-              id: 'Foo',
-              type: 'object',
-              properties: {
-                x: {
-                  type: 'string',
-                  title: 'X',
-                  id: 'x',
-                  meta: {
-                    vis: {
-                      component: 'Text'
-                    }
-                  }
-                }
-              }
-            },
-            {
-              id: 'Bar',
-              title: 'Bar',
-              type: 'object',
-              properties: {
-                y: {
-                  type: 'string',
-                  title: 'Y',
-                  id: 'Y',
-                  meta: {
-                    vis: {
-                      component: 'Text'
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
+        name: 'SingleSelect'
       },
-      name: 'SingleSelect'
-    })
+      SingleSelect
+    )
   );
 
   it('should handle select change', () => {

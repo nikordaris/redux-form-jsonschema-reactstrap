@@ -1,8 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
-import { FormField } from './FormField';
+import FormField from './FormField';
 import { omit } from 'lodash';
+import { matchSnapshotShallow, matchSnapshot } from '../testUtils';
 
 const schema = {
   title: 'Foo',
@@ -18,80 +19,79 @@ const schema = {
 
 const schemaNoDescription = omit(schema, ['description']);
 
-const testFormFieldSnapshot = options => () => {
-  const tree = renderer
-    .create(
-      <FormField {...options}>
-        <input type="number" />
-      </FormField>
-    )
-    .toJSON();
-  expect(tree).toMatchSnapshot();
-};
-
-const testShallowFormFieldSnapshot = options => () => {
-  const wrapper = shallow(
-    <FormField {...options}>
-      <input type="number" />
-    </FormField>
-  );
-
-  expect(wrapper.getNodes()).toMatchSnapshot();
-};
-
 describe('Render FormField', () => {
   it(
     'should render',
-    testShallowFormFieldSnapshot({
-      input: { name: 'foo' },
-      schema,
-      classes: {},
-      required: true,
-      meta: { touched: false }
-    })
+    matchSnapshotShallow(
+      {
+        input: { name: 'foo' },
+        schema,
+        classes: {},
+        required: true,
+        meta: { touched: false },
+        children: <input type="number" />
+      },
+      FormField
+    )
   );
 
   it(
     'should render touched',
-    testShallowFormFieldSnapshot({
-      input: { name: 'foo' },
-      schema,
-      classes: {},
-      required: true,
-      meta: { touched: true }
-    })
+    matchSnapshotShallow(
+      {
+        input: { name: 'foo' },
+        schema,
+        classes: {},
+        required: true,
+        meta: { touched: true },
+        children: <input type="number" />
+      },
+      FormField
+    )
   );
 
   it(
     'should render with error',
-    testShallowFormFieldSnapshot({
-      input: { name: 'foo' },
-      schema,
-      classes: {},
-      required: true,
-      meta: { touched: true, error: 'error' }
-    })
+    matchSnapshotShallow(
+      {
+        input: { name: 'foo' },
+        schema,
+        classes: {},
+        required: true,
+        meta: { touched: true, error: 'error' },
+        children: <input type="number" />
+      },
+      FormField
+    )
   );
 
   it(
     'should render with warning',
-    testShallowFormFieldSnapshot({
-      input: { name: 'foo' },
-      schema,
-      classes: {},
-      required: true,
-      meta: { touched: true, warning: 'warning' }
-    })
+    matchSnapshotShallow(
+      {
+        input: { name: 'foo' },
+        schema,
+        classes: {},
+        required: true,
+        meta: { touched: true, warning: 'warning' },
+        children: <input type="number" />
+      },
+      FormField
+    )
   );
 
   it(
     'should render without tooltip',
-    testFormFieldSnapshot({
-      input: { name: 'foo' },
-      classes: {},
-      schema: schemaNoDescription,
-      required: true,
-      meta: { touched: true, error: 'error', warning: 'warning' }
-    })
+    matchSnapshot(
+      {
+        input: { name: 'foo' },
+        classes: {},
+        schema: schemaNoDescription,
+        required: true,
+        meta: { touched: true, error: 'error', warning: 'warning' },
+        children: <input type="number" />
+      },
+      FormField
+    )
   );
 });

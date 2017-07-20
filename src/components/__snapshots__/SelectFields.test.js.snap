@@ -2,52 +2,387 @@
 
 exports[`Render SelectFields Should render SingleSelect 1`] = `
 <div
-  className="card-0-1 card"
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="select"
+  valid={true}
+  warning={undefined}
 >
-  <div
-    className="header-0-2 card-header"
+  <label
+    className=""
+    htmlFor="SingleSelect"
+    id="SingleSelect-label"
   >
     SingleSelect
-  </div>
-  <div />
+  </label>
+  <select
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="SingleSelect"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="SingleSelect"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    reset={[Function]}
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    valid={true}
+    value=""
+    warning={undefined}
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Select 
+      SingleSelect
+    </option>
+    <option
+      value={2}
+    >
+      bar
+    </option>
+    <option
+      value={1}
+    >
+      foo
+    </option>
+  </select>
 </div>
 `;
 
 exports[`Render SelectFields Should render SingleSelect with only titles 1`] = `
 <div
-  className="card-0-9 card"
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="select"
+  valid={true}
+  warning={undefined}
 >
-  <div
-    className="header-0-10 card-header"
+  <label
+    className=""
+    htmlFor="SingleSelect"
+    id="SingleSelect-label"
   >
     SingleSelect
-  </div>
-  <div />
+  </label>
+  <select
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="SingleSelect"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="SingleSelect"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    reset={[Function]}
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    valid={true}
+    value=""
+    warning={undefined}
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Select 
+      SingleSelect
+    </option>
+    <option
+      value="bar"
+    >
+      bar
+    </option>
+    <option
+      value="foo"
+    >
+      foo
+    </option>
+  </select>
 </div>
 `;
 
 exports[`Render SelectFields Should render SingleSelect with only values 1`] = `
 <div
-  className="card-0-5 card"
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  type="select"
+  valid={true}
+  warning={undefined}
 >
-  <div
-    className="header-0-6 card-header"
+  <label
+    className=""
+    htmlFor="SingleSelect"
+    id="SingleSelect-label"
   >
     SingleSelect
-  </div>
-  <div />
+  </label>
+  <select
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="SingleSelect"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="SingleSelect"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    reset={[Function]}
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    valid={true}
+    value=""
+    warning={undefined}
+  >
+    <option
+      disabled={true}
+      value=""
+    >
+      Select 
+      SingleSelect
+    </option>
+    <option
+      value="bar"
+    >
+      bar
+    </option>
+    <option
+      value="foo"
+    >
+      foo
+    </option>
+  </select>
 </div>
 `;
 
 exports[`Render SelectFields Should render object SingleSelect 1`] = `
 <div
-  className="card-0-4 card"
+  className="card-0-10 card"
 >
   <div
-    className="header-0-5 card-header"
+    className="header-0-11 card-header"
   >
     SingleSelect
   </div>
-  <div />
+  <div
+    className="card-block"
+  >
+    <select
+      className="form-control"
+      onChange={[Function]}
+      value=""
+    >
+      <option
+        disabled={true}
+        value=""
+      >
+        Select 
+        SingleSelect
+      </option>
+      <option
+        value="Bar"
+      >
+        Bar
+      </option>
+      <option
+        value="Foo"
+      >
+        Foo
+      </option>
+    </select>
+  </div>
 </div>
 `;
