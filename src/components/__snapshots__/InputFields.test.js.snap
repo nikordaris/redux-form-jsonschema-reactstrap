@@ -43,7 +43,7 @@ exports[`Render InputFields Should render Color 1`] = `
   warning={undefined}
 >
   <label
-    className=""
+    className=" form-control-label"
     htmlFor="Color"
     id="Color-label"
   >
@@ -168,7 +168,7 @@ exports[`Render InputFields Should render Date 1`] = `
   warning={undefined}
 >
   <label
-    className=""
+    className=" form-control-label"
     htmlFor="Date"
     id="Date-label"
   >
@@ -293,7 +293,7 @@ exports[`Render InputFields Should render DateTime 1`] = `
   warning={undefined}
 >
   <label
-    className=""
+    className=" form-control-label"
     htmlFor="DateTime"
     id="DateTime-label"
   >
@@ -418,7 +418,7 @@ exports[`Render InputFields Should render Email 1`] = `
   warning={undefined}
 >
   <label
-    className=""
+    className=" form-control-label"
     htmlFor="Email"
     id="Email-label"
   >
@@ -543,7 +543,7 @@ exports[`Render InputFields Should render Number 1`] = `
   warning={undefined}
 >
   <label
-    className=""
+    className=" form-control-label"
     htmlFor="Number"
     id="Number-label"
   >
@@ -668,7 +668,7 @@ exports[`Render InputFields Should render Password 1`] = `
   warning={undefined}
 >
   <label
-    className=""
+    className=" form-control-label"
     htmlFor="Password"
     id="Password-label"
   >
@@ -793,7 +793,7 @@ exports[`Render InputFields Should render Text 1`] = `
   warning={undefined}
 >
   <label
-    className=""
+    className=" form-control-label"
     htmlFor="Text"
     id="Text-label"
   >
@@ -918,7 +918,7 @@ exports[`Render InputFields Should render TextArea 1`] = `
   warning={undefined}
 >
   <label
-    className=""
+    className=" form-control-label"
     htmlFor="TextArea"
     id="TextArea-label"
   >

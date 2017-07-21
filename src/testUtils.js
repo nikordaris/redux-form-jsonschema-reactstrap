@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
 import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
 
 export const matchSnapshotWithReduxForm = (options, TestComponent) => () => {
   const rootReducers = combineReducers({ form: formReducer });
@@ -27,5 +28,5 @@ export const matchSnapshot = (options, TestComponent) => () => {
 export const matchSnapshotShallow = (options, TestComponent) => () => {
   const wrapper = shallow(<TestComponent {...options} />);
 
-  expect(wrapper.getNodes()).toMatchSnapshot();
+  expect(toJson(wrapper)).toMatchSnapshot();
 };
