@@ -1,9 +1,9 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Button, Card, CardHeader, CardBlock } from 'reactstrap';
+import { Button, Card, CardHeader, CardBlock, Input } from 'reactstrap';
 import { FieldArray } from 'redux-form';
-import { get } from 'lodash';
+import { get, sortBy } from 'lodash';
 import SchemaVis from 'react-jsonschema-vis';
 
 import { injectSheet } from '../Jss';
@@ -122,11 +122,37 @@ export class UniformedArrayInline extends Component {
 }
 
 // export class VariedArray extends Component {
+//   static defaultProps = {
+//     tag: Card,
+//     headerTag: CardHeader,
+//     bodyTag: CardBlock,
+//     addBtnProps: {},
+//     required: false
+//   };
+
+//   state = {
+//     selected: ''
+//   };
+
+//   props: {
+//     tag: string,
+//     headerTag: string,
+//     bodyTag: string,
+//     addBtnProps: { [string]: any },
+//     schemaVis: SchemaVisType,
+//     name: string,
+//     classes: { [string]: any },
+//     required: boolean
+//   };
+
+//   state: {
+//     selected?: string
+//   };
 //   getArrayOptions(index: string) {
 //     const { schemaVis: { schema, ...schemaVis }, name } = this.props;
 //     const itemsOneOf = get(schema, 'items.oneOf');
 //     if (itemsOneOf) {
-//       itemsOneOf
+//       return itemsOneOf
 //         .map((s, idx) => {
 //           const { id, title, const: value, description } = s;
 //           const rendered = (
@@ -145,6 +171,81 @@ export class UniformedArrayInline extends Component {
 //         })
 //         .filter(o => o.value);
 //     }
+//     return [];
+//   }
+
+//   handleChange = (e: { target: { value: string } }) => {
+//     this.setState({ ...this.state, selected: e.target.value });
+//   };
+
+//   renderInputOptions(options: Array<OptionType>) {
+//     return sortBy(options, o => o.label).map(({ label, value }, idx) => (
+//       <option key={idx} value={React.isValidElement(value) ? label : value}>
+//         {label}
+//       </option>
+//     ));
+//   }
+
+//   renderFieldArray = (props: any) => {
+//     const {
+//       tag: Tag,
+//       headerTag: HeaderTag,
+//       bodyTag: BodyTag,
+//       addBtnProps: { children, ...addBtnProps },
+//       schemaVis: { schema },
+//       name,
+//       classes
+//     } = this.props;
+//     const { fields } = props;
+//     const options = this.getArrayOptions(`${name}-oneOf`);
+
+//     const handleAddItem = () => {
+//       const {selected} = this.state;
+//       const option = options.find(o => o.label === selected);
+//       fields.push(this.renderFormItem(option));
+//     }
+
+//     return (
+//       <Tag className={classes.container}>
+//         <HeaderTag className={classes.header}>
+//           <div className={classes.headerTitle}>{schema.title}</div>
+//           <div className={classes.select}>
+//             <Input
+//               type="select"
+//               onChange={this.handleChange}
+//               value={this.state.selected}
+//             >
+//               <option disabled value="">Select {schema.title}</option>
+//               {this.renderInputOptions(options)}
+//             </Input>
+//           </div>
+//           <div className={classes.addButton}>
+//             <Button
+//               id="addItemBtn"
+//               color="primary"
+//               size="sm"
+//               {...addBtnProps}
+//               onClick={() => fields.push({})}
+//               children={children || 'Add'}
+//             />
+//           </div>
+//         </HeaderTag>
+//         <BodyTag className={classes.body}>
+//           {fields.map((name, idx) => this.renderForm(fields, name, idx))}
+//         </BodyTag>
+//       </Tag>
+//     );
+//   };
+
+//   render() {
+//     const { name, schemaVis: { schema }, required } = this.props;
+//     return (
+//       <FieldArray
+//         name={name}
+//         validate={validate(schema, required)}
+//         component={this.renderFieldArray}
+//       />
+//     );
 //   }
 // }
 
