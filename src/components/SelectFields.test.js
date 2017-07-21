@@ -1,13 +1,13 @@
 import React from 'react';
 import { Input } from 'reactstrap';
-import renderer from 'react-test-renderer';
 import { SingleSelect } from './SelectFields';
 import { Provider } from 'react-redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
 import { mount } from 'enzyme';
-import { Text } from './InputFields';
+import { Text, CardWithHeader } from './index';
 import { matchSnapshotWithReduxForm } from '../testUtils';
+import toJson from 'enzyme-to-json';
 
 describe('Render SelectFields', () => {
   it(
@@ -150,6 +150,7 @@ describe('Render SelectFields', () => {
           title: 'Foo',
           id: 'Foo',
           type: 'object',
+          meta: { vis: { component: 'CardWithHeader' } },
           properties: {
             x: {
               type: 'string',
@@ -189,7 +190,7 @@ describe('Render SelectFields', () => {
             meta: {
               hasComponent: () => true
             },
-            components: { Text },
+            components: { Text, CardWithHeader },
             prefix: 'meta.vis',
             schema
           }}
@@ -203,6 +204,7 @@ describe('Render SelectFields', () => {
       target: { value: 'Foo' }
     });
     expect(SelectComponent.state.selected).toEqual('Foo');
+    expect(toJson(wrapper)).toMatchSnapshot();
     wrapper.unmount();
     expect(StyledComponent.node.state.sheet.attached).toBeFalsy();
   });

@@ -73,7 +73,14 @@ export class CardItem extends Component {
         <CardHeader className={classes.header}>
           <div className={classes.headerTitle}>{schema.title}</div>
           <div className={classes.removeButton}>
-            <Button color="danger" size="sm" onClick={onRemove}>Remove</Button>
+            <Button
+              id="removeItemBtn"
+              color="danger"
+              size="sm"
+              onClick={onRemove}
+            >
+              Remove
+            </Button>
           </div>
         </CardHeader>
         <SchemaVis

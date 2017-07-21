@@ -57,6 +57,7 @@ class UniformedArray extends Component {
           <div className={classes.headerTitle}>{schema.title}</div>
           <div className={classes.addButton}>
             <Button
+              id="addItemBtn"
               color="primary"
               size="sm"
               {...addBtnProps}
@@ -120,33 +121,33 @@ export class UniformedArrayInline extends Component {
   }
 }
 
-export class VariedArray extends Component {
-  getArrayOptions(index: string) {
-    const { schemaVis: { schema, ...schemaVis }, name } = this.props;
-    const itemsOneOf = get(schema, 'items.oneOf');
-    if (itemsOneOf) {
-      itemsOneOf
-        .map((s, idx) => {
-          const { id, title, const: value, description } = s;
-          const rendered = (
-            <SchemaVis
-              {...schemaVis}
-              schema={s}
-              key={`${index}-${idx}`}
-              namespace={name}
-            />
-          );
-          return {
-            label: title || id || value,
-            tooltip: description,
-            value: rendered || value || id || title
-          };
-        })
-        .filter(o => o.value);
-    }
-  }
-}
+// export class VariedArray extends Component {
+//   getArrayOptions(index: string) {
+//     const { schemaVis: { schema, ...schemaVis }, name } = this.props;
+//     const itemsOneOf = get(schema, 'items.oneOf');
+//     if (itemsOneOf) {
+//       itemsOneOf
+//         .map((s, idx) => {
+//           const { id, title, const: value, description } = s;
+//           const rendered = (
+//             <SchemaVis
+//               {...schemaVis}
+//               schema={s}
+//               key={`${index}-${idx}`}
+//               namespace={name}
+//             />
+//           );
+//           return {
+//             label: title || id || value,
+//             tooltip: description,
+//             value: rendered || value || id || title
+//           };
+//         })
+//         .filter(o => o.value);
+//     }
+//   }
+// }
 
-export class ModalUniformArray extends Component {}
+// export class ModalUniformArray extends Component {}
 
-export class ModalVariedArray extends Component {}
+// export class ModalVariedArray extends Component {}
