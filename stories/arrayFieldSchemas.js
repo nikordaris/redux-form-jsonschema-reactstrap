@@ -1,5 +1,183 @@
 // export const variedArraySchema = {};
 
+export const variedArraySchema = {
+  id: 'VariedArray',
+  title: 'Varied Array Components',
+  type: 'object',
+  properties: {
+    fooCard: {
+      id: 'FooArrayCard',
+      title: 'Foo Card',
+      type: 'array',
+      items: {
+        anyOf: [
+          {
+            id: 'Bar',
+            title: 'Bar',
+            type: 'object',
+            meta: {
+              vis: {
+                ordinal: 1,
+                component: 'CardItem'
+              }
+            },
+            properties: {
+              name: {
+                title: 'Name',
+                it: 'Name',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 1,
+                    component: 'Text'
+                  }
+                }
+              },
+              bar: {
+                id: 'Bar',
+                title: 'Bar',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 2,
+                    component: 'Text'
+                  }
+                }
+              }
+            }
+          },
+          {
+            id: 'Baz',
+            title: 'Baz',
+            type: 'object',
+            meta: {
+              vis: {
+                ordinal: 1,
+                component: 'CardItem'
+              }
+            },
+            properties: {
+              name: {
+                title: 'Name',
+                it: 'Name',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 1,
+                    component: 'Text'
+                  }
+                }
+              },
+              baz: {
+                id: 'Baz',
+                title: 'Baz',
+                type: 'number',
+                meta: {
+                  vis: {
+                    ordinal: 2,
+                    component: 'Number'
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      meta: {
+        vis: {
+          ordinal: 180,
+          component: 'VariedArrayCard'
+        }
+      }
+    },
+    fooInline: {
+      id: 'FooArrayInline',
+      title: 'Foo Inline',
+      type: 'array',
+      items: {
+        anyOf: [
+          {
+            id: 'Bar',
+            title: 'Bar',
+            type: 'object',
+            meta: {
+              vis: {
+                ordinal: 1,
+                component: 'CardItem'
+              }
+            },
+            properties: {
+              name: {
+                title: 'Name',
+                it: 'Name',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 1,
+                    component: 'Text'
+                  }
+                }
+              },
+              bar: {
+                id: 'Bar',
+                title: 'Bar',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 2,
+                    component: 'Text'
+                  }
+                }
+              }
+            }
+          },
+          {
+            id: 'Baz',
+            title: 'Baz',
+            type: 'object',
+            meta: {
+              vis: {
+                ordinal: 1,
+                component: 'CardItem'
+              }
+            },
+            properties: {
+              name: {
+                title: 'Name',
+                it: 'Name',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 1,
+                    component: 'Text'
+                  }
+                }
+              },
+              baz: {
+                id: 'Baz',
+                title: 'Baz',
+                type: 'number',
+                meta: {
+                  vis: {
+                    ordinal: 2,
+                    component: 'Number'
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      meta: {
+        vis: {
+          ordinal: 180,
+          component: 'VariedArrayInline'
+        }
+      }
+    }
+  }
+};
+
 export const uniformedArraySchmea = {
   id: 'UniformedArray',
   title: 'Uniformed Array Components',
