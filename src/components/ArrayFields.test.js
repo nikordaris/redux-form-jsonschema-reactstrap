@@ -1,9 +1,8 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 import { reduxForm, reducer as formReducer } from 'redux-form';
 import { createStore, combineReducers } from 'redux';
-import { Button } from 'reactstrap';
 import toJson from 'enzyme-to-json';
 
 import {

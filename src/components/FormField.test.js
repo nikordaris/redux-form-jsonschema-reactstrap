@@ -1,6 +1,4 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 import FormField from './FormField';
 import { omit } from 'lodash';
 import { matchSnapshotShallow, matchSnapshot } from '../testUtils';
