@@ -31,10 +31,11 @@ declare type RenderPropertiesType = (
 ) => React.Element<*> | Array<React.Element<*>>;
 
 declare type SchemaVisType = {
-  schema: { [string]: any},
-  components: { [string]: any},
-  componentProps: { [string]: any},
-  prefix: string
+  schema: { [string]: any },
+  components: { [string]: any },
+  componentProps: { [string]: any },
+  prefix: string,
+  children: any
 };
 
 declare module 'redux-form-jsonschema-reactstrap' {

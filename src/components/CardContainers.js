@@ -47,10 +47,13 @@ export class CardWithHeader extends Component {
   headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
 })
 export class CardItem extends Component {
+  static defaultProps = {
+    btnProps: {}
+  };
+
   props: {
     styles: any,
     sheet: any,
-    onRemove: () => void,
     name: string,
     classes: { [string]: any },
     btnProps: { [string]: any },
@@ -61,7 +64,7 @@ export class CardItem extends Component {
       classes,
       name,
       schemaVis: { schema, prefix, ...schemaVis },
-      onRemove,
+      btnProps: { children = 'Remove', ...btnProps },
       styles,
       sheet,
       ...rest
@@ -77,10 +80,9 @@ export class CardItem extends Component {
               id="removeItemBtn"
               color="danger"
               size="sm"
-              onClick={onRemove}
-            >
-              Remove
-            </Button>
+              {...btnProps}
+              children={children}
+            />
           </div>
         </CardHeader>
         <SchemaVis
