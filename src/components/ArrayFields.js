@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Button,
   Card,
@@ -10,14 +10,21 @@ import {
   ListGroup,
   ListGroupItem,
   ListGroupItemHeading,
-  ListGroupItemText
-} from "reactstrap";
-import { FieldArray } from "redux-form";
-import { includes, merge } from "lodash";
-import SchemaVis, { getComponent } from "react-jsonschema-vis";
+  ListGroupItemText,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from 'reactstrap';
+import { FieldArray } from 'redux-form';
+import { includes, merge, get } from 'lodash';
+import SchemaVis, { getComponent } from 'react-jsonschema-vis';
 
-import { injectSheet } from "../Jss";
-import validate from "../validator";
+import { templateStrings } from '../utils';
+import { injectSheet } from '../Jss';
+import validate from '../validator';
+
+const SCHEMA_TEMPLATE = 'template';
 
 class UniformedArray extends Component {
   static defaultProps = {
@@ -35,7 +42,8 @@ class UniformedArray extends Component {
     schemaVis: SchemaVisType,
     name: string,
     classes: { [string]: any },
-    required: boolean
+    required: boolean,
+    fields: any
   };
 
   renderForm = (name: string, idx: number, fields: any) => {
@@ -57,16 +65,17 @@ class UniformedArray extends Component {
     );
   };
 
-  renderFieldArray = (props: any) => {
+  render() {
     const {
       tag: Tag,
       headerTag: HeaderTag,
       bodyTag: BodyTag,
       addBtnProps: { children, ...addBtnProps },
       schemaVis: { schema },
-      classes
+      classes,
+      fields
     } = this.props;
-    const { fields } = props;
+
     return (
       <Tag className={classes.container}>
         <HeaderTag className={classes.header}>
@@ -78,7 +87,7 @@ class UniformedArray extends Component {
               size="sm"
               {...addBtnProps}
               onClick={() => fields.push({})}
-              children={children || "Add"}
+              children={children || 'Add'}
             />
           </div>
         </HeaderTag>
@@ -87,15 +96,24 @@ class UniformedArray extends Component {
         </BodyTag>
       </Tag>
     );
-  };
+  }
+}
 
+@injectSheet({
+  container: { marginBottom: 10, marginTop: 15 },
+  header: { padding: 5, paddingLeft: 10, display: 'inline-flex' },
+  addButton: { marginLeft: 'auto' },
+  headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
+})
+export class UniformedArrayCard extends Component {
   render() {
-    const { name, schemaVis: { schema }, required } = this.props;
+    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
-        name={name}
         validate={validate(schema, required)}
-        component={this.renderFieldArray}
+        component={UniformedArray}
+        schemaVis={schemaVis}
+        {...rest}
       />
     );
   }
@@ -103,36 +121,33 @@ class UniformedArray extends Component {
 
 @injectSheet({
   container: { marginBottom: 10, marginTop: 15 },
-  header: { padding: 5, paddingLeft: 10, display: "inline-flex" },
-  addButton: { marginLeft: "auto" },
-  headerTitle: { marginTop: "auto", marginBottom: "auto" }
-})
-export class UniformedArrayCard extends Component {
-  render() {
-    return <UniformedArray {...this.props} />;
-  }
-}
-
-@injectSheet({
-  container: { marginBottom: 10, marginTop: 15 },
   header: {
-    width: "100%",
+    width: '100%',
     padding: 0,
     marginBottom: 20,
     fontSize: 21,
-    lineHeight: "inherit",
-    color: "#333",
+    lineHeight: 'inherit',
+    color: '#333',
     border: 0,
-    borderBottom: "1px solid #e5e5e5",
-    display: "inline-flex"
+    borderBottom: '1px solid #e5e5e5',
+    display: 'inline-flex'
   },
-  addButton: { marginLeft: "auto" },
-  headerTitle: { marginTop: "auto", marginBottom: "auto" }
+  addButton: { marginLeft: 'auto' },
+  headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
 })
 export class UniformedArrayInline extends Component {
   render() {
+    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
-      <UniformedArray {...this.props} bodyTag="div" headerTag="div" tag="div" />
+      <FieldArray
+        validate={validate(schema, required)}
+        component={UniformedArray}
+        schemaVis={schemaVis}
+        bodyTag="div"
+        headerTag="div"
+        tag="div"
+        {...rest}
+      />
     );
   }
 }
@@ -148,7 +163,7 @@ class VariedArray extends Component {
   };
 
   state = {
-    selected: "",
+    selected: '',
     fieldSchemas: []
   };
 
@@ -247,9 +262,9 @@ class VariedArray extends Component {
             <Button
               id="addItemBtn"
               color="primary"
-              disabled={this.state.selected === ""}
+              disabled={this.state.selected === ''}
               onClick={this.handleAddItem(fields)}
-              children={btnChildren || "Add"}
+              children={btnChildren || 'Add'}
               {...addBtnProps}
             />
           </div>
@@ -275,9 +290,9 @@ class VariedArray extends Component {
   container: { marginBottom: 10, marginTop: 15 },
   header: { padding: 5, paddingLeft: 10 },
   select: {
-    display: "inline-flex",
-    width: "100%",
-    "@global select": { marginRight: 5 }
+    display: 'inline-flex',
+    width: '100%',
+    '@global select': { marginRight: 5 }
   }
 })
 export class VariedArrayCard extends Component {
@@ -297,20 +312,20 @@ export class VariedArrayCard extends Component {
 @injectSheet({
   container: { marginBottom: 10, marginTop: 15 },
   header: {
-    width: "100%",
+    width: '100%',
     padding: 0,
     marginBottom: 20,
     fontSize: 21,
-    lineHeight: "inherit",
-    color: "#333",
+    lineHeight: 'inherit',
+    color: '#333',
     border: 0,
-    borderBottom: "1px solid #e5e5e5",
-    display: "inline-flex"
+    borderBottom: '1px solid #e5e5e5',
+    display: 'inline-flex'
   },
   select: {
-    display: "inline-flex",
-    width: "100%",
-    "@global select": { marginRight: 5 }
+    display: 'inline-flex',
+    width: '100%',
+    '@global select': { marginRight: 5 }
   }
 })
 export class VariedArrayInline extends Component {
@@ -330,55 +345,171 @@ export class VariedArrayInline extends Component {
   }
 }
 
-// export class ModalUniformArray extends Component {
-//   static defaultProps = {
-//     tag: Card,
-//     headerTag: CardHeader,
-//     bodyTag: CardBlock,
-//     addBtnProps: {},
-//     required: false
-//   };
-//   props: {
-//     tag: string,
-//     headerTag: string,
-//     bodyTag: string,
-//     addBtnProps: { [string]: any },
-//     schemaVis: SchemaVisType,
-//     name: string,
-//     classes: { [string]: any },
-//     required: boolean
-//   };
+export class ModalUniformArray extends Component {
+  static defaultProps = {
+    tag: Card,
+    headerTag: CardHeader,
+    bodyTag: CardBlock,
+    addBtnProps: {},
+    required: false
+  };
+  state = {
+    showItemForm: false,
+    currentItemIdx: -1
+  };
 
-//   renderArrayItems() {}
+  props: {
+    tag: string,
+    fields: any,
+    headerTag: string,
+    bodyTag: string,
+    addBtnProps: { [string]: any },
+    schemaVis: SchemaVisType,
+    name: string,
+    classes: { [string]: any },
+    required: boolean
+  };
+  state: {
+    showItemForm: boolean,
+    currentItemIdx: number
+  };
 
-//   render() {
-//     const {
-//       fields,
-//       schemaVis: { schema },
-//       classes,
-//       tag: Tag,
-//       headerTag: HeaderTag,
-//       bodyTag: BodyTag
-//     } = this.props;
+  getItemMetaTemplate(idx: number) {
+    const { schemaVis: { prefix, schema: { items } } } = this.props;
+    const schema = items[idx];
+    return get(get(schema, prefix, schema), SCHEMA_TEMPLATE);
+  }
 
-//     return (
-//       <Tag>
-//         <HeaderTag>
-//           <div className={classes.headerTitle}>
-//             {schema.title}
-//           </div>
-//           <div className={classes.addButton}>
-//             <Button />
-//           </div>
-//         </HeaderTag>
-//         <BodyTag>
-//           <ListGroup>
-//             {this.renderArrayItems()}
-//           </ListGroup>
-//         </BodyTag>
-//       </Tag>
-//     );
-//   }
-// }
+  handleAddItem = () => {
+    const { fields } = this.props;
+    this.setState({
+      ...this.state,
+      currentItemIdx: fields.length,
+      showItemForm: true
+    });
+  };
 
-// export class ModalVariedArray extends Component {}
+  handleCancelItem = () => {};
+
+  toggleAddFormModal = () => {
+    this.setState({ ...this.state, showItemForm: !this.state.showItemForm });
+  };
+
+  renderArrayItems() {
+    const { fields, schemaVis: { schema: { items } } } = this.props;
+    return fields.map((name, idx) => (
+      <ListGroupItem>
+        <ListGroupItemHeading>{items[idx].title}</ListGroupItemHeading>
+        <ListGroupItemText>
+          {templateStrings(this.getItemMetaTemplate(idx), fields.get(idx))}
+        </ListGroupItemText>
+      </ListGroupItem>
+    ));
+  }
+
+  renderItemFormModalBody() {
+    const {
+      fields,
+      schemaVis,
+      schemaVis: { schema: { items: schema } }
+    } = this.props;
+    const { currentItemIdx } = this.state;
+    const field = fields.get(currentItemIdx);
+    const { name } = field;
+    return (
+      <SchemaVis
+        tag={ModalBody}
+        key={`ArrayFields-${name}-${currentItemIdx}`}
+        {...schemaVis}
+        namespace={name}
+        schema={schema}
+      />
+    );
+  }
+
+  renderItemFormModal() {
+    const { fields, schemaVis: { schema: { items: schema } } } = this.props;
+    const { currentItemIdx } = this.state;
+    const field = currentItemIdx >= 0 ? fields.get(currentItemIdx) : undefined;
+    return (
+      <Modal isOpen={this.state.showItemForm} toggle={this.toggleAddFormModal}>
+        <ModalHeader toggle={this.toggleAddFormModal}>
+          {schema.title}
+        </ModalHeader>
+        {currentItemIdx >= 0 && this.renderItemFormModalBody()}
+        <ModalFooter>
+          <Button color="primary" onClick={this.toggleAddFormModal}>
+            Submit
+          </Button>
+          <Button color="second" onClick={this.toggleAddFormModal}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </Modal>
+    );
+  }
+
+  render() {
+    const {
+      schemaVis: { schema },
+      classes,
+      tag: Tag,
+      headerTag: HeaderTag,
+      bodyTag: BodyTag,
+      addBtnProps: { children, ...addBtnProps }
+    } = this.props;
+
+    return (
+      <Tag>
+        <HeaderTag>
+          <div className={classes.headerTitle}>
+            {schema.title}
+          </div>
+          <div className={classes.addButton}>
+            <Button
+              onClick={this.handleAddItem}
+              {...addBtnProps}
+              children={children || 'Add'}
+            />
+          </div>
+        </HeaderTag>
+        <BodyTag tag={ListGroup}>
+          {this.renderArrayItems()}
+        </BodyTag>
+      </Tag>
+    );
+  }
+}
+
+export class ModalVariedArray extends Component {
+  static defaultProps = {
+    tag: Card,
+    headerTag: CardHeader,
+    bodyTag: CardBlock,
+    addBtnProps: {},
+    selectInputProps: {},
+    required: false
+  };
+
+  state = {
+    selected: '',
+    fieldSchemas: []
+  };
+
+  props: {
+    fields: any,
+    tag: string,
+    headerTag: string,
+    bodyTag: string,
+    addBtnProps: { [string]: any },
+    selectInputProps: { [string]: any },
+    schemaVis: SchemaVisType,
+    name: string,
+    classes: { [string]: any },
+    required: boolean
+  };
+  state: {
+    selected: string,
+    fieldSchemas: Array<any>
+  };
+}
