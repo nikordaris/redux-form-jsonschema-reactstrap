@@ -16,7 +16,9 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap';
-import { FieldArray } from 'redux-form';
+import { FieldArray, reduxForm, submit } from 'redux-form';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { includes, merge, get } from 'lodash';
 import SchemaVis, { getComponent } from 'react-jsonschema-vis';
 
@@ -345,21 +347,35 @@ export class VariedArrayInline extends Component {
   }
 }
 
-export class ModalUniformArray extends Component {
+@reduxForm({
+  form: 'arrayItem'
+})
+class SchemaVisForm extends Component {
+  render() {
+    const { schemaVis, tag, styles } = this.props;
+    return <SchemaVis {...schemaVis} tag={tag} styles={styles} />;
+  }
+}
+
+@connect(
+  () => ({}),
+  dispatch => bindActionCreators({ submitForm: submit }, dispatch)
+)
+class ModalUniformArray extends Component {
   static defaultProps = {
     tag: Card,
     headerTag: CardHeader,
-    bodyTag: CardBlock,
+    bodyTag: ListGroup,
     addBtnProps: {},
     required: false
   };
   state = {
-    showItemForm: false,
-    currentItemIdx: -1
+    showItemForm: false
   };
 
   props: {
     tag: string,
+    submitForm: string => Promise<any>,
     fields: any,
     headerTag: string,
     bodyTag: string,
@@ -370,26 +386,25 @@ export class ModalUniformArray extends Component {
     required: boolean
   };
   state: {
-    showItemForm: boolean,
-    currentItemIdx: number
+    showItemForm: boolean
   };
 
-  getItemMetaTemplate(idx: number) {
-    const { schemaVis: { prefix, schema: { items } } } = this.props;
-    const schema = items[idx];
+  getItemMetaTemplate() {
+    const { schemaVis: { prefix, schema: { items: schema } } } = this.props;
     return get(get(schema, prefix, schema), SCHEMA_TEMPLATE);
   }
 
-  handleAddItem = () => {
+  handleSubmitItem = (values: any) => {
     const { fields } = this.props;
-    this.setState({
-      ...this.state,
-      currentItemIdx: fields.length,
-      showItemForm: true
-    });
+    fields.push(values);
+    this.toggleAddFormModal();
   };
 
-  handleCancelItem = () => {};
+  handleSubmitModal = () => {
+    const { submitForm } = this.props;
+    submitForm('arrayItem');
+    this.toggleAddFormModal();
+  };
 
   toggleAddFormModal = () => {
     this.setState({ ...this.state, showItemForm: !this.state.showItemForm });
@@ -398,47 +413,28 @@ export class ModalUniformArray extends Component {
   renderArrayItems() {
     const { fields, schemaVis: { schema: { items } } } = this.props;
     return fields.map((name, idx) => (
-      <ListGroupItem>
-        <ListGroupItemHeading>{items[idx].title}</ListGroupItemHeading>
-        <ListGroupItemText>
-          {templateStrings(this.getItemMetaTemplate(idx), fields.get(idx))}
-        </ListGroupItemText>
+      <ListGroupItem key={idx}>
+        {templateStrings(this.getItemMetaTemplate(), fields.get(idx))}
       </ListGroupItem>
     ));
   }
 
-  renderItemFormModalBody() {
-    const {
-      fields,
-      schemaVis,
-      schemaVis: { schema: { items: schema } }
-    } = this.props;
-    const { currentItemIdx } = this.state;
-    const field = fields.get(currentItemIdx);
-    const { name } = field;
-    return (
-      <SchemaVis
-        tag={ModalBody}
-        key={`ArrayFields-${name}-${currentItemIdx}`}
-        {...schemaVis}
-        namespace={name}
-        schema={schema}
-      />
-    );
-  }
-
   renderItemFormModal() {
-    const { fields, schemaVis: { schema: { items: schema } } } = this.props;
-    const { currentItemIdx } = this.state;
-    const field = currentItemIdx >= 0 ? fields.get(currentItemIdx) : undefined;
+    const { schemaVis, schemaVis: { schema: { items: schema } } } = this.props;
+
     return (
       <Modal isOpen={this.state.showItemForm} toggle={this.toggleAddFormModal}>
         <ModalHeader toggle={this.toggleAddFormModal}>
           {schema.title}
         </ModalHeader>
-        {currentItemIdx >= 0 && this.renderItemFormModalBody()}
+        <ModalBody>
+          <SchemaVisForm
+            schemaVis={{ ...schemaVis, schema }}
+            onSubmit={this.handleSubmitItem}
+          />
+        </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={this.toggleAddFormModal}>
+          <Button color="primary" onClick={this.handleSubmitModal}>
             Submit
           </Button>
           <Button color="second" onClick={this.toggleAddFormModal}>
@@ -460,23 +456,48 @@ export class ModalUniformArray extends Component {
     } = this.props;
 
     return (
-      <Tag>
-        <HeaderTag>
-          <div className={classes.headerTitle}>
-            {schema.title}
-          </div>
-          <div className={classes.addButton}>
-            <Button
-              onClick={this.handleAddItem}
-              {...addBtnProps}
-              children={children || 'Add'}
-            />
-          </div>
-        </HeaderTag>
-        <BodyTag tag={ListGroup}>
-          {this.renderArrayItems()}
-        </BodyTag>
-      </Tag>
+      <div>
+        <Tag className={classes.container}>
+          <HeaderTag className={classes.header}>
+            <div className={classes.headerTitle}>
+              {schema.title}
+            </div>
+            <div className={classes.addButton}>
+              <Button
+                color="primary"
+                size="sm"
+                onClick={this.toggleAddFormModal}
+                {...addBtnProps}
+                children={children || 'Add'}
+              />
+            </div>
+          </HeaderTag>
+          <BodyTag className={classes.body} flush>
+            {this.renderArrayItems()}
+          </BodyTag>
+        </Tag>
+        {schema.items && this.renderItemFormModal()}
+      </div>
+    );
+  }
+}
+
+@injectSheet({
+  container: { marginBottom: 10, marginTop: 15 },
+  header: { padding: 5, paddingLeft: 10, display: 'inline-flex' },
+  addButton: { marginLeft: 'auto' },
+  headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
+})
+export class ModalUniformArrayCard extends Component {
+  render() {
+    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    return (
+      <FieldArray
+        validate={validate(schema, required)}
+        component={ModalUniformArray}
+        schemaVis={schemaVis}
+        {...rest}
+      />
     );
   }
 }

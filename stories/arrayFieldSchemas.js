@@ -314,6 +314,51 @@ export const uniformedArraySchmea = {
           component: 'UniformedArrayInline'
         }
       }
+    },
+    childrenModal: {
+      id: 'ChildrenArrayModal',
+      title: 'Children Modal',
+      type: 'array',
+      items: {
+        id: 'Child',
+        title: 'Child',
+        type: 'object',
+        meta: {
+          vis: {
+            template: '${name} (${age})'
+          }
+        },
+        properties: {
+          name: {
+            title: 'Name',
+            it: 'Name',
+            type: 'string',
+            meta: {
+              vis: {
+                ordinal: 1,
+                component: 'Text'
+              }
+            }
+          },
+          age: {
+            id: 'Age',
+            title: 'Age',
+            type: 'number',
+            meta: {
+              vis: {
+                ordinal: 2,
+                component: 'Number'
+              }
+            }
+          }
+        }
+      },
+      meta: {
+        vis: {
+          ordinal: 180,
+          component: 'ModalUniformArrayCard'
+        }
+      }
     }
   }
 };
