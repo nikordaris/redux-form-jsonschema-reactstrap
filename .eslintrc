@@ -1,7 +1,12 @@
 {
-  "extends": "react-app",
+  "extends": [
+    "react-app",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": [
+    "jsx-a11y"
+  ],
   "rules": {
-    "jsx-a11y/img-has-alt": 0,
-    "jsx-a11y/href-no-hash": "off"
+    "jsx-a11y/img-has-alt": 0
   }
 }
