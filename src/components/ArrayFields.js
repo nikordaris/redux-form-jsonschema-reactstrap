@@ -411,7 +411,7 @@ class ModalUniformArray extends Component {
   };
 
   renderArrayItems() {
-    const { fields, schemaVis: { schema: { items } } } = this.props;
+    const { fields } = this.props;
     return fields.map((name, idx) => (
       <ListGroupItem key={idx}>
         {templateStrings(this.getItemMetaTemplate(), fields.get(idx))}
@@ -496,6 +496,39 @@ export class ModalUniformArrayCard extends Component {
         validate={validate(schema, required)}
         component={ModalUniformArray}
         schemaVis={schemaVis}
+        {...rest}
+      />
+    );
+  }
+}
+
+@injectSheet({
+  container: { marginBottom: 10, marginTop: 15 },
+  header: {
+    width: '100%',
+    padding: 0,
+    marginBottom: 20,
+    fontSize: 21,
+    lineHeight: 'inherit',
+    color: '#333',
+    border: 0,
+    borderBottom: '1px solid #e5e5e5',
+    display: 'inline-flex'
+  },
+  addButton: { marginLeft: 'auto' },
+  headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
+})
+export class ModalUniformArrayInline extends Component {
+  render() {
+    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    return (
+      <FieldArray
+        validate={validate(schema, required)}
+        component={ModalUniformArray}
+        schemaVis={schemaVis}
+        bodyTag="div"
+        headerTag="div"
+        tag="div"
         {...rest}
       />
     );
