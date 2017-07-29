@@ -315,9 +315,9 @@ export const uniformedArraySchmea = {
         }
       }
     },
-    childrenModal: {
-      id: 'ChildrenArrayModal',
-      title: 'Children Modal',
+    childrenModalCard: {
+      id: 'ChildrenArrayModalCard',
+      title: 'Children Modal Card',
       type: 'array',
       items: {
         id: 'Child',
@@ -357,6 +357,51 @@ export const uniformedArraySchmea = {
         vis: {
           ordinal: 180,
           component: 'ModalUniformArrayCard'
+        }
+      }
+    },
+    childrenModalInline: {
+      id: 'ChildrenArrayModalInline',
+      title: 'Children Modal Inline',
+      type: 'array',
+      items: {
+        id: 'Child',
+        title: 'Child',
+        type: 'object',
+        meta: {
+          vis: {
+            template: '${name} (${age})'
+          }
+        },
+        properties: {
+          name: {
+            title: 'Name',
+            it: 'Name',
+            type: 'string',
+            meta: {
+              vis: {
+                ordinal: 1,
+                component: 'Text'
+              }
+            }
+          },
+          age: {
+            id: 'Age',
+            title: 'Age',
+            type: 'number',
+            meta: {
+              vis: {
+                ordinal: 2,
+                component: 'Number'
+              }
+            }
+          }
+        }
+      },
+      meta: {
+        vis: {
+          ordinal: 180,
+          component: 'ModalUniformArrayInline'
         }
       }
     }
