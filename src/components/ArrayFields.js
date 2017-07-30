@@ -8,9 +8,6 @@ import {
   CardBlock,
   Input,
   ListGroup,
-  ListGroupItem,
-  ListGroupItemHeading,
-  ListGroupItemText,
   Modal,
   ModalHeader,
   ModalBody,
@@ -22,11 +19,8 @@ import { bindActionCreators } from 'redux';
 import { includes, merge, get } from 'lodash';
 import SchemaVis, { getComponent } from 'react-jsonschema-vis';
 
-import { templateStrings } from '../utils';
 import { injectSheet } from '../Jss';
 import validate from '../validator';
-
-const SCHEMA_TEMPLATE = 'template';
 
 class UniformedArray extends Component {
   static defaultProps = {
@@ -368,7 +362,8 @@ class ModalUniformArray extends Component {
     bodyTag: ListGroup,
     addBtnProps: {},
     required: false,
-    bodyProps: {}
+    bodyProps: {},
+    dataSchemaPrefix: 'meta.data'
   };
   state = {
     showItemForm: false
@@ -385,16 +380,12 @@ class ModalUniformArray extends Component {
     schemaVis: SchemaVisType,
     name: string,
     classes: { [string]: any },
-    required: boolean
+    required: boolean,
+    dataSchemaPrefix: string
   };
   state: {
     showItemForm: boolean
   };
-
-  getItemMetaTemplate() {
-    const { schemaVis: { prefix, schema: { items: schema } } } = this.props;
-    return get(get(schema, prefix, schema), SCHEMA_TEMPLATE);
-  }
 
   handleSubmitItem = (values: any) => {
     const { fields } = this.props;
@@ -412,11 +403,20 @@ class ModalUniformArray extends Component {
   };
 
   renderArrayItems() {
-    const { fields } = this.props;
+    const {
+      fields,
+      dataSchemaPrefix,
+      schemaVis,
+      schemaVis: { schema: { items: schema } }
+    } = this.props;
     return fields.map((name, idx) => (
-      <ListGroupItem key={idx}>
-        {templateStrings(this.getItemMetaTemplate(), fields.get(idx))}
-      </ListGroupItem>
+      <SchemaVis
+        {...schemaVis}
+        prefix={dataSchemaPrefix}
+        schema={schema}
+        key={idx}
+        data={fields.get(idx)}
+      />
     ));
   }
 
