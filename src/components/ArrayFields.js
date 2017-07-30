@@ -367,7 +367,8 @@ class ModalUniformArray extends Component {
     headerTag: CardHeader,
     bodyTag: ListGroup,
     addBtnProps: {},
-    required: false
+    required: false,
+    bodyProps: {}
   };
   state = {
     showItemForm: false
@@ -375,10 +376,11 @@ class ModalUniformArray extends Component {
 
   props: {
     tag: string,
-    submitForm: string => Promise<any>,
+    submitForm: string => void,
     fields: any,
     headerTag: string,
     bodyTag: string,
+    bodyProps: { [string]: any },
     addBtnProps: { [string]: any },
     schemaVis: SchemaVisType,
     name: string,
@@ -403,7 +405,6 @@ class ModalUniformArray extends Component {
   handleSubmitModal = () => {
     const { submitForm } = this.props;
     submitForm('arrayItem');
-    this.toggleAddFormModal();
   };
 
   toggleAddFormModal = () => {
@@ -448,6 +449,7 @@ class ModalUniformArray extends Component {
   render() {
     const {
       schemaVis: { schema },
+      bodyProps,
       classes,
       tag: Tag,
       headerTag: HeaderTag,
@@ -472,7 +474,7 @@ class ModalUniformArray extends Component {
               />
             </div>
           </HeaderTag>
-          <BodyTag className={classes.body} flush>
+          <BodyTag className={classes.body} {...bodyProps}>
             {this.renderArrayItems()}
           </BodyTag>
         </Tag>
@@ -496,6 +498,7 @@ export class ModalUniformArrayCard extends Component {
         validate={validate(schema, required)}
         component={ModalUniformArray}
         schemaVis={schemaVis}
+        bodyProps={{ flush: true }}
         {...rest}
       />
     );
