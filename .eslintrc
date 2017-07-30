@@ -7,6 +7,7 @@
     "jsx-a11y"
   ],
   "rules": {
-    "jsx-a11y/img-has-alt": 0
+    "jsx-a11y/img-has-alt": 0,
+    "no-template-curly-in-string": 0
   }
 }

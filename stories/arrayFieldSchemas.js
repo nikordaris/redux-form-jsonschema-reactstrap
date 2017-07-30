@@ -324,8 +324,9 @@ export const uniformedArraySchmea = {
         title: 'Child',
         type: 'object',
         meta: {
-          vis: {
-            template: '${name} (${age})'
+          data: {
+            template: '${name} (${age})',
+            component: 'ListItemTemplate'
           }
         },
         properties: {
@@ -369,8 +370,9 @@ export const uniformedArraySchmea = {
         title: 'Child',
         type: 'object',
         meta: {
-          vis: {
-            template: '${name} (${age})'
+          data: {
+            template: '${name} (${age})',
+            component: 'ListItemTemplate'
           }
         },
         properties: {
