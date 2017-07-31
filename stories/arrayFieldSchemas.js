@@ -174,6 +174,91 @@ export const variedArraySchema = {
           component: 'VariedArrayInline'
         }
       }
+    },
+    fooCardsModal: {
+      id: 'FooArrayCardsModal',
+      title: 'Modal Foo Cards',
+      type: 'array',
+      items: {
+        id: 'FooCard',
+        title: 'Foo Card',
+        type: 'object',
+        meta: {
+          vis: {
+            component: 'SingleSelect'
+          }
+        },
+        anyOf: [{
+            id: 'Bar',
+            title: 'Bar',
+            type: 'object',
+            meta: {
+              vis: {
+                ordinal: 1,
+                component: 'CardItem'
+              }
+            },
+            properties: {
+              name: {
+                title: 'Name',
+                it: 'Name',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 1,
+                    component: 'Text'
+                  }
+                }
+              },
+              bar: {
+                id: 'Bar',
+                title: 'Bar',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 2,
+                    component: 'Text'
+                  }
+                }
+              }
+            }
+          },
+          {
+            id: 'Baz',
+            title: 'Baz',
+            type: 'object',
+            meta: {
+              vis: {
+                ordinal: 1,
+                component: 'CardItem'
+              }
+            },
+            properties: {
+              name: {
+                title: 'Name',
+                it: 'Name',
+                type: 'string',
+                meta: {
+                  vis: {
+                    ordinal: 1,
+                    component: 'Text'
+                  }
+                }
+              },
+              baz: {
+                id: 'Baz',
+                title: 'Baz',
+                type: 'number',
+                meta: {
+                  vis: {
+                    ordinal: 2,
+                    component: 'Number'
+                  }
+                }
+              }
+            }
+          }]
+      }
     }
   }
 };
