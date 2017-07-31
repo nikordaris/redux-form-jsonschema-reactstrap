@@ -10,7 +10,9 @@ export class ListItemTemplate extends Component {
   props: {
     idx: number | string,
     data: any,
-    schemaVis: any
+    schemaVis: any,
+    removeBtnProps: { [string]: any, onClick: () => void },
+    selectBtnProps: { [string]: any, onClick: () => void }
   };
 
   getItemMetaTemplate() {

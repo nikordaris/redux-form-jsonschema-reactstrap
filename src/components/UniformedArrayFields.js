@@ -148,199 +148,6 @@ export class UniformedArrayInline extends Component {
   }
 }
 
-class VariedArray extends Component {
-  static defaultProps = {
-    tag: Card,
-    headerTag: CardHeader,
-    bodyTag: CardBlock,
-    addBtnProps: {},
-    selectInputProps: {},
-    required: false
-  };
-
-  state = {
-    selected: '',
-    fieldSchemas: []
-  };
-
-  props: {
-    fields: any,
-    tag: string,
-    headerTag: string,
-    bodyTag: string,
-    addBtnProps: { [string]: any },
-    selectInputProps: { [string]: any },
-    schemaVis: SchemaVisType,
-    name: string,
-    classes: { [string]: any },
-    required: boolean
-  };
-
-  state: {
-    selected?: string,
-    fieldSchemas: Array<any>
-  };
-
-  renderInputOptions() {
-    const { schemaVis: { schema: { items: { anyOf: schemas } } } } = this.props;
-    return schemas.map(({ const: value, id, title }, idx) => (
-      <option key={`selectOption-${idx}`} value={value || title || id}>
-        {title || value || id}
-      </option>
-    ));
-  }
-
-  handleSelectChange = (e: { target: { value: string } }) => {
-    this.setState({ ...this.state, selected: e.target.value });
-  };
-
-  handleAddItem = (fields: any) => () => {
-    const { fieldSchemas, selected } = this.state;
-    const { schemaVis: { schema: { items: { anyOf: schemas } } } } = this.props;
-    const selectedSchema = schemas.find(schema =>
-      includes([schema.title, schema.id, schema.const], selected)
-    );
-    if (selectedSchema) {
-      this.setState({
-        ...this.state,
-        fieldSchemas: [...fieldSchemas, selectedSchema]
-      });
-      fields.push({});
-    }
-  };
-
-  handleRemoveItem = (fields: any, idx: number) => () => {
-    const { fieldSchemas } = this.state;
-    const _fieldSchemas = [...fieldSchemas];
-    _fieldSchemas.splice(idx, 1);
-    fields.remove(idx);
-    this.setState({ ...this.state, fieldSchemas: _fieldSchemas });
-  };
-
-  render() {
-    const {
-      fields,
-      selectInputProps,
-      addBtnProps,
-      schemaVis: { schema, children: btnChildren, ...schemaVis },
-      classes,
-      tag: Tag,
-      headerTag: HeaderTag,
-      bodyTag: BodyTag
-    } = this.props;
-    const componentProps = idx => {
-      const schema = this.state.fieldSchemas[idx];
-      const component = getComponent(schema, schemaVis.prefix);
-      const rv = merge({}, schemaVis.componentProps, {
-        [component]: {
-          btnProps: { onClick: this.handleRemoveItem(fields, idx) }
-        }
-      });
-      return rv;
-    };
-    return (
-      <Tag className={classes.container}>
-        <HeaderTag className={classes.header}>
-          {schema.title}
-        </HeaderTag>
-        <BodyTag className={classes.body}>
-          <div className={classes.select}>
-            <Input
-              id="selectItem"
-              onChange={this.handleSelectChange}
-              {...selectInputProps}
-              type="select"
-              value={this.state.selected}
-            >
-              <option disabled value="">Select {schema.title}</option>
-              {this.renderInputOptions()}
-            </Input>
-            <Button
-              id="addItemBtn"
-              color="primary"
-              disabled={this.state.selected === ''}
-              onClick={this.handleAddItem(fields)}
-              children={btnChildren || 'Add'}
-              {...addBtnProps}
-            />
-          </div>
-          <div className={classes.arrayFields}>
-            {fields.length === this.state.fieldSchemas.length &&
-              fields.map((name, idx) => (
-                <SchemaVis
-                  key={`ArrayFields-${name}-${idx}`}
-                  {...schemaVis}
-                  namespace={name}
-                  schema={this.state.fieldSchemas[idx]}
-                  componentProps={componentProps(idx)}
-                />
-              ))}
-          </div>
-        </BodyTag>
-      </Tag>
-    );
-  }
-}
-
-@injectSheet({
-  container: { marginBottom: 10, marginTop: 15 },
-  header: { padding: 5, paddingLeft: 10 },
-  select: {
-    display: 'inline-flex',
-    width: '100%',
-    '@global select': { marginRight: 5 }
-  }
-})
-export class VariedArrayCard extends Component {
-  render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
-    return (
-      <FieldArray
-        validate={validate(schema, required)}
-        component={VariedArray}
-        schemaVis={schemaVis}
-        {...rest}
-      />
-    );
-  }
-}
-
-@injectSheet({
-  container: { marginBottom: 10, marginTop: 15 },
-  header: {
-    width: '100%',
-    padding: 0,
-    marginBottom: 20,
-    fontSize: 21,
-    lineHeight: 'inherit',
-    color: '#333',
-    border: 0,
-    borderBottom: '1px solid #e5e5e5',
-    display: 'inline-flex'
-  },
-  select: {
-    display: 'inline-flex',
-    width: '100%',
-    '@global select': { marginRight: 5 }
-  }
-})
-export class VariedArrayInline extends Component {
-  render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
-    return (
-      <FieldArray
-        validate={validate(schema, required)}
-        component={VariedArray}
-        schemaVis={schemaVis}
-        bodyTag="div"
-        headerTag="div"
-        tag="div"
-        {...rest}
-      />
-    );
-  }
-}
-
 @reduxForm({
   form: 'arrayItem'
 })
@@ -407,11 +214,17 @@ class ModalUniformArray extends Component {
       fields,
       dataSchemaPrefix,
       schemaVis,
-      schemaVis: { schema: { items: schema } }
+      schemaVis: { componentProps, schema: { items: schema } }
     } = this.props;
+    const component = getComponent(schema, dataSchemaPrefix);
+    const _componentProps = idx =>
+      merge({}, componentProps, {
+        [component]: { removeBtnProps: { onClick: () => fields.remove(idx) } }
+      });
     return fields.map((name, idx) => (
       <SchemaVis
         {...schemaVis}
+        componentProps={_componentProps(idx)}
         prefix={dataSchemaPrefix}
         schema={schema}
         key={idx}
@@ -536,37 +349,4 @@ export class ModalUniformArrayInline extends Component {
       />
     );
   }
-}
-
-export class ModalVariedArray extends Component {
-  static defaultProps = {
-    tag: Card,
-    headerTag: CardHeader,
-    bodyTag: CardBlock,
-    addBtnProps: {},
-    selectInputProps: {},
-    required: false
-  };
-
-  state = {
-    selected: '',
-    fieldSchemas: []
-  };
-
-  props: {
-    fields: any,
-    tag: string,
-    headerTag: string,
-    bodyTag: string,
-    addBtnProps: { [string]: any },
-    selectInputProps: { [string]: any },
-    schemaVis: SchemaVisType,
-    name: string,
-    classes: { [string]: any },
-    required: boolean
-  };
-  state: {
-    selected: string,
-    fieldSchemas: Array<any>
-  };
 }
