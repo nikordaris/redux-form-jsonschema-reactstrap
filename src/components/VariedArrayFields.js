@@ -341,7 +341,7 @@ export class ModalVariedArray extends Component {
 
   renderItemFormModal() {
     const { schemaVis, schemaVis: { schema: { items: schema } } } = this.props;
-    
+
     return (
       <Modal isOpen={this.state.showItemForm} toggle={this.toggleAddFormModal}>
         <ModalHeader toggle={this.toggleAddFormModal}>
