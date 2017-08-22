@@ -107,7 +107,7 @@ class VariedArray extends Component {
       const component = getComponent(schema, schemaVis.prefix);
       const rv = merge({}, schemaVis.componentProps, {
         [component]: {
-          btnProps: { onClick: this.handleRemoveItem(fields, idx) }
+          removeBtnProps: { onClick: this.handleRemoveItem(fields, idx) }
         }
       });
       return rv;
@@ -320,7 +320,7 @@ export class ModalVariedArray extends Component {
       const component = getComponent(schema, dataSchemaPrefix);
       const rv = merge({}, schemaVis.componentProps, {
         [component]: {
-          btnProps: { onClick: this.handleRemoveItem(idx) }
+          removeBtnProps: { onClick: this.handleRemoveItem(idx) }
         }
       });
       return rv;
@@ -338,13 +338,15 @@ export class ModalVariedArray extends Component {
   }
 
   renderItemFormModal() {
-    const { schemaVis, schemaVis: { componentProps = {}, prefix, schema: { items: schema } } } = this.props;
+    const { schemaVis, schemaVis: { prefix, schema: { items: schema } } } = this.props;
     const component = getComponent(schema, prefix);
+    let componentProps = schemaVis.componentProps;
     if (component) {
-      componentProps[component] = {
-        ...componentProps[component],
-        onChange: this.handleSelectSchema
-      }
+      componentProps = merge({}, componentProps, {
+        [component]: {
+          onChange: this.handleSelectSchema
+        }
+      });
     }
     return (
       <Modal isOpen={this.state.showItemForm} toggle={this.toggleAddFormModal}>
