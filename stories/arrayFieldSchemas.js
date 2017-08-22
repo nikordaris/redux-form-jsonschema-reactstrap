@@ -189,75 +189,81 @@ export const variedArraySchema = {
           }
         },
         anyOf: [{
-            id: 'Bar',
-            title: 'Bar',
-            type: 'object',
-            meta: {
-              vis: {
-                ordinal: 1,
-                component: 'CardItem'
-              }
-            },
-            properties: {
-              name: {
-                title: 'Name',
-                it: 'Name',
-                type: 'string',
-                meta: {
-                  vis: {
-                    ordinal: 1,
-                    component: 'Text'
-                  }
-                }
-              },
-              bar: {
-                id: 'Bar',
-                title: 'Bar',
-                type: 'string',
-                meta: {
-                  vis: {
-                    ordinal: 2,
-                    component: 'Text'
-                  }
-                }
-              }
+          id: 'Bar',
+          title: 'Bar',
+          type: 'object',
+          meta: {
+            data: {
+              template: '${name} (Bar: ${bar})',
+              component: 'ListItemTemplate'
             }
           },
-          {
-            id: 'Baz',
-            title: 'Baz',
-            type: 'object',
-            meta: {
-              vis: {
-                ordinal: 1,
-                component: 'CardItem'
+          properties: {
+            name: {
+              title: 'Name',
+              it: 'Name',
+              type: 'string',
+              meta: {
+                vis: {
+                  ordinal: 1,
+                  component: 'Text'
+                }
               }
             },
-            properties: {
-              name: {
-                title: 'Name',
-                it: 'Name',
-                type: 'string',
-                meta: {
-                  vis: {
-                    ordinal: 1,
-                    component: 'Text'
-                  }
-                }
-              },
-              baz: {
-                id: 'Baz',
-                title: 'Baz',
-                type: 'number',
-                meta: {
-                  vis: {
-                    ordinal: 2,
-                    component: 'Number'
-                  }
+            bar: {
+              id: 'Bar',
+              title: 'Bar',
+              type: 'string',
+              meta: {
+                vis: {
+                  ordinal: 2,
+                  component: 'Text'
                 }
               }
             }
-          }]
+          }
+        },
+        {
+          id: 'Baz',
+          title: 'Baz',
+          type: 'object',
+          meta: {
+            data: {
+              template: '${name} (Baz: ${baz})',
+              component: 'ListItemTemplate'
+            }
+          },
+          properties: {
+            name: {
+              title: 'Name',
+              it: 'Name',
+              type: 'string',
+              meta: {
+                vis: {
+                  ordinal: 1,
+                  component: 'Text'
+                }
+              }
+            },
+            baz: {
+              id: 'Baz',
+              title: 'Baz',
+              type: 'number',
+              meta: {
+                vis: {
+                  ordinal: 2,
+                  component: 'Number'
+                }
+              }
+            }
+          }
+        }]
+      },
+      meta: {
+        vis: {
+          ordinal: 180,
+          component: 'ModalVariedArrayCard'
+        }
       }
     }
   }

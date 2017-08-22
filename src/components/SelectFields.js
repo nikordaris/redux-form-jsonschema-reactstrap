@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, change, untouch } from 'redux-form';
 import { Input, Card, CardHeader, CardBlock } from 'reactstrap';
-import { sortBy, omit, isEmpty, forEach } from 'lodash';
+import { sortBy, omit, isEmpty, forEach, get, has, includes } from 'lodash';
 import SchemaVis, { hasComponent } from 'react-jsonschema-vis';
 
 import FormField from './FormField';
@@ -39,7 +39,8 @@ export class SingleSelect extends Component {
     sheet: any,
     styles: { [string]: any },
     change: (form: string, prop: string, value: any) => void,
-    untouch: (form: string, fields: string) => void
+    untouch: (form: string, fields: string) => void,
+    onChange: (selected: string) => void
   };
 
   state: {
@@ -55,6 +56,7 @@ export class SingleSelect extends Component {
       styles,
       change,
       untouch,
+      onChange,
       schemaVis,
       schemaVis: { prefix },
       ...rest
@@ -95,33 +97,36 @@ export class SingleSelect extends Component {
       change,
       untouch,
       form,
-      schemaVis: { schema: { oneOf } }
+      onChange,
+      schemaVis: { schema }
     } = this.props;
-    change(form, name, {});
-    oneOf.forEach(s =>
+    const selected = e.target.value;
+    const items = get(schema, 'oneOf', schema.anyOf);
+    if (name) {
+      change(form, name, {});
+    }
+    items.forEach(s =>
       forEach(s.properties, (_, p) => untouch(form, `${name}.${p}`))
     );
-    this.setState({ ...this.state, selected: e.target.value });
+    this.setState({ ...this.state, selected });
+    onChange(selected)
   };
 
   renderSelectInput(options: Array<OptionType>) {
     const { schemaVis: { schema }, classes } = this.props;
     return (
-      <Card className={classes.card}>
-        <CardHeader className={classes.header}>{schema.title}</CardHeader>
-        <CardBlock className={classes.cardblock}>
-          <Input
-            className={classes.select}
-            type="select"
-            onChange={this.handleChange}
-            value={this.state.selected}
-          >
-            <option disabled value="">Select {schema.title}</option>
-            {this.renderInputOptions(options)}
-          </Input>
-          {this.renderInputObject(options)}
-        </CardBlock>
-      </Card>
+      <div>
+        <Input
+          className={classes.select}
+          type="select"
+          onChange={this.handleChange}
+          value={this.state.selected}
+        >
+          <option disabled value="">Select {schema.title}</option>
+          {this.renderInputOptions(options)}
+        </Input>
+        {this.renderInputObject(options)}
+      </div>
     );
   }
 
@@ -132,7 +137,8 @@ export class SingleSelect extends Component {
       'change',
       'untouch',
       'schemaVis',
-      'styles'
+      'styles',
+      'onChange'
     ]);
     const { schemaVis: { schema }, required } = this.props;
     return (
@@ -169,7 +175,8 @@ export class SingleSelect extends Component {
 
   render() {
     const { schemaVis: { schema }, name } = this.props;
-    const options = this.getOptions(schema.oneOf, `${name}-oneOf`);
+    const [schemas, optionsId] = has(schema, 'oneOf') ? [schema.oneOf, `${name}-oneOf`] : [schema.anyOf, `${name}-anyOf`];
+    const options = this.getOptions(schemas, optionsId);
     if (isEmpty(options.filter(({ value }) => React.isValidElement(value)))) {
       return this.renderSelectField(options);
     }
