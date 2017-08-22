@@ -221,7 +221,7 @@ export class VariedArrayInline extends Component {
 class SchemaVisForm extends Component {
   render() {
     const { schemaVis, tag, styles } = this.props;
-    return <SchemaVis {...schemaVis} tag={tag} styles={styles} />;
+    return <SchemaVis {...schemaVis} form="arrayItem" tag={tag} styles={styles} />;
   }
 }
 
@@ -233,7 +233,7 @@ export class ModalVariedArray extends Component {
   static defaultProps = {
     tag: Card,
     headerTag: CardHeader,
-    bodyTag: CardBlock,
+    bodyTag: ListGroup,
     addBtnProps: {},
     selectInputProps: {},
     required: false,
@@ -277,14 +277,16 @@ export class ModalVariedArray extends Component {
     const selectedSchema = schemas.find(schema =>
       includes([schema.title, schema.id, schema.const], selected)
     );
+    let state = { ...this.state };
     if (selectedSchema) {
-      this.setState({
+      state = {
         ...this.state,
+        selected: undefined,
         fieldSchemas: [...fieldSchemas, selectedSchema]
-      });
+      };
     }
     fields.push(values);
-    this.toggleAddFormModal();
+    this.toggleAddFormModal(state);
   };
 
   handleSubmitModal = () => {
@@ -301,18 +303,14 @@ export class ModalVariedArray extends Component {
     this.setState({ ...this.state, fieldSchemas: _fieldSchemas });
   };
 
-  toggleAddFormModal = () => {
-    this.setState({ ...this.state, showItemForm: !this.state.showItemForm });
-  };
-
-  renderInputOptions() {
-    const { schemaVis: { schema: { items: { anyOf: schemas } } } } = this.props;
-    return schemas.map(({ const: value, id, title }, idx) => (
-      <option key={`selectOption-${idx}`} value={value || title || id}>
-        {title || value || id}
-      </option>
-    ));
+  handleSelectSchema = (selected: string) => {
+    this.setState({ ...this.state, selected });
   }
+
+  toggleAddFormModal = (state?: any) => {
+    const prevState = state || this.state;
+    this.setState({ ...prevState, showItemForm: !this.state.showItemForm });
+  };
 
   renderArrayItems() {
     const { fieldSchemas } = this.state;
@@ -340,8 +338,14 @@ export class ModalVariedArray extends Component {
   }
 
   renderItemFormModal() {
-    const { schemaVis, schemaVis: { schema: { items: schema } } } = this.props;
-
+    const { schemaVis, schemaVis: { componentProps = {}, prefix, schema: { items: schema } } } = this.props;
+    const component = getComponent(schema, prefix);
+    if (component) {
+      componentProps[component] = {
+        ...componentProps[component],
+        onChange: this.handleSelectSchema
+      }
+    }
     return (
       <Modal isOpen={this.state.showItemForm} toggle={this.toggleAddFormModal}>
         <ModalHeader toggle={this.toggleAddFormModal}>
@@ -349,7 +353,11 @@ export class ModalVariedArray extends Component {
         </ModalHeader>
         <ModalBody>
           <SchemaVisForm
-            schemaVis={{ ...schemaVis, schema }}
+            schemaVis={{
+              ...schemaVis,
+              schema,
+              componentProps
+            }}
             onSubmit={this.handleSubmitItem}
           />
         </ModalBody>
@@ -399,6 +407,60 @@ export class ModalVariedArray extends Component {
         </Tag>
         {has(schema, 'items.anyOf') && this.renderItemFormModal()}
       </div>
+    );
+  }
+}
+
+@injectSheet({
+  container: { marginBottom: 10, marginTop: 15 },
+  header: { padding: 5, paddingLeft: 10, display: 'inline-flex' },
+  addButton: { marginLeft: 'auto' },
+  headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
+})
+export class ModalVariedArrayCard extends Component {
+  render() {
+    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    return (
+      <FieldArray
+        validate={validate(schema, required)}
+        component={ModalVariedArray}
+        schemaVis={schemaVis}
+        bodyProps={{ flush: true }}
+        {...rest}
+      />
+    );
+  }
+}
+
+@injectSheet({
+  container: { marginBottom: 10, marginTop: 15 },
+  header: {
+    width: '100%',
+    padding: 0,
+    marginBottom: 20,
+    fontSize: 21,
+    lineHeight: 'inherit',
+    color: '#333',
+    border: 0,
+    borderBottom: '1px solid #e5e5e5',
+    display: 'inline-flex'
+  },
+  addButton: { marginLeft: 'auto' },
+  headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
+})
+export class ModalVariedArrayInline extends Component {
+  render() {
+    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    return (
+      <FieldArray
+        validate={validate(schema, required)}
+        component={ModalVariedArray}
+        schemaVis={schemaVis}
+        bodyTag="div"
+        headerTag="div"
+        tag="div"
+        {...rest}
+      />
     );
   }
 }

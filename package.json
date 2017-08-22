@@ -60,7 +60,7 @@
     "eslint-plugin-jsx-a11y": "^5.1",
     "eslint-plugin-react": "^7.0.1",
     "file-loader": "^0.11.2",
-    "flow-bin": "^0.53.1",
+    "flow-bin": "0.52.x",
     "flow-typed": "^2.1.2",
     "jest": "^20.0.1",
     "jest-cli": "^20.0.1",
