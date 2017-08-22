@@ -48,7 +48,7 @@ class UniformedArray extends Component {
     } = this.props;
     const component = getComponent(items, prefix);
     const _componentProps = merge({}, componentProps, {
-      [component]: { btnProps: { onClick: () => fields.remove(idx) } }
+      [component]: { removeBtnProps: { onClick: () => fields.remove(idx) } }
     });
     return (
       <SchemaVis

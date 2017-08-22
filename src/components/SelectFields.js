@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, change, untouch } from 'redux-form';
-import { Input, Card, CardHeader, CardBlock } from 'reactstrap';
+import { Input, Label } from 'reactstrap';
 import { sortBy, omit, isEmpty, forEach, get, has, includes } from 'lodash';
 import SchemaVis, { hasComponent } from 'react-jsonschema-vis';
 
@@ -116,6 +116,7 @@ export class SingleSelect extends Component {
     const { schemaVis: { schema }, classes } = this.props;
     return (
       <div>
+        <Label>{schema.title}</Label>
         <Input
           className={classes.select}
           type="select"

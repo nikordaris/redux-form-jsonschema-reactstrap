@@ -1,11 +1,32 @@
 import React, { Component } from 'react';
-import { ListGroupItem } from 'reactstrap';
+import { ListGroupItem, Button } from 'reactstrap';
 import { get } from 'lodash';
 
 import { templateStrings } from '../utils';
+import { injectSheet } from '../Jss';
 
 const SCHEMA_TEMPLATE = 'template';
 
+@injectSheet({
+  listItem: {
+    display: 'inline-flex',
+    width: '100%',
+    borderTop: '1px solid #DDD'
+  },
+  removeItem: {
+    float: 'right',
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    marginRight: 10,
+    marginLeft: 10,
+    padding: [7, 12, 7, 12],
+  },
+  '@global': {
+    '.list-group-item': {
+      borderTop: 'none'
+    }
+  }
+})
 export class ListItemTemplate extends Component {
   props: {
     idx: number | string,
@@ -21,11 +42,14 @@ export class ListItemTemplate extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { classes, data, removeBtnProps, selectBtnProps } = this.props;
     return (
-      <ListGroupItem>
-        {templateStrings(this.getItemMetaTemplate(), data)}
-      </ListGroupItem>
+      <div className={classes.listItem}>
+        <ListGroupItem action {...selectBtnProps}>
+          {templateStrings(this.getItemMetaTemplate(), data)}
+        </ListGroupItem>
+        <Button className={classes.removeItem} id="removeItemBtn" color="danger" size="sm" children="Remove" {...removeBtnProps} />
+      </div>
     );
   }
 }

@@ -14,11 +14,11 @@ export * from './ListItems';
 
 export FormField from './FormField';
 
-export const defaultComponents = {
-  string: InputFields.Text,
-  number: InputFields.Number,
-  array: UniformedArrayFields.UniformedArrayInline
-};
+export const defaultComponents = [
+  { type: 'string', component: InputFields.Text },
+  { type: 'number', component: InputFields.Number },
+  { type: 'array', component: UniformedArrayFields.UniformedArrayInline }
+];
 
 export default {
   ...InputFields,

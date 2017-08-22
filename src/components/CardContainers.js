@@ -48,7 +48,7 @@ export class CardWithHeader extends Component {
 })
 export class CardItem extends Component {
   static defaultProps = {
-    btnProps: {}
+    removeBtnProps: {}
   };
 
   props: {
@@ -56,7 +56,7 @@ export class CardItem extends Component {
     sheet: any,
     name: string,
     classes: { [string]: any },
-    btnProps: { [string]: any },
+    removeBtnProps: { [string]: any },
     schemaVis: SchemaVisType
   };
   render() {
@@ -64,7 +64,7 @@ export class CardItem extends Component {
       classes,
       name,
       schemaVis: { schema, prefix, ...schemaVis },
-      btnProps: { children = 'Remove', ...btnProps },
+      removeBtnProps: { children = 'Remove', ...removeBtnProps },
       styles,
       sheet,
       ...rest
@@ -80,7 +80,7 @@ export class CardItem extends Component {
               id="removeItemBtn"
               color="danger"
               size="sm"
-              {...btnProps}
+              {...removeBtnProps}
               children={children}
             />
           </div>
