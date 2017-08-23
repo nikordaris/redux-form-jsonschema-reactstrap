@@ -24,7 +24,9 @@ import validate from '../validator';
   { withRef: true }
 )
 export class SingleSelect extends Component {
-  static defaultProps = {};
+  static defaultProps = {
+    initialSelected: ''
+  };
 
   state = {
     selected: '',
@@ -33,6 +35,7 @@ export class SingleSelect extends Component {
 
   props: {
     schemaVis: SchemaVisType,
+    initialSelected?: string,
     form: string,
     name: string,
     required: boolean,
@@ -49,6 +52,21 @@ export class SingleSelect extends Component {
     selected?: string
   };
 
+  componentWillReceiveProps(nextProps: any) {
+    const { initialSelected: prevInitialSelected } = this.props;
+    const { initialSelected } = nextProps;
+    if (initialSelected !== prevInitialSelected) {
+      this.setState({ ...this.state, selected: initialSelected });
+    }
+  }
+
+  componentWillMount() {
+    const { initialSelected } = this.props;
+    if (initialSelected) {
+      this.setState({ ...this.state, selected: initialSelected });
+    }
+  }
+
   getOptions = (schemas: Array<any>, index: string) => {
     const {
       name,
@@ -62,6 +80,7 @@ export class SingleSelect extends Component {
       schemaVis,
       schemaVis: { prefix },
       showLabel,
+      initialSelected,
       ...rest
     } = this.props;
     return schemas
@@ -143,7 +162,8 @@ export class SingleSelect extends Component {
       'schemaVis',
       'styles',
       'onChange',
-      'showLabel'
+      'showLabel',
+      'initialSelected'
     ]);
     const { schemaVis: { schema }, required } = this.props;
     return (

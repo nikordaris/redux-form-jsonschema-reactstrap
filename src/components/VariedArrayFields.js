@@ -13,10 +13,10 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap';
-import { FieldArray, reduxForm, submit, destroy } from 'redux-form';
+import { FieldArray, reduxForm, submit, destroy, change } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { includes, merge, get, has } from 'lodash';
+import { includes, merge, get, has, isNil } from 'lodash';
 import SchemaVis, { getComponent } from 'react-jsonschema-vis';
 
 import { injectSheet } from '../Jss';
@@ -215,15 +215,22 @@ export class VariedArrayInline extends Component {
   }
 }
 
+const ARRAY_ITEM_FORM = 'ArrayItem';
+
 @reduxForm({
-  form: 'arrayItem',
+  form: ARRAY_ITEM_FORM,
   destroyOnUnmount: false
 })
 class SchemaVisForm extends Component {
   render() {
     const { schemaVis, tag, styles } = this.props;
     return (
-      <SchemaVis {...schemaVis} form="arrayItem" tag={tag} styles={styles} />
+      <SchemaVis
+        {...schemaVis}
+        form={ARRAY_ITEM_FORM}
+        tag={tag}
+        styles={styles}
+      />
     );
   }
 }
@@ -231,7 +238,10 @@ class SchemaVisForm extends Component {
 @connect(
   () => ({}),
   dispatch =>
-    bindActionCreators({ submitForm: submit, destroyForm: destroy }, dispatch)
+    bindActionCreators(
+      { submitForm: submit, destroyForm: destroy, changeForm: change },
+      dispatch
+    )
 )
 export class ModalVariedArray extends Component {
   static defaultProps = {
@@ -253,6 +263,7 @@ export class ModalVariedArray extends Component {
 
   props: {
     fields: any,
+    meta: { form: string },
     submitForm: string => void,
     tag: string,
     headerTag: string,
@@ -264,40 +275,61 @@ export class ModalVariedArray extends Component {
     name: string,
     classes: { [string]: any },
     required: boolean,
+    destroyForm: string => void,
+    changeForm: (string, string, any) => void,
     dataSchemaPrefix: string
   };
   state: {
     selected: string,
+    selectedIdx: number,
     fieldSchemas: Array<any>,
     showItemForm: boolean
   };
 
+  getSchemaId = (schema: any) => schema.id || schema.title || schema.const;
+
+  getSchema = (id: string, schemas: Array<any>) =>
+    schemas.find(schema =>
+      [schema.title, schema.id, schema.const].includes(id)
+    );
+
   handleSubmitItem = (values: any) => {
-    const { fieldSchemas, selected } = this.state;
+    const { fieldSchemas, selected, selectedIdx } = this.state;
     const {
       fields,
+      meta: { form },
       destroyForm,
+      changeForm,
       schemaVis: { schema: { items: { anyOf: schemas } } }
     } = this.props;
-    const selectedSchema = schemas.find(schema =>
-      includes([schema.title, schema.id, schema.const], selected)
-    );
-    let state = { ...this.state };
-    if (selectedSchema) {
+    let state = {};
+    if (!isNil(selectedIdx)) {
+      const items = fields.getAll();
+      items.splice(selectedIdx, 1, values);
+      changeForm(form, fields.name, [...items]);
+
       state = {
-        ...this.state,
         selected: undefined,
-        fieldSchemas: [...fieldSchemas, selectedSchema]
+        selectedIdx: undefined
       };
+    } else {
+      const selectedSchema = this.getSchema(selected, schemas);
+
+      if (selectedSchema) {
+        state = {
+          selected: undefined,
+          fieldSchemas: [...fieldSchemas, selectedSchema]
+        };
+      }
+      fields.push(values);
     }
-    fields.push(values);
-    destroyForm('arrayItem');
+    destroyForm(ARRAY_ITEM_FORM);
     this.toggleAddFormModal(state);
   };
 
   handleSubmitModal = () => {
     const { submitForm } = this.props;
-    submitForm('arrayItem');
+    submitForm(ARRAY_ITEM_FORM);
   };
 
   handleRemoveItem = (idx: number) => () => {
@@ -309,12 +341,16 @@ export class ModalVariedArray extends Component {
     this.setState({ ...this.state, fieldSchemas: _fieldSchemas });
   };
 
-  handleSelectSchema = (selected: string) => {
-    this.setState({ ...this.state, selected });
+  handleSelectItem = (idx: number) => () => {
+    this.toggleAddFormModal({ selectedIdx: idx });
   };
 
-  toggleAddFormModal = (state?: any) => {
-    const prevState = state || this.state;
+  handleSelectSchema = (selected: string) => {
+    this.setState({ selected });
+  };
+
+  toggleAddFormModal = (state: any = { selectedIdx: undefined }) => {
+    const prevState = { ...this.state, ...state };
     this.setState({ ...prevState, showItemForm: !this.state.showItemForm });
   };
 
@@ -326,7 +362,8 @@ export class ModalVariedArray extends Component {
       const component = getComponent(schema, dataSchemaPrefix);
       const rv = merge({}, schemaVis.componentProps, {
         [component]: {
-          removeBtnProps: { onClick: this.handleRemoveItem(idx) }
+          removeBtnProps: { onClick: this.handleRemoveItem(idx) },
+          selectBtnProps: { onClick: this.handleSelectItem(idx) }
         }
       });
       return rv;
@@ -346,15 +383,25 @@ export class ModalVariedArray extends Component {
   renderItemFormModal() {
     const {
       schemaVis,
+      fields,
       schemaVis: { prefix, schema: { items: schema } }
     } = this.props;
+    const { selectedIdx, fieldSchemas } = this.state;
     const component = getComponent(schema, prefix);
     let componentProps = schemaVis.componentProps;
+
+    let initialValues = {};
+    let initialSelected = undefined;
+    if (!isNil(selectedIdx) && fieldSchemas) {
+      initialValues = fields.get(selectedIdx);
+      initialSelected = this.getSchemaId(fieldSchemas[selectedIdx]);
+    }
     if (component) {
       componentProps = merge({}, componentProps, {
         [component]: {
           onChange: this.handleSelectSchema,
-          showLabel: false
+          showLabel: false,
+          initialSelected
         }
       });
     }
@@ -370,6 +417,7 @@ export class ModalVariedArray extends Component {
               schema,
               componentProps
             }}
+            initialValues={initialValues}
             onSubmit={this.handleSubmitItem}
           />
         </ModalBody>
