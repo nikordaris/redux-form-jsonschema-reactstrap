@@ -27,7 +27,8 @@ export class SingleSelect extends Component {
   static defaultProps = {};
 
   state = {
-    selected: ''
+    selected: '',
+    showLabel: true
   };
 
   props: {
@@ -38,6 +39,7 @@ export class SingleSelect extends Component {
     classes: { [string]: any },
     sheet: any,
     styles: { [string]: any },
+    showLabel: boolean,
     change: (form: string, prop: string, value: any) => void,
     untouch: (form: string, fields: string) => void,
     onChange: (selected: string) => void
@@ -47,7 +49,7 @@ export class SingleSelect extends Component {
     selected?: string
   };
 
-  getOptions = (schema: Array<any>, index: string) => {
+  getOptions = (schemas: Array<any>, index: string) => {
     const {
       name,
       required,
@@ -59,19 +61,20 @@ export class SingleSelect extends Component {
       onChange,
       schemaVis,
       schemaVis: { prefix },
+      showLabel,
       ...rest
     } = this.props;
-    return schema
-      .map((s, idx) => {
-        const { id, title, const: value, description } = s;
+    return schemas
+      .map((schema, idx) => {
+        const { id, title, const: value, description } = schema;
         const rendered =
-          (hasComponent(s, prefix) || !isEmpty(s.properties)) &&
+          (hasComponent(schema, prefix) || !isEmpty(schema.properties)) &&
           <SchemaVis
             key={`${index}-${idx}`}
             {...schemaVis}
             {...rest}
             namespace={name}
-            schema={s}
+            schema={schema}
           />;
 
         return {
@@ -106,17 +109,17 @@ export class SingleSelect extends Component {
       change(form, name, {});
     }
     items.forEach(s =>
-      forEach(s.properties, (_, p) => untouch(form, `${name}.${p}`))
+      forEach(s.properties, (_, p) => untouch(form, name ? `${name}.${p}` : p))
     );
     this.setState({ ...this.state, selected });
-    onChange(selected)
+    onChange(selected);
   };
 
   renderSelectInput(options: Array<OptionType>) {
-    const { schemaVis: { schema }, classes } = this.props;
+    const { showLabel, schemaVis: { schema }, classes } = this.props;
     return (
       <div>
-        <Label>{schema.title}</Label>
+        {showLabel && <Label>{schema.title}</Label>}
         <Input
           className={classes.select}
           type="select"
@@ -139,7 +142,8 @@ export class SingleSelect extends Component {
       'untouch',
       'schemaVis',
       'styles',
-      'onChange'
+      'onChange',
+      'showLabel'
     ]);
     const { schemaVis: { schema }, required } = this.props;
     return (
@@ -176,7 +180,9 @@ export class SingleSelect extends Component {
 
   render() {
     const { schemaVis: { schema }, name } = this.props;
-    const [schemas, optionsId] = has(schema, 'oneOf') ? [schema.oneOf, `${name}-oneOf`] : [schema.anyOf, `${name}-anyOf`];
+    const [schemas, optionsId] = has(schema, 'oneOf')
+      ? [schema.oneOf, `${name}-oneOf`]
+      : [schema.anyOf, `${name}-anyOf`];
     const options = this.getOptions(schemas, optionsId);
     if (isEmpty(options.filter(({ value }) => React.isValidElement(value)))) {
       return this.renderSelectField(options);

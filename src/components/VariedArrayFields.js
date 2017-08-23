@@ -13,7 +13,7 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap';
-import { FieldArray, reduxForm, submit } from 'redux-form';
+import { FieldArray, reduxForm, submit, destroy } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { includes, merge, get, has } from 'lodash';
@@ -216,18 +216,22 @@ export class VariedArrayInline extends Component {
 }
 
 @reduxForm({
-  form: 'arrayItem'
+  form: 'arrayItem',
+  destroyOnUnmount: false
 })
 class SchemaVisForm extends Component {
   render() {
     const { schemaVis, tag, styles } = this.props;
-    return <SchemaVis {...schemaVis} form="arrayItem" tag={tag} styles={styles} />;
+    return (
+      <SchemaVis {...schemaVis} form="arrayItem" tag={tag} styles={styles} />
+    );
   }
 }
 
 @connect(
   () => ({}),
-  dispatch => bindActionCreators({ submitForm: submit }, dispatch)
+  dispatch =>
+    bindActionCreators({ submitForm: submit, destroyForm: destroy }, dispatch)
 )
 export class ModalVariedArray extends Component {
   static defaultProps = {
@@ -272,6 +276,7 @@ export class ModalVariedArray extends Component {
     const { fieldSchemas, selected } = this.state;
     const {
       fields,
+      destroyForm,
       schemaVis: { schema: { items: { anyOf: schemas } } }
     } = this.props;
     const selectedSchema = schemas.find(schema =>
@@ -286,6 +291,7 @@ export class ModalVariedArray extends Component {
       };
     }
     fields.push(values);
+    destroyForm('arrayItem');
     this.toggleAddFormModal(state);
   };
 
@@ -305,7 +311,7 @@ export class ModalVariedArray extends Component {
 
   handleSelectSchema = (selected: string) => {
     this.setState({ ...this.state, selected });
-  }
+  };
 
   toggleAddFormModal = (state?: any) => {
     const prevState = state || this.state;
@@ -338,13 +344,17 @@ export class ModalVariedArray extends Component {
   }
 
   renderItemFormModal() {
-    const { schemaVis, schemaVis: { prefix, schema: { items: schema } } } = this.props;
+    const {
+      schemaVis,
+      schemaVis: { prefix, schema: { items: schema } }
+    } = this.props;
     const component = getComponent(schema, prefix);
     let componentProps = schemaVis.componentProps;
     if (component) {
       componentProps = merge({}, componentProps, {
         [component]: {
-          onChange: this.handleSelectSchema
+          onChange: this.handleSelectSchema,
+          showLabel: false
         }
       });
     }
