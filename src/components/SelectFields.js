@@ -25,7 +25,10 @@ import validate from '../validator';
 )
 export class SingleSelect extends Component {
   static defaultProps = {
-    initialSelected: ''
+    initialSelected: '',
+    onChange: () => {},
+    change: () => {},
+    untouch: () => {}
   };
 
   state = {
