@@ -420,10 +420,11 @@ export const uniformedArraySchmea = {
         type: 'object',
         meta: {
           data: {
-            template: '${name} (${age})',
+            template: ['${name} (${age})', '${name}'],
             component: 'ListItemTemplate'
           }
         },
+        required: ['name'],
         properties: {
           name: {
             title: 'Name',
@@ -466,10 +467,11 @@ export const uniformedArraySchmea = {
         type: 'object',
         meta: {
           data: {
-            template: '${name} (${age})',
+            template: ['${name} (${age})', '${name}'],
             component: 'ListItemTemplate'
           }
         },
+        required: ['name'],
         properties: {
           name: {
             title: 'Name',
