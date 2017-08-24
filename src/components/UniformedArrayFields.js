@@ -13,10 +13,10 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap';
-import { FieldArray, reduxForm, submit } from 'redux-form';
+import { FieldArray, reduxForm, submit, change } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { includes, merge, get } from 'lodash';
+import { includes, merge, get, isNil } from 'lodash';
 import SchemaVis, { getComponent } from 'react-jsonschema-vis';
 
 import { injectSheet } from '../Jss';
@@ -160,7 +160,8 @@ class SchemaVisForm extends Component {
 
 @connect(
   () => ({}),
-  dispatch => bindActionCreators({ submitForm: submit }, dispatch)
+  dispatch =>
+    bindActionCreators({ submitForm: submit, changeForm: change }, dispatch)
 )
 class ModalUniformArray extends Component {
   static defaultProps = {
@@ -170,7 +171,8 @@ class ModalUniformArray extends Component {
     addBtnProps: {},
     required: false,
     bodyProps: {},
-    dataSchemaPrefix: 'meta.data'
+    dataSchemaPrefix: 'meta.data',
+    changeForm: () => {}
   };
   state = {
     showItemForm: false
@@ -188,15 +190,26 @@ class ModalUniformArray extends Component {
     name: string,
     classes: { [string]: any },
     required: boolean,
-    dataSchemaPrefix: string
+    dataSchemaPrefix: string,
+    meta: { form: string },
+    changeForm: (string, string, any) => void
   };
   state: {
-    showItemForm: boolean
+    showItemForm: boolean,
+    selectedIdx: number
   };
 
   handleSubmitItem = (values: any) => {
-    const { fields } = this.props;
-    fields.push(values);
+    const { fields, changeForm, meta: { form } } = this.props;
+    const { selectedIdx } = this.state;
+    if (!isNil(selectedIdx)) {
+      const items = fields.getAll();
+      items.splice(selectedIdx, 1, values);
+      changeForm(form, fields.name, [...items]);
+    } else {
+      fields.push(values);
+    }
+
     this.toggleAddFormModal();
   };
 
@@ -205,8 +218,12 @@ class ModalUniformArray extends Component {
     submitForm('arrayItem');
   };
 
-  toggleAddFormModal = () => {
-    this.setState({ ...this.state, showItemForm: !this.state.showItemForm });
+  toggleAddFormModal = (state: any = { selectedIdx: undefined }) => {
+    this.setState({
+      ...this.state,
+      ...state,
+      showItemForm: !this.state.showItemForm
+    });
   };
 
   renderArrayItems() {
@@ -219,7 +236,12 @@ class ModalUniformArray extends Component {
     const component = getComponent(schema, dataSchemaPrefix);
     const _componentProps = idx =>
       merge({}, componentProps, {
-        [component]: { removeBtnProps: { onClick: () => fields.remove(idx) } }
+        [component]: {
+          removeBtnProps: { onClick: () => fields.remove(idx) },
+          selectBtnProps: {
+            onClick: () => this.toggleAddFormModal({ selectedIdx: idx })
+          }
+        }
       });
     return fields.map((name, idx) => (
       <SchemaVis
@@ -234,8 +256,17 @@ class ModalUniformArray extends Component {
   }
 
   renderItemFormModal() {
-    const { schemaVis, schemaVis: { schema: { items: schema } } } = this.props;
+    const {
+      schemaVis,
+      fields,
+      schemaVis: { schema: { items: schema } }
+    } = this.props;
+    const { selectedIdx } = this.state;
 
+    let initialValues = undefined;
+    if (!isNil(selectedIdx)) {
+      initialValues = fields.get(selectedIdx);
+    }
     return (
       <Modal isOpen={this.state.showItemForm} toggle={this.toggleAddFormModal}>
         <ModalHeader toggle={this.toggleAddFormModal}>
@@ -243,6 +274,7 @@ class ModalUniformArray extends Component {
         </ModalHeader>
         <ModalBody>
           <SchemaVisForm
+            initialValues={initialValues}
             schemaVis={{ ...schemaVis, schema }}
             onSubmit={this.handleSubmitItem}
           />
