@@ -13,7 +13,7 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap';
-import { FieldArray, reduxForm, submit, destroy, change } from 'redux-form';
+import { FieldArray, reduxForm, submit, destroy, change, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { includes, merge, get, has, isNil } from 'lodash';
@@ -236,7 +236,7 @@ class SchemaVisForm extends Component {
 }
 
 @connect(
-  () => ({}),
+  (state, { form, fields: { name } }) => ({ items: formValueSelector(form)(state, name) }),
   dispatch =>
     bindActionCreators(
       { submitForm: submit, destroyForm: destroy, changeForm: change },
@@ -276,6 +276,7 @@ export class ModalVariedArray extends Component {
     classes: { [string]: any },
     required: boolean,
     destroyForm: string => void,
+    items: any,
     changeForm: (string, string, any) => void,
     dataSchemaPrefix: string
   };
@@ -300,6 +301,7 @@ export class ModalVariedArray extends Component {
       meta: { form },
       destroyForm,
       changeForm,
+      items,
       schemaVis: { schema: { items: { anyOf: schemas } } }
     } = this.props;
     let state = {};

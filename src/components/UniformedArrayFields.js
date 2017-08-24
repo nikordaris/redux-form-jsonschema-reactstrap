@@ -13,7 +13,7 @@ import {
   ModalBody,
   ModalFooter
 } from 'reactstrap';
-import { FieldArray, reduxForm, submit, change } from 'redux-form';
+import { FieldArray, reduxForm, submit, change, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { includes, merge, get, isNil } from 'lodash';
@@ -159,7 +159,7 @@ class SchemaVisForm extends Component {
 }
 
 @connect(
-  () => ({}),
+  (state, { form, fields: { name } }) => ({ items: formValueSelector(form)(state, name) }),
   dispatch =>
     bindActionCreators({ submitForm: submit, changeForm: change }, dispatch)
 )
@@ -172,7 +172,7 @@ class ModalUniformArray extends Component {
     required: false,
     bodyProps: {},
     dataSchemaPrefix: 'meta.data',
-    changeForm: () => {}
+    changeForm: () => { }
   };
   state = {
     showItemForm: false
@@ -182,6 +182,7 @@ class ModalUniformArray extends Component {
     tag: string,
     submitForm: string => void,
     fields: any,
+    items: any,
     headerTag: string,
     bodyTag: string,
     bodyProps: { [string]: any },
@@ -200,7 +201,7 @@ class ModalUniformArray extends Component {
   };
 
   handleSubmitItem = (values: any) => {
-    const { fields, changeForm, meta: { form } } = this.props;
+    const { fields, changeForm, items, meta: { form } } = this.props;
     const { selectedIdx } = this.state;
     if (!isNil(selectedIdx)) {
       const items = fields.getAll();
