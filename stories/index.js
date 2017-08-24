@@ -39,7 +39,7 @@ storybook.add('simple form', () => (
 
 Object.values(arrayFieldSchemas).forEach(schema => {
   storybook.add(schema.title, () => (
-    <ReduxTestForm onSubmit={data => action(`Form(${schema.id}) submit`)(data)}>
+    <ReduxTestForm form={schema.id} onSubmit={data => action(`Form(${schema.id}) submit`)(data)}>
       <SchemaVis form={schema.id} schema={schema} components={components} />
     </ReduxTestForm>
   ));
