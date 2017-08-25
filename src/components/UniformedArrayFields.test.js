@@ -1,8 +1,4 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import { Provider } from 'react-redux';
-import { reduxForm, reducer as formReducer } from 'redux-form';
-import { createStore, combineReducers } from 'redux';
+import React from 'react';  // eslint-disable-line
 import toJson from 'enzyme-to-json';
 
 import { UniformedArrayCard, UniformedArrayInline, ModalUniformedArrayCard, ModalUniformedArrayInline } from '../index';
