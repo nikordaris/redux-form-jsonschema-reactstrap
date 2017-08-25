@@ -16,7 +16,7 @@ import {
 import { FieldArray, reduxForm, submit, destroy, change, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { includes, merge, get, has, isNil } from 'lodash';
+import { includes, merge, has, isNil } from 'lodash';
 import SchemaVis, { getComponent } from 'react-jsonschema-vis';
 
 import { injectSheet } from '../Jss';
@@ -241,9 +241,11 @@ class SchemaVisForm extends Component {
     bindActionCreators(
       { submitForm: submit, destroyForm: destroy, changeForm: change },
       dispatch
-    )
+    ),
+  undefined,
+  { withRef: true }
 )
-export class ModalVariedArray extends Component {
+class ModalVariedArray extends Component {
   static defaultProps = {
     tag: Card,
     headerTag: CardHeader,
@@ -301,7 +303,6 @@ export class ModalVariedArray extends Component {
       meta: { form },
       destroyForm,
       changeForm,
-      items,
       schemaVis: { schema: { items: { anyOf: schemas } } }
     } = this.props;
     let state = {};
@@ -480,10 +481,13 @@ export class ModalVariedArray extends Component {
   headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
 })
 export class ModalVariedArrayCard extends Component {
+  wrapped: any;
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
+        ref={elm => { this.wrapped = elm; }}
         validate={validate(schema, required)}
         component={ModalVariedArray}
         schemaVis={schemaVis}
@@ -511,10 +515,13 @@ export class ModalVariedArrayCard extends Component {
   headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
 })
 export class ModalVariedArrayInline extends Component {
+  wrapped: any;
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
+        ref={elm => { this.wrapped = elm; }}
         validate={validate(schema, required)}
         component={ModalVariedArray}
         schemaVis={schemaVis}

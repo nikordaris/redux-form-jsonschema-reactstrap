@@ -453,7 +453,7 @@ export const uniformedArraySchmea = {
       meta: {
         vis: {
           ordinal: 180,
-          component: 'ModalUniformArrayCard'
+          component: 'ModalUniformedArrayCard'
         }
       }
     },
@@ -500,7 +500,7 @@ export const uniformedArraySchmea = {
       meta: {
         vis: {
           ordinal: 180,
-          component: 'ModalUniformArrayInline'
+          component: 'ModalUniformedArrayInline'
         }
       }
     }
