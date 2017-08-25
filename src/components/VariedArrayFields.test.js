@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; // eslint-disable-line
 import toJson from 'enzyme-to-json';
 
 import { VariedArrayCard, VariedArrayInline, ModalVariedArrayCard, ModalVariedArrayInline } from '../index';
