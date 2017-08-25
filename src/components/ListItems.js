@@ -45,7 +45,7 @@ export class ListItemTemplate extends Component {
     const { classes, data, removeBtnProps, selectBtnProps } = this.props;
     return (
       <div className={classes.listItem}>
-        <ListGroupItem action {...selectBtnProps}>
+        <ListGroupItem id="arrayListItem" action {...selectBtnProps}>
           {templateStrings(this.getItemMetaTemplate(), data)}
         </ListGroupItem>
         <Button className={classes.removeItem} id="removeItemBtn" color="danger" size="sm" children="Remove" {...removeBtnProps} />

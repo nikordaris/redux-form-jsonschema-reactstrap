@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Field, change, untouch } from 'redux-form';
 import { Input, Label } from 'reactstrap';
-import { sortBy, omit, isEmpty, forEach, get, has, includes } from 'lodash';
+import { sortBy, omit, isEmpty, forEach, get, has } from 'lodash';
 import SchemaVis, { hasComponent } from 'react-jsonschema-vis';
 
 import FormField from './FormField';
@@ -26,9 +26,9 @@ import validate from '../validator';
 export class SingleSelect extends Component {
   static defaultProps = {
     initialSelected: '',
-    onChange: () => {},
-    change: () => {},
-    untouch: () => {}
+    onChange: () => { },
+    change: () => { },
+    untouch: () => { }
   };
 
   state = {

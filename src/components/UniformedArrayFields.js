@@ -6,7 +6,6 @@ import {
   Card,
   CardHeader,
   CardBlock,
-  Input,
   ListGroup,
   Modal,
   ModalHeader,
@@ -16,7 +15,7 @@ import {
 import { FieldArray, reduxForm, submit, change, formValueSelector } from 'redux-form';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { includes, merge, get, isNil } from 'lodash';
+import { merge, isNil } from 'lodash';
 import SchemaVis, { getComponent } from 'react-jsonschema-vis';
 
 import { injectSheet } from '../Jss';
@@ -161,7 +160,9 @@ class SchemaVisForm extends Component {
 @connect(
   (state, { form, fields: { name } }) => ({ items: formValueSelector(form)(state, name) }),
   dispatch =>
-    bindActionCreators({ submitForm: submit, changeForm: change }, dispatch)
+    bindActionCreators({ submitForm: submit, changeForm: change }, dispatch),
+  undefined,
+  { withRef: true }
 )
 class ModalUniformArray extends Component {
   static defaultProps = {
@@ -201,7 +202,7 @@ class ModalUniformArray extends Component {
   };
 
   handleSubmitItem = (values: any) => {
-    const { fields, changeForm, items, meta: { form } } = this.props;
+    const { fields, changeForm, meta: { form } } = this.props;
     const { selectedIdx } = this.state;
     if (!isNil(selectedIdx)) {
       const items = fields.getAll();
@@ -281,10 +282,10 @@ class ModalUniformArray extends Component {
           />
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={this.handleSubmitModal}>
+          <Button id="submitAddItemBtn" color="primary" onClick={this.handleSubmitModal}>
             Submit
           </Button>
-          <Button color="second" onClick={this.toggleAddFormModal}>
+          <Button id="cancelAddItemBtn" color="second" onClick={this.toggleAddFormModal}>
             Cancel
           </Button>
         </ModalFooter>
@@ -312,6 +313,7 @@ class ModalUniformArray extends Component {
             </div>
             <div className={classes.addButton}>
               <Button
+                id="addItemBtn"
                 color="primary"
                 size="sm"
                 onClick={this.toggleAddFormModal}
@@ -336,11 +338,14 @@ class ModalUniformArray extends Component {
   addButton: { marginLeft: 'auto' },
   headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
 })
-export class ModalUniformArrayCard extends Component {
+export class ModalUniformedArrayCard extends Component {
+  wrapped: any;
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
+        ref={elm => { this.wrapped = elm; }}
         validate={validate(schema, required)}
         component={ModalUniformArray}
         schemaVis={schemaVis}
@@ -367,11 +372,14 @@ export class ModalUniformArrayCard extends Component {
   addButton: { marginLeft: 'auto' },
   headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
 })
-export class ModalUniformArrayInline extends Component {
+export class ModalUniformedArrayInline extends Component {
+  wrapped: any;
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
+        ref={elm => { this.wrapped = elm; }}
         validate={validate(schema, required)}
         component={ModalUniformArray}
         schemaVis={schemaVis}
