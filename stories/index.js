@@ -1,14 +1,15 @@
-import React, { Component, cloneElement } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 import { storiesOf, addDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { reduxForm, reducer as formReducer } from 'redux-form';
-import { Button } from 'reactstrap';
+import { reducer as formReducer } from 'redux-form';
 import SchemaVis from 'react-jsonschema-vis';
 
+import { ReduxTestForm } from './TestForm';
 import components from '../src';
-import schema from './schema.json';
+import * as arrayFieldSchemas from './arrayFieldSchemas';
+import simpleFormSchema from './schema.json';
 
 const rootReducers = combineReducers({ form: formReducer });
 const store = createStore(
@@ -16,35 +17,30 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-class TestForm extends Component {
-  handleSubmit = values => {
-    this.props.handleSubmit(values);
-  };
-  render() {
-    const { children } = this.props;
-
-    return (
-      <form onSubmit={this.handleSubmit} className="container">
-        {React.Children.map(children, child => cloneElement(child))}
-        <Button color="primary" type="submit">Submit</Button>
-      </form>
-    );
-  }
-}
-
-const ReduxTestForm = reduxForm({ form: 'test' })(TestForm);
-
 addDecorator(getStory => (
   <Provider store={store}>
     {getStory()}
   </Provider>
 ));
 
-storiesOf(
-  'Reactstrap Redux-Form Jsonschema Vis',
-  module
-).add('simple form', () => (
-  <ReduxTestForm onSubmit={data => action('form submit')(data)}>
-    <SchemaVis form="test" schema={schema} components={components} />
+const storybook = storiesOf('Reactstrap Redux-Form Jsonschema Vis', module);
+storybook.add('simple form', () => (
+  <ReduxTestForm
+    form="simple form"
+    onSubmit={data => action('Form(SimpleForm) submit')(data)}
+  >
+    <SchemaVis
+      form="simple form"
+      schema={simpleFormSchema}
+      components={components}
+    />
   </ReduxTestForm>
 ));
+
+Object.values(arrayFieldSchemas).forEach(schema => {
+  storybook.add(schema.title, () => (
+    <ReduxTestForm form={schema.id} onSubmit={data => action(`Form(${schema.id}) submit`)(data)}>
+      <SchemaVis form={schema.id} schema={schema} components={components} />
+    </ReduxTestForm>
+  ));
+});

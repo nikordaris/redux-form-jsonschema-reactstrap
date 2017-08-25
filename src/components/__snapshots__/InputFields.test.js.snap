@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render InputFields Should render ColorInputField 1`] = `
+exports[`Render InputFields Should render Color 1`] = `
 <div
   anyTouched={false}
   array={
@@ -43,11 +43,11 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
   warning={undefined}
 >
   <label
-    className=""
-    htmlFor="ColorInputField"
-    id="ColorInputField-label"
+    className=" form-control-label"
+    htmlFor="Color"
+    id="Color-label"
   >
-    ColorInputField
+    Color
   </label>
   <input
     anyTouched={false}
@@ -76,12 +76,12 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
     destroy={[Function]}
     error={undefined}
     handleSubmit={[Function]}
-    id="ColorInputField"
+    id="Color"
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
     invalid={false}
-    name="ColorInputField"
+    name="Color"
     onBlur={[Function]}
     onChange={[Function]}
     onDragStart={[Function]}
@@ -90,6 +90,28 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
     pure={true}
     required={false}
     reset={[Function]}
+    schema={
+      Object {
+        "id": "Color",
+        "meta": Object {
+          "vis": Object {
+            "component": "Color",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Color",
+        "type": "string",
+      }
+    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
@@ -103,7 +125,7 @@ exports[`Render InputFields Should render ColorInputField 1`] = `
 </div>
 `;
 
-exports[`Render InputFields Should render DateInputField 1`] = `
+exports[`Render InputFields Should render Date 1`] = `
 <div
   anyTouched={false}
   array={
@@ -146,11 +168,11 @@ exports[`Render InputFields Should render DateInputField 1`] = `
   warning={undefined}
 >
   <label
-    className=""
-    htmlFor="DateInputField"
-    id="DateInputField-label"
+    className=" form-control-label"
+    htmlFor="Date"
+    id="Date-label"
   >
-    DateInputField
+    Date
   </label>
   <input
     anyTouched={false}
@@ -179,12 +201,12 @@ exports[`Render InputFields Should render DateInputField 1`] = `
     destroy={[Function]}
     error={undefined}
     handleSubmit={[Function]}
-    id="DateInputField"
+    id="Date"
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
     invalid={false}
-    name="DateInputField"
+    name="Date"
     onBlur={[Function]}
     onChange={[Function]}
     onDragStart={[Function]}
@@ -193,6 +215,28 @@ exports[`Render InputFields Should render DateInputField 1`] = `
     pure={true}
     required={false}
     reset={[Function]}
+    schema={
+      Object {
+        "id": "Date",
+        "meta": Object {
+          "vis": Object {
+            "component": "Date",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Date",
+        "type": "string",
+      }
+    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
@@ -206,7 +250,7 @@ exports[`Render InputFields Should render DateInputField 1`] = `
 </div>
 `;
 
-exports[`Render InputFields Should render DateTimeInputField 1`] = `
+exports[`Render InputFields Should render DateTime 1`] = `
 <div
   anyTouched={false}
   array={
@@ -249,11 +293,11 @@ exports[`Render InputFields Should render DateTimeInputField 1`] = `
   warning={undefined}
 >
   <label
-    className=""
-    htmlFor="DateTimeInputField"
-    id="DateTimeInputField-label"
+    className=" form-control-label"
+    htmlFor="DateTime"
+    id="DateTime-label"
   >
-    DateTimeInputField
+    DateTime
   </label>
   <input
     anyTouched={false}
@@ -282,12 +326,12 @@ exports[`Render InputFields Should render DateTimeInputField 1`] = `
     destroy={[Function]}
     error={undefined}
     handleSubmit={[Function]}
-    id="DateTimeInputField"
+    id="DateTime"
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
     invalid={false}
-    name="DateTimeInputField"
+    name="DateTime"
     onBlur={[Function]}
     onChange={[Function]}
     onDragStart={[Function]}
@@ -296,6 +340,28 @@ exports[`Render InputFields Should render DateTimeInputField 1`] = `
     pure={true}
     required={false}
     reset={[Function]}
+    schema={
+      Object {
+        "id": "DateTime",
+        "meta": Object {
+          "vis": Object {
+            "component": "DateTime",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "DateTime",
+        "type": "string",
+      }
+    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
@@ -309,7 +375,7 @@ exports[`Render InputFields Should render DateTimeInputField 1`] = `
 </div>
 `;
 
-exports[`Render InputFields Should render EmailInputField 1`] = `
+exports[`Render InputFields Should render Email 1`] = `
 <div
   anyTouched={false}
   array={
@@ -352,11 +418,11 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
   warning={undefined}
 >
   <label
-    className=""
-    htmlFor="EmailInputField"
-    id="EmailInputField-label"
+    className=" form-control-label"
+    htmlFor="Email"
+    id="Email-label"
   >
-    EmailInputField
+    Email
   </label>
   <input
     anyTouched={false}
@@ -385,12 +451,12 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
     destroy={[Function]}
     error={undefined}
     handleSubmit={[Function]}
-    id="EmailInputField"
+    id="Email"
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
     invalid={false}
-    name="EmailInputField"
+    name="Email"
     onBlur={[Function]}
     onChange={[Function]}
     onDragStart={[Function]}
@@ -399,6 +465,28 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
     pure={true}
     required={false}
     reset={[Function]}
+    schema={
+      Object {
+        "id": "Email",
+        "meta": Object {
+          "vis": Object {
+            "component": "Email",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Email",
+        "type": "string",
+      }
+    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
@@ -412,7 +500,7 @@ exports[`Render InputFields Should render EmailInputField 1`] = `
 </div>
 `;
 
-exports[`Render InputFields Should render NumberInputField 1`] = `
+exports[`Render InputFields Should render Number 1`] = `
 <div
   anyTouched={false}
   array={
@@ -455,11 +543,11 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
   warning={undefined}
 >
   <label
-    className=""
-    htmlFor="NumberInputField"
-    id="NumberInputField-label"
+    className=" form-control-label"
+    htmlFor="Number"
+    id="Number-label"
   >
-    NumberInputField
+    Number
   </label>
   <input
     anyTouched={false}
@@ -488,12 +576,12 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
     destroy={[Function]}
     error={undefined}
     handleSubmit={[Function]}
-    id="NumberInputField"
+    id="Number"
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
     invalid={false}
-    name="NumberInputField"
+    name="Number"
     onBlur={[Function]}
     onChange={[Function]}
     onDragStart={[Function]}
@@ -502,6 +590,28 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
     pure={true}
     required={false}
     reset={[Function]}
+    schema={
+      Object {
+        "id": "Number",
+        "meta": Object {
+          "vis": Object {
+            "component": "Number",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Number",
+        "type": "string",
+      }
+    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
@@ -515,7 +625,7 @@ exports[`Render InputFields Should render NumberInputField 1`] = `
 </div>
 `;
 
-exports[`Render InputFields Should render PasswordInputField 1`] = `
+exports[`Render InputFields Should render Password 1`] = `
 <div
   anyTouched={false}
   array={
@@ -558,11 +668,11 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
   warning={undefined}
 >
   <label
-    className=""
-    htmlFor="PasswordInputField"
-    id="PasswordInputField-label"
+    className=" form-control-label"
+    htmlFor="Password"
+    id="Password-label"
   >
-    PasswordInputField
+    Password
   </label>
   <input
     anyTouched={false}
@@ -591,12 +701,12 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
     destroy={[Function]}
     error={undefined}
     handleSubmit={[Function]}
-    id="PasswordInputField"
+    id="Password"
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
     invalid={false}
-    name="PasswordInputField"
+    name="Password"
     onBlur={[Function]}
     onChange={[Function]}
     onDragStart={[Function]}
@@ -605,6 +715,28 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
     pure={true}
     required={false}
     reset={[Function]}
+    schema={
+      Object {
+        "id": "Password",
+        "meta": Object {
+          "vis": Object {
+            "component": "Password",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Password",
+        "type": "string",
+      }
+    }
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
@@ -618,7 +750,7 @@ exports[`Render InputFields Should render PasswordInputField 1`] = `
 </div>
 `;
 
-exports[`Render InputFields Should render TextAreaInputField 1`] = `
+exports[`Render InputFields Should render Text 1`] = `
 <div
   anyTouched={false}
   array={
@@ -661,11 +793,136 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
   warning={undefined}
 >
   <label
-    className=""
-    htmlFor="TextAreaInputField"
-    id="TextAreaInputField-label"
+    className=" form-control-label"
+    htmlFor="Text"
+    id="Text-label"
   >
-    TextAreaInputField
+    Text
+  </label>
+  <input
+    anyTouched={false}
+    array={
+      Object {
+        "insert": [Function],
+        "move": [Function],
+        "pop": [Function],
+        "push": [Function],
+        "remove": [Function],
+        "removeAll": [Function],
+        "shift": [Function],
+        "splice": [Function],
+        "swap": [Function],
+        "unshift": [Function],
+      }
+    }
+    asyncValidate={[Function]}
+    autofill={[Function]}
+    blur={[Function]}
+    change={[Function]}
+    className="form-control"
+    clearAsyncError={[Function]}
+    clearSubmit={[Function]}
+    clearSubmitErrors={[Function]}
+    destroy={[Function]}
+    error={undefined}
+    handleSubmit={[Function]}
+    id="Text"
+    initialValues={undefined}
+    initialize={[Function]}
+    initialized={false}
+    invalid={false}
+    name="Text"
+    onBlur={[Function]}
+    onChange={[Function]}
+    onDragStart={[Function]}
+    onDrop={[Function]}
+    onFocus={[Function]}
+    pure={true}
+    required={false}
+    reset={[Function]}
+    schema={
+      Object {
+        "id": "Text",
+        "meta": Object {
+          "vis": Object {
+            "component": "Text",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "Text",
+        "type": "string",
+      }
+    }
+    submit={[Function]}
+    submitSucceeded={false}
+    touch={[Function]}
+    triggerSubmit={undefined}
+    type="text"
+    untouch={[Function]}
+    valid={true}
+    value=""
+    warning={undefined}
+  />
+</div>
+`;
+
+exports[`Render InputFields Should render TextArea 1`] = `
+<div
+  anyTouched={false}
+  array={
+    Object {
+      "insert": [Function],
+      "move": [Function],
+      "pop": [Function],
+      "push": [Function],
+      "remove": [Function],
+      "removeAll": [Function],
+      "shift": [Function],
+      "splice": [Function],
+      "swap": [Function],
+      "unshift": [Function],
+    }
+  }
+  asyncValidate={[Function]}
+  autofill={[Function]}
+  blur={[Function]}
+  change={[Function]}
+  className="form-group"
+  clearAsyncError={[Function]}
+  clearSubmit={[Function]}
+  clearSubmitErrors={[Function]}
+  destroy={[Function]}
+  error={undefined}
+  handleSubmit={[Function]}
+  initialValues={undefined}
+  initialize={[Function]}
+  initialized={false}
+  invalid={false}
+  pure={true}
+  reset={[Function]}
+  submit={[Function]}
+  submitSucceeded={false}
+  touch={[Function]}
+  triggerSubmit={undefined}
+  untouch={[Function]}
+  valid={true}
+  warning={undefined}
+>
+  <label
+    className=" form-control-label"
+    htmlFor="TextArea"
+    id="TextArea-label"
+  >
+    TextArea
   </label>
   <textarea
     anyTouched={false}
@@ -694,12 +951,12 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
     destroy={[Function]}
     error={undefined}
     handleSubmit={[Function]}
-    id="TextAreaInputField"
+    id="TextArea"
     initialValues={undefined}
     initialize={[Function]}
     initialized={false}
     invalid={false}
-    name="TextAreaInputField"
+    name="TextArea"
     onBlur={[Function]}
     onChange={[Function]}
     onDragStart={[Function]}
@@ -708,113 +965,32 @@ exports[`Render InputFields Should render TextAreaInputField 1`] = `
     pure={true}
     required={false}
     reset={[Function]}
-    submit={[Function]}
-    submitSucceeded={false}
-    touch={[Function]}
-    triggerSubmit={undefined}
-    untouch={[Function]}
-    valid={true}
-    value=""
-    warning={undefined}
-  />
-</div>
-`;
-
-exports[`Render InputFields Should render TextInputField 1`] = `
-<div
-  anyTouched={false}
-  array={
-    Object {
-      "insert": [Function],
-      "move": [Function],
-      "pop": [Function],
-      "push": [Function],
-      "remove": [Function],
-      "removeAll": [Function],
-      "shift": [Function],
-      "splice": [Function],
-      "swap": [Function],
-      "unshift": [Function],
-    }
-  }
-  asyncValidate={[Function]}
-  autofill={[Function]}
-  blur={[Function]}
-  change={[Function]}
-  className="form-group"
-  clearAsyncError={[Function]}
-  clearSubmit={[Function]}
-  clearSubmitErrors={[Function]}
-  destroy={[Function]}
-  error={undefined}
-  handleSubmit={[Function]}
-  initialValues={undefined}
-  initialize={[Function]}
-  initialized={false}
-  invalid={false}
-  pure={true}
-  reset={[Function]}
-  submit={[Function]}
-  submitSucceeded={false}
-  touch={[Function]}
-  triggerSubmit={undefined}
-  untouch={[Function]}
-  valid={true}
-  warning={undefined}
->
-  <label
-    className=""
-    htmlFor="TextInputField"
-    id="TextInputField-label"
-  >
-    TextInputField
-  </label>
-  <input
-    anyTouched={false}
-    array={
+    schema={
       Object {
-        "insert": [Function],
-        "move": [Function],
-        "pop": [Function],
-        "push": [Function],
-        "remove": [Function],
-        "removeAll": [Function],
-        "shift": [Function],
-        "splice": [Function],
-        "swap": [Function],
-        "unshift": [Function],
+        "id": "TextArea",
+        "meta": Object {
+          "vis": Object {
+            "component": "TextArea",
+            "ordinal": Object {
+              "Color": [Function],
+              "Date": [Function],
+              "DateTime": [Function],
+              "Email": [Function],
+              "Number": [Function],
+              "Password": [Function],
+              "Text": [Function],
+              "TextArea": [Function],
+            },
+          },
+        },
+        "title": "TextArea",
+        "type": "string",
       }
     }
-    asyncValidate={[Function]}
-    autofill={[Function]}
-    blur={[Function]}
-    change={[Function]}
-    className="form-control"
-    clearAsyncError={[Function]}
-    clearSubmit={[Function]}
-    clearSubmitErrors={[Function]}
-    destroy={[Function]}
-    error={undefined}
-    handleSubmit={[Function]}
-    id="TextInputField"
-    initialValues={undefined}
-    initialize={[Function]}
-    initialized={false}
-    invalid={false}
-    name="TextInputField"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onDragStart={[Function]}
-    onDrop={[Function]}
-    onFocus={[Function]}
-    pure={true}
-    required={false}
-    reset={[Function]}
     submit={[Function]}
     submitSucceeded={false}
     touch={[Function]}
     triggerSubmit={undefined}
-    type="text"
     untouch={[Function]}
     valid={true}
     value=""

@@ -4,27 +4,25 @@ import React, { Component } from 'react';
 import { Field } from 'redux-form';
 import { Input } from 'reactstrap';
 
-import FormField from './FormField';
+import FormField from './components/FormField';
 import { injectSheet } from './Jss';
 import validate from './validator';
 
-export class InputComponent extends Component<*, *, *> {
-  static defaultProps = {};
+class InputComponent extends Component {
+  static defaultProps = {
+    schemaVis: {}
+  };
   props: {
     type: string,
-    schema: { [string]: any },
-    options?: ObjectSelectOptionsType,
+    schemaVis: {
+      schema: { [string]: any }
+    },
     input: { name: string },
     meta: { [string]: any },
     children: [React.Element<*>],
     classes: { [string]: any },
     styles: { [string]: any },
-    sheet: any,
-    renderSchema: (
-      { [string]: any },
-      index: string,
-      namespace: string
-    ) => React.Element<*>
+    sheet: any
   };
 
   renderInput() {
@@ -34,11 +32,9 @@ export class InputComponent extends Component<*, *, *> {
       sheet,
       type,
       input,
-      schema,
+      schemaVis,
       meta,
-      options,
       children,
-      renderSchema,
       ...rest
     } = this.props;
     const attributes = {
@@ -50,8 +46,9 @@ export class InputComponent extends Component<*, *, *> {
     };
     return <Input {...attributes} />;
   }
+
   render() {
-    const { options, schema, type, ...rest } = this.props;
+    const { schemaVis: { schema }, type, ...rest } = this.props;
     return (
       <FormField schema={schema} {...rest}>
         {this.renderInput()}
@@ -64,11 +61,14 @@ class InputField extends Component<*, *, *> {
   static defaultProps = {
     type: 'text',
     component: InputComponent,
-    required: false
+    required: false,
+    schemaVis: {}
   };
 
   props: {
-    schema: any,
+    schemaVis: {
+      schema: any
+    },
     component: any,
     type: string,
     name: string,
@@ -77,46 +77,34 @@ class InputField extends Component<*, *, *> {
   };
 
   render() {
-    const { schema, name, component, required, ...rest } = this.props;
+    const {
+      schemaVis,
+      name,
+      component,
+      required,
+      ...rest
+    } = this.props;
 
     return (
       <Field
         name={name}
-        schema={schema}
+        schemaVis={schemaVis}
         required={required}
         component={component}
-        validate={validate(schema, required)}
+        validate={validate(schemaVis.schema, required)}
         {...rest}
       />
     );
   }
 }
 
-const createInputField = (_options: CreateInputOptionsType) => {
+export default function(_options: CreateInputOptionsType) {
   const { styles, ...options } = _options;
-  class CreatedInputField extends Component<*, *, *> {
+  class CreatedInputField extends Component {
     render() {
       return <InputField {...this.props} {...options} />;
     }
   }
 
   return injectSheet(styles)(CreatedInputField);
-};
-
-export const inputFields = {
-  TextInputField: createInputField({ type: 'text' }),
-  EmailInputField: createInputField({ type: 'email' }),
-  PasswordInputField: createInputField({ type: 'password' }),
-  DateInputField: createInputField({ type: 'date' }),
-  DateTimeInputField: createInputField({ type: 'datetime-local' }),
-  NumberInputField: createInputField({
-    type: 'number'
-  }),
-  ColorInputField: createInputField({
-    type: 'color',
-    styles: { input: { height: '40px' } }
-  }),
-  TextAreaInputField: createInputField({ type: 'textarea' })
-};
-
-export default createInputField;
+}

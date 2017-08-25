@@ -1,4 +1,4 @@
-import validator from './validator';
+import validate from './validator';
 
 describe('Call Validator', () => {
   it('should validate schema', () => {
@@ -6,7 +6,7 @@ describe('Call Validator', () => {
       type: 'string'
     };
 
-    const result = validator(schema, false)('test', {}, {});
+    const result = validate(schema, false)('test', {}, {});
     expect(result).toBeUndefined();
   });
 
@@ -15,7 +15,7 @@ describe('Call Validator', () => {
       type: 'string'
     };
 
-    const result = validator(schema, true)('', {}, {});
+    const result = validate(schema, true)('', {}, {});
     expect(result).toEqual('missing required field');
   });
 });
