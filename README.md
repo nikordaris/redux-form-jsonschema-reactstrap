@@ -2,8 +2,8 @@
 
 A collection of [reactstrap](https://reactstrap.github.io/) form components for [redux-form](http://redux-form.com). These components are intended to be used with [react-jsonschema-vis](https://github.com/nikordaris/react-jsonschema-vis) to generate redux-form forms from a jsonschema definitions
 
-[![Travis](https://img.shields.io/travis/nikordaris/redux-form-jsonschema-reactstrap.svg?style=plastic)]()
-[![Codecov](https://img.shields.io/codecov/c/github/nikordaris/redux-form-jsonschema-reactstrap.svg?style=plastic)]()
+[![Build Status](https://travis-ci.org/nikordaris/redux-form-jsonschema-reactstrap.svg?branch=master)](https://travis-ci.org/nikordaris/redux-form-jsonschema-reactstrap)
+[![codecov](https://codecov.io/gh/nikordaris/redux-form-jsonschema-reactstrap/branch/master/graph/badge.svg)](https://codecov.io/gh/nikordaris/redux-form-jsonschema-reactstrap)
 
 ## Install
 
