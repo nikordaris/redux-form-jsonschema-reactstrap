@@ -46,6 +46,7 @@ export class SingleSelect extends Component {
     sheet: any,
     styles: { [string]: any },
     showLabel: boolean,
+    getOptions: (schema: { [string]: any }) => Array<{ label: string, value: any, tooltip: string }>,
     change: (form: string, prop: string, value: any) => void,
     untouch: (form: string, fields: string) => void,
     onChange: (selected: string) => void
@@ -70,7 +71,7 @@ export class SingleSelect extends Component {
     }
   }
 
-  getOptions = (schemas: Array<any>, index: string) => {
+  getOptions = (schema: { [string]: any }) => {
     const {
       name,
       required,
@@ -86,6 +87,9 @@ export class SingleSelect extends Component {
       initialSelected,
       ...rest
     } = this.props;
+    const [schemas, index] = has(schema, 'oneOf')
+      ? [schema.oneOf, `${name}-oneOf`]
+      : [schema.anyOf, `${name}-anyOf`];
     return schemas
       .map((schema, idx) => {
         const { id, title, const: value, description } = schema;
@@ -202,11 +206,9 @@ export class SingleSelect extends Component {
   }
 
   render() {
-    const { schemaVis: { schema }, name } = this.props;
-    const [schemas, optionsId] = has(schema, 'oneOf')
-      ? [schema.oneOf, `${name}-oneOf`]
-      : [schema.anyOf, `${name}-anyOf`];
-    const options = this.getOptions(schemas, optionsId);
+    const { getOptions = this.getOptions, schemaVis: { schema } } = this.props;
+
+    const options = getOptions(schema);
     if (isEmpty(options.filter(({ value }) => React.isValidElement(value)))) {
       return this.renderSelectField(options);
     }
