@@ -24,7 +24,7 @@ describe('Inject JSS', () => {
   it('should update styles', () => {
     const wrapper = shallow(<StyledFoo />);
     wrapper.setProps({ styles: { test: { background: 'white' } } });
-    expect(wrapper.getNode().props.styles.test.background).toEqual('white');
+    expect(wrapper.getElement().props.styles.test.background).toEqual('white');
   });
 
   it('should update props', () => {

@@ -113,11 +113,15 @@ exports[`Inject JSS should update props 1`] = `
       },
       "renderer": DomRenderer {
         "element": <style
-          type="text/css"
           data-jss=""
-    >
-          .test-0-3 { background: black; }
-    </style>,
+          type="text/css"
+        >
+          
+.test-0-3 {
+  background: black;
+}
+
+        </style>,
         "getSelector": [Function],
         "getStyle": [Function],
         "hasInsertedRules": false,

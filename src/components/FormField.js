@@ -106,9 +106,7 @@ export default class FormField extends Component {
         {Children.map(children, child =>
           cloneElement(child, {
             id: name,
-            state: inputState,
-            ...input,
-            ...rest
+            state: inputState
           })
         )}
 
