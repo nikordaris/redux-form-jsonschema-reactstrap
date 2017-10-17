@@ -160,6 +160,11 @@ export class SingleSelect extends Component {
     );
   }
 
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   renderSelectField(options: Array<OptionType>) {
     const rest = omit(this.props, [
       'tag',
@@ -176,7 +181,7 @@ export class SingleSelect extends Component {
     return (
       <Field
         type="select"
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={FormField}
         schema={schema}
         {...rest}

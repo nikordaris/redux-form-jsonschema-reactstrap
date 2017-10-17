@@ -7,7 +7,15 @@ export const Password = createInputField({ type: 'password' });
 export const Date = createInputField({ type: 'date' });
 export const DateTime = createInputField({ type: 'datetime-local' });
 export const Number = createInputField({
-  type: 'number'
+  type: 'number',
+  parse: value => {
+    try {
+      return parseInt(value)
+    }
+    catch (Exception) {
+      return value;
+    }
+  }
 });
 export const Color = createInputField({
   type: 'color',
