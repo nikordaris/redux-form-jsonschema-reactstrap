@@ -101,11 +101,16 @@ class UniformedArray extends Component {
   headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
 })
 export class UniformedArrayCard extends Component {
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={UniformedArray}
         schemaVis={schemaVis}
         {...rest}
@@ -131,11 +136,16 @@ export class UniformedArrayCard extends Component {
   headerTitle: { marginTop: 'auto', marginBottom: 'auto' }
 })
 export class UniformedArrayInline extends Component {
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={UniformedArray}
         schemaVis={schemaVis}
         bodyTag="div"
@@ -341,12 +351,17 @@ class ModalUniformArray extends Component {
 export class ModalUniformedArrayCard extends Component {
   wrapped: any;
 
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
         ref={elm => { this.wrapped = elm; }}
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={ModalUniformArray}
         schemaVis={schemaVis}
         bodyProps={{ flush: true }}
@@ -375,12 +390,17 @@ export class ModalUniformedArrayCard extends Component {
 export class ModalUniformedArrayInline extends Component {
   wrapped: any;
 
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
         ref={elm => { this.wrapped = elm; }}
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={ModalUniformArray}
         schemaVis={schemaVis}
         bodyTag="div"

@@ -166,11 +166,16 @@ class VariedArray extends Component {
   }
 })
 export class VariedArrayCard extends Component {
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={VariedArray}
         schemaVis={schemaVis}
         {...rest}
@@ -199,11 +204,15 @@ export class VariedArrayCard extends Component {
   }
 })
 export class VariedArrayInline extends Component {
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={VariedArray}
         schemaVis={schemaVis}
         bodyTag="div"
@@ -483,12 +492,17 @@ class ModalVariedArray extends Component {
 export class ModalVariedArrayCard extends Component {
   wrapped: any;
 
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
         ref={elm => { this.wrapped = elm; }}
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={ModalVariedArray}
         schemaVis={schemaVis}
         bodyProps={{ flush: true }}
@@ -517,12 +531,17 @@ export class ModalVariedArrayCard extends Component {
 export class ModalVariedArrayInline extends Component {
   wrapped: any;
 
+  validate = (value: any, allValues: { [string]: any }, props: any, name: string) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   render() {
     const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
     return (
       <FieldArray
         ref={elm => { this.wrapped = elm; }}
-        validate={validate(schema, required)}
+        validate={this.validate}
         component={ModalVariedArray}
         schemaVis={schemaVis}
         bodyTag="div"

@@ -192,7 +192,7 @@ const MODAL_VARIED_ARRAY_CARD_SCHEMA = {
         properties: {
           name: {
             title: 'Name',
-            it: 'Name',
+            id: 'Name',
             type: 'string',
             meta: {
               vis: {
@@ -289,9 +289,10 @@ describe('Render Varied Array Fields', () => {
     mountReduxFormComponent(VariedArrayCard, { schemaVis: { components, prefix: 'meta.vis', schema: VARIED_ARRAY_CARD_SCHEMA }, name: 'foobar' }, (wrapper) => {
       wrapper
         .find('#selectItem')
+        .first()
         .simulate('change', { target: { value: 'Bar' } });
       expect(toJson(wrapper)).toMatchSnapshot();
-      wrapper.find('#addItemBtn').simulate('click');
+      wrapper.find('#addItemBtn').first().simulate('click');
       expect(toJson(wrapper)).toMatchSnapshot();
       wrapper.find('#removeItemBtn').at(0).simulate('click');
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -335,7 +336,7 @@ describe('Render Varied Array Fields', () => {
   it('should handle add and cancel item modal', () => {
     mountReduxFormComponent(ModalVariedArrayCard, { schemaVis: { components, prefix: 'meta.vis', schema: MODAL_VARIED_ARRAY_CARD_SCHEMA }, name: 'foobar' }, (wrapper) => {
       const StyledComponent = wrapper.find(ModalVariedArrayCard);
-      const arrayComponent = StyledComponent.node.wrapped.wrapped.getRenderedComponent().wrappedInstance;
+      const arrayComponent = StyledComponent.instance().wrapped.wrapped.getRenderedComponent().wrappedInstance;
 
       arrayComponent.toggleAddFormModal();
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -349,19 +350,23 @@ describe('Render Varied Array Fields', () => {
   it('should add item to array, modify it, and remove it', () => {
     mountReduxFormComponent(ModalVariedArrayCard, { schemaVis: { components, prefix: 'meta.vis', schema: MODAL_VARIED_ARRAY_CARD_SCHEMA }, name: 'foobar' }, (wrapper) => {
       const StyledComponent = wrapper.find(ModalVariedArrayCard);
-      const arrayComponent = StyledComponent.node.wrapped.wrapped.getRenderedComponent().wrappedInstance;
+      const arrayComponent = StyledComponent.instance().wrapped.wrapped.getRenderedComponent().wrappedInstance;
 
       arrayComponent.toggleAddFormModal();
+      wrapper.update();
       expect(toJson(wrapper)).toMatchSnapshot();
       arrayComponent.handleSelectSchema('Bar');
+      wrapper.update();
       expect(toJson(wrapper)).toMatchSnapshot();
       arrayComponent.handleSubmitItem({ name: 'name', bar: 'bar' });
+      wrapper.update();
       expect(toJson(wrapper)).toMatchSnapshot();
-      wrapper.find('#arrayListItem').simulate('click');
+      wrapper.find('#arrayListItem').first().simulate('click');
       expect(toJson(wrapper)).toMatchSnapshot();
       arrayComponent.handleSubmitItem({ name: 'name', bar: undefined });
+      wrapper.update();
       expect(toJson(wrapper)).toMatchSnapshot();
-      wrapper.find('#removeItemBtn').simulate('click');
+      wrapper.find('#removeItemBtn').first().simulate('click');
       expect(toJson(wrapper)).toMatchSnapshot();
       wrapper.unmount();
     });

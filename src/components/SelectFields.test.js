@@ -199,13 +199,13 @@ describe('Render SelectFields', () => {
       </Provider>
     );
     const StyledComponent = wrapper.find(SingleSelect);
-    const SelectComponent = StyledComponent.node.wrapped.wrappedInstance;
+    const SelectComponent = StyledComponent.instance().wrapped.wrappedInstance;
     wrapper.find(Input).simulate('change', {
       target: { value: 'Foo' }
     });
     expect(SelectComponent.state.selected).toEqual('Foo');
     expect(toJson(wrapper)).toMatchSnapshot();
     wrapper.unmount();
-    expect(StyledComponent.node.state.sheet.attached).toBeFalsy();
+    expect(StyledComponent.instance().state.sheet.attached).toBeFalsy();
   });
 });

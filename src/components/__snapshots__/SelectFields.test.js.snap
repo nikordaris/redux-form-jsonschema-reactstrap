@@ -49,51 +49,8 @@ exports[`Render SelectFields Should render SingleSelect 1`] = `
     SingleSelect
   </label>
   <select
-    anyTouched={false}
-    array={
-      Object {
-        "insert": [Function],
-        "move": [Function],
-        "pop": [Function],
-        "push": [Function],
-        "remove": [Function],
-        "removeAll": [Function],
-        "shift": [Function],
-        "splice": [Function],
-        "swap": [Function],
-        "unshift": [Function],
-      }
-    }
-    asyncValidate={[Function]}
-    autofill={[Function]}
-    blur={[Function]}
     className="form-control"
-    clearAsyncError={[Function]}
-    clearSubmit={[Function]}
-    clearSubmitErrors={[Function]}
-    destroy={[Function]}
-    error={undefined}
-    handleSubmit={[Function]}
     id="SingleSelect"
-    initialValues={undefined}
-    initialize={[Function]}
-    initialized={false}
-    invalid={false}
-    name="SingleSelect"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onDragStart={[Function]}
-    onDrop={[Function]}
-    onFocus={[Function]}
-    pure={true}
-    reset={[Function]}
-    submit={[Function]}
-    submitSucceeded={false}
-    touch={[Function]}
-    triggerSubmit={undefined}
-    valid={true}
-    value=""
-    warning={undefined}
   >
     <option
       disabled={true}
@@ -165,51 +122,8 @@ exports[`Render SelectFields Should render SingleSelect with only titles 1`] = `
     SingleSelect
   </label>
   <select
-    anyTouched={false}
-    array={
-      Object {
-        "insert": [Function],
-        "move": [Function],
-        "pop": [Function],
-        "push": [Function],
-        "remove": [Function],
-        "removeAll": [Function],
-        "shift": [Function],
-        "splice": [Function],
-        "swap": [Function],
-        "unshift": [Function],
-      }
-    }
-    asyncValidate={[Function]}
-    autofill={[Function]}
-    blur={[Function]}
     className="form-control"
-    clearAsyncError={[Function]}
-    clearSubmit={[Function]}
-    clearSubmitErrors={[Function]}
-    destroy={[Function]}
-    error={undefined}
-    handleSubmit={[Function]}
     id="SingleSelect"
-    initialValues={undefined}
-    initialize={[Function]}
-    initialized={false}
-    invalid={false}
-    name="SingleSelect"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onDragStart={[Function]}
-    onDrop={[Function]}
-    onFocus={[Function]}
-    pure={true}
-    reset={[Function]}
-    submit={[Function]}
-    submitSucceeded={false}
-    touch={[Function]}
-    triggerSubmit={undefined}
-    valid={true}
-    value=""
-    warning={undefined}
   >
     <option
       disabled={true}
@@ -281,51 +195,8 @@ exports[`Render SelectFields Should render SingleSelect with only values 1`] = `
     SingleSelect
   </label>
   <select
-    anyTouched={false}
-    array={
-      Object {
-        "insert": [Function],
-        "move": [Function],
-        "pop": [Function],
-        "push": [Function],
-        "remove": [Function],
-        "removeAll": [Function],
-        "shift": [Function],
-        "splice": [Function],
-        "swap": [Function],
-        "unshift": [Function],
-      }
-    }
-    asyncValidate={[Function]}
-    autofill={[Function]}
-    blur={[Function]}
     className="form-control"
-    clearAsyncError={[Function]}
-    clearSubmit={[Function]}
-    clearSubmitErrors={[Function]}
-    destroy={[Function]}
-    error={undefined}
-    handleSubmit={[Function]}
     id="SingleSelect"
-    initialValues={undefined}
-    initialize={[Function]}
-    initialized={false}
-    invalid={false}
-    name="SingleSelect"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onDragStart={[Function]}
-    onDrop={[Function]}
-    onFocus={[Function]}
-    pure={true}
-    reset={[Function]}
-    submit={[Function]}
-    submitSucceeded={false}
-    touch={[Function]}
-    triggerSubmit={undefined}
-    valid={true}
-    value=""
-    warning={undefined}
   >
     <option
       disabled={true}
@@ -455,6 +326,7 @@ exports[`Render SelectFields should handle select change 1`] = `
       forceUnregisterOnUnmount={false}
       form="MyForm"
       getFormState={[Function]}
+      initialValues={undefined}
       keepDirtyOnReinitialize={false}
       name="foobar"
       persistentSubmitErrors={false}
@@ -518,7 +390,9 @@ exports[`Render SelectFields should handle select change 1`] = `
         }
       }
       shouldAsyncValidate={[Function]}
+      shouldError={[Function]}
       shouldValidate={[Function]}
+      shouldWarn={[Function]}
       touchOnBlur={true}
       touchOnChange={false}
     >
@@ -548,6 +422,7 @@ exports[`Render SelectFields should handle select change 1`] = `
         arraySplice={[Function]}
         arraySwap={[Function]}
         arrayUnshift={[Function]}
+        asyncErrors={undefined}
         asyncValidating={false}
         autofill={[Function]}
         blur={[Function]}
@@ -560,10 +435,12 @@ exports[`Render SelectFields should handle select change 1`] = `
         dirty={true}
         dispatch={[Function]}
         enableReinitialize={false}
+        error={undefined}
         focus={[Function]}
         forceUnregisterOnUnmount={false}
         form="MyForm"
         getFormState={[Function]}
+        initialValues={undefined}
         initialize={[Function]}
         initialized={false}
         invalid={false}
@@ -644,7 +521,9 @@ exports[`Render SelectFields should handle select change 1`] = `
         setSubmitFailed={[Function]}
         setSubmitSucceeded={[Function]}
         shouldAsyncValidate={[Function]}
+        shouldError={[Function]}
         shouldValidate={[Function]}
+        shouldWarn={[Function]}
         startAsyncValidation={[Function]}
         startSubmit={[Function]}
         stopAsyncValidation={[Function]}
@@ -658,6 +537,7 @@ exports[`Render SelectFields should handle select change 1`] = `
         touch={[Function]}
         touchOnBlur={true}
         touchOnChange={false}
+        triggerSubmit={undefined}
         unregisterField={[Function]}
         untouch={[Function]}
         updateSyncErrors={[Function]}
@@ -669,6 +549,7 @@ exports[`Render SelectFields should handle select change 1`] = `
             "foobar": Object {},
           }
         }
+        warning={undefined}
       >
         <StyledComponent
           anyTouched={false}
@@ -697,8 +578,10 @@ exports[`Render SelectFields should handle select change 1`] = `
           destroy={[Function]}
           dirty={true}
           dispatch={[Function]}
+          error={undefined}
           form="MyForm"
           handleSubmit={[Function]}
+          initialValues={undefined}
           initialize={[Function]}
           initialized={false}
           invalid={false}
@@ -769,8 +652,10 @@ exports[`Render SelectFields should handle select change 1`] = `
           submitSucceeded={false}
           submitting={false}
           touch={[Function]}
+          triggerSubmit={undefined}
           untouch={[Function]}
           valid={true}
+          warning={undefined}
         >
           <Connect(SingleSelect)
             anyTouched={false}
@@ -806,8 +691,10 @@ exports[`Render SelectFields should handle select change 1`] = `
             destroy={[Function]}
             dirty={true}
             dispatch={[Function]}
+            error={undefined}
             form="MyForm"
             handleSubmit={[Function]}
+            initialValues={undefined}
             initialize={[Function]}
             initialized={false}
             invalid={false}
@@ -974,11 +861,23 @@ exports[`Render SelectFields should handle select change 1`] = `
                 },
                 "renderer": DomRenderer {
                   "element": <style
-                    type="text/css"
                     data-jss=""
-              >
-                    .selectedObject-0-12 { margin-top: 10px; } .card-0-13 { margin-top: 15px; margin-bottom: 10px; } .header-0-14 { padding: 5px; padding-left: 10px; }
-              </style>,
+                    type="text/css"
+                  >
+                    
+.selectedObject-0-12 {
+  margin-top: 10px;
+}
+.card-0-13 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.header-0-14 {
+  padding: 5px;
+  padding-left: 10px;
+}
+
+                  </style>,
                   "getSelector": [Function],
                   "getStyle": [Function],
                   "hasInsertedRules": false,
@@ -1154,8 +1053,10 @@ exports[`Render SelectFields should handle select change 1`] = `
             submitSucceeded={false}
             submitting={false}
             touch={[Function]}
+            triggerSubmit={undefined}
             untouch={[Function]}
             valid={true}
+            warning={undefined}
           >
             <SingleSelect
               anyTouched={false}
@@ -1191,9 +1092,11 @@ exports[`Render SelectFields should handle select change 1`] = `
               destroy={[Function]}
               dirty={true}
               dispatch={[Function]}
+              error={undefined}
               form="MyForm"
               handleSubmit={[Function]}
               initialSelected=""
+              initialValues={undefined}
               initialize={[Function]}
               initialized={false}
               invalid={false}
@@ -1361,11 +1264,23 @@ exports[`Render SelectFields should handle select change 1`] = `
                   },
                   "renderer": DomRenderer {
                     "element": <style
-                      type="text/css"
                       data-jss=""
-                >
-                      .selectedObject-0-12 { margin-top: 10px; } .card-0-13 { margin-top: 15px; margin-bottom: 10px; } .header-0-14 { padding: 5px; padding-left: 10px; }
-                </style>,
+                      type="text/css"
+                    >
+                      
+.selectedObject-0-12 {
+  margin-top: 10px;
+}
+.card-0-13 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.header-0-14 {
+  padding: 5px;
+  padding-left: 10px;
+}
+
+                    </style>,
                     "getSelector": [Function],
                     "getStyle": [Function],
                     "hasInsertedRules": false,
@@ -1541,11 +1456,14 @@ exports[`Render SelectFields should handle select change 1`] = `
               submitSucceeded={false}
               submitting={false}
               touch={[Function]}
+              triggerSubmit={undefined}
               untouch={[Function]}
               valid={true}
+              warning={undefined}
             >
               <div>
                 <Input
+                  className={undefined}
                   onChange={[Function]}
                   tag="p"
                   type="select"
@@ -1559,16 +1477,15 @@ exports[`Render SelectFields should handle select change 1`] = `
                     <option
                       disabled={true}
                       value=""
-                    >
-                      Select 
-                      SingleSelect
-                    </option>
+                    />
                     <option
+                      key="0"
                       value="Bar"
                     >
                       Bar
                     </option>
                     <option
+                      key="1"
                       value="Foo"
                     >
                       Foo
@@ -1610,12 +1527,15 @@ exports[`Render SelectFields should handle select change 1`] = `
                     destroy={[Function]}
                     dirty={true}
                     dispatch={[Function]}
+                    error={undefined}
                     form="MyForm"
                     handleSubmit={[Function]}
                     id="schemaVis"
+                    initialValues={undefined}
                     initialize={[Function]}
                     initialized={false}
                     invalid={false}
+                    key="foobar-oneOf-0"
                     meta={
                       Object {
                         "hasComponent": [Function],
@@ -1657,7 +1577,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                     submitting={false}
                     tag="div"
                     touch={[Function]}
+                    triggerSubmit={undefined}
                     valid={true}
+                    warning={undefined}
                   >
                     <StyledComponent
                       anyTouched={false}
@@ -1685,12 +1607,15 @@ exports[`Render SelectFields should handle select change 1`] = `
                       destroy={[Function]}
                       dirty={true}
                       dispatch={[Function]}
+                      error={undefined}
                       form="MyForm"
                       handleSubmit={[Function]}
                       id="schemaVis"
+                      initialValues={undefined}
                       initialize={[Function]}
                       initialized={false}
                       invalid={false}
+                      key="schemaVis"
                       meta={
                         Object {
                           "hasComponent": [Function],
@@ -1740,7 +1665,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                       submitSucceeded={false}
                       submitting={false}
                       touch={[Function]}
+                      triggerSubmit={undefined}
                       valid={true}
+                      warning={undefined}
                     >
                       <CardWithHeader
                         anyTouched={false}
@@ -1774,9 +1701,11 @@ exports[`Render SelectFields should handle select change 1`] = `
                         destroy={[Function]}
                         dirty={true}
                         dispatch={[Function]}
+                        error={undefined}
                         form="MyForm"
                         handleSubmit={[Function]}
                         id="schemaVis"
+                        initialValues={undefined}
                         initialize={[Function]}
                         initialized={false}
                         invalid={false}
@@ -1922,11 +1851,20 @@ exports[`Render SelectFields should handle select change 1`] = `
                             },
                             "renderer": DomRenderer {
                               "element": <style
-                                type="text/css"
                                 data-jss=""
-                          >
-                                .card-0-15 { margin-top: 15px; margin-bottom: 10px; } .header-0-16 { padding: 5px; padding-left: 10px; }
-                          </style>,
+                                type="text/css"
+                              >
+                                
+.card-0-15 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.header-0-16 {
+  padding: 5px;
+  padding-left: 10px;
+}
+
+                              </style>,
                               "getSelector": [Function],
                               "getStyle": [Function],
                               "hasInsertedRules": false,
@@ -2085,7 +2023,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                         submitSucceeded={false}
                         submitting={false}
                         touch={[Function]}
+                        triggerSubmit={undefined}
                         valid={true}
+                        warning={undefined}
                       >
                         <Card
                           className="card-0-15"
@@ -2105,12 +2045,15 @@ exports[`Render SelectFields should handle select change 1`] = `
                               </div>
                             </CardHeader>
                             <SchemaVis
+                              className={undefined}
+                              componentProps={undefined}
                               components={
                                 Object {
                                   "CardWithHeader": [Function],
                                   "Text": [Function],
                                 }
                               }
+                              defaultComponents={undefined}
                               id="schemaVis"
                               namespace="foobar"
                               prefix="meta.vis"
@@ -2140,7 +2083,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                               tag={[Function]}
                             >
                               <CardBlock
+                                className={undefined}
                                 id="schemaVis"
+                                key="schemaVis"
                                 tag="div"
                               >
                                 <div
@@ -2148,7 +2093,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                                   id="schemaVis"
                                 >
                                   <StyledComponent
+                                    className={undefined}
                                     id="schemaVis"
+                                    key="0"
                                     name="foobar.x"
                                     required={false}
                                     schemaVis={
@@ -2175,6 +2122,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                     styles={Object {}}
                                   >
                                     <CreatedInputField
+                                      className={undefined}
                                       classes={Object {}}
                                       id="schemaVis"
                                       name="foobar.x"
@@ -2293,11 +2241,13 @@ exports[`Render SelectFields should handle select change 1`] = `
                                           },
                                           "renderer": DomRenderer {
                                             "element": <style
-                                              type="text/css"
                                               data-jss=""
-                                        >
+                                              type="text/css"
+                                            >
                                               
-                                        </style>,
+
+
+                                            </style>,
                                             "getSelector": [Function],
                                             "getStyle": [Function],
                                             "hasInsertedRules": false,
@@ -2401,6 +2351,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                       styles={Object {}}
                                     >
                                       <InputField
+                                        className={undefined}
                                         classes={Object {}}
                                         component={[Function]}
                                         id="schemaVis"
@@ -2520,11 +2471,13 @@ exports[`Render SelectFields should handle select change 1`] = `
                                             },
                                             "renderer": DomRenderer {
                                               "element": <style
-                                                type="text/css"
                                                 data-jss=""
-                                          >
+                                                type="text/css"
+                                              >
                                                 
-                                          </style>,
+
+
+                                              </style>,
                                               "getSelector": [Function],
                                               "getStyle": [Function],
                                               "hasInsertedRules": false,
@@ -2629,6 +2582,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                         type="text"
                                       >
                                         <Field
+                                          className={undefined}
                                           classes={Object {}}
                                           component={[Function]}
                                           id="schemaVis"
@@ -2748,11 +2702,13 @@ exports[`Render SelectFields should handle select change 1`] = `
                                               },
                                               "renderer": DomRenderer {
                                                 "element": <style
-                                                  type="text/css"
                                                   data-jss=""
-                                            >
+                                                  type="text/css"
+                                                >
                                                   
-                                            </style>,
+
+
+                                                </style>,
                                                 "getSelector": [Function],
                                                 "getStyle": [Function],
                                                 "hasInsertedRules": false,
@@ -2977,7 +2933,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                 "setSubmitFailed": [Function],
                                                 "setSubmitSucceeded": [Function],
                                                 "shouldAsyncValidate": [Function],
+                                                "shouldError": [Function],
                                                 "shouldValidate": [Function],
+                                                "shouldWarn": [Function],
                                                 "startAsyncValidation": [Function],
                                                 "startSubmit": [Function],
                                                 "stopAsyncValidation": [Function],
@@ -3005,6 +2963,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                 "warning": undefined,
                                               }
                                             }
+                                            className={undefined}
                                             classes={Object {}}
                                             component={[Function]}
                                             id="schemaVis"
@@ -3125,11 +3084,13 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                 },
                                                 "renderer": DomRenderer {
                                                   "element": <style
-                                                    type="text/css"
                                                     data-jss=""
-                                              >
+                                                    type="text/css"
+                                                  >
                                                     
-                                              </style>,
+
+
+                                                  </style>,
                                                   "getSelector": [Function],
                                                   "getStyle": [Function],
                                                   "hasInsertedRules": false,
@@ -3354,7 +3315,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   "setSubmitFailed": [Function],
                                                   "setSubmitSucceeded": [Function],
                                                   "shouldAsyncValidate": [Function],
+                                                  "shouldError": [Function],
                                                   "shouldValidate": [Function],
+                                                  "shouldWarn": [Function],
                                                   "startAsyncValidation": [Function],
                                                   "startSubmit": [Function],
                                                   "stopAsyncValidation": [Function],
@@ -3382,12 +3345,16 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   "warning": undefined,
                                                 }
                                               }
+                                              _value={undefined}
+                                              asyncError={undefined}
                                               asyncValidating={false}
+                                              className={undefined}
                                               classes={Object {}}
                                               component={[Function]}
                                               dirty={false}
                                               dispatch={[Function]}
                                               id="schemaVis"
+                                              initial={undefined}
                                               name="foobar.x"
                                               normalize={[Function]}
                                               pristine={true}
@@ -3506,11 +3473,13 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   },
                                                   "renderer": DomRenderer {
                                                     "element": <style
-                                                      type="text/css"
                                                       data-jss=""
-                                                >
+                                                      type="text/css"
+                                                    >
                                                       
-                                                </style>,
+
+
+                                                    </style>,
                                                     "getSelector": [Function],
                                                     "getStyle": [Function],
                                                     "hasInsertedRules": false,
@@ -3611,11 +3580,19 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   },
                                                 }
                                               }
+                                              state={undefined}
                                               styles={Object {}}
+                                              submitError={undefined}
+                                              submitFailed={undefined}
+                                              submitting={undefined}
+                                              syncError={undefined}
+                                              syncWarning={undefined}
                                               type="text"
                                               validate={[Function]}
+                                              value={undefined}
                                             >
                                               <InputComponent
+                                                className={undefined}
                                                 classes={Object {}}
                                                 id="schemaVis"
                                                 input={
@@ -3764,11 +3741,13 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     },
                                                     "renderer": DomRenderer {
                                                       "element": <style
-                                                        type="text/css"
                                                         data-jss=""
-                                                  >
+                                                        type="text/css"
+                                                      >
                                                         
-                                                  </style>,
+
+
+                                                      </style>,
                                                       "getSelector": [Function],
                                                       "getStyle": [Function],
                                                       "hasInsertedRules": false,
@@ -3873,6 +3852,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                 type="text"
                                               >
                                                 <FormField
+                                                  className={undefined}
                                                   classes={Object {}}
                                                   id="schemaVis"
                                                   input={
@@ -4013,11 +3993,13 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       },
                                                       "renderer": DomRenderer {
                                                         "element": <style
-                                                          type="text/css"
                                                           data-jss=""
-                                                    >
+                                                          type="text/css"
+                                                        >
                                                           
-                                                    </style>,
+
+
+                                                        </style>,
                                                         "getSelector": [Function],
                                                         "getStyle": [Function],
                                                         "hasInsertedRules": false,
@@ -4124,6 +4106,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   tooltipProps={Object {}}
                                                 >
                                                   <FormGroup
+                                                    className={undefined}
+                                                    color={undefined}
                                                     id="schemaVis"
                                                     tag="div"
                                                   >
@@ -4132,6 +4116,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       id="schemaVis"
                                                     >
                                                       <Label
+                                                        className={undefined}
                                                         for="foobar.x"
                                                         id="foobar.x-label"
                                                         tag="label"
@@ -4145,7 +4130,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         </label>
                                                       </Label>
                                                       <Input
-                                                        id="schemaVis"
+                                                        className={undefined}
+                                                        id="foobar.x"
+                                                        key=".0"
                                                         name="foobar.x"
                                                         onBlur={[Function]}
                                                         onChange={[Function]}
@@ -4153,13 +4140,14 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         onDrop={[Function]}
                                                         onFocus={[Function]}
                                                         required={false}
+                                                        state={undefined}
                                                         tag="p"
                                                         type="text"
                                                         value=""
                                                       >
                                                         <input
                                                           className="form-control"
-                                                          id="schemaVis"
+                                                          id="foobar.x"
                                                           name="foobar.x"
                                                           onBlur={[Function]}
                                                           onChange={[Function]}

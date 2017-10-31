@@ -28,7 +28,7 @@ exports[`Render FormField should render 1`] = `
   </UncontrolledTooltip>
   <input
     id="foo"
-    name="foo"
+    key=".0"
     type="number"
   />
 </FormGroup>
@@ -63,7 +63,7 @@ exports[`Render FormField should render touched 1`] = `
   </UncontrolledTooltip>
   <input
     id="foo"
-    name="foo"
+    key=".0"
     state="success"
     type="number"
   />
@@ -103,7 +103,7 @@ exports[`Render FormField should render with error 1`] = `
   </UncontrolledTooltip>
   <input
     id="foo"
-    name="foo"
+    key=".0"
     state="danger"
     type="number"
   />
@@ -145,7 +145,7 @@ exports[`Render FormField should render with warning 1`] = `
   </UncontrolledTooltip>
   <input
     id="foo"
-    name="foo"
+    key=".0"
     state="warning"
     type="number"
   />
@@ -180,7 +180,6 @@ exports[`Render FormField should render without tooltip 1`] = `
   </label>
   <input
     id="foo"
-    name="foo"
     state="danger"
     type="number"
   />

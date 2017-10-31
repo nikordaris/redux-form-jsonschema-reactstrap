@@ -76,6 +76,11 @@ class InputField extends Component<*, *, *> {
     classes: { [string]: any }
   };
 
+  validate = (value, allValues, props, name) => {
+    const { schemaVis: { schema }, required } = this.props;
+    return validate(schema, required)(value, allValues, props, name);
+  }
+
   render() {
     const {
       schemaVis,
@@ -91,14 +96,14 @@ class InputField extends Component<*, *, *> {
         schemaVis={schemaVis}
         required={required}
         component={component}
-        validate={validate(schemaVis.schema, required)}
+        validate={this.validate}
         {...rest}
       />
     );
   }
 }
 
-export default function(_options: CreateInputOptionsType) {
+export default function (_options: CreateInputOptionsType) {
   const { styles, ...options } = _options;
   class CreatedInputField extends Component {
     render() {

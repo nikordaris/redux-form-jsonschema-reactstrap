@@ -80,7 +80,7 @@ describe('Render Uniformed Array Fields', () => {
       }
     };
     mountReduxFormComponent(UniformedArrayCard, { schemaVis: { components, prefix: 'meta.vis', schema }, name: 'foobar' }, (wrapper) => {
-      wrapper.find('#addItemBtn').simulate('click');
+      wrapper.find('#addItemBtn').first().simulate('click');
       expect(toJson(wrapper)).toMatchSnapshot();
       wrapper.find('#removeItemBtn').at(0).simulate('click');
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -163,7 +163,7 @@ describe('Render Uniformed Array Fields', () => {
     };
     mountReduxFormComponent(ModalUniformedArrayCard, { schemaVis: { components, prefix: 'meta.vis', schema }, name: 'foobar' }, (wrapper) => {
       const StyledComponent = wrapper.find(ModalUniformedArrayCard);
-      const ArrayComponent = StyledComponent.node.wrapped.wrapped.getRenderedComponent().wrappedInstance;
+      const ArrayComponent = StyledComponent.instance().wrapped.wrapped.getRenderedComponent().wrappedInstance;
 
       ArrayComponent.toggleAddFormModal();
       expect(toJson(wrapper)).toMatchSnapshot();
@@ -191,17 +191,20 @@ describe('Render Uniformed Array Fields', () => {
     };
     mountReduxFormComponent(ModalUniformedArrayCard, { schemaVis: { components, prefix: 'meta.vis', schema }, name: 'foobar' }, (wrapper) => {
       const StyledComponent = wrapper.find(ModalUniformedArrayCard);
-      const arrayComponent = StyledComponent.node.wrapped.wrapped.getRenderedComponent().wrappedInstance;
+      const arrayComponent = StyledComponent.instance().wrapped.wrapped.getRenderedComponent().wrappedInstance;
 
       arrayComponent.toggleAddFormModal();
+      wrapper.update();
       expect(toJson(wrapper)).toMatchSnapshot();
       arrayComponent.handleSubmitItem({ foo: 'bar' });
+      wrapper.update();
       expect(toJson(wrapper)).toMatchSnapshot();
-      wrapper.find('#arrayListItem').simulate('click');
+      wrapper.find('#arrayListItem').first().simulate('click');
       expect(toJson(wrapper)).toMatchSnapshot();
       arrayComponent.handleSubmitItem({ foo: 'bar2' });
+      wrapper.update();
       expect(toJson(wrapper)).toMatchSnapshot();
-      wrapper.find('#removeItemBtn').simulate('click');
+      wrapper.find('#removeItemBtn').first().simulate('click');
       expect(toJson(wrapper)).toMatchSnapshot();
       wrapper.unmount();
     });
