@@ -46,7 +46,7 @@ export class SingleSelect extends Component {
     sheet: any,
     styles: { [string]: any },
     showLabel: boolean,
-    getOptions: (schema: { [string]: any }) => Array<{ label: string, value: any, tooltip: string }>,
+    getOptions: (schema: { [string]: any }) => Array<OptionType>,
     change: (form: string, prop: string, value: any) => void,
     untouch: (form: string, fields: string) => void,
     onChange: (selected: string) => void
@@ -177,7 +177,7 @@ export class SingleSelect extends Component {
       'showLabel',
       'initialSelected'
     ]);
-    const { schemaVis: { schema }, required } = this.props;
+    const { schemaVis: { schema } } = this.props;
     return (
       <Field
         type="select"

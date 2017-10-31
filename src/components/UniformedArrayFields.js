@@ -5,7 +5,7 @@ import {
   Button,
   Card,
   CardHeader,
-  CardBlock,
+  CardBody,
   ListGroup,
   Modal,
   ModalHeader,
@@ -25,7 +25,7 @@ class UniformedArray extends Component {
   static defaultProps = {
     tag: Card,
     headerTag: CardHeader,
-    bodyTag: CardBlock,
+    bodyTag: CardBody,
     addBtnProps: {},
     required: false
   };
@@ -107,7 +107,7 @@ export class UniformedArrayCard extends Component {
   }
 
   render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    const { required, schemaVis, ...rest } = this.props;
     return (
       <FieldArray
         validate={this.validate}
@@ -142,7 +142,7 @@ export class UniformedArrayInline extends Component {
   }
 
   render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    const { required, schemaVis, ...rest } = this.props;
     return (
       <FieldArray
         validate={this.validate}
@@ -357,7 +357,7 @@ export class ModalUniformedArrayCard extends Component {
   }
 
   render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    const { required, schemaVis, ...rest } = this.props;
     return (
       <FieldArray
         ref={elm => { this.wrapped = elm; }}
@@ -396,7 +396,7 @@ export class ModalUniformedArrayInline extends Component {
   }
 
   render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    const { required, schemaVis, ...rest } = this.props;
     return (
       <FieldArray
         ref={elm => { this.wrapped = elm; }}

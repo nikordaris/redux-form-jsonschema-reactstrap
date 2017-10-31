@@ -2,7 +2,7 @@
 
 exports[`Inject JSS should inject stylesheet 1`] = `
 <p
-  className="test-0-0"
+  className="test-0-1"
 >
   test
 </p>
@@ -12,7 +12,7 @@ exports[`Inject JSS should update props 1`] = `
 <Foo
   classes={
     Object {
-      "test": "test-0-3",
+      "test": "test-0-4",
     }
   }
   foo="red"
@@ -20,14 +20,14 @@ exports[`Inject JSS should update props 1`] = `
     StyleSheet {
       "attached": true,
       "classes": Object {
-        "test": "test-0-3",
+        "test": "test-0-4",
       },
       "deployed": true,
       "linked": false,
       "options": Object {
         "Renderer": [Function],
         "classes": Object {
-          "test": "test-0-3",
+          "test": "test-0-4",
         },
         "generateClassName": [Function],
         "index": 0,
@@ -38,6 +38,39 @@ exports[`Inject JSS should update props 1`] = `
             "Renderer": [Function],
             "createGenerateClassName": [Function],
             "plugins": Array [
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onCreateRule": [Function],
+              },
+              Object {
+                "onProcessRule": [Function],
+              },
+              Object {
+                "onProcessRule": [Function],
+              },
               Object {
                 "onCreateRule": [Function],
                 "onProcessRule": [Function],
@@ -92,6 +125,8 @@ exports[`Inject JSS should update props 1`] = `
               "onProcessRule": Array [
                 [Function],
                 [Function],
+                [Function],
+                [Function],
               ],
               "onProcessSheet": Array [],
               "onProcessStyle": Array [
@@ -106,7 +141,7 @@ exports[`Inject JSS should update props 1`] = `
               ],
             },
           },
-          "version": "8.1.0",
+          "version": "9.0.0",
         },
         "parent": [Circular],
         "sheet": [Circular],
@@ -117,13 +152,14 @@ exports[`Inject JSS should update props 1`] = `
           type="text/css"
         >
           
-.test-0-3 {
+.test-0-4 {
   background: black;
 }
 
         </style>,
-        "getSelector": [Function],
+        "getKey": [Function],
         "getStyle": [Function],
+        "getUnescapedKeysMap": [Function],
         "hasInsertedRules": false,
         "setSelector": [Function],
         "setStyle": [Function],
@@ -131,7 +167,7 @@ exports[`Inject JSS should update props 1`] = `
       },
       "rules": RuleList {
         "classes": Object {
-          "test": "test-0-3",
+          "test": "test-0-4",
         },
         "index": Array [
           Object {
@@ -140,7 +176,7 @@ exports[`Inject JSS should update props 1`] = `
           },
         ],
         "map": Object {
-          ".test-0-3": Object {
+          ".test-0-4": Object {
             "background": "black",
             "color": "red",
           },
@@ -152,7 +188,7 @@ exports[`Inject JSS should update props 1`] = `
         "options": Object {
           "Renderer": [Function],
           "classes": Object {
-            "test": "test-0-3",
+            "test": "test-0-4",
           },
           "generateClassName": [Function],
           "index": 0,
@@ -163,6 +199,39 @@ exports[`Inject JSS should update props 1`] = `
               "Renderer": [Function],
               "createGenerateClassName": [Function],
               "plugins": Array [
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onCreateRule": [Function],
+                },
+                Object {
+                  "onProcessRule": [Function],
+                },
+                Object {
+                  "onProcessRule": [Function],
+                },
                 Object {
                   "onCreateRule": [Function],
                   "onProcessRule": [Function],
@@ -217,6 +286,8 @@ exports[`Inject JSS should update props 1`] = `
                 "onProcessRule": Array [
                   [Function],
                   [Function],
+                  [Function],
+                  [Function],
                 ],
                 "onProcessSheet": Array [],
                 "onProcessStyle": Array [
@@ -231,7 +302,7 @@ exports[`Inject JSS should update props 1`] = `
                 ],
               },
             },
-            "version": "8.1.0",
+            "version": "9.0.0",
           },
           "parent": [Circular],
           "sheet": [Circular],

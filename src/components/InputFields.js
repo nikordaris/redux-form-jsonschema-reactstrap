@@ -10,7 +10,7 @@ export const Number = createInputField({
   type: 'number',
   parse: value => {
     try {
-      return parseInt(value)
+      return parseInt(value, 10)
     }
     catch (Exception) {
       return value;

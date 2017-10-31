@@ -5,7 +5,7 @@ import {
   Button,
   Card,
   CardHeader,
-  CardBlock,
+  CardBody,
   Input,
   ListGroup,
   Modal,
@@ -26,7 +26,7 @@ class VariedArray extends Component {
   static defaultProps = {
     tag: Card,
     headerTag: CardHeader,
-    bodyTag: CardBlock,
+    bodyTag: CardBody,
     addBtnProps: {},
     selectInputProps: {},
     required: false
@@ -172,7 +172,7 @@ export class VariedArrayCard extends Component {
   }
 
   render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    const { required, schemaVis, ...rest } = this.props;
     return (
       <FieldArray
         validate={this.validate}
@@ -209,7 +209,7 @@ export class VariedArrayInline extends Component {
     return validate(schema, required)(value, allValues, props, name);
   }
   render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    const { required, schemaVis, ...rest } = this.props;
     return (
       <FieldArray
         validate={this.validate}
@@ -498,7 +498,7 @@ export class ModalVariedArrayCard extends Component {
   }
 
   render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    const { required, schemaVis, ...rest } = this.props;
     return (
       <FieldArray
         ref={elm => { this.wrapped = elm; }}
@@ -537,7 +537,7 @@ export class ModalVariedArrayInline extends Component {
   }
 
   render() {
-    const { required, schemaVis, schemaVis: { schema }, ...rest } = this.props;
+    const { required, schemaVis, ...rest } = this.props;
     return (
       <FieldArray
         ref={elm => { this.wrapped = elm; }}

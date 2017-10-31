@@ -24,6 +24,7 @@ exports[`Render SelectFields Should render SingleSelect 1`] = `
   clearAsyncError={[Function]}
   clearSubmit={[Function]}
   clearSubmitErrors={[Function]}
+  color={undefined}
   destroy={[Function]}
   error={undefined}
   handleSubmit={[Function]}
@@ -97,6 +98,7 @@ exports[`Render SelectFields Should render SingleSelect with only titles 1`] = `
   clearAsyncError={[Function]}
   clearSubmit={[Function]}
   clearSubmitErrors={[Function]}
+  color={undefined}
   destroy={[Function]}
   error={undefined}
   handleSubmit={[Function]}
@@ -170,6 +172,7 @@ exports[`Render SelectFields Should render SingleSelect with only values 1`] = `
   clearAsyncError={[Function]}
   clearSubmit={[Function]}
   clearSubmitErrors={[Function]}
+  color={undefined}
   destroy={[Function]}
   error={undefined}
   handleSubmit={[Function]}
@@ -680,9 +683,9 @@ exports[`Render SelectFields should handle select change 1`] = `
             change={[Function]}
             classes={
               Object {
-                "card": "card-0-13",
-                "header": "header-0-14",
-                "selectedObject": "selectedObject-0-12",
+                "card": "card-0-14",
+                "header": "header-0-15",
+                "selectedObject": "selectedObject-0-13",
               }
             }
             clearAsyncError={[Function]}
@@ -764,18 +767,18 @@ exports[`Render SelectFields should handle select change 1`] = `
               StyleSheet {
                 "attached": true,
                 "classes": Object {
-                  "card": "card-0-13",
-                  "header": "header-0-14",
-                  "selectedObject": "selectedObject-0-12",
+                  "card": "card-0-14",
+                  "header": "header-0-15",
+                  "selectedObject": "selectedObject-0-13",
                 },
                 "deployed": true,
                 "linked": false,
                 "options": Object {
                   "Renderer": [Function],
                   "classes": Object {
-                    "card": "card-0-13",
-                    "header": "header-0-14",
-                    "selectedObject": "selectedObject-0-12",
+                    "card": "card-0-14",
+                    "header": "header-0-15",
+                    "selectedObject": "selectedObject-0-13",
                   },
                   "generateClassName": [Function],
                   "index": 0,
@@ -786,6 +789,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                       "Renderer": [Function],
                       "createGenerateClassName": [Function],
                       "plugins": Array [
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onCreateRule": [Function],
+                        },
+                        Object {
+                          "onProcessRule": [Function],
+                        },
+                        Object {
+                          "onProcessRule": [Function],
+                        },
                         Object {
                           "onCreateRule": [Function],
                           "onProcessRule": [Function],
@@ -840,6 +876,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                         "onProcessRule": Array [
                           [Function],
                           [Function],
+                          [Function],
+                          [Function],
                         ],
                         "onProcessSheet": Array [],
                         "onProcessStyle": Array [
@@ -854,7 +892,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                         ],
                       },
                     },
-                    "version": "8.1.0",
+                    "version": "9.0.0",
                   },
                   "parent": [Circular],
                   "sheet": [Circular],
@@ -865,21 +903,22 @@ exports[`Render SelectFields should handle select change 1`] = `
                     type="text/css"
                   >
                     
-.selectedObject-0-12 {
+.selectedObject-0-13 {
   margin-top: 10px;
 }
-.card-0-13 {
+.card-0-14 {
   margin-top: 15px;
   margin-bottom: 10px;
 }
-.header-0-14 {
+.header-0-15 {
   padding: 5px;
   padding-left: 10px;
 }
 
                   </style>,
-                  "getSelector": [Function],
+                  "getKey": [Function],
                   "getStyle": [Function],
+                  "getUnescapedKeysMap": [Function],
                   "hasInsertedRules": false,
                   "setSelector": [Function],
                   "setStyle": [Function],
@@ -887,9 +926,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                 },
                 "rules": RuleList {
                   "classes": Object {
-                    "card": "card-0-13",
-                    "header": "header-0-14",
-                    "selectedObject": "selectedObject-0-12",
+                    "card": "card-0-14",
+                    "header": "header-0-15",
+                    "selectedObject": "selectedObject-0-13",
                   },
                   "index": Array [
                     Object {
@@ -905,15 +944,15 @@ exports[`Render SelectFields should handle select change 1`] = `
                     },
                   ],
                   "map": Object {
-                    ".card-0-13": Object {
+                    ".card-0-14": Object {
                       "margin-bottom": "10px",
                       "margin-top": "15px",
                     },
-                    ".header-0-14": Object {
+                    ".header-0-15": Object {
                       "padding": "5px",
                       "padding-left": "10px",
                     },
-                    ".selectedObject-0-12": Object {
+                    ".selectedObject-0-13": Object {
                       "margin-top": "10px",
                     },
                     "card": Object {
@@ -931,9 +970,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                   "options": Object {
                     "Renderer": [Function],
                     "classes": Object {
-                      "card": "card-0-13",
-                      "header": "header-0-14",
-                      "selectedObject": "selectedObject-0-12",
+                      "card": "card-0-14",
+                      "header": "header-0-15",
+                      "selectedObject": "selectedObject-0-13",
                     },
                     "generateClassName": [Function],
                     "index": 0,
@@ -944,6 +983,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                         "Renderer": [Function],
                         "createGenerateClassName": [Function],
                         "plugins": Array [
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onProcessRule": [Function],
+                          },
+                          Object {
+                            "onProcessRule": [Function],
+                          },
                           Object {
                             "onCreateRule": [Function],
                             "onProcessRule": [Function],
@@ -998,6 +1070,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                           "onProcessRule": Array [
                             [Function],
                             [Function],
+                            [Function],
+                            [Function],
                           ],
                           "onProcessSheet": Array [],
                           "onProcessStyle": Array [
@@ -1012,7 +1086,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                           ],
                         },
                       },
-                      "version": "8.1.0",
+                      "version": "9.0.0",
                     },
                     "parent": [Circular],
                     "sheet": [Circular],
@@ -1081,9 +1155,9 @@ exports[`Render SelectFields should handle select change 1`] = `
               change={[Function]}
               classes={
                 Object {
-                  "card": "card-0-13",
-                  "header": "header-0-14",
-                  "selectedObject": "selectedObject-0-12",
+                  "card": "card-0-14",
+                  "header": "header-0-15",
+                  "selectedObject": "selectedObject-0-13",
                 }
               }
               clearAsyncError={[Function]}
@@ -1167,18 +1241,18 @@ exports[`Render SelectFields should handle select change 1`] = `
                 StyleSheet {
                   "attached": true,
                   "classes": Object {
-                    "card": "card-0-13",
-                    "header": "header-0-14",
-                    "selectedObject": "selectedObject-0-12",
+                    "card": "card-0-14",
+                    "header": "header-0-15",
+                    "selectedObject": "selectedObject-0-13",
                   },
                   "deployed": true,
                   "linked": false,
                   "options": Object {
                     "Renderer": [Function],
                     "classes": Object {
-                      "card": "card-0-13",
-                      "header": "header-0-14",
-                      "selectedObject": "selectedObject-0-12",
+                      "card": "card-0-14",
+                      "header": "header-0-15",
+                      "selectedObject": "selectedObject-0-13",
                     },
                     "generateClassName": [Function],
                     "index": 0,
@@ -1189,6 +1263,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                         "Renderer": [Function],
                         "createGenerateClassName": [Function],
                         "plugins": Array [
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onCreateRule": [Function],
+                          },
+                          Object {
+                            "onProcessRule": [Function],
+                          },
+                          Object {
+                            "onProcessRule": [Function],
+                          },
                           Object {
                             "onCreateRule": [Function],
                             "onProcessRule": [Function],
@@ -1243,6 +1350,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                           "onProcessRule": Array [
                             [Function],
                             [Function],
+                            [Function],
+                            [Function],
                           ],
                           "onProcessSheet": Array [],
                           "onProcessStyle": Array [
@@ -1257,7 +1366,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                           ],
                         },
                       },
-                      "version": "8.1.0",
+                      "version": "9.0.0",
                     },
                     "parent": [Circular],
                     "sheet": [Circular],
@@ -1268,21 +1377,22 @@ exports[`Render SelectFields should handle select change 1`] = `
                       type="text/css"
                     >
                       
-.selectedObject-0-12 {
+.selectedObject-0-13 {
   margin-top: 10px;
 }
-.card-0-13 {
+.card-0-14 {
   margin-top: 15px;
   margin-bottom: 10px;
 }
-.header-0-14 {
+.header-0-15 {
   padding: 5px;
   padding-left: 10px;
 }
 
                     </style>,
-                    "getSelector": [Function],
+                    "getKey": [Function],
                     "getStyle": [Function],
+                    "getUnescapedKeysMap": [Function],
                     "hasInsertedRules": false,
                     "setSelector": [Function],
                     "setStyle": [Function],
@@ -1290,9 +1400,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                   },
                   "rules": RuleList {
                     "classes": Object {
-                      "card": "card-0-13",
-                      "header": "header-0-14",
-                      "selectedObject": "selectedObject-0-12",
+                      "card": "card-0-14",
+                      "header": "header-0-15",
+                      "selectedObject": "selectedObject-0-13",
                     },
                     "index": Array [
                       Object {
@@ -1308,15 +1418,15 @@ exports[`Render SelectFields should handle select change 1`] = `
                       },
                     ],
                     "map": Object {
-                      ".card-0-13": Object {
+                      ".card-0-14": Object {
                         "margin-bottom": "10px",
                         "margin-top": "15px",
                       },
-                      ".header-0-14": Object {
+                      ".header-0-15": Object {
                         "padding": "5px",
                         "padding-left": "10px",
                       },
-                      ".selectedObject-0-12": Object {
+                      ".selectedObject-0-13": Object {
                         "margin-top": "10px",
                       },
                       "card": Object {
@@ -1334,9 +1444,9 @@ exports[`Render SelectFields should handle select change 1`] = `
                     "options": Object {
                       "Renderer": [Function],
                       "classes": Object {
-                        "card": "card-0-13",
-                        "header": "header-0-14",
-                        "selectedObject": "selectedObject-0-12",
+                        "card": "card-0-14",
+                        "header": "header-0-15",
+                        "selectedObject": "selectedObject-0-13",
                       },
                       "generateClassName": [Function],
                       "index": 0,
@@ -1347,6 +1457,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                           "Renderer": [Function],
                           "createGenerateClassName": [Function],
                           "plugins": Array [
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onCreateRule": [Function],
+                            },
+                            Object {
+                              "onProcessRule": [Function],
+                            },
+                            Object {
+                              "onProcessRule": [Function],
+                            },
                             Object {
                               "onCreateRule": [Function],
                               "onProcessRule": [Function],
@@ -1401,6 +1544,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                             "onProcessRule": Array [
                               [Function],
                               [Function],
+                              [Function],
+                              [Function],
                             ],
                             "onProcessSheet": Array [],
                             "onProcessStyle": Array [
@@ -1415,7 +1560,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                             ],
                           },
                         },
-                        "version": "8.1.0",
+                        "version": "9.0.0",
                       },
                       "parent": [Circular],
                       "sheet": [Circular],
@@ -1477,7 +1622,10 @@ exports[`Render SelectFields should handle select change 1`] = `
                     <option
                       disabled={true}
                       value=""
-                    />
+                    >
+                      Select 
+                      SingleSelect
+                    </option>
                     <option
                       key="0"
                       value="Bar"
@@ -1493,7 +1641,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                   </select>
                 </Input>
                 <div
-                  className="selectedObject-0-12"
+                  className="selectedObject-0-13"
                 >
                   <SchemaVis
                     anyTouched={false}
@@ -1634,6 +1782,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                             "Text": [Function],
                           },
                           "defaultComponents": undefined,
+                          "definitions": Object {},
                           "prefix": "meta.vis",
                           "schema": Object {
                             "id": "Foo",
@@ -1691,8 +1840,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                         blur={[Function]}
                         classes={
                           Object {
-                            "card": "card-0-15",
-                            "header": "header-0-16",
+                            "card": "card-0-16",
+                            "header": "header-0-17",
                           }
                         }
                         clearAsyncError={[Function]}
@@ -1727,6 +1876,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                               "Text": [Function],
                             },
                             "defaultComponents": undefined,
+                            "definitions": Object {},
                             "prefix": "meta.vis",
                             "schema": Object {
                               "id": "Foo",
@@ -1756,16 +1906,16 @@ exports[`Render SelectFields should handle select change 1`] = `
                           StyleSheet {
                             "attached": true,
                             "classes": Object {
-                              "card": "card-0-15",
-                              "header": "header-0-16",
+                              "card": "card-0-16",
+                              "header": "header-0-17",
                             },
                             "deployed": true,
                             "linked": false,
                             "options": Object {
                               "Renderer": [Function],
                               "classes": Object {
-                                "card": "card-0-15",
-                                "header": "header-0-16",
+                                "card": "card-0-16",
+                                "header": "header-0-17",
                               },
                               "generateClassName": [Function],
                               "index": 0,
@@ -1776,6 +1926,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                   "Renderer": [Function],
                                   "createGenerateClassName": [Function],
                                   "plugins": Array [
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onCreateRule": [Function],
+                                    },
+                                    Object {
+                                      "onProcessRule": [Function],
+                                    },
+                                    Object {
+                                      "onProcessRule": [Function],
+                                    },
                                     Object {
                                       "onCreateRule": [Function],
                                       "onProcessRule": [Function],
@@ -1830,6 +2013,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                     "onProcessRule": Array [
                                       [Function],
                                       [Function],
+                                      [Function],
+                                      [Function],
                                     ],
                                     "onProcessSheet": Array [],
                                     "onProcessStyle": Array [
@@ -1844,7 +2029,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                     ],
                                   },
                                 },
-                                "version": "8.1.0",
+                                "version": "9.0.0",
                               },
                               "parent": [Circular],
                               "sheet": [Circular],
@@ -1855,18 +2040,19 @@ exports[`Render SelectFields should handle select change 1`] = `
                                 type="text/css"
                               >
                                 
-.card-0-15 {
+.card-0-16 {
   margin-top: 15px;
   margin-bottom: 10px;
 }
-.header-0-16 {
+.header-0-17 {
   padding: 5px;
   padding-left: 10px;
 }
 
                               </style>,
-                              "getSelector": [Function],
+                              "getKey": [Function],
                               "getStyle": [Function],
+                              "getUnescapedKeysMap": [Function],
                               "hasInsertedRules": false,
                               "setSelector": [Function],
                               "setStyle": [Function],
@@ -1874,8 +2060,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                             },
                             "rules": RuleList {
                               "classes": Object {
-                                "card": "card-0-15",
-                                "header": "header-0-16",
+                                "card": "card-0-16",
+                                "header": "header-0-17",
                               },
                               "index": Array [
                                 Object {
@@ -1888,11 +2074,11 @@ exports[`Render SelectFields should handle select change 1`] = `
                                 },
                               ],
                               "map": Object {
-                                ".card-0-15": Object {
+                                ".card-0-16": Object {
                                   "margin-bottom": "10px",
                                   "margin-top": "15px",
                                 },
-                                ".header-0-16": Object {
+                                ".header-0-17": Object {
                                   "padding": "5px",
                                   "padding-left": "10px",
                                 },
@@ -1908,8 +2094,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                               "options": Object {
                                 "Renderer": [Function],
                                 "classes": Object {
-                                  "card": "card-0-15",
-                                  "header": "header-0-16",
+                                  "card": "card-0-16",
+                                  "header": "header-0-17",
                                 },
                                 "generateClassName": [Function],
                                 "index": 0,
@@ -1920,6 +2106,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                     "Renderer": [Function],
                                     "createGenerateClassName": [Function],
                                     "plugins": Array [
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onCreateRule": [Function],
+                                      },
+                                      Object {
+                                        "onProcessRule": [Function],
+                                      },
+                                      Object {
+                                        "onProcessRule": [Function],
+                                      },
                                       Object {
                                         "onCreateRule": [Function],
                                         "onProcessRule": [Function],
@@ -1974,6 +2193,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                       "onProcessRule": Array [
                                         [Function],
                                         [Function],
+                                        [Function],
+                                        [Function],
                                       ],
                                       "onProcessSheet": Array [],
                                       "onProcessStyle": Array [
@@ -1988,7 +2209,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                       ],
                                     },
                                   },
-                                  "version": "8.1.0",
+                                  "version": "9.0.0",
                                 },
                                 "parent": [Circular],
                                 "sheet": [Circular],
@@ -2028,18 +2249,18 @@ exports[`Render SelectFields should handle select change 1`] = `
                         warning={undefined}
                       >
                         <Card
-                          className="card-0-15"
+                          className="card-0-16"
                           tag="div"
                         >
                           <div
-                            className="card-0-15 card"
+                            className="card-0-16 card"
                           >
                             <CardHeader
-                              className="header-0-16"
+                              className="header-0-17"
                               tag="div"
                             >
                               <div
-                                className="header-0-16 card-header"
+                                className="header-0-17 card-header"
                               >
                                 Foo
                               </div>
@@ -2054,6 +2275,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                 }
                               }
                               defaultComponents={undefined}
+                              definitions={Object {}}
                               id="schemaVis"
                               namespace="foobar"
                               prefix="meta.vis"
@@ -2082,14 +2304,14 @@ exports[`Render SelectFields should handle select change 1`] = `
                               styles={Object {}}
                               tag={[Function]}
                             >
-                              <CardBlock
+                              <CardBody
                                 className={undefined}
                                 id="schemaVis"
                                 key="schemaVis"
                                 tag="div"
                               >
                                 <div
-                                  className="card-block"
+                                  className="card-body"
                                   id="schemaVis"
                                 >
                                   <StyledComponent
@@ -2106,6 +2328,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                           "Text": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.vis",
                                         "schema": Object {
                                           "id": "x",
@@ -2135,6 +2358,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                             "Text": [Function],
                                           },
                                           "defaultComponents": undefined,
+                                          "definitions": Object {},
                                           "prefix": "meta.vis",
                                           "schema": Object {
                                             "id": "x",
@@ -2166,6 +2390,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                 "Renderer": [Function],
                                                 "createGenerateClassName": [Function],
                                                 "plugins": Array [
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onCreateRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onProcessRule": [Function],
+                                                  },
+                                                  Object {
+                                                    "onProcessRule": [Function],
+                                                  },
                                                   Object {
                                                     "onCreateRule": [Function],
                                                     "onProcessRule": [Function],
@@ -2220,6 +2477,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   "onProcessRule": Array [
                                                     [Function],
                                                     [Function],
+                                                    [Function],
+                                                    [Function],
                                                   ],
                                                   "onProcessSheet": Array [],
                                                   "onProcessStyle": Array [
@@ -2234,7 +2493,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   ],
                                                 },
                                               },
-                                              "version": "8.1.0",
+                                              "version": "9.0.0",
                                             },
                                             "parent": [Circular],
                                             "sheet": [Circular],
@@ -2248,8 +2507,9 @@ exports[`Render SelectFields should handle select change 1`] = `
 
 
                                             </style>,
-                                            "getSelector": [Function],
+                                            "getKey": [Function],
                                             "getStyle": [Function],
+                                            "getUnescapedKeysMap": [Function],
                                             "hasInsertedRules": false,
                                             "setSelector": [Function],
                                             "setStyle": [Function],
@@ -2271,6 +2531,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   "Renderer": [Function],
                                                   "createGenerateClassName": [Function],
                                                   "plugins": Array [
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onProcessRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onProcessRule": [Function],
+                                                    },
                                                     Object {
                                                       "onCreateRule": [Function],
                                                       "onProcessRule": [Function],
@@ -2325,6 +2618,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     "onProcessRule": Array [
                                                       [Function],
                                                       [Function],
+                                                      [Function],
+                                                      [Function],
                                                     ],
                                                     "onProcessSheet": Array [],
                                                     "onProcessStyle": Array [
@@ -2339,7 +2634,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     ],
                                                   },
                                                 },
-                                                "version": "8.1.0",
+                                                "version": "9.0.0",
                                               },
                                               "parent": [Circular],
                                               "sheet": [Circular],
@@ -2365,6 +2660,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                               "Text": [Function],
                                             },
                                             "defaultComponents": undefined,
+                                            "definitions": Object {},
                                             "prefix": "meta.vis",
                                             "schema": Object {
                                               "id": "x",
@@ -2398,6 +2694,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   "plugins": Array [
                                                     Object {
                                                       "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onProcessRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onProcessRule": [Function],
+                                                    },
+                                                    Object {
+                                                      "onCreateRule": [Function],
                                                       "onProcessRule": [Function],
                                                     },
                                                     Object {
@@ -2450,6 +2779,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     "onProcessRule": Array [
                                                       [Function],
                                                       [Function],
+                                                      [Function],
+                                                      [Function],
                                                     ],
                                                     "onProcessSheet": Array [],
                                                     "onProcessStyle": Array [
@@ -2464,7 +2795,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     ],
                                                   },
                                                 },
-                                                "version": "8.1.0",
+                                                "version": "9.0.0",
                                               },
                                               "parent": [Circular],
                                               "sheet": [Circular],
@@ -2478,8 +2809,9 @@ exports[`Render SelectFields should handle select change 1`] = `
 
 
                                               </style>,
-                                              "getSelector": [Function],
+                                              "getKey": [Function],
                                               "getStyle": [Function],
+                                              "getUnescapedKeysMap": [Function],
                                               "hasInsertedRules": false,
                                               "setSelector": [Function],
                                               "setStyle": [Function],
@@ -2501,6 +2833,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     "Renderer": [Function],
                                                     "createGenerateClassName": [Function],
                                                     "plugins": Array [
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onProcessRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onProcessRule": [Function],
+                                                      },
                                                       Object {
                                                         "onCreateRule": [Function],
                                                         "onProcessRule": [Function],
@@ -2555,6 +2920,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       "onProcessRule": Array [
                                                         [Function],
                                                         [Function],
+                                                        [Function],
+                                                        [Function],
                                                       ],
                                                       "onProcessSheet": Array [],
                                                       "onProcessStyle": Array [
@@ -2569,7 +2936,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       ],
                                                     },
                                                   },
-                                                  "version": "8.1.0",
+                                                  "version": "9.0.0",
                                                 },
                                                 "parent": [Circular],
                                                 "sheet": [Circular],
@@ -2596,6 +2963,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                 "Text": [Function],
                                               },
                                               "defaultComponents": undefined,
+                                              "definitions": Object {},
                                               "prefix": "meta.vis",
                                               "schema": Object {
                                                 "id": "x",
@@ -2629,6 +2997,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     "plugins": Array [
                                                       Object {
                                                         "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onProcessRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onProcessRule": [Function],
+                                                      },
+                                                      Object {
+                                                        "onCreateRule": [Function],
                                                         "onProcessRule": [Function],
                                                       },
                                                       Object {
@@ -2681,6 +3082,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       "onProcessRule": Array [
                                                         [Function],
                                                         [Function],
+                                                        [Function],
+                                                        [Function],
                                                       ],
                                                       "onProcessSheet": Array [],
                                                       "onProcessStyle": Array [
@@ -2695,7 +3098,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       ],
                                                     },
                                                   },
-                                                  "version": "8.1.0",
+                                                  "version": "9.0.0",
                                                 },
                                                 "parent": [Circular],
                                                 "sheet": [Circular],
@@ -2709,8 +3112,9 @@ exports[`Render SelectFields should handle select change 1`] = `
 
 
                                                 </style>,
-                                                "getSelector": [Function],
+                                                "getKey": [Function],
                                                 "getStyle": [Function],
+                                                "getUnescapedKeysMap": [Function],
                                                 "hasInsertedRules": false,
                                                 "setSelector": [Function],
                                                 "setStyle": [Function],
@@ -2732,6 +3136,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       "Renderer": [Function],
                                                       "createGenerateClassName": [Function],
                                                       "plugins": Array [
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onProcessRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onProcessRule": [Function],
+                                                        },
                                                         Object {
                                                           "onCreateRule": [Function],
                                                           "onProcessRule": [Function],
@@ -2786,6 +3223,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         "onProcessRule": Array [
                                                           [Function],
                                                           [Function],
+                                                          [Function],
+                                                          [Function],
                                                         ],
                                                         "onProcessSheet": Array [],
                                                         "onProcessStyle": Array [
@@ -2800,7 +3239,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         ],
                                                       },
                                                     },
-                                                    "version": "8.1.0",
+                                                    "version": "9.0.0",
                                                   },
                                                   "parent": [Circular],
                                                   "sheet": [Circular],
@@ -2978,6 +3417,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   "Text": [Function],
                                                 },
                                                 "defaultComponents": undefined,
+                                                "definitions": Object {},
                                                 "prefix": "meta.vis",
                                                 "schema": Object {
                                                   "id": "x",
@@ -3009,6 +3449,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       "Renderer": [Function],
                                                       "createGenerateClassName": [Function],
                                                       "plugins": Array [
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onCreateRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onProcessRule": [Function],
+                                                        },
+                                                        Object {
+                                                          "onProcessRule": [Function],
+                                                        },
                                                         Object {
                                                           "onCreateRule": [Function],
                                                           "onProcessRule": [Function],
@@ -3063,6 +3536,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         "onProcessRule": Array [
                                                           [Function],
                                                           [Function],
+                                                          [Function],
+                                                          [Function],
                                                         ],
                                                         "onProcessSheet": Array [],
                                                         "onProcessStyle": Array [
@@ -3077,7 +3552,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         ],
                                                       },
                                                     },
-                                                    "version": "8.1.0",
+                                                    "version": "9.0.0",
                                                   },
                                                   "parent": [Circular],
                                                   "sheet": [Circular],
@@ -3091,8 +3566,9 @@ exports[`Render SelectFields should handle select change 1`] = `
 
 
                                                   </style>,
-                                                  "getSelector": [Function],
+                                                  "getKey": [Function],
                                                   "getStyle": [Function],
+                                                  "getUnescapedKeysMap": [Function],
                                                   "hasInsertedRules": false,
                                                   "setSelector": [Function],
                                                   "setStyle": [Function],
@@ -3114,6 +3590,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         "Renderer": [Function],
                                                         "createGenerateClassName": [Function],
                                                         "plugins": Array [
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onProcessRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onProcessRule": [Function],
+                                                          },
                                                           Object {
                                                             "onCreateRule": [Function],
                                                             "onProcessRule": [Function],
@@ -3168,6 +3677,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                           "onProcessRule": Array [
                                                             [Function],
                                                             [Function],
+                                                            [Function],
+                                                            [Function],
                                                           ],
                                                           "onProcessSheet": Array [],
                                                           "onProcessStyle": Array [
@@ -3182,7 +3693,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                           ],
                                                         },
                                                       },
-                                                      "version": "8.1.0",
+                                                      "version": "9.0.0",
                                                     },
                                                     "parent": [Circular],
                                                     "sheet": [Circular],
@@ -3367,6 +3878,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     "Text": [Function],
                                                   },
                                                   "defaultComponents": undefined,
+                                                  "definitions": Object {},
                                                   "prefix": "meta.vis",
                                                   "schema": Object {
                                                     "id": "x",
@@ -3398,6 +3910,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         "Renderer": [Function],
                                                         "createGenerateClassName": [Function],
                                                         "plugins": Array [
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onCreateRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onProcessRule": [Function],
+                                                          },
+                                                          Object {
+                                                            "onProcessRule": [Function],
+                                                          },
                                                           Object {
                                                             "onCreateRule": [Function],
                                                             "onProcessRule": [Function],
@@ -3452,6 +3997,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                           "onProcessRule": Array [
                                                             [Function],
                                                             [Function],
+                                                            [Function],
+                                                            [Function],
                                                           ],
                                                           "onProcessSheet": Array [],
                                                           "onProcessStyle": Array [
@@ -3466,7 +4013,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                           ],
                                                         },
                                                       },
-                                                      "version": "8.1.0",
+                                                      "version": "9.0.0",
                                                     },
                                                     "parent": [Circular],
                                                     "sheet": [Circular],
@@ -3480,8 +4027,9 @@ exports[`Render SelectFields should handle select change 1`] = `
 
 
                                                     </style>,
-                                                    "getSelector": [Function],
+                                                    "getKey": [Function],
                                                     "getStyle": [Function],
+                                                    "getUnescapedKeysMap": [Function],
                                                     "hasInsertedRules": false,
                                                     "setSelector": [Function],
                                                     "setStyle": [Function],
@@ -3503,6 +4051,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                           "Renderer": [Function],
                                                           "createGenerateClassName": [Function],
                                                           "plugins": Array [
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onProcessRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onProcessRule": [Function],
+                                                            },
                                                             Object {
                                                               "onCreateRule": [Function],
                                                               "onProcessRule": [Function],
@@ -3557,6 +4138,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                             "onProcessRule": Array [
                                                               [Function],
                                                               [Function],
+                                                              [Function],
+                                                              [Function],
                                                             ],
                                                             "onProcessSheet": Array [],
                                                             "onProcessStyle": Array [
@@ -3571,7 +4154,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                             ],
                                                           },
                                                         },
-                                                        "version": "8.1.0",
+                                                        "version": "9.0.0",
                                                       },
                                                       "parent": [Circular],
                                                       "sheet": [Circular],
@@ -3635,6 +4218,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       "Text": [Function],
                                                     },
                                                     "defaultComponents": undefined,
+                                                    "definitions": Object {},
                                                     "prefix": "meta.vis",
                                                     "schema": Object {
                                                       "id": "x",
@@ -3666,6 +4250,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                           "Renderer": [Function],
                                                           "createGenerateClassName": [Function],
                                                           "plugins": Array [
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onCreateRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onProcessRule": [Function],
+                                                            },
+                                                            Object {
+                                                              "onProcessRule": [Function],
+                                                            },
                                                             Object {
                                                               "onCreateRule": [Function],
                                                               "onProcessRule": [Function],
@@ -3720,6 +4337,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                             "onProcessRule": Array [
                                                               [Function],
                                                               [Function],
+                                                              [Function],
+                                                              [Function],
                                                             ],
                                                             "onProcessSheet": Array [],
                                                             "onProcessStyle": Array [
@@ -3734,7 +4353,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                             ],
                                                           },
                                                         },
-                                                        "version": "8.1.0",
+                                                        "version": "9.0.0",
                                                       },
                                                       "parent": [Circular],
                                                       "sheet": [Circular],
@@ -3748,8 +4367,9 @@ exports[`Render SelectFields should handle select change 1`] = `
 
 
                                                       </style>,
-                                                      "getSelector": [Function],
+                                                      "getKey": [Function],
                                                       "getStyle": [Function],
+                                                      "getUnescapedKeysMap": [Function],
                                                       "hasInsertedRules": false,
                                                       "setSelector": [Function],
                                                       "setStyle": [Function],
@@ -3771,6 +4391,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                             "Renderer": [Function],
                                                             "createGenerateClassName": [Function],
                                                             "plugins": Array [
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onProcessRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onProcessRule": [Function],
+                                                              },
                                                               Object {
                                                                 "onCreateRule": [Function],
                                                                 "onProcessRule": [Function],
@@ -3825,6 +4478,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                               "onProcessRule": Array [
                                                                 [Function],
                                                                 [Function],
+                                                                [Function],
+                                                                [Function],
                                                               ],
                                                               "onProcessSheet": Array [],
                                                               "onProcessStyle": Array [
@@ -3839,7 +4494,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                               ],
                                                             },
                                                           },
-                                                          "version": "8.1.0",
+                                                          "version": "9.0.0",
                                                         },
                                                         "parent": [Circular],
                                                         "sheet": [Circular],
@@ -3920,6 +4575,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                             "plugins": Array [
                                                               Object {
                                                                 "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onProcessRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onProcessRule": [Function],
+                                                              },
+                                                              Object {
+                                                                "onCreateRule": [Function],
                                                                 "onProcessRule": [Function],
                                                               },
                                                               Object {
@@ -3972,6 +4660,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                               "onProcessRule": Array [
                                                                 [Function],
                                                                 [Function],
+                                                                [Function],
+                                                                [Function],
                                                               ],
                                                               "onProcessSheet": Array [],
                                                               "onProcessStyle": Array [
@@ -3986,7 +4676,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                               ],
                                                             },
                                                           },
-                                                          "version": "8.1.0",
+                                                          "version": "9.0.0",
                                                         },
                                                         "parent": [Circular],
                                                         "sheet": [Circular],
@@ -4000,8 +4690,9 @@ exports[`Render SelectFields should handle select change 1`] = `
 
 
                                                         </style>,
-                                                        "getSelector": [Function],
+                                                        "getKey": [Function],
                                                         "getStyle": [Function],
+                                                        "getUnescapedKeysMap": [Function],
                                                         "hasInsertedRules": false,
                                                         "setSelector": [Function],
                                                         "setStyle": [Function],
@@ -4023,6 +4714,39 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                               "Renderer": [Function],
                                                               "createGenerateClassName": [Function],
                                                               "plugins": Array [
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onCreateRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onProcessRule": [Function],
+                                                                },
+                                                                Object {
+                                                                  "onProcessRule": [Function],
+                                                                },
                                                                 Object {
                                                                   "onCreateRule": [Function],
                                                                   "onProcessRule": [Function],
@@ -4077,6 +4801,8 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                                 "onProcessRule": Array [
                                                                   [Function],
                                                                   [Function],
+                                                                  [Function],
+                                                                  [Function],
                                                                 ],
                                                                 "onProcessSheet": Array [],
                                                                 "onProcessStyle": Array [
@@ -4091,7 +4817,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                                 ],
                                                               },
                                                             },
-                                                            "version": "8.1.0",
+                                                            "version": "9.0.0",
                                                           },
                                                           "parent": [Circular],
                                                           "sheet": [Circular],
@@ -4113,6 +4839,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   >
                                                     <div
                                                       className="form-group"
+                                                      color={undefined}
                                                       id="schemaVis"
                                                     >
                                                       <Label
@@ -4120,6 +4847,15 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         for="foobar.x"
                                                         id="foobar.x-label"
                                                         tag="label"
+                                                        widths={
+                                                          Array [
+                                                            "xs",
+                                                            "sm",
+                                                            "md",
+                                                            "lg",
+                                                            "xl",
+                                                          ]
+                                                        }
                                                       >
                                                         <label
                                                           className=" form-control-label"
@@ -4170,7 +4906,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                     </CreatedInputField>
                                   </StyledComponent>
                                 </div>
-                              </CardBlock>
+                              </CardBody>
                             </SchemaVis>
                           </div>
                         </Card>

@@ -8,6 +8,15 @@ exports[`Render FormField should render 1`] = `
     for="foo"
     id="foo-label"
     tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <span
       style={
@@ -43,6 +52,15 @@ exports[`Render FormField should render touched 1`] = `
     for="foo"
     id="foo-label"
     tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <span
       style={
@@ -83,6 +101,15 @@ exports[`Render FormField should render with error 1`] = `
     for="foo"
     id="foo-label"
     tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <span
       style={
@@ -125,6 +152,15 @@ exports[`Render FormField should render with warning 1`] = `
     for="foo"
     id="foo-label"
     tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <span
       style={
@@ -160,7 +196,8 @@ exports[`Render FormField should render with warning 1`] = `
 
 exports[`Render FormField should render without tooltip 1`] = `
 <div
-  className="has-danger form-group"
+  className="form-group"
+  color="danger"
 >
   <label
     className=" form-control-label"
@@ -184,7 +221,7 @@ exports[`Render FormField should render without tooltip 1`] = `
     type="number"
   />
   <div
-    className="form-control-feedback"
+    className="invalid-feedback"
     id="foo-feedback"
   >
     error
