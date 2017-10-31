@@ -285,7 +285,7 @@ class ModalUniformArray extends Component {
           <Button id="submitAddItemBtn" color="primary" onClick={this.handleSubmitModal}>
             Submit
           </Button>
-          <Button id="cancelAddItemBtn" color="second" onClick={this.toggleAddFormModal}>
+          <Button id="cancelAddItemBtn" color="secondary" onClick={this.toggleAddFormModal}>
             Cancel
           </Button>
         </ModalFooter>

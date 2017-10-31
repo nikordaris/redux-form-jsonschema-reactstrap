@@ -428,7 +428,7 @@ class ModalVariedArray extends Component {
           <Button color="primary" onClick={this.handleSubmitModal}>
             Submit
           </Button>
-          <Button color="second" onClick={this.toggleAddFormModal}>
+          <Button color="secondary" onClick={this.toggleAddFormModal}>
             Cancel
           </Button>
         </ModalFooter>

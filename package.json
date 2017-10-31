@@ -1,18 +1,21 @@
 {
   "name": "redux-form-jsonschema-reactstrap",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nikordaris/redux-form-jsonschema-reactstrap.git"
+    "url":
+      "git+https://github.com/nikordaris/redux-form-jsonschema-reactstrap.git"
   },
   "author": "Nikordaris <nikordaris@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nikordaris/redux-form-jsonschema-reactstrap/issues"
+    "url":
+      "https://github.com/nikordaris/redux-form-jsonschema-reactstrap/issues"
   },
-  "homepage": "https://github.com/nikordaris/redux-form-jsonschema-reactstrap#readme",
+  "homepage":
+    "https://github.com/nikordaris/redux-form-jsonschema-reactstrap#readme",
   "scripts": {
     "prepublish": "npm run build",
     "build": "npm run clean; babel src --out-dir lib --ignore *.test.js",
