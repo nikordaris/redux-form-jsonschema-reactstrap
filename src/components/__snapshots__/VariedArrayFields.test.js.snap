@@ -74,7 +74,7 @@ exports[`Render Varied Array Fields Should render VariedArrayCard 1`] = `
     Varied Array Card
   </div>
   <div
-    className="card-block"
+    className="card-body"
   >
     <div
       className="select-0-2"
@@ -1376,6 +1376,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="variedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -2092,6 +2093,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="variedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -2819,6 +2821,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="variedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -3351,6 +3354,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                       }
                     }
                     form="TestForm"
+                    formName="variedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -3888,6 +3892,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         }
                       }
                       form="TestForm"
+                      formName="variedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -4418,11 +4423,23 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={true}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -5640,6 +5657,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="variedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -6356,6 +6374,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="variedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -7083,6 +7102,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="variedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -7615,6 +7635,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                       }
                     }
                     form="TestForm"
+                    formName="variedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -8152,6 +8173,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         }
                       }
                       form="TestForm"
+                      formName="variedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -8682,11 +8704,23 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={true}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -9913,6 +9947,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="variedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -10642,6 +10677,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="variedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -11382,6 +11418,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="variedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -11921,6 +11958,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                       }
                     }
                     form="TestForm"
+                    formName="variedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -12458,6 +12496,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         }
                       }
                       form="TestForm"
+                      formName="variedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -13129,6 +13168,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                                           "VariedArrayInline": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.data",
                                         "schema": Object {
                                           "id": "Bar",
@@ -13234,6 +13274,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                                             "VariedArrayInline": [Function],
                                           },
                                           "defaultComponents": undefined,
+                                          "definitions": Object {},
                                           "prefix": "meta.data",
                                           "schema": Object {
                                             "id": "Bar",
@@ -14051,11 +14092,23 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -15282,6 +15335,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="variedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -16011,6 +16065,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="variedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -16751,6 +16806,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="variedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -17290,6 +17346,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                       }
                     }
                     form="TestForm"
+                    formName="variedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -17827,6 +17884,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         }
                       }
                       form="TestForm"
+                      formName="variedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -18498,6 +18556,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                                           "VariedArrayInline": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.data",
                                         "schema": Object {
                                           "id": "Bar",
@@ -18603,6 +18662,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                                             "VariedArrayInline": [Function],
                                           },
                                           "defaultComponents": undefined,
+                                          "definitions": Object {},
                                           "prefix": "meta.data",
                                           "schema": Object {
                                             "id": "Bar",
@@ -19420,11 +19480,23 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={true}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -20651,6 +20723,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="variedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -21380,6 +21453,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="variedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -22120,6 +22194,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="variedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -22659,6 +22734,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                       }
                     }
                     form="TestForm"
+                    formName="variedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -23196,6 +23272,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         }
                       }
                       form="TestForm"
+                      formName="variedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -23867,6 +23944,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                                           "VariedArrayInline": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.data",
                                         "schema": Object {
                                           "id": "Bar",
@@ -23972,6 +24050,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                                             "VariedArrayInline": [Function],
                                           },
                                           "defaultComponents": undefined,
+                                          "definitions": Object {},
                                           "prefix": "meta.data",
                                           "schema": Object {
                                             "id": "Bar",
@@ -24789,11 +24868,23 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -26015,6 +26106,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="variedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -26744,6 +26836,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="variedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -27484,6 +27577,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="variedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -28016,6 +28110,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                       }
                     }
                     form="TestForm"
+                    formName="variedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -28553,6 +28648,7 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         }
                       }
                       form="TestForm"
+                      formName="variedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -29083,11 +29179,23 @@ exports[`Render Varied Array Fields should add item to array, modify it, and rem
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -30305,6 +30413,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 1`] 
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="variedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -31021,6 +31130,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 1`] 
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="variedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -31748,6 +31858,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 1`] 
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="variedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -32280,6 +32391,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 1`] 
                       }
                     }
                     form="TestForm"
+                    formName="variedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -32817,6 +32929,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 1`] 
                         }
                       }
                       form="TestForm"
+                      formName="variedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -33347,11 +33460,23 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 1`] 
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -34569,6 +34694,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 2`] 
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="variedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -35285,6 +35411,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 2`] 
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="variedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -36012,6 +36139,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 2`] 
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="variedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -36544,6 +36672,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 2`] 
                       }
                     }
                     form="TestForm"
+                    formName="variedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -37081,6 +37210,7 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 2`] 
                         }
                       }
                       form="TestForm"
+                      formName="variedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -37611,11 +37741,23 @@ exports[`Render Varied Array Fields should handle add and cancel item modal 2`] 
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -41097,12 +41239,12 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                             Varied Array Card
                           </div>
                         </CardHeader>
-                        <CardBlock
+                        <CardBody
                           className={undefined}
                           tag="div"
                         >
                           <div
-                            className="card-block"
+                            className="card-body"
                           >
                             <div
                               className="select-0-8"
@@ -41160,7 +41302,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                               className={undefined}
                             />
                           </div>
-                        </CardBlock>
+                        </CardBody>
                       </div>
                     </Card>
                   </VariedArray>
@@ -44679,12 +44821,12 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                             Varied Array Card
                           </div>
                         </CardHeader>
-                        <CardBlock
+                        <CardBody
                           className={undefined}
                           tag="div"
                         >
                           <div
-                            className="card-block"
+                            className="card-body"
                           >
                             <div
                               className="select-0-8"
@@ -44861,6 +45003,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                         "VariedArrayInline": [Function],
                                       },
                                       "defaultComponents": undefined,
+                                      "definitions": Object {},
                                       "prefix": "meta.vis",
                                       "schema": Object {
                                         "id": "Bar",
@@ -44950,6 +45093,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                           "VariedArrayInline": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.vis",
                                         "schema": Object {
                                           "id": "Bar",
@@ -45388,6 +45532,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                             }
                                           }
                                           defaultComponents={undefined}
+                                          definitions={Object {}}
                                           id="schemaVis"
                                           namespace="foobar[0]"
                                           prefix="meta.vis"
@@ -45429,7 +45574,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                           styles={Object {}}
                                           tag={[Function]}
                                         >
-                                          <CardBlock
+                                          <CardBody
                                             className={undefined}
                                             id="schemaVis"
                                             key="schemaVis"
@@ -45437,7 +45582,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                             tag="div"
                                           >
                                             <div
-                                              className="card-block"
+                                              className="card-body"
                                               id="schemaVis"
                                               required={false}
                                             >
@@ -45479,6 +45624,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                       "VariedArrayInline": [Function],
                                                     },
                                                     "defaultComponents": undefined,
+                                                    "definitions": Object {},
                                                     "prefix": "meta.vis",
                                                     "schema": Object {
                                                       "it": "Name",
@@ -45533,6 +45679,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                         "VariedArrayInline": [Function],
                                                       },
                                                       "defaultComponents": undefined,
+                                                      "definitions": Object {},
                                                       "prefix": "meta.vis",
                                                       "schema": Object {
                                                         "it": "Name",
@@ -45788,6 +45935,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                           "VariedArrayInline": [Function],
                                                         },
                                                         "defaultComponents": undefined,
+                                                        "definitions": Object {},
                                                         "prefix": "meta.vis",
                                                         "schema": Object {
                                                           "it": "Name",
@@ -46044,6 +46192,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                             "VariedArrayInline": [Function],
                                                           },
                                                           "defaultComponents": undefined,
+                                                          "definitions": Object {},
                                                           "prefix": "meta.vis",
                                                           "schema": Object {
                                                             "it": "Name",
@@ -46508,6 +46657,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                               "VariedArrayInline": [Function],
                                                             },
                                                             "defaultComponents": undefined,
+                                                            "definitions": Object {},
                                                             "prefix": "meta.vis",
                                                             "schema": Object {
                                                               "it": "Name",
@@ -46979,6 +47129,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                 "VariedArrayInline": [Function],
                                                               },
                                                               "defaultComponents": undefined,
+                                                              "definitions": Object {},
                                                               "prefix": "meta.vis",
                                                               "schema": Object {
                                                                 "it": "Name",
@@ -47272,6 +47423,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                   "VariedArrayInline": [Function],
                                                                 },
                                                                 "defaultComponents": undefined,
+                                                                "definitions": Object {},
                                                                 "prefix": "meta.vis",
                                                                 "schema": Object {
                                                                   "it": "Name",
@@ -47746,7 +47898,6 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                             >
                                                               <FormGroup
                                                                 className={undefined}
-                                                                color={undefined}
                                                                 id="schemaVis"
                                                                 tag="div"
                                                               >
@@ -47759,6 +47910,15 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                     for="foobar[0].name"
                                                                     id="foobar[0].name-label"
                                                                     tag="label"
+                                                                    widths={
+                                                                      Array [
+                                                                        "xs",
+                                                                        "sm",
+                                                                        "md",
+                                                                        "lg",
+                                                                        "xl",
+                                                                      ]
+                                                                    }
                                                                   >
                                                                     <label
                                                                       className=" form-control-label"
@@ -47779,13 +47939,13 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                     onDrop={[Function]}
                                                                     onFocus={[Function]}
                                                                     required={false}
-                                                                    state={undefined}
                                                                     tag="p"
                                                                     type="text"
+                                                                    valid={true}
                                                                     value=""
                                                                   >
                                                                     <input
-                                                                      className="form-control"
+                                                                      className="is-valid form-control"
                                                                       id="foobar[0].name"
                                                                       name="foobar[0].name"
                                                                       onBlur={[Function]}
@@ -47798,6 +47958,16 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                       value=""
                                                                     />
                                                                   </Input>
+                                                                  <FormFeedback
+                                                                    className={undefined}
+                                                                    id="foobar[0].name-feedback"
+                                                                    tag="div"
+                                                                  >
+                                                                    <div
+                                                                      className="invalid-feedback"
+                                                                      id="foobar[0].name-feedback"
+                                                                    />
+                                                                  </FormFeedback>
                                                                 </div>
                                                               </FormGroup>
                                                             </FormField>
@@ -47846,6 +48016,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                       "VariedArrayInline": [Function],
                                                     },
                                                     "defaultComponents": undefined,
+                                                    "definitions": Object {},
                                                     "prefix": "meta.vis",
                                                     "schema": Object {
                                                       "id": "Bar",
@@ -47900,6 +48071,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                         "VariedArrayInline": [Function],
                                                       },
                                                       "defaultComponents": undefined,
+                                                      "definitions": Object {},
                                                       "prefix": "meta.vis",
                                                       "schema": Object {
                                                         "id": "Bar",
@@ -48155,6 +48327,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                           "VariedArrayInline": [Function],
                                                         },
                                                         "defaultComponents": undefined,
+                                                        "definitions": Object {},
                                                         "prefix": "meta.vis",
                                                         "schema": Object {
                                                           "id": "Bar",
@@ -48411,6 +48584,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                             "VariedArrayInline": [Function],
                                                           },
                                                           "defaultComponents": undefined,
+                                                          "definitions": Object {},
                                                           "prefix": "meta.vis",
                                                           "schema": Object {
                                                             "id": "Bar",
@@ -48875,6 +49049,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                               "VariedArrayInline": [Function],
                                                             },
                                                             "defaultComponents": undefined,
+                                                            "definitions": Object {},
                                                             "prefix": "meta.vis",
                                                             "schema": Object {
                                                               "id": "Bar",
@@ -49346,6 +49521,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                 "VariedArrayInline": [Function],
                                                               },
                                                               "defaultComponents": undefined,
+                                                              "definitions": Object {},
                                                               "prefix": "meta.vis",
                                                               "schema": Object {
                                                                 "id": "Bar",
@@ -49639,6 +49815,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                   "VariedArrayInline": [Function],
                                                                 },
                                                                 "defaultComponents": undefined,
+                                                                "definitions": Object {},
                                                                 "prefix": "meta.vis",
                                                                 "schema": Object {
                                                                   "id": "Bar",
@@ -50113,7 +50290,6 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                             >
                                                               <FormGroup
                                                                 className={undefined}
-                                                                color={undefined}
                                                                 id="schemaVis"
                                                                 tag="div"
                                                               >
@@ -50126,6 +50302,15 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                     for="foobar[0].bar"
                                                                     id="foobar[0].bar-label"
                                                                     tag="label"
+                                                                    widths={
+                                                                      Array [
+                                                                        "xs",
+                                                                        "sm",
+                                                                        "md",
+                                                                        "lg",
+                                                                        "xl",
+                                                                      ]
+                                                                    }
                                                                   >
                                                                     <label
                                                                       className=" form-control-label"
@@ -50146,13 +50331,13 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                     onDrop={[Function]}
                                                                     onFocus={[Function]}
                                                                     required={false}
-                                                                    state={undefined}
                                                                     tag="p"
                                                                     type="text"
+                                                                    valid={true}
                                                                     value=""
                                                                   >
                                                                     <input
-                                                                      className="form-control"
+                                                                      className="is-valid form-control"
                                                                       id="foobar[0].bar"
                                                                       name="foobar[0].bar"
                                                                       onBlur={[Function]}
@@ -50165,6 +50350,16 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                                       value=""
                                                                     />
                                                                   </Input>
+                                                                  <FormFeedback
+                                                                    className={undefined}
+                                                                    id="foobar[0].bar-feedback"
+                                                                    tag="div"
+                                                                  >
+                                                                    <div
+                                                                      className="invalid-feedback"
+                                                                      id="foobar[0].bar-feedback"
+                                                                    />
+                                                                  </FormFeedback>
                                                                 </div>
                                                               </FormGroup>
                                                             </FormField>
@@ -50176,7 +50371,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                                                 </CreatedInputField>
                                               </StyledComponent>
                                             </div>
-                                          </CardBlock>
+                                          </CardBody>
                                         </SchemaVis>
                                       </div>
                                     </Card>
@@ -50185,7 +50380,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                               </SchemaVis>
                             </div>
                           </div>
-                        </CardBlock>
+                        </CardBody>
                       </div>
                     </Card>
                   </VariedArray>
@@ -53688,12 +53883,12 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                             Varied Array Card
                           </div>
                         </CardHeader>
-                        <CardBlock
+                        <CardBody
                           className={undefined}
                           tag="div"
                         >
                           <div
-                            className="card-block"
+                            className="card-body"
                           >
                             <div
                               className="select-0-8"
@@ -53751,7 +53946,7 @@ exports[`Render Varied Array Fields should handle add item and remove Varied ite
                               className={undefined}
                             />
                           </div>
-                        </CardBlock>
+                        </CardBody>
                       </div>
                     </Card>
                   </VariedArray>

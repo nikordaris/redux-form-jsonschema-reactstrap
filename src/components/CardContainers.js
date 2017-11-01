@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Card, CardBlock, CardHeader, Button } from 'reactstrap';
+import { Card, CardBody, CardHeader, Button } from 'reactstrap';
 import { injectSheet } from '../Jss';
 import SchemaVis from 'react-jsonschema-vis';
 import { set, merge } from 'lodash';
@@ -29,8 +29,8 @@ export class CardWithHeader extends Component {
       <Card className={classes.card}>
         <CardHeader className={classes.header}>{schema.title}</CardHeader>
         <SchemaVis
-          tag={CardBlock}
-          className={classes.cardblock}
+          tag={CardBody}
+          className={classes.cardbody}
           {...schemaVis}
           schema={_schema}
           namespace={name}
@@ -86,8 +86,8 @@ export class CardItem extends Component {
           </div>
         </CardHeader>
         <SchemaVis
-          tag={CardBlock}
-          className={classes.cardblock}
+          tag={CardBody}
+          className={classes.cardbody}
           namespace={name}
           prefix={prefix}
           schema={_schema}

@@ -1,21 +1,18 @@
 {
   "name": "redux-form-jsonschema-reactstrap",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url":
-      "git+https://github.com/nikordaris/redux-form-jsonschema-reactstrap.git"
+    "url": "git+https://github.com/nikordaris/redux-form-jsonschema-reactstrap.git"
   },
   "author": "Nikordaris <nikordaris@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url":
-      "https://github.com/nikordaris/redux-form-jsonschema-reactstrap/issues"
+    "url": "https://github.com/nikordaris/redux-form-jsonschema-reactstrap/issues"
   },
-  "homepage":
-    "https://github.com/nikordaris/redux-form-jsonschema-reactstrap#readme",
+  "homepage": "https://github.com/nikordaris/redux-form-jsonschema-reactstrap#readme",
   "scripts": {
     "prepublish": "npm run build",
     "build": "npm run clean; babel src --out-dir lib --ignore *.test.js",
@@ -51,7 +48,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "bootstrap": "^4.0.0-alpha.6",
+    "bootstrap": "^4.0.0-beta.2",
     "codecov": "^2.2.0",
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.4",
@@ -79,7 +76,7 @@
     "react-redux": "^5.0.5",
     "react-test-renderer": "^15.5.4",
     "react-transition-group": "^1.2",
-    "reactstrap": "^4.6.2",
+    "reactstrap": "^5.0.0-alpha.3",
     "redux": "^3.7.1",
     "redux-form": "^7.0.2",
     "rimraf": "^2.6.1",
@@ -99,6 +96,7 @@
     "react-dom": "^15.6.1",
     "react-jsonschema-vis": "^0.0.8",
     "react-redux": "^5.0.5",
+    "reactstrap": "^5.0.0-alpha.3",
     "redux": "^3.7.1",
     "redux-form": "^6.8.0"
   }

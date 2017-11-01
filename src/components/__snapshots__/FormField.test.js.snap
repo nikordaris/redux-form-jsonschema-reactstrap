@@ -8,6 +8,15 @@ exports[`Render FormField should render 1`] = `
     for="foo"
     id="foo-label"
     tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <span
       style={
@@ -30,19 +39,32 @@ exports[`Render FormField should render 1`] = `
     id="foo"
     key=".0"
     type="number"
+    valid={true}
+  />
+  <FormFeedback
+    id="foo-feedback"
+    tag="div"
   />
 </FormGroup>
 `;
 
 exports[`Render FormField should render touched 1`] = `
 <FormGroup
-  color="success"
   tag="div"
 >
   <Label
     for="foo"
     id="foo-label"
     tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <span
       style={
@@ -64,8 +86,8 @@ exports[`Render FormField should render touched 1`] = `
   <input
     id="foo"
     key=".0"
-    state="success"
     type="number"
+    valid={true}
   />
   <FormFeedback
     id="foo-feedback"
@@ -76,13 +98,21 @@ exports[`Render FormField should render touched 1`] = `
 
 exports[`Render FormField should render with error 1`] = `
 <FormGroup
-  color="danger"
   tag="div"
 >
   <Label
     for="foo"
     id="foo-label"
     tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <span
       style={
@@ -104,8 +134,8 @@ exports[`Render FormField should render with error 1`] = `
   <input
     id="foo"
     key=".0"
-    state="danger"
     type="number"
+    valid={false}
   />
   <FormFeedback
     id="foo-feedback"
@@ -118,13 +148,21 @@ exports[`Render FormField should render with error 1`] = `
 
 exports[`Render FormField should render with warning 1`] = `
 <FormGroup
-  color="warning"
   tag="div"
 >
   <Label
     for="foo"
     id="foo-label"
     tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <span
       style={
@@ -146,8 +184,8 @@ exports[`Render FormField should render with warning 1`] = `
   <input
     id="foo"
     key=".0"
-    state="warning"
     type="number"
+    valid={false}
   />
   <FormFeedback
     id="foo-feedback"
@@ -160,7 +198,7 @@ exports[`Render FormField should render with warning 1`] = `
 
 exports[`Render FormField should render without tooltip 1`] = `
 <div
-  className="has-danger form-group"
+  className="form-group"
 >
   <label
     className=" form-control-label"
@@ -180,11 +218,11 @@ exports[`Render FormField should render without tooltip 1`] = `
   </label>
   <input
     id="foo"
-    state="danger"
     type="number"
+    valid={false}
   />
   <div
-    className="form-control-feedback"
+    className="invalid-feedback"
     id="foo-feedback"
   >
     error

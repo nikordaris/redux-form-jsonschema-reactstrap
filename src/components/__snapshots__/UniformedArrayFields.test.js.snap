@@ -92,7 +92,7 @@ exports[`Render Uniformed Array Fields Should render UniformedArrayCard 1`] = `
     </div>
   </div>
   <div
-    className="card-block"
+    className="card-body"
   />
 </div>
 `;
@@ -988,6 +988,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="uniformedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -1568,6 +1569,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="uniformedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -2159,6 +2161,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="uniformedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -2623,6 +2626,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                       }
                     }
                     form="TestForm"
+                    formName="uniformedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -3091,6 +3095,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         }
                       }
                       form="TestForm"
+                      formName="uniformedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -3554,11 +3559,23 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={true}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -4444,6 +4461,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="uniformedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -5036,6 +5054,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="uniformedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -5639,6 +5658,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="uniformedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -6109,6 +6129,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                       }
                     }
                     form="TestForm"
+                    formName="uniformedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -6577,6 +6598,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         }
                       }
                       form="TestForm"
+                      formName="uniformedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -7160,6 +7182,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                                           "VariedArrayInline": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.data",
                                         "schema": Object {
                                           "id": "Bar",
@@ -7246,6 +7269,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                                             "VariedArrayInline": [Function],
                                           },
                                           "defaultComponents": undefined,
+                                          "definitions": Object {},
                                           "prefix": "meta.data",
                                           "schema": Object {
                                             "id": "Bar",
@@ -8045,11 +8069,23 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -8935,6 +8971,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="uniformedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -9527,6 +9564,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="uniformedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -10130,6 +10168,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="uniformedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -10600,6 +10639,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                       }
                     }
                     form="TestForm"
+                    formName="uniformedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -11068,6 +11108,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         }
                       }
                       form="TestForm"
+                      formName="uniformedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -11651,6 +11692,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                                           "VariedArrayInline": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.data",
                                         "schema": Object {
                                           "id": "Bar",
@@ -11737,6 +11779,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                                             "VariedArrayInline": [Function],
                                           },
                                           "defaultComponents": undefined,
+                                          "definitions": Object {},
                                           "prefix": "meta.data",
                                           "schema": Object {
                                             "id": "Bar",
@@ -12536,11 +12579,23 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={true}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -13426,6 +13481,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="uniformedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -14018,6 +14074,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="uniformedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -14621,6 +14678,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="uniformedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -15091,6 +15149,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                       }
                     }
                     form="TestForm"
+                    formName="uniformedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -15559,6 +15618,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         }
                       }
                       form="TestForm"
+                      formName="uniformedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -16142,6 +16202,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                                           "VariedArrayInline": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.data",
                                         "schema": Object {
                                           "id": "Bar",
@@ -16228,6 +16289,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                                             "VariedArrayInline": [Function],
                                           },
                                           "defaultComponents": undefined,
+                                          "definitions": Object {},
                                           "prefix": "meta.data",
                                           "schema": Object {
                                             "id": "Bar",
@@ -17027,11 +17089,23 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -17913,6 +17987,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="uniformedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -18505,6 +18580,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="uniformedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -19108,6 +19184,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="uniformedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -19572,6 +19649,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                       }
                     }
                     form="TestForm"
+                    formName="uniformedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -20040,6 +20118,7 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         }
                       }
                       form="TestForm"
+                      formName="uniformedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -20503,11 +20582,23 @@ exports[`Render Uniformed Array Fields should add item to array, modify it, and 
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -21385,6 +21476,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 1
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="uniformedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -21965,6 +22057,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 1
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="uniformedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -22556,6 +22649,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 1
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="uniformedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -23020,6 +23114,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 1
                       }
                     }
                     form="TestForm"
+                    formName="uniformedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -23488,6 +23583,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 1
                         }
                       }
                       form="TestForm"
+                      formName="uniformedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -23951,11 +24047,23 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 1
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -24833,6 +24941,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 2
               dispatch={[Function]}
               error={undefined}
               form="TestForm"
+              formName="uniformedArrayCardItem"
               handleSubmit={[Function]}
               initialValues={undefined}
               initialize={[Function]}
@@ -25413,6 +25522,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 2
                 dispatch={[Function]}
                 error={undefined}
                 form="TestForm"
+                formName="uniformedArrayCardItem"
                 handleSubmit={[Function]}
                 initialValues={undefined}
                 initialize={[Function]}
@@ -26004,6 +26114,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 2
                   dispatch={[Function]}
                   error={undefined}
                   form="TestForm"
+                  formName="uniformedArrayCardItem"
                   handleSubmit={[Function]}
                   initialValues={undefined}
                   initialize={[Function]}
@@ -26468,6 +26579,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 2
                       }
                     }
                     form="TestForm"
+                    formName="uniformedArrayCardItem"
                     handleSubmit={[Function]}
                     initialValues={undefined}
                     initialize={[Function]}
@@ -26936,6 +27048,7 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 2
                         }
                       }
                       form="TestForm"
+                      formName="uniformedArrayCardItem"
                       handleSubmit={[Function]}
                       headerTag={[Function]}
                       initialValues={undefined}
@@ -27399,11 +27512,23 @@ exports[`Render Uniformed Array Fields should handle add and cancel item modal 2
                         <Modal
                           autoFocus={true}
                           backdrop={true}
-                          backdropTransitionTimeout={150}
+                          backdropTransition={
+                            Object {
+                              "mountOnEnter": true,
+                              "timeout": 150,
+                            }
+                          }
                           fade={true}
                           isOpen={false}
                           keyboard={true}
-                          modalTransitionTimeout={300}
+                          modalTransition={
+                            Object {
+                              "timeout": 300,
+                            }
+                          }
+                          onClosed={[Function]}
+                          onOpened={[Function]}
+                          role="dialog"
                           toggle={[Function]}
                           zIndex={1050}
                         />
@@ -30379,12 +30504,12 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                             </div>
                           </div>
                         </CardHeader>
-                        <CardBlock
+                        <CardBody
                           className={undefined}
                           tag="div"
                         >
                           <div
-                            className="card-block"
+                            className="card-body"
                           >
                             <SchemaVis
                               componentProps={
@@ -30491,6 +30616,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                       "VariedArrayInline": [Function],
                                     },
                                     "defaultComponents": undefined,
+                                    "definitions": Object {},
                                     "prefix": "meta.vis",
                                     "schema": Object {
                                       "id": "Bar",
@@ -30565,6 +30691,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                         "VariedArrayInline": [Function],
                                       },
                                       "defaultComponents": undefined,
+                                      "definitions": Object {},
                                       "prefix": "meta.vis",
                                       "schema": Object {
                                         "id": "Bar",
@@ -30988,6 +31115,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                           }
                                         }
                                         defaultComponents={undefined}
+                                        definitions={Object {}}
                                         id="schemaVis"
                                         namespace="foobar[0]"
                                         prefix="meta.vis"
@@ -31015,7 +31143,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                         styles={Object {}}
                                         tag={[Function]}
                                       >
-                                        <CardBlock
+                                        <CardBody
                                           className={undefined}
                                           id="schemaVis"
                                           key="schemaVis"
@@ -31023,7 +31151,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                           tag="div"
                                         >
                                           <div
-                                            className="card-block"
+                                            className="card-body"
                                             id="schemaVis"
                                             required={false}
                                           >
@@ -31065,6 +31193,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                     "VariedArrayInline": [Function],
                                                   },
                                                   "defaultComponents": undefined,
+                                                  "definitions": Object {},
                                                   "prefix": "meta.vis",
                                                   "schema": Object {
                                                     "meta": Object {
@@ -31116,6 +31245,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                       "VariedArrayInline": [Function],
                                                     },
                                                     "defaultComponents": undefined,
+                                                    "definitions": Object {},
                                                     "prefix": "meta.vis",
                                                     "schema": Object {
                                                       "meta": Object {
@@ -31368,6 +31498,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                         "VariedArrayInline": [Function],
                                                       },
                                                       "defaultComponents": undefined,
+                                                      "definitions": Object {},
                                                       "prefix": "meta.vis",
                                                       "schema": Object {
                                                         "meta": Object {
@@ -31621,6 +31752,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                           "VariedArrayInline": [Function],
                                                         },
                                                         "defaultComponents": undefined,
+                                                        "definitions": Object {},
                                                         "prefix": "meta.vis",
                                                         "schema": Object {
                                                           "meta": Object {
@@ -32028,6 +32160,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                             "VariedArrayInline": [Function],
                                                           },
                                                           "defaultComponents": undefined,
+                                                          "definitions": Object {},
                                                           "prefix": "meta.vis",
                                                           "schema": Object {
                                                             "meta": Object {
@@ -32442,6 +32575,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                               "VariedArrayInline": [Function],
                                                             },
                                                             "defaultComponents": undefined,
+                                                            "definitions": Object {},
                                                             "prefix": "meta.vis",
                                                             "schema": Object {
                                                               "meta": Object {
@@ -32732,6 +32866,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                                 "VariedArrayInline": [Function],
                                                               },
                                                               "defaultComponents": undefined,
+                                                              "definitions": Object {},
                                                               "prefix": "meta.vis",
                                                               "schema": Object {
                                                                 "meta": Object {
@@ -33200,7 +33335,6 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                           >
                                                             <FormGroup
                                                               className={undefined}
-                                                              color={undefined}
                                                               id="schemaVis"
                                                               tag="div"
                                                             >
@@ -33213,6 +33347,15 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                                   for="foobar[0].foo"
                                                                   id="foobar[0].foo-label"
                                                                   tag="label"
+                                                                  widths={
+                                                                    Array [
+                                                                      "xs",
+                                                                      "sm",
+                                                                      "md",
+                                                                      "lg",
+                                                                      "xl",
+                                                                    ]
+                                                                  }
                                                                 >
                                                                   <label
                                                                     className=" form-control-label"
@@ -33231,13 +33374,13 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                                   onDrop={[Function]}
                                                                   onFocus={[Function]}
                                                                   required={false}
-                                                                  state={undefined}
                                                                   tag="p"
                                                                   type="text"
+                                                                  valid={true}
                                                                   value=""
                                                                 >
                                                                   <input
-                                                                    className="form-control"
+                                                                    className="is-valid form-control"
                                                                     id="foobar[0].foo"
                                                                     name="foobar[0].foo"
                                                                     onBlur={[Function]}
@@ -33250,6 +33393,16 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                                                     value=""
                                                                   />
                                                                 </Input>
+                                                                <FormFeedback
+                                                                  className={undefined}
+                                                                  id="foobar[0].foo-feedback"
+                                                                  tag="div"
+                                                                >
+                                                                  <div
+                                                                    className="invalid-feedback"
+                                                                    id="foobar[0].foo-feedback"
+                                                                  />
+                                                                </FormFeedback>
                                                               </div>
                                                             </FormGroup>
                                                           </FormField>
@@ -33261,7 +33414,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                                               </CreatedInputField>
                                             </StyledComponent>
                                           </div>
-                                        </CardBlock>
+                                        </CardBody>
                                       </SchemaVis>
                                     </div>
                                   </Card>
@@ -33269,7 +33422,7 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                               </StyledComponent>
                             </SchemaVis>
                           </div>
-                        </CardBlock>
+                        </CardBody>
                       </div>
                     </Card>
                   </UniformedArray>
@@ -36231,14 +36384,14 @@ exports[`Render Uniformed Array Fields should handle add item and remove Uniform
                             </div>
                           </div>
                         </CardHeader>
-                        <CardBlock
+                        <CardBody
                           className={undefined}
                           tag="div"
                         >
                           <div
-                            className="card-block"
+                            className="card-body"
                           />
-                        </CardBlock>
+                        </CardBody>
                       </div>
                     </Card>
                   </UniformedArray>

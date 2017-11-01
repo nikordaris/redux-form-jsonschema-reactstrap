@@ -82,7 +82,7 @@ export default class FormField extends Component {
     const labelId = `${name}-label`;
     const inputState = this.getInputState();
     return (
-      <Tag {...rest} className={classes.formGroup} color={inputState}>
+      <Tag {...rest} className={classes.formGroup}>
         <LabelTag
           className={classes.label}
           id={labelId}
@@ -106,14 +106,12 @@ export default class FormField extends Component {
         {Children.map(children, child =>
           cloneElement(child, {
             id: name,
-            state: inputState
+            valid: (!showFeedback(this.props) || (!error && !warning))
           })
         )}
-
-        {inputState &&
-          <FormFeedback className={classes.feedback} id={`${name}-feedback`}>
-            {error || warning}
-          </FormFeedback>}
+        <FormFeedback className={classes.feedback} id={`${name}-feedback`}>
+          {error || warning}
+        </FormFeedback>
       </Tag>
     );
   }

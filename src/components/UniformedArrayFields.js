@@ -5,7 +5,7 @@ import {
   Button,
   Card,
   CardHeader,
-  CardBlock,
+  CardBody,
   ListGroup,
   Modal,
   ModalHeader,
@@ -25,7 +25,7 @@ class UniformedArray extends Component {
   static defaultProps = {
     tag: Card,
     headerTag: CardHeader,
-    bodyTag: CardBlock,
+    bodyTag: CardBody,
     addBtnProps: {},
     required: false
   };
@@ -158,7 +158,7 @@ export class UniformedArrayInline extends Component {
 }
 
 @reduxForm({
-  form: 'arrayItem'
+  form: 'uniformedArrayItem'
 })
 class SchemaVisForm extends Component {
   render() {
@@ -192,6 +192,7 @@ class ModalUniformArray extends Component {
   props: {
     tag: string,
     submitForm: string => void,
+    formName: string,
     fields: any,
     items: any,
     headerTag: string,
@@ -226,8 +227,8 @@ class ModalUniformArray extends Component {
   };
 
   handleSubmitModal = () => {
-    const { submitForm } = this.props;
-    submitForm('arrayItem');
+    const { submitForm, formName } = this.props;
+    submitForm(formName);
   };
 
   toggleAddFormModal = (state: any = { selectedIdx: undefined }) => {
@@ -271,6 +272,7 @@ class ModalUniformArray extends Component {
     const {
       schemaVis,
       fields,
+      formName,
       schemaVis: { schema: { items: schema } }
     } = this.props;
     const { selectedIdx } = this.state;
@@ -286,6 +288,7 @@ class ModalUniformArray extends Component {
         </ModalHeader>
         <ModalBody>
           <SchemaVisForm
+            form={formName}
             initialValues={initialValues}
             schemaVis={{ ...schemaVis, schema }}
             onSubmit={this.handleSubmitItem}
@@ -365,6 +368,7 @@ export class ModalUniformedArrayCard extends Component {
         component={ModalUniformArray}
         schemaVis={schemaVis}
         bodyProps={{ flush: true }}
+        formName="uniformedArrayCardItem"
         {...rest}
       />
     );
@@ -406,6 +410,7 @@ export class ModalUniformedArrayInline extends Component {
         bodyTag="div"
         headerTag="div"
         tag="div"
+        formName="uniformedArrayInlineItem"
         {...rest}
       />
     );

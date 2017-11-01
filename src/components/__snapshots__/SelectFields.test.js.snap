@@ -49,7 +49,7 @@ exports[`Render SelectFields Should render SingleSelect 1`] = `
     SingleSelect
   </label>
   <select
-    className="form-control"
+    className="is-valid form-control"
     id="SingleSelect"
   >
     <option
@@ -70,6 +70,10 @@ exports[`Render SelectFields Should render SingleSelect 1`] = `
       foo
     </option>
   </select>
+  <div
+    className="invalid-feedback"
+    id="SingleSelect-feedback"
+  />
 </div>
 `;
 
@@ -122,7 +126,7 @@ exports[`Render SelectFields Should render SingleSelect with only titles 1`] = `
     SingleSelect
   </label>
   <select
-    className="form-control"
+    className="is-valid form-control"
     id="SingleSelect"
   >
     <option
@@ -143,6 +147,10 @@ exports[`Render SelectFields Should render SingleSelect with only titles 1`] = `
       foo
     </option>
   </select>
+  <div
+    className="invalid-feedback"
+    id="SingleSelect-feedback"
+  />
 </div>
 `;
 
@@ -195,7 +203,7 @@ exports[`Render SelectFields Should render SingleSelect with only values 1`] = `
     SingleSelect
   </label>
   <select
-    className="form-control"
+    className="is-valid form-control"
     id="SingleSelect"
   >
     <option
@@ -216,6 +224,10 @@ exports[`Render SelectFields Should render SingleSelect with only values 1`] = `
       foo
     </option>
   </select>
+  <div
+    className="invalid-feedback"
+    id="SingleSelect-feedback"
+  />
 </div>
 `;
 
@@ -1634,6 +1646,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                             "Text": [Function],
                           },
                           "defaultComponents": undefined,
+                          "definitions": Object {},
                           "prefix": "meta.vis",
                           "schema": Object {
                             "id": "Foo",
@@ -1727,6 +1740,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                               "Text": [Function],
                             },
                             "defaultComponents": undefined,
+                            "definitions": Object {},
                             "prefix": "meta.vis",
                             "schema": Object {
                               "id": "Foo",
@@ -2054,6 +2068,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                 }
                               }
                               defaultComponents={undefined}
+                              definitions={Object {}}
                               id="schemaVis"
                               namespace="foobar"
                               prefix="meta.vis"
@@ -2082,14 +2097,14 @@ exports[`Render SelectFields should handle select change 1`] = `
                               styles={Object {}}
                               tag={[Function]}
                             >
-                              <CardBlock
+                              <CardBody
                                 className={undefined}
                                 id="schemaVis"
                                 key="schemaVis"
                                 tag="div"
                               >
                                 <div
-                                  className="card-block"
+                                  className="card-body"
                                   id="schemaVis"
                                 >
                                   <StyledComponent
@@ -2106,6 +2121,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                           "Text": [Function],
                                         },
                                         "defaultComponents": undefined,
+                                        "definitions": Object {},
                                         "prefix": "meta.vis",
                                         "schema": Object {
                                           "id": "x",
@@ -2135,6 +2151,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                             "Text": [Function],
                                           },
                                           "defaultComponents": undefined,
+                                          "definitions": Object {},
                                           "prefix": "meta.vis",
                                           "schema": Object {
                                             "id": "x",
@@ -2365,6 +2382,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                               "Text": [Function],
                                             },
                                             "defaultComponents": undefined,
+                                            "definitions": Object {},
                                             "prefix": "meta.vis",
                                             "schema": Object {
                                               "id": "x",
@@ -2596,6 +2614,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                 "Text": [Function],
                                               },
                                               "defaultComponents": undefined,
+                                              "definitions": Object {},
                                               "prefix": "meta.vis",
                                               "schema": Object {
                                                 "id": "x",
@@ -2978,6 +2997,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                   "Text": [Function],
                                                 },
                                                 "defaultComponents": undefined,
+                                                "definitions": Object {},
                                                 "prefix": "meta.vis",
                                                 "schema": Object {
                                                   "id": "x",
@@ -3367,6 +3387,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                     "Text": [Function],
                                                   },
                                                   "defaultComponents": undefined,
+                                                  "definitions": Object {},
                                                   "prefix": "meta.vis",
                                                   "schema": Object {
                                                     "id": "x",
@@ -3635,6 +3656,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                       "Text": [Function],
                                                     },
                                                     "defaultComponents": undefined,
+                                                    "definitions": Object {},
                                                     "prefix": "meta.vis",
                                                     "schema": Object {
                                                       "id": "x",
@@ -4107,7 +4129,6 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                 >
                                                   <FormGroup
                                                     className={undefined}
-                                                    color={undefined}
                                                     id="schemaVis"
                                                     tag="div"
                                                   >
@@ -4120,6 +4141,15 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         for="foobar.x"
                                                         id="foobar.x-label"
                                                         tag="label"
+                                                        widths={
+                                                          Array [
+                                                            "xs",
+                                                            "sm",
+                                                            "md",
+                                                            "lg",
+                                                            "xl",
+                                                          ]
+                                                        }
                                                       >
                                                         <label
                                                           className=" form-control-label"
@@ -4140,13 +4170,13 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                         onDrop={[Function]}
                                                         onFocus={[Function]}
                                                         required={false}
-                                                        state={undefined}
                                                         tag="p"
                                                         type="text"
+                                                        valid={true}
                                                         value=""
                                                       >
                                                         <input
-                                                          className="form-control"
+                                                          className="is-valid form-control"
                                                           id="foobar.x"
                                                           name="foobar.x"
                                                           onBlur={[Function]}
@@ -4159,6 +4189,16 @@ exports[`Render SelectFields should handle select change 1`] = `
                                                           value=""
                                                         />
                                                       </Input>
+                                                      <FormFeedback
+                                                        className={undefined}
+                                                        id="foobar.x-feedback"
+                                                        tag="div"
+                                                      >
+                                                        <div
+                                                          className="invalid-feedback"
+                                                          id="foobar.x-feedback"
+                                                        />
+                                                      </FormFeedback>
                                                     </div>
                                                   </FormGroup>
                                                 </FormField>
@@ -4170,7 +4210,7 @@ exports[`Render SelectFields should handle select change 1`] = `
                                     </CreatedInputField>
                                   </StyledComponent>
                                 </div>
-                              </CardBlock>
+                              </CardBody>
                             </SchemaVis>
                           </div>
                         </Card>

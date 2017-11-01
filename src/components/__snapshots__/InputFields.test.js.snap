@@ -69,7 +69,7 @@ exports[`Render InputFields Should render Color 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="input-0-0 form-control"
+    className="input-0-0 is-valid form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -118,9 +118,12 @@ exports[`Render InputFields Should render Color 1`] = `
     triggerSubmit={undefined}
     type="color"
     untouch={[Function]}
-    valid={true}
     value=""
     warning={undefined}
+  />
+  <div
+    className="invalid-feedback"
+    id="Color-feedback"
   />
 </div>
 `;
@@ -194,7 +197,7 @@ exports[`Render InputFields Should render Date 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="form-control"
+    className="is-valid form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -243,9 +246,12 @@ exports[`Render InputFields Should render Date 1`] = `
     triggerSubmit={undefined}
     type="date"
     untouch={[Function]}
-    valid={true}
     value=""
     warning={undefined}
+  />
+  <div
+    className="invalid-feedback"
+    id="Date-feedback"
   />
 </div>
 `;
@@ -319,7 +325,7 @@ exports[`Render InputFields Should render DateTime 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="form-control"
+    className="is-valid form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -368,9 +374,12 @@ exports[`Render InputFields Should render DateTime 1`] = `
     triggerSubmit={undefined}
     type="datetime-local"
     untouch={[Function]}
-    valid={true}
     value=""
     warning={undefined}
+  />
+  <div
+    className="invalid-feedback"
+    id="DateTime-feedback"
   />
 </div>
 `;
@@ -444,7 +453,7 @@ exports[`Render InputFields Should render Email 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="form-control"
+    className="is-valid form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -493,9 +502,12 @@ exports[`Render InputFields Should render Email 1`] = `
     triggerSubmit={undefined}
     type="email"
     untouch={[Function]}
-    valid={true}
     value=""
     warning={undefined}
+  />
+  <div
+    className="invalid-feedback"
+    id="Email-feedback"
   />
 </div>
 `;
@@ -569,7 +581,7 @@ exports[`Render InputFields Should render Number 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="form-control"
+    className="is-valid form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -618,9 +630,12 @@ exports[`Render InputFields Should render Number 1`] = `
     triggerSubmit={undefined}
     type="number"
     untouch={[Function]}
-    valid={true}
     value=""
     warning={undefined}
+  />
+  <div
+    className="invalid-feedback"
+    id="Number-feedback"
   />
 </div>
 `;
@@ -694,7 +709,7 @@ exports[`Render InputFields Should render Password 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="form-control"
+    className="is-valid form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -743,9 +758,12 @@ exports[`Render InputFields Should render Password 1`] = `
     triggerSubmit={undefined}
     type="password"
     untouch={[Function]}
-    valid={true}
     value=""
     warning={undefined}
+  />
+  <div
+    className="invalid-feedback"
+    id="Password-feedback"
   />
 </div>
 `;
@@ -819,7 +837,7 @@ exports[`Render InputFields Should render Text 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="form-control"
+    className="is-valid form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -868,9 +886,12 @@ exports[`Render InputFields Should render Text 1`] = `
     triggerSubmit={undefined}
     type="text"
     untouch={[Function]}
-    valid={true}
     value=""
     warning={undefined}
+  />
+  <div
+    className="invalid-feedback"
+    id="Text-feedback"
   />
 </div>
 `;
@@ -944,7 +965,7 @@ exports[`Render InputFields Should render TextArea 1`] = `
     autofill={[Function]}
     blur={[Function]}
     change={[Function]}
-    className="form-control"
+    className="is-valid form-control"
     clearAsyncError={[Function]}
     clearSubmit={[Function]}
     clearSubmitErrors={[Function]}
@@ -992,9 +1013,12 @@ exports[`Render InputFields Should render TextArea 1`] = `
     touch={[Function]}
     triggerSubmit={undefined}
     untouch={[Function]}
-    valid={true}
     value=""
     warning={undefined}
+  />
+  <div
+    className="invalid-feedback"
+    id="TextArea-feedback"
   />
 </div>
 `;

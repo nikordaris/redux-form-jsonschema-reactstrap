@@ -5,7 +5,7 @@ import {
   Button,
   Card,
   CardHeader,
-  CardBlock,
+  CardBody,
   Input,
   ListGroup,
   Modal,
@@ -26,7 +26,7 @@ class VariedArray extends Component {
   static defaultProps = {
     tag: Card,
     headerTag: CardHeader,
-    bodyTag: CardBlock,
+    bodyTag: CardBody,
     addBtnProps: {},
     selectInputProps: {},
     required: false
@@ -276,6 +276,7 @@ class ModalVariedArray extends Component {
     fields: any,
     meta: { form: string },
     submitForm: string => void,
+    formName: string,
     tag: string,
     headerTag: string,
     bodyTag: string,
@@ -340,8 +341,8 @@ class ModalVariedArray extends Component {
   };
 
   handleSubmitModal = () => {
-    const { submitForm } = this.props;
-    submitForm(ARRAY_ITEM_FORM);
+    const { submitForm, formName } = this.props;
+    submitForm(formName);
   };
 
   handleRemoveItem = (idx: number) => () => {
@@ -396,6 +397,7 @@ class ModalVariedArray extends Component {
     const {
       schemaVis,
       fields,
+      formName,
       schemaVis: { prefix, schema: { items: schema } }
     } = this.props;
     const { selectedIdx, fieldSchemas } = this.state;
@@ -429,6 +431,7 @@ class ModalVariedArray extends Component {
               schema,
               componentProps
             }}
+            form={formName}
             initialValues={initialValues}
             onSubmit={this.handleSubmitItem}
           />
@@ -506,6 +509,7 @@ export class ModalVariedArrayCard extends Component {
         component={ModalVariedArray}
         schemaVis={schemaVis}
         bodyProps={{ flush: true }}
+        formName="variedArrayCardItem"
         {...rest}
       />
     );
@@ -547,6 +551,7 @@ export class ModalVariedArrayInline extends Component {
         bodyTag="div"
         headerTag="div"
         tag="div"
+        formName="variedArrayInlineItem"
         {...rest}
       />
     );
